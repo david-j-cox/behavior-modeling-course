@@ -1,0 +1,41 @@
+export interface WeekMeta {
+  slug: string;
+  number: number;
+  title: string;
+  subtitle: string;
+  description: string;
+  published: boolean;
+  keyModels: string[];
+  keyEquations: string[];
+}
+
+export interface ProblemMeta {
+  id: number;
+  title: string;
+  week: number;
+  difficulty: "Introductory" | "Intermediate" | "Advanced";
+  modelingSteps: number[];
+  tags: string[];
+}
+
+export interface GlossaryEntry {
+  term: string;
+  definition: string;
+  relatedTerms?: string[];
+  firstAppears?: number;
+}
+
+export interface AppendixMeta {
+  slug: string;
+  letter: string;
+  title: string;
+  description: string;
+}
+
+export interface FrameworkStep {
+  number: number;
+  engineeringLanguage: string;
+  behaviorScienceLanguage: string;
+  description: string;
+  commonMistakes: string;
+}

@@ -1,0 +1,176 @@
+---
+slug: "week-1"
+number: 1
+published: true
+title: "Introduction to Modeling in Behavior Science"
+subtitle: "What models are, why they matter, and the systematic framework for building them"
+description: "Types of models, description vs explanation, parameters vs variables, and the first pass through the 8-step modeling framework."
+keyModels:
+  - "Linear Model"
+  - "Verbal Models"
+  - "Mathematical Models"
+keyEquations:
+  - "R = k * t"
+---
+
+## Why This Topic Matters
+
+Behavior science aspires to be a natural science of behavior, and natural sciences make quantitative predictions. They do this through models---formal representations of how processes work that can be tested against observation. The experimental analysis of behavior has produced impressive quantitative regularities (the matching law, delay discounting functions, demand curves), but the broader discipline often treats these as isolated findings rather than as instances of a general modeling enterprise. This week introduces that enterprise.
+
+Models matter because they force clarity. A verbal claim like "reinforcement strengthens behavior" is useful, but it does not tell you by how much, under what conditions, or how the effect changes when parameters change. A mathematical model must answer these questions or fail visibly. Models also matter because they are the bridge between basic findings and application. If you want to predict how a token economy will perform, or how changing the price of a commodity will alter consumption, you need a quantitative framework---not just a principle, but a model.
+
+Understanding what models are and are not is equally important. A model is not reality. It is a deliberately simplified representation of some aspect of reality, constructed to serve a purpose---prediction, explanation, or both. All models are wrong in the sense that they omit details. Useful models are wrong in ways that do not matter for the question at hand. The art of modeling lies in choosing what to leave out.
+
+Abstraction is the modeler's primary tool. To abstract is to retain the features of a phenomenon that are essential for the question being asked and to discard the rest. A cumulative record abstracts away the topography of each response and retains only its time of occurrence. A rate measure abstracts further, collapsing a stream of events into a single number. Every model involves choices about the level and type of abstraction, and those choices must be made deliberately.
+
+## Core Concepts
+
+### What Is a Model?
+
+A model is a formal representation of a system or process. "Formal" means the representation is expressed in a language with explicit rules---mathematics, computer code, or a logical calculus. The representation specifies the components of the system, the relationships among them, and the rules by which the system changes over time or across conditions.
+
+### Types of Models
+
+**Verbal models** state claims in natural language. "Behavior is a function of its consequences" is a verbal model. Verbal models are useful starting points but are imprecise and difficult to test rigorously.
+
+**Mathematical models** express claims as equations. $R = \frac{k \cdot r}{r + r_e}$ is a mathematical model (Herrnstein's hyperbola). The relationships are explicit, the parameters are defined, and predictions are quantitative.
+
+**Computational models** implement processes as algorithms. Rather than writing a closed-form equation, a computational model specifies rules that are executed step by step. Agent-based models and reinforcement-learning simulations fall in this category.
+
+**Simulation models** are computational models run forward in time to generate synthetic data. They are especially useful when a system's behavior is too complex to solve analytically.
+
+These categories overlap. A mathematical model can be implemented computationally; a simulation can be based on a mathematical model. The distinctions are about emphasis, not rigid boundaries.
+
+### Description vs. Explanation
+
+A descriptive model summarizes a pattern in data. It tells you the shape of a function and the values of its parameters. An explanatory (or mechanistic) model proposes a process that generates the pattern. Both are valuable, but they answer different questions.
+
+Mazur's hyperbolic discounting function describes how subjective value declines with delay. A process model that specifies *why* hyperbolic decay occurs (e.g., via memory mechanisms or competing temporal representations) would explain it. Much of behavior science currently operates at the descriptive level. Pushing toward explanation is one of the frontiers where modeling can contribute.
+
+### Parameters vs. Variables
+
+A **variable** is a quantity that changes across observations or conditions (e.g., delay to reinforcement, response rate). A **parameter** is a quantity that is fixed within a model but may differ across individuals or conditions (e.g., the sensitivity parameter in the generalized matching equation). Parameters are typically estimated from data.
+
+Understanding the distinction is critical: when you fit a model, you are estimating parameters; when you use the model to predict, you are computing values of variables.
+
+### Curve Fitting vs. Mechanistic Modeling
+
+Curve fitting finds the parameter values that make a given equation best describe a dataset. It is a tool, not a theory. The fact that a hyperbola fits discounting data well does not, by itself, explain why discounting is hyperbolic.
+
+Mechanistic modeling goes further by proposing processes whose operation produces the observed functional form. Both activities are legitimate parts of the modeling enterprise, but they must not be confused.
+
+## Model Families Overview
+
+Over the coming weeks, we will encounter several families of models:
+
+**Algebraic models** express relationships as equations involving arithmetic operations, powers, and standard functions. The matching law and discounting functions are algebraic models. They are solved by substitution and algebra.
+
+**Differential equation models** express relationships in terms of rates of change. The Rescorla-Wagner model, in its continuous form, is a differential equation. These models describe how a system evolves over time and are central to dynamical systems approaches.
+
+**Probabilistic models** treat outcomes as random variables governed by probability distributions. Maximum likelihood estimation, Bayesian models, and many statistical frameworks fall here. They are essential whenever data contain noise---which is always.
+
+**Computational models** specify algorithms rather than equations. Agent-based models, Monte Carlo simulations, and reinforcement-learning algorithms are computational. They excel at capturing emergent phenomena that arise from the interaction of simple rules.
+
+**Machine learning models** prioritize predictive accuracy, often at the expense of interpretability. Neural networks, random forests, and support vector machines are examples. They are powerful tools for pattern detection but are difficult to interpret in behavioral terms.
+
+## Applying the 8-Step Framework
+
+This section walks through each step of the 8-step modeling framework using a behavior-science example: modeling the rate of lever pressing by a rat on a variable-interval (VI) schedule of food reinforcement.
+
+**Step 1: Get the behavioral phenomenon clearly in mind.** A food-deprived rat is placed in an operant chamber equipped with a lever. Presses on the lever are reinforced with food pellets according to a VI schedule. Over many sessions, the rat's response rate stabilizes. We want to model the relationship between the programmed reinforcement rate and the observed response rate.
+
+**Step 2: Define the behavioral processes and scope of the model.** We will model steady-state response rate as a function of reinforcement rate. We will not model acquisition, extinction, or within-session changes. The model covers a single operant on a single schedule.
+
+**Step 3: Identify the behavioral principles and quantitative laws.** Herrnstein's single-alternative matching law proposes that response rate is a hyperbolic function of reinforcement rate. This is our candidate law.
+
+**Step 4: State all simplifying assumptions.** We assume the organism is at steady state. We assume a single source of measured reinforcement and a constant background level of extraneous reinforcement. We assume motivation (deprivation level) is constant across conditions.
+
+**Step 5: Write the model verbally, then mathematically.** Verbally: Response rate equals the product of a maximum response rate and the ratio of the obtained reinforcement rate to the sum of the obtained reinforcement rate and the extraneous reinforcement rate. Mathematically:
+
+$$R = \frac{k \cdot r}{r + r_e}$$
+
+where $R$ is response rate, $r$ is reinforcement rate, $k$ is the asymptotic response rate, and $r_e$ is the extraneous reinforcement rate.
+
+In plain language: the equation says that as reinforcement increases, responding increases toward a ceiling ($k$), but with diminishing returns. The parameter $r_e$ controls how quickly responding approaches that ceiling.
+
+**Step 6: Verify dimensional consistency.** $R$ is in responses per minute. $k$ is in responses per minute. $r$ is in reinforcers per minute. $r_e$ is in reinforcers per minute. The ratio $\frac{r}{r + r_e}$ is dimensionless (reinforcers per minute divided by reinforcers per minute). Therefore, the right side has units of responses per minute, matching the left side.
+
+**Step 7: Specify starting values and constraints.** $k$ must be positive (you cannot have a negative response rate). $r_e$ must be positive. The model applies to VI schedule performance after responding has reached a stable state, typically after at least 20--30 sessions at each reinforcement rate.
+
+**Step 8: Check the math, test against data, and derive predictions.** Verify: At $r = 0$, $R = 0$ (no reinforcement yields no responding). As $r$ becomes very large, $R$ approaches $k$ (there is a ceiling on response rate). These are qualitatively sensible. Validate: Fit the equation to data from multiple VI schedule values and assess goodness of fit. Solve: Given estimated $k$ and $r_e$, predict response rate at any new reinforcement rate.
+
+## Worked Example: $R = k \cdot t$
+
+Consider the simplest possible behavioral model: cumulative responses as a linear function of time.
+
+### The Model
+
+$$R = k \cdot t$$
+
+where:
+- $R$ is the cumulative number of responses
+- $k$ is the response rate (responses per unit time), a constant
+- $t$ is elapsed time
+
+In plain language: if you know how fast the organism is responding ($k$), you can predict how many total responses will have occurred by any given time ($t$) simply by multiplying. The model treats responding as a steady stream---like water from a faucet filling a bucket.
+
+### Walking Through All 8 Steps
+
+**Step 1: Get the behavioral phenomenon clearly in mind.** An organism is responding on some schedule. We observe that over a session, responses accumulate. We want to describe the cumulative record---the running total of responses as a function of time.
+
+**Step 2: Define the behavioral processes and scope.** We model only the accumulation of responses over time within a single session. We do not model what maintains responding, how responding was acquired, or what happens between sessions.
+
+**Step 3: Identify behavioral principles and quantitative laws.** We invoke the simplest possible assumption: the organism responds at a constant rate. This is the defining feature of steady-state VI schedule performance, at least as an approximation.
+
+**Step 4: State all simplifying assumptions.** (a) Response rate is constant throughout the session. (b) There are no pauses, warm-up effects, or satiation effects. (c) Each response is identical and countable. (d) Time is measured continuously from session onset.
+
+**Step 5: Write the model verbally, then mathematically.** Verbally: The cumulative number of responses equals the response rate multiplied by the elapsed time. Mathematically: $R = k \cdot t$.
+
+**Step 6: Verify dimensional consistency.** $R$ is in responses (count). $k$ is in responses per minute. $t$ is in minutes. Responses per minute multiplied by minutes equals responses. The units are consistent.
+
+**Step 7: Specify starting values and constraints.** At $t = 0$, $R = 0$ (no responses have occurred at the start of the session). $k$ must be non-negative. The model applies from session onset ($t = 0$) to session end ($t = T$), and only during periods when the constant-rate assumption is reasonable.
+
+**Step 8: Check the math, test against data, and derive predictions.** Verify: The model predicts a straight-line cumulative record. If $k = 2$ responses/min and $t = 30$ min, then $R = 60$ responses. Validate: Compare the predicted straight line to actual cumulative records. In practice, real cumulative records show local variability (pauses, bursts), so the linear model will fit the overall trend but not the fine grain. Solve: Given an estimate of $k$ from observed data (e.g., total responses divided by total time), predict cumulative responses at any time point.
+
+## Plain-Language Interpretation
+
+$R = k \cdot t$ says: "If you know how fast the organism is responding ($k$), you can predict how many total responses will have occurred by any given time ($t$) simply by multiplying." The rate of flow ($k$) determines how quickly the bucket ($R$) fills as time ($t$) passes.
+
+This is obviously a simplification. Real organisms pause, accelerate, and decelerate. But the linear model serves as a useful baseline. Deviations from linearity are informative: they point toward phenomena (satiation, ratio strain, schedule effects) that a more complex model would need to capture.
+
+## Assumptions and Limitations
+
+The linear model $R = k \cdot t$ assumes:
+
+- **Steady-state responding:** The rate is constant. This is approximately true for well-trained organisms on VI schedules during the middle portion of a session, but it is rarely true at the start (warm-up) or end (satiation) of a session.
+- **Linearity:** Cumulative responses grow proportionally with time. Nonlinear growth (e.g., negatively accelerated curves during satiation) violates this assumption.
+- **Single response class:** The model counts one type of response. If the organism engages in competing behaviors, the model does not account for them.
+- **No measurement error:** Every response is detected and counted. In practice, recording equipment has limits.
+
+These limitations are not flaws---they are the boundaries of the model, identified in Step 2 and made explicit in Step 4. Every model has them. The discipline lies in knowing what they are.
+
+## Connection to Empirical Behavior Science
+
+The cumulative record is one of the oldest and most characteristic tools of the experimental analysis of behavior. Skinner used it to visualize response patterns under different schedules of reinforcement. The linear model $R = k \cdot t$ corresponds to the idealized cumulative record for a VI schedule: a straight line whose slope reflects response rate.
+
+More broadly, this week's introduction connects to the entire tradition of quantitative analysis in behavior science. The field has always valued prediction and control. Mathematical models make prediction explicit and testable. The 8-step framework provides a systematic method for constructing models that are clear, testable, and connected to behavioral principles.
+
+## Exercises for Reflection
+
+1. Consider a behavioral phenomenon you study or find interesting. What would Step 1 (getting the phenomenon clearly in mind) look like for that phenomenon? What features would you need to observe and describe before attempting to model it?
+
+2. The linear model $R = k \cdot t$ is almost certainly wrong for any real dataset if examined closely enough. In what sense can a model be both "wrong" and "useful"? What criteria would you use to decide whether a wrong model is still worth using?
+
+3. What is the difference between fitting a curve to data and understanding the process that produced the data? Can you think of examples from behavior science where a good curve fit was mistaken for a good explanation?
+
+4. The 8-step framework asks you to state your assumptions explicitly (Step 4). Why might this be the most important step? What are the consequences of unstated assumptions in a published model?
+
+## Key Takeaways
+
+- **What is a model?** A formal (mathematical or computational) representation of a system or process, built to predict, explain, or both.
+- **Types of models:** Verbal, mathematical, computational, and simulation. These overlap in practice.
+- **Key distinctions:** Description vs. explanation; parameters (estimated) vs. variables (observed or manipulated); curve fitting (tool) vs. mechanistic modeling (theory).
+- **Model families for this course:** Algebraic, differential equation, probabilistic, computational, and machine learning.
+- **The 8-step framework:** (1) Understand the phenomenon. (2) Define scope. (3) Identify principles and laws. (4) State assumptions. (5) Write the model in words, then symbols. (6) Check units. (7) Specify initial/boundary conditions. (8) Verify, validate, solve.
+- **Worked example:** $R = k \cdot t$ models cumulative responding as a linear function of time. The slope $k$ is the response rate. The model assumes constant-rate responding and serves as a baseline against which more complex models can be compared.
+- **Takeaway:** Modeling is a disciplined activity with a clear structure. The 8-step framework provides that structure and will be applied to every model encountered in this course.

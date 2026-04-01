@@ -1,0 +1,20 @@
+{
+  "name": "behavior-modeling-course",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Unified repository for Mathematical & Computational Modeling in Behavior Science — handbook manuscript and companion website sharing canonical content.",
+  "scripts": {
+    "dev": "cd website && npm run dev",
+    "build:website": "cd website && npm run build",
+    "build:manuscript": "npx tsx scripts/build-manuscript.ts",
+    "build:problems": "npx tsx scripts/generate-problems.ts",
+    "validate": "npx tsx scripts/validate-metadata.ts",
+    "build:all": "npm run validate && npm run build:manuscript && npm run build:problems && npm run build:website",
+    "clean": "rm -rf manuscript/build/* website/.next"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0",
+    "gray-matter": "^4.0.3"
+  }
+}

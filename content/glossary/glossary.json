@@ -1,0 +1,320 @@
+[
+  {
+    "term": "Acquisition",
+    "definition": "The process by which a new behavior or conditional response is learned, typically characterized by an increasing trend in responding over trials or sessions.",
+    "relatedTerms": ["Extinction", "Steady State", "Rescorla-Wagner Model"],
+    "firstAppears": 5
+  },
+  {
+    "term": "Agent-Based Model",
+    "definition": "A computational model in which individual agents follow specified rules and interact with each other or an environment, producing emergent aggregate behavior that may not be predictable from the rules alone.",
+    "relatedTerms": ["Computational Model", "Simulation", "Monte Carlo"],
+    "firstAppears": 11
+  },
+  {
+    "term": "AIC (Akaike Information Criterion)",
+    "definition": "A measure of the relative quality of a statistical model that balances goodness of fit against model complexity, calculated as AIC = 2k - 2ln(L), where k is the number of parameters and L is the maximized likelihood.",
+    "relatedTerms": ["BIC", "Likelihood", "Parsimony", "Overfitting"],
+    "firstAppears": 6
+  },
+  {
+    "term": "Algorithm",
+    "definition": "A step-by-step procedure or set of rules for performing a computation or solving a problem, forming the basis of computational models.",
+    "relatedTerms": ["Computational Model", "Simulation", "Q-Learning"],
+    "firstAppears": 11
+  },
+  {
+    "term": "Associative Strength",
+    "definition": "A theoretical quantity representing the degree of learned association between a conditioned stimulus and an unconditioned stimulus, central to the Rescorla-Wagner model and related accounts of respondent conditioning.",
+    "relatedTerms": ["Rescorla-Wagner Model", "Prediction Error", "Acquisition"],
+    "firstAppears": 5
+  },
+  {
+    "term": "Attractor",
+    "definition": "A state or set of states toward which a dynamical system tends to evolve over time, regardless of starting conditions within some region. Fixed points, limit cycles, and strange attractors are common types.",
+    "relatedTerms": ["Equilibrium", "Stability", "Phase Space", "Bifurcation"],
+    "firstAppears": 10
+  },
+  {
+    "term": "Bayes Factor",
+    "definition": "The ratio of the marginal likelihoods of two competing models, providing a measure of the evidence in favor of one model over another within a Bayesian framework.",
+    "relatedTerms": ["Likelihood", "AIC", "BIC", "Maximum Likelihood Estimation"],
+    "firstAppears": 8
+  },
+  {
+    "term": "BIC (Bayesian Information Criterion)",
+    "definition": "A criterion for model selection that penalizes complexity more heavily than AIC, calculated as BIC = k ln(n) - 2ln(L), where k is the number of parameters, n is the sample size, and L is the maximized likelihood.",
+    "relatedTerms": ["AIC", "Parsimony", "Likelihood", "Overfitting"],
+    "firstAppears": 6
+  },
+  {
+    "term": "Bias",
+    "definition": "In the generalized matching equation, a parameter representing a constant preference for one alternative over another that is independent of the reinforcement ratio, often attributed to differences in response effort or qualitative aspects of reinforcement.",
+    "relatedTerms": ["Matching Law", "Generalized Matching", "Sensitivity"],
+    "firstAppears": 2
+  },
+  {
+    "term": "Bifurcation",
+    "definition": "A qualitative change in the behavior of a dynamical system that occurs when a parameter crosses a critical value, such as a stable equilibrium becoming unstable or splitting into multiple equilibria.",
+    "relatedTerms": ["Attractor", "Stability", "Phase Space", "Equilibrium"],
+    "firstAppears": 10
+  },
+  {
+    "term": "Cross-Validation",
+    "definition": "A model evaluation technique in which data are partitioned into training and test sets, the model is fit to the training set, and its predictive accuracy is evaluated on the held-out test set.",
+    "relatedTerms": ["Overfitting", "AIC", "BIC", "Parsimony"],
+    "firstAppears": 6
+  },
+  {
+    "term": "Curve Fitting",
+    "definition": "The process of finding parameter values that make a given mathematical function best describe a dataset, typically by minimizing the sum of squared residuals or maximizing the likelihood function.",
+    "relatedTerms": ["Mechanistic Model", "Parameter", "Residual", "R-Squared"],
+    "firstAppears": 1
+  },
+  {
+    "term": "Demand",
+    "definition": "The relationship between the price of a commodity (typically measured in responses per reinforcer) and the amount consumed, often described by Hursh and Silberberg's exponential demand equation.",
+    "relatedTerms": ["Essential Value", "Reinforcement", "Discounting"],
+    "firstAppears": 4
+  },
+  {
+    "term": "Derivative",
+    "definition": "A mathematical quantity representing the instantaneous rate of change of a function with respect to one of its variables. In behavioral modeling, derivatives often represent rates of change in response strength, value, or other behavioral quantities over time.",
+    "relatedTerms": ["Differential Equation", "Function", "Variable"],
+    "firstAppears": 5
+  },
+  {
+    "term": "Difference Equation",
+    "definition": "A mathematical equation that expresses the value of a variable at the next time step as a function of its current value and other quantities. The Rescorla-Wagner model in its trial-by-trial form is a difference equation.",
+    "relatedTerms": ["Differential Equation", "Rescorla-Wagner Model", "Variable"],
+    "firstAppears": 5
+  },
+  {
+    "term": "Differential Equation",
+    "definition": "A mathematical equation that relates a function to its derivatives, describing how a quantity changes continuously over time. Used to model dynamic behavioral processes such as learning and extinction.",
+    "relatedTerms": ["Difference Equation", "Derivative", "Equilibrium", "Phase Space"],
+    "firstAppears": 5
+  },
+  {
+    "term": "Dimensional Analysis",
+    "definition": "The practice of checking that both sides of an equation have consistent physical units, serving as a verification tool in model construction (Step 6 of the 8-step framework).",
+    "relatedTerms": ["Verification", "Validation", "Model"],
+    "firstAppears": 1
+  },
+  {
+    "term": "Discounting",
+    "definition": "The decrease in subjective value of a reinforcer as a function of delay to its delivery (delay discounting) or uncertainty about its delivery (probability discounting).",
+    "relatedTerms": ["Demand", "Reinforcement", "Matching Law"],
+    "firstAppears": 3
+  },
+  {
+    "term": "Eigenvalue",
+    "definition": "A scalar associated with a linear transformation (matrix) that characterizes the rate and direction of change near an equilibrium point. In dynamical systems models, eigenvalues determine whether an equilibrium is stable, unstable, or oscillatory.",
+    "relatedTerms": ["Jacobian", "Stability", "Equilibrium", "Phase Space"],
+    "firstAppears": 10
+  },
+  {
+    "term": "Equilibrium",
+    "definition": "A state of a dynamical system at which all rates of change are zero, meaning the system will remain in that state unless perturbed. In behavioral terms, a steady state where response rates and reinforcement rates are no longer changing.",
+    "relatedTerms": ["Stability", "Attractor", "Steady State", "Differential Equation"],
+    "firstAppears": 10
+  },
+  {
+    "term": "Extinction",
+    "definition": "The decrease in responding that occurs when reinforcement is discontinued. Modeled dynamically as a process of declining response strength or associative value.",
+    "relatedTerms": ["Acquisition", "Reinforcement", "Steady State"],
+    "firstAppears": 5
+  },
+  {
+    "term": "Function",
+    "definition": "A mathematical relationship that assigns exactly one output value to each input value. In behavioral modeling, functions describe how dependent variables (e.g., response rate) relate to independent variables (e.g., reinforcement rate).",
+    "relatedTerms": ["Variable", "Parameter", "Model"],
+    "firstAppears": 1
+  },
+  {
+    "term": "Generalized Matching",
+    "definition": "An extension of the strict matching law that includes parameters for sensitivity and bias, expressed as log(B1/B2) = a log(r1/r2) + log(c), where a is sensitivity and c is bias.",
+    "relatedTerms": ["Matching Law", "Sensitivity", "Bias"],
+    "firstAppears": 2
+  },
+  {
+    "term": "ICC (Intraclass Correlation Coefficient)",
+    "definition": "A measure of the proportion of total variance attributable to differences between groups (e.g., subjects), used to assess the need for multilevel modeling in nested data structures.",
+    "relatedTerms": ["Random Effect", "Multilevel Model"],
+    "firstAppears": 9
+  },
+  {
+    "term": "Jacobian",
+    "definition": "A matrix of partial derivatives that describes how a system of differential equations behaves near an equilibrium point. Its eigenvalues determine the local stability of the equilibrium.",
+    "relatedTerms": ["Eigenvalue", "Stability", "Equilibrium", "Differential Equation"],
+    "firstAppears": 10
+  },
+  {
+    "term": "Likelihood",
+    "definition": "A function that expresses the probability of observed data given a set of parameter values and a model. Maximizing the likelihood function yields parameter estimates that make the observed data most probable under the model.",
+    "relatedTerms": ["Maximum Likelihood Estimation", "AIC", "BIC", "Bayes Factor"],
+    "firstAppears": 8
+  },
+  {
+    "term": "Matching Law",
+    "definition": "A quantitative relationship stating that the relative rate of responding on an alternative equals the relative rate of reinforcement obtained from that alternative.",
+    "relatedTerms": ["Generalized Matching", "Sensitivity", "Bias"],
+    "firstAppears": 2
+  },
+  {
+    "term": "Maximum Likelihood Estimation",
+    "definition": "A method of estimating model parameters by finding the parameter values that maximize the likelihood of the observed data under the model.",
+    "relatedTerms": ["Likelihood", "Parameter", "AIC", "BIC"],
+    "firstAppears": 8
+  },
+  {
+    "term": "Mechanistic Model",
+    "definition": "A model that proposes a specific process or mechanism that generates the observed behavioral pattern, as opposed to a descriptive model that merely summarizes the pattern.",
+    "relatedTerms": ["Curve Fitting", "Model", "Simulation"],
+    "firstAppears": 1
+  },
+  {
+    "term": "Model",
+    "definition": "A formal (mathematical or computational) representation of a system or process, constructed to predict, explain, or both. All models simplify reality; their value lies in whether the simplifications matter for the question at hand.",
+    "relatedTerms": ["Parameter", "Variable", "Function", "Mechanistic Model"],
+    "firstAppears": 1
+  },
+  {
+    "term": "Monte Carlo Simulation",
+    "definition": "A computational technique that uses repeated random sampling to estimate the properties of a system or the distribution of an outcome, useful when analytical solutions are unavailable.",
+    "relatedTerms": ["Simulation", "Agent-Based Model", "Computational Model"],
+    "firstAppears": 11
+  },
+  {
+    "term": "Overfitting",
+    "definition": "A modeling error in which a model captures noise in the training data rather than the underlying signal, resulting in excellent fit to the training data but poor prediction of new data.",
+    "relatedTerms": ["Parsimony", "Cross-Validation", "AIC", "BIC"],
+    "firstAppears": 6
+  },
+  {
+    "term": "Parameter",
+    "definition": "A quantity that is fixed within a model but may differ across individuals or conditions, typically estimated from data. Examples include the sensitivity exponent in generalized matching and the discounting rate in Mazur's hyperbolic model.",
+    "relatedTerms": ["Variable", "Model", "Curve Fitting", "Maximum Likelihood Estimation"],
+    "firstAppears": 1
+  },
+  {
+    "term": "Parsimony",
+    "definition": "The principle that simpler models should be preferred over more complex ones when both account for the data equally well, because simpler models are less likely to overfit and more likely to generalize.",
+    "relatedTerms": ["Overfitting", "AIC", "BIC", "Cross-Validation"],
+    "firstAppears": 6
+  },
+  {
+    "term": "Phase Space",
+    "definition": "A multidimensional space in which each axis represents one variable of a dynamical system, and each point represents a complete state of the system. Trajectories through phase space show how the system evolves over time.",
+    "relatedTerms": ["Attractor", "Equilibrium", "Stability", "Differential Equation"],
+    "firstAppears": 10
+  },
+  {
+    "term": "Prediction Error",
+    "definition": "The difference between what was expected (predicted) and what actually occurred. In the Rescorla-Wagner model, prediction error drives learning: associative strength changes in proportion to the discrepancy between expected and obtained reinforcement.",
+    "relatedTerms": ["Rescorla-Wagner Model", "Associative Strength", "Reinforcement Learning"],
+    "firstAppears": 5
+  },
+  {
+    "term": "Q-Learning",
+    "definition": "A model-free reinforcement learning algorithm that learns the value (Q-value) of taking a given action in a given state, updating values based on prediction errors without requiring a model of the environment.",
+    "relatedTerms": ["Reinforcement Learning", "Prediction Error", "Algorithm"],
+    "firstAppears": 11
+  },
+  {
+    "term": "R-Squared",
+    "definition": "The proportion of variance in the dependent variable that is accounted for by the model, calculated as 1 minus the ratio of residual variance to total variance. A measure of descriptive adequacy, not explanatory validity.",
+    "relatedTerms": ["Residual", "Curve Fitting", "Model"],
+    "firstAppears": 6
+  },
+  {
+    "term": "Random Effect",
+    "definition": "A model term representing variability across units (e.g., subjects or groups) that is treated as drawn from a probability distribution rather than estimated as fixed values, central to multilevel modeling.",
+    "relatedTerms": ["ICC", "Multilevel Model", "Parameter"],
+    "firstAppears": 9
+  },
+  {
+    "term": "Reinforcement",
+    "definition": "A process in which a consequence of behavior increases the future probability or rate of that behavior. In quantitative models, reinforcement rate is typically measured as reinforcers delivered per unit time.",
+    "relatedTerms": ["Reinforcer Rate", "Response Rate", "Matching Law"],
+    "firstAppears": 1
+  },
+  {
+    "term": "Reinforcement Learning",
+    "definition": "A class of computational algorithms in which an agent learns to select actions that maximize cumulative reward through trial-and-error interaction with an environment, closely related to behavioral principles of reinforcement.",
+    "relatedTerms": ["Q-Learning", "Prediction Error", "Agent-Based Model", "Algorithm"],
+    "firstAppears": 11
+  },
+  {
+    "term": "Reinforcer Rate",
+    "definition": "The number of reinforcers delivered per unit time, typically measured in reinforcers per minute. A key independent variable in models of schedule performance such as Herrnstein's hyperbola.",
+    "relatedTerms": ["Response Rate", "Reinforcement", "Matching Law"],
+    "firstAppears": 2
+  },
+  {
+    "term": "Rescorla-Wagner Model",
+    "definition": "A model of respondent conditioning in which associative strength changes on each trial as a function of prediction error: the difference between the maximum associative strength supported by the unconditioned stimulus and the current total associative strength of all conditioned stimuli present.",
+    "relatedTerms": ["Associative Strength", "Prediction Error", "Acquisition", "Extinction"],
+    "firstAppears": 5
+  },
+  {
+    "term": "Residual",
+    "definition": "The difference between an observed data value and the value predicted by a model. Patterns in residuals indicate systematic misfit and suggest directions for model improvement.",
+    "relatedTerms": ["R-Squared", "Curve Fitting", "Validation"],
+    "firstAppears": 6
+  },
+  {
+    "term": "Response Rate",
+    "definition": "The number of responses emitted per unit time, typically measured in responses per minute. The primary dependent variable in many operant models.",
+    "relatedTerms": ["Reinforcer Rate", "Matching Law", "Steady State"],
+    "firstAppears": 1
+  },
+  {
+    "term": "Sensitivity",
+    "definition": "In the generalized matching equation, the exponent (a) that describes how strongly relative responding tracks relative reinforcement. A value of 1.0 indicates strict matching; values less than 1.0 indicate undermatching.",
+    "relatedTerms": ["Matching Law", "Generalized Matching", "Bias"],
+    "firstAppears": 2
+  },
+  {
+    "term": "Sensitivity Analysis",
+    "definition": "The systematic investigation of how changes in model parameters or assumptions affect the model's predictions, used to identify which parameters the model is most sensitive to and which assumptions are most consequential.",
+    "relatedTerms": ["Parameter", "Validation", "Simulation"],
+    "firstAppears": 7
+  },
+  {
+    "term": "Simulation",
+    "definition": "The process of running a computational model forward in time to generate synthetic data, especially useful when the system is too complex for analytical solutions.",
+    "relatedTerms": ["Computational Model", "Agent-Based Model", "Monte Carlo Simulation"],
+    "firstAppears": 11
+  },
+  {
+    "term": "Stability",
+    "definition": "A property of an equilibrium point in a dynamical system. An equilibrium is stable if small perturbations cause the system to return to the equilibrium, and unstable if perturbations cause the system to move away.",
+    "relatedTerms": ["Equilibrium", "Attractor", "Eigenvalue", "Bifurcation"],
+    "firstAppears": 10
+  },
+  {
+    "term": "Steady State",
+    "definition": "A condition in which a behavioral measure (e.g., response rate) is no longer systematically changing over time, indicating that the organism's behavior has stabilized under the current environmental arrangement.",
+    "relatedTerms": ["Equilibrium", "Acquisition", "Extinction"],
+    "firstAppears": 1
+  },
+  {
+    "term": "Validation",
+    "definition": "The process of testing whether a model's predictions match empirical data, distinct from verification (checking internal mathematical consistency) and from curve fitting (which only tests descriptive adequacy on the training data).",
+    "relatedTerms": ["Verification", "Cross-Validation", "Residual"],
+    "firstAppears": 1
+  },
+  {
+    "term": "Variable",
+    "definition": "A quantity that changes across observations, conditions, or time. Independent variables are manipulated or selected by the researcher; dependent variables are measured. In models, variables are the quantities whose values the model predicts.",
+    "relatedTerms": ["Parameter", "Function", "Model"],
+    "firstAppears": 1
+  },
+  {
+    "term": "Verification",
+    "definition": "The process of confirming that a model's mathematics are internally consistent and that the model does what the modeler intends, distinct from validation (testing against data).",
+    "relatedTerms": ["Validation", "Dimensional Analysis"],
+    "firstAppears": 1
+  }
+]
