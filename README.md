@@ -1,86 +1,43 @@
 # Mathematical & Computational Modeling in Behavior Science
 
-A unified, open-source repository for a doctoral-level course on building, evaluating, and applying formal models of behavior-environment relations.
+A unified, open-source repository for a doctoral-level course (ABA 761) on building, evaluating, and applying formal models of behavior-environment relations.
 
-This repository contains **canonical course content** shared by two outputs:
+**Live site:** Deployed on Vercel
 
-- A **course handbook** (assembled markdown, convertible to DOCX via Pandoc)
-- A **companion website** (Next.js, deployable on Vercel)
+## What's on the site
 
-Both read from the same `/content/` directory -- a single source of truth.
+| Section | Description |
+|:--------|:------------|
+| **Syllabus** | Full course policies, grading, assignment descriptions, and topical outline |
+| **Framework** | The 8-step modeling framework used throughout the course |
+| **Weeks** | 13 weeks of content with key models, equations, worked examples, reading guides, and section navigation |
+| **Labs** | Jupyter notebooks and downloadable datasets for hands-on exercises (Weeks 2-12) |
+| **Problems** | 16 practice problems (Introductory through Advanced) with worked answers |
+| **Readings** | ~50 research articles organized by week (required + supplemental) |
+| **Glossary** | 150+ searchable terms with definitions |
+| **Appendices** | Key equations, model comparison guide, quick reference |
 
-## Quick Start
+## Course structure
 
-```bash
-# Install dependencies
-npm install
-cd website && npm install && cd ..
+| Week | Topic | Key Models |
+|:-----|:------|:-----------|
+| 1 | Introduction to Modeling in Behavior Science | Linear model, verbal models |
+| 2 | Historical Models — Matching and Discounting | Herrnstein's hyperbola, GME, Mazur's hyperbolic |
+| 3 | Historical Models — Demand | Hursh-Silberberg exponential demand |
+| 4 | Associative Learning Models | Rescorla-Wagner, Mackintosh attention |
+| 5 | Behavioral Momentum and Response Persistence | Behavioral momentum theory |
+| 6 | Model Comparisons | AIC, BIC, cross-validation |
+| 7 | How to Construct a Model | Sensitivity analysis, lifecycle diagrams |
+| 8 | Probability Theory and Probabilistic Models | Bayes' theorem, Monte Carlo |
+| 9 | Multilevel Modeling and Time-Series Forecasting | HLM, time-series decomposition |
+| 10 | Dynamical Systems Models | Logistic ODE, phase portraits |
+| 11 | Computational Models | Q-learning, agent-based models |
+| 12 | Machine Learning and Artificial Intelligence | Decision trees, neural networks |
+| 13 | Final Project Presentations | Course integration |
 
-# Validate all content
-npm run validate
+## The 8-step modeling framework
 
-# Run the website locally
-npm run dev
-
-# Build the handbook manuscript
-npm run build:manuscript
-
-# Build everything
-npm run build:all
-```
-
-## Repository Structure
-
-```
-content/                # Canonical course content
-  weeks/                # 13 weekly chapter files (markdown + frontmatter)
-  problems/             # Practice problem statements
-  answers/              # Worked solutions
-  appendices/           # Reference materials
-  glossary/             # Searchable glossary (JSON)
-  framework.md          # The 8-step modeling framework
-  course-overview.md    # Course overview and learning objectives
-
-manuscript/             # Handbook generation
-  templates/            # Front matter, metadata, chapter wrappers
-  build/                # Generated output (gitignored)
-  pagebreak.lua         # Pandoc Lua filter
-
-scripts/                # Build and validation (TypeScript)
-  build-manuscript.ts   # Assembles handbook from content + templates
-  validate-metadata.ts  # Validates all frontmatter and cross-references
-  generate-problems.ts  # Generates standalone problems document
-  build-website.sh      # Validates, then builds the website
-
-website/                # Next.js companion site
-  src/app/              # App Router pages
-  src/components/       # React components (MathContent, WeekNav, etc.)
-  src/lib/              # Content loading, markdown/KaTeX rendering
-
-docs/                   # Architecture and deployment documentation
-```
-
-## Course Sequence
-
-| Week | Topic | Key Model |
-|:-----|:------|:----------|
-| 1 | Introduction to Modeling | R = kt |
-| 2 | Matching Law | Herrnstein's hyperbola |
-| 3 | Discounting | Mazur's hyperbolic model |
-| 4 | Demand | Hursh-Silberberg equation |
-| 5 | Respondent Conditioning | Rescorla-Wagner |
-| 6 | Model Comparisons | AIC, BIC |
-| 7 | How to Construct a Model | Sensitivity analysis |
-| 8 | Probability & Probabilistic Models | Poisson, Bayes |
-| 9 | Multilevel & Time-Series | HLM, ARIMA |
-| 10 | **Dynamical Systems** | Logistic ODE |
-| 11 | Computational Models | Q-learning |
-| 12 | Machine Learning & AI | Decision trees, neural nets |
-| 13 | Final Projects | Course integration |
-
-## The 8-Step Modeling Framework
-
-Every module uses this framework:
+Every week uses this framework:
 
 1. Get the behavioral phenomenon clearly in mind
 2. Define the behavioral processes and scope
@@ -91,58 +48,69 @@ Every module uses this framework:
 7. Specify starting values and constraints
 8. Check the math, test against data, derive predictions
 
-## Tech Stack
+## Access control
 
-- **Content:** Markdown with YAML frontmatter, LaTeX math (`$...$`, `$$...$$`)
-- **Website:** Next.js 15, TypeScript, KaTeX, App Router
-- **Manuscript:** Pandoc with Lua filter for page breaks
-- **Scripts:** TypeScript (via tsx), gray-matter for frontmatter parsing
-- **Validation:** Custom script checking all frontmatter, cross-references, and completeness
+The site is open-source by design. Most content is publicly accessible. Two tiers of password protection gate sensitive materials:
 
-## Adding Content
+- **Student password** — Required for PDF article downloads (copyright protection)
+- **Instructor password** — Required for instructor notes and dataset creation notebooks
 
-All content goes in `/content/`. See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+Passwords are set via environment variables (`STUDENT_PASSWORD`, `INSTRUCTOR_PASSWORD`).
 
-### Add a week
+## Tech stack
 
-Create `content/weeks/week-N.md` with frontmatter:
+- **Framework:** Next.js 15 (App Router, static generation)
+- **Content:** Markdown with YAML frontmatter, processed via unified/remark/rehype
+- **Math:** KaTeX for LaTeX rendering
+- **Styling:** Custom CSS with CSS variables (no Tailwind)
+- **Deployment:** Vercel (standalone output)
 
-```yaml
----
-slug: "week-N"
-number: N
-title: "Topic Title"
-subtitle: ""
-description: "Brief description."
-keyModels: ["Model Name"]
-keyEquations: ["equation label"]
----
+## Repository structure
+
+```
+behavior-modeling-course/
+├── content/                # All course content (markdown + YAML)
+│   ├── weeks/              # Week 1-13 content files
+│   ├── problems/           # 16 practice problems
+│   ├── answers/            # Worked solutions
+│   ├── labs/               # Lab metadata (week, notebooks, data files)
+│   ├── readings/           # Reading metadata (citations, required/supplemental)
+│   ├── instructor/         # Instructor notes (password-gated)
+│   ├── appendices/         # Reference materials
+│   ├── glossary/           # Glossary entries (JSON)
+│   ├── framework.md        # 8-step framework
+│   ├── syllabus.md         # Course syllabus
+│   └── course-overview.md  # Course overview
+├── website/                # Next.js application
+│   ├── src/
+│   │   ├── app/            # Routes (syllabus, weeks, labs, problems, etc.)
+│   │   ├── components/     # Reusable components (MathContent, PasswordGate, etc.)
+│   │   └── lib/            # Content loaders, markdown pipeline, types
+│   └── public/
+│       ├── labs/            # Jupyter notebooks + CSV data files
+│       ├── readings/        # PDF articles (by week)
+│       └── images/          # Embedded images
 ```
 
-### Add a problem
-
-Create `content/problems/problem-NN.md` and `content/answers/answer-NN.md`.
-
-### Validate
+## Local development
 
 ```bash
-npm run validate
+cd website
+npm install
+npm run dev
+```
+
+Create a `.env.local` with:
+
+```
+STUDENT_PASSWORD=your-student-password
+INSTRUCTOR_PASSWORD=your-instructor-password
 ```
 
 ## Deployment
 
-**Website:** Push to GitHub, connect to Vercel, set root directory to `website`.
-
-**Handbook:** Run `npm run build:manuscript`, then convert with Pandoc:
-
-```bash
-pandoc manuscript/build/handbook.md -o handbook.docx \
-  --lua-filter=manuscript/pagebreak.lua \
-  --toc --number-sections
-```
-
-See [docs/deployment.md](docs/deployment.md) for full instructions.
+Push to GitHub, connect to Vercel, set root directory to `website`. Add environment variables for passwords.
 
 ## License
 
-[MIT](LICENSE)
+Course content is provided for educational use. Research articles in `website/public/readings/` are copyrighted by their respective publishers and are provided for enrolled students only.
