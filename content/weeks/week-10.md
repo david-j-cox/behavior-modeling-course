@@ -289,6 +289,14 @@ Dynamical systems models have been applied to several domains in behavior scienc
 
 ---
 
+## Key Readings
+
+**Myerson and Miezin (1980)** presented a kinetic model of choice that applies systems analysis to concurrent schedule performance. Starting from the matching law, they derived coupled differential equations (Equations 4a and 4b) describing how preference between two alternatives changes over time as a function of obtained reinforcement rates. The key insight is that reinforcing one response simultaneously increases preference for that response and decreases preference for the alternative---a dynamical feedback process. For concurrent VI-VI schedules, the model predicts exponential acquisition of preference (Equation 7), and for concurrent VR-VR schedules, the solution is a logistic function (Equation 8)---connecting directly to the logistic ODE covered in this week's main content. The paper also develops a molecular-level "switching model" (Equations 13--14) formulated in terms of transition probabilities between alternatives, and shows that the molar predictions (matching at equilibrium, sigmoidal acquisition) can be derived from this more fundamental process. The constant sum of transition probabilities and the inverted-U relationship between switching rate and preference strength are unique, testable predictions. This paper is an exemplary application of dynamical systems thinking to a core behavioral phenomenon and demonstrates how the matching law emerges as the equilibrium of a dynamical process.
+
+**Myerson and Hale (1988)** extended this work by directly comparing the kinetic model's predictions against melioration theory (Herrnstein & Vaughan, 1980) for choice in transition. Both models predict the same steady-state outcomes (matching), but they diverge in their predictions about the *path* behavior takes to get there---precisely the kind of question dynamical systems models are designed to answer.
+
+---
+
 ## Key Takeaways
 
 - **Dynamical systems models** describe how behavioral state variables change over time, using ODEs (continuous time) or difference equations (discrete time).
