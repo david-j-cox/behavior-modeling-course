@@ -32,6 +32,11 @@ export interface AppendixMeta {
   description: string;
 }
 
+export interface InstructorNoteMeta {
+  title: string;
+  week: number;
+}
+
 export interface FrameworkStep {
   number: number;
   engineeringLanguage: string;

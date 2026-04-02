@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
-import { getWeek, getWeekSlugs } from "@/lib/content";
+import Link from "next/link";
+import { getWeek, getWeekSlugs, getInstructorNote } from "@/lib/content";
 import { renderMarkdown } from "@/lib/markdown";
 import MathContent from "@/components/MathContent";
 import WeekNav from "@/components/WeekNav";
@@ -26,11 +27,28 @@ export default async function WeekPage({ params }: Props) {
 
   const { meta, content } = data;
   const html = await renderMarkdown(content);
+  const hasInstructorNotes = getInstructorNote(meta.number) !== null;
 
   return (
     <div className="container page">
-      <div className="card-number" style={{ marginBottom: "0.25rem" }}>
-        Week {meta.number}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginBottom: "0.25rem",
+        }}
+      >
+        <div className="card-number">Week {meta.number}</div>
+        {hasInstructorNotes && (
+          <Link
+            href={`/weeks/${meta.slug}/instructor`}
+            className="badge badge-step"
+            style={{ textDecoration: "none", fontSize: "0.85rem" }}
+          >
+            Instructor Notes
+          </Link>
+        )}
       </div>
       <h1>{meta.title}</h1>
       {meta.subtitle && (
