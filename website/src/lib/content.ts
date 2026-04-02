@@ -31,7 +31,8 @@ export function getAllWeeks(includeUnpublished = false): WeekMeta[] {
       const { data } = matter(raw);
       return data as WeekMeta;
     })
-    .filter((w) => includeUnpublished || w.published !== false);
+    .filter((w) => includeUnpublished || w.published !== false)
+    .sort((a, b) => a.number - b.number);
 }
 
 export function getWeek(slug: string): { meta: WeekMeta; content: string } | null {
