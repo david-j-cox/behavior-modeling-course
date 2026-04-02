@@ -1,16 +1,9 @@
-import MathProcessor from "./MathProcessor";
+import parse from "html-react-parser";
 
 interface MathContentProps {
   html: string;
 }
 
 export default function MathContent({ html }: MathContentProps) {
-  return (
-    <MathProcessor>
-      <div
-        className="prose"
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
-    </MathProcessor>
-  );
+  return <div className="prose">{parse(html)}</div>;
 }
