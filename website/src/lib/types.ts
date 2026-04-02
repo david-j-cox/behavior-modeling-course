@@ -45,6 +45,18 @@ export interface FrameworkStep {
   commonMistakes: string;
 }
 
+export interface Reading {
+  filename: string;
+  citation: string;
+  type: "required" | "supplemental";
+}
+
+export interface ReadingWeek {
+  week: number;
+  title: string;
+  readings: Reading[];
+}
+
 export interface LabNotebook {
   filename: string;
   title: string;
