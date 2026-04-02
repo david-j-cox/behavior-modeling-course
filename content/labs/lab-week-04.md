@@ -5,6 +5,9 @@ description: "Fit behavioral momentum models to extinction and alternative reinf
 notebooks:
   - filename: "equation_fits.ipynb"
     title: "Equation Fits"
+instructorNotebooks:
+  - filename: "dataset_creation.ipynb"
+    title: "Dataset Creation"
 dataFiles:
   - "behavioral_momentum_extinction_data.csv"
   - "behavioral_momentum_alternative_data.csv"
