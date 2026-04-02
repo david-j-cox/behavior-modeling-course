@@ -6,6 +6,7 @@ import type {
   ProblemMeta,
   GlossaryEntry,
   AppendixMeta,
+  InstructorNoteMeta,
 } from "./types";
 
 const contentDir = path.resolve(
@@ -130,4 +131,31 @@ export function getFrameworkContent(): string {
   const raw = fs.readFileSync(filePath, "utf-8");
   const { content } = matter(raw);
   return content;
+}
+
+// --- Instructor Notes ---
+
+export function getInstructorNote(
+  weekNumber: number
+): { meta: InstructorNoteMeta; content: string } | null {
+  const filePath = path.join(
+    contentDir,
+    "instructor",
+    `week-${weekNumber}.md`
+  );
+  if (!fs.existsSync(filePath)) return null;
+  const raw = fs.readFileSync(filePath, "utf-8");
+  const { data, content } = matter(raw);
+  return { meta: data as InstructorNoteMeta, content };
+}
+
+export function getInstructorNoteSlugs(): number[] {
+  const dir = path.join(contentDir, "instructor");
+  if (!fs.existsSync(dir)) return [];
+  return fs
+    .readdirSync(dir)
+    .filter((f) => f.endsWith(".md"))
+    .map((f) => parseInt(f.replace("week-", "").replace(".md", ""), 10))
+    .filter((n) => !isNaN(n))
+    .sort((a, b) => a - b);
 }
