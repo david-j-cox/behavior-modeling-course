@@ -134,6 +134,15 @@ export function getFrameworkContent(): string {
   return content;
 }
 
+// --- Syllabus ---
+
+export function getSyllabusContent(): string {
+  const filePath = path.join(contentDir, "syllabus.md");
+  const raw = fs.readFileSync(filePath, "utf-8");
+  const { content } = matter(raw);
+  return content;
+}
+
 // --- Instructor Notes ---
 
 export function getInstructorNote(
