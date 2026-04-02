@@ -30,6 +30,18 @@ A final note before we begin: ML is not a replacement for theory. It is a tool. 
 
 ---
 
+## Connecting Backward: From Mechanism to Pattern Discovery
+
+The course has traced an arc from simple to complex models, but there is a deeper arc running alongside it: a shift in where the **knowledge** lives.
+
+In Weeks 2–5, knowledge lived in the **equations**. The generalized matching law, the hyperbolic discounting function, and behavioral momentum theory each encoded a behavioral principle directly — you could read the mechanism off the equation. In Week 10, knowledge lived in the **dynamics** — the differential equations specified how behavioral state variables change over time, and the equilibria and trajectories followed from the math. In Week 11, knowledge lived in the **algorithm** — we specified the rules (Q-learning updates, selection operators, agent interaction rules) and ran the simulation forward to see what those rules produce.
+
+This week, knowledge lives in the **data**. Machine learning algorithms do not require the modeler to specify a mechanism, a dynamical rule, or an algorithmic process. Instead, the algorithm searches through a space of possible functions and finds one that maps inputs to outputs as accurately as possible. The mechanism, if one exists, is implicit in the learned function — but it may be unrecoverable.
+
+This is not a rejection of everything that came before. It is a complement. The theory-driven models from earlier weeks tell us **why** behavior takes the form it does. ML models can tell us **what patterns exist** in behavioral data that we might not have hypothesized — patterns involving high-dimensional interactions, nonlinear thresholds, and combinatorial feature spaces that exceed human intuition. The most productive use of ML in behavior science is not to replace mechanistic models but to discover regularities that mechanistic models can then explain. Data-driven pattern discovery feeds theory-driven explanation, and the cycle continues.
+
+---
+
 ## Core Concepts
 
 ### Two Cultures of Modeling
@@ -583,7 +595,7 @@ Machine learning has begun to appear in the behavior-analytic literature in seve
 
 ### Connections to Other Modeling Frameworks
 
-It is worth noting how ML relates to models covered in earlier weeks of this course. In Week 5 (Signal Detection Theory), we built models that classified stimuli based on noisy evidence---a task structurally similar to classification in supervised learning. The difference is that SDT specifies the decision process (a criterion on a strength-of-evidence continuum), while a decision tree or neural network learns the decision process from data. In Week 11 (Computational Models), we built agent-based models and Q-learning models that generate behavior from internal processes. ML models can be seen as the inverse problem: given observed behavior, infer the mapping from environment to action, without specifying the internal process that produces it.
+It is worth noting how ML relates to models covered in earlier weeks of this course. In Week 4 (Associative Learning), we built models that classified stimuli based on noisy evidence---a task structurally similar to classification in supervised learning. The difference is that SDT specifies the decision process (a criterion on a strength-of-evidence continuum), while a decision tree or neural network learns the decision process from data. In Week 11 (Computational Models), we built agent-based models and Q-learning models that generate behavior from internal processes. ML models can be seen as the inverse problem: given observed behavior, infer the mapping from environment to action, without specifying the internal process that produces it.
 
 This complementarity is important. Computational models generate predictions from mechanisms (forward modeling). ML models infer patterns from observed data (inverse modeling). A complete science of behavior may need both: forward models to test mechanistic theories, and inverse models to discover patterns that the theories should explain.
 
@@ -612,6 +624,57 @@ Several challenges are specific to behavior science:
 3. A research team uses k-means clustering on a large dataset of behavioral assessments and discovers three distinct clusters of learner profiles. They name the clusters "high support," "moderate support," and "independent." Is this discovery or invention? How would you validate whether these clusters represent real subtypes rather than artifacts of the algorithm?
 
 4. The prediction-explanation gap suggests that ML models can predict without explaining. But is the reverse also true---can a model explain without predicting? Think of a model from earlier in this course that provides a clear mechanistic explanation but has limited predictive accuracy. What does this tell you about the relationship between prediction and explanation in behavior science?
+
+---
+
+## Key Readings
+
+**Required:**
+
+- Badillo, S., Banfai, B., Birzele, F., Davydov, I. I., Hutchinson, L., Kam-Thong, T., ..., & Zhang, J. D. (2020). An introduction to machine learning. *Clinical Pharmacology & Therapeutics, 107*(4), 871--885.
+- Bloice, M. D., & Holzinger, A. (2016). A tutorial on machine learning and data science tools with Python. In A. Holzinger (Ed.), *Machine learning for health informatics* (pp. 435--480). Springer International Publishing.
+
+**Supplemental:**
+
+- Turgeon, S., & Lanovaz, M. J. (2020). Tutorial: Applying machine learning in behavioral research. *Perspectives on Behavior Science, 43*(4), 697--723.
+- Kliegr, T., Bahnik, S., & Furnkranz, J. (2019). Advances in machine learning for the behavioral sciences. *American Behavioral Scientist, 64*(2), 145--175.
+- Morales, G. B., & Escalante, H. J. (2022). A brief introduction to supervised, unsupervised, and reinforcement learning. In *Biosignal processing and classification using computational learning and intelligence* (pp. 111--134). Academic Press.
+- Yates, L. A., Aandahl, Z., Richards, S. A., & Brook, B. W. (2022). Cross validation for model selection: A review with examples from ecology. *Ecological Monographs, 93*(1), e1557.
+- Raschka, S. (2020). Model evaluation, model selection, and algorithm selection in machine learning. *arXiv preprint arXiv:1811.12808*.
+
+---
+
+## Reading Guide
+
+### Badillo et al. (2020)
+
+- What distinction do the authors draw between Culture 1 and Culture 2 approaches to statistical modeling, and how does this difference affect interpretability?
+- How do the terms weights, learning, and generalization in ML correspond to more traditional statistical terminology? Why is this translation important?
+- What is the "black box" problem in ML, and what tools exist to improve interpretability?
+- How are data points, features, and feature spaces defined in ML, and why is the notion of a feature vector central?
+- What is the curse of dimensionality, and why does it pose problems for biomedical data?
+- How can time be incorporated into ML, and what limitations exist?
+- What role does feature engineering play in model performance?
+- How can missing data and selection bias undermine ML models? What strategies help?
+- What are imbalanced datasets, and why are they problematic?
+- Define and contrast Euclidean distance and cosine similarity.
+- What are strengths and weaknesses of k-means clustering?
+- How does density-based clustering differ from k-means?
+- What does hierarchical clustering add, and how is the resulting tree interpreted?
+- Why is dimensionality reduction useful beyond visualization?
+- What lesson does the wolf-husky example illustrate?
+- What is the bias-variance tradeoff, and how does it relate to underfitting and overfitting?
+- What is regularization (L1 vs. L2), and how does it improve generalizability?
+
+### Bloice & Holzinger (2016)
+
+- What are the five core tools highlighted for a Python ML pipeline?
+- What do the symbols X and y typically represent in ML data structures?
+- What distinguishes supervised from unsupervised learning in this framework?
+- What is the role of SciKit-Learn in the Python ML stack?
+- What is Keras, and how does it differ from SciKit-Learn?
+- Why is reproducibility emphasized in this tutorial?
+- Find 2--3 topics in the chapter that were surprising or intriguing to you. Come prepared to discuss what that topic was and why you found it surprising or intriguing.
 
 ---
 

@@ -620,6 +620,52 @@ These exercises are designed to deepen your understanding of the probabilistic t
 
 ---
 
+## Key Readings
+
+**Required:**
+
+- Otto, S. P., & Day, T. (2007). Probability theory. In S. P. Otto & T. Day (Eds.), *A biologist's guide to mathematical modeling in ecology and evolution* (pp. 54--80). Princeton University Press.
+- Otto, S. P., & Day, T. (2007). Probabilistic models. In S. P. Otto & T. Day (Eds.), *A biologist's guide to mathematical modeling in ecology and evolution* (pp. 81--109). Princeton University Press.
+
+---
+
+## Reading Guide
+
+### Otto & Day (2007) --- Probability Theory
+
+- What is the difference between a probability and a probability distribution? Why is this distinction important for modeling behavioral data?
+- How do Otto & Day define a random variable? Give an example of a behavioral measure that would be modeled as a discrete random variable and one that would be modeled as a continuous random variable.
+- What is the expected value of a random variable, and how does it relate to the concept of a "typical" observation in behavioral data?
+- What is variance, and why is it important to quantify when modeling behavior? How does variance relate to the precision of our predictions?
+- What is a Bernoulli trial? Describe a behavioral observation that could be modeled as a Bernoulli trial.
+- How is the binomial distribution derived from Bernoulli trials? When would you use a binomial model in behavior science?
+- What conditions must be met for a Poisson distribution to be appropriate? Give a behavioral example where these conditions are approximately satisfied.
+- What is a probability density function, and how does it differ from a probability mass function?
+- How do Otto & Day describe the normal distribution? Why is the normal distribution so common in statistical applications, even when individual observations are not normally distributed?
+- What is the law of large numbers, and what does it imply for behavioral researchers who collect data across many sessions or trials?
+- What is the central limit theorem, and why is it relevant for estimating means from behavioral data?
+- How do conditional probabilities relate to behavioral contingencies? Can you express a reinforcement contingency as a conditional probability?
+- What is Bayes' theorem, and how does it update prior beliefs in light of new evidence?
+- Why do Otto & Day emphasize the importance of understanding probability theory before building probabilistic models?
+
+### Otto & Day (2007) --- Probabilistic Models
+
+- What distinguishes a probabilistic model from a deterministic model? When might a probabilistic model be more appropriate for behavioral data?
+- How do the authors incorporate randomness into models that were previously treated as deterministic?
+- What is a likelihood function, and how does it relate to the probability of observing your data given a specific model?
+- What is maximum likelihood estimation (MLE)? Why is it preferred over least-squares estimation for many probabilistic models?
+- How do you find the MLE for a simple model? What role does the log-likelihood play in simplifying the computation?
+- What is a confidence interval, and how does it relate to the precision of a parameter estimate?
+- How do the authors describe the relationship between sample size and the precision of parameter estimates? What does this imply for the design of behavioral experiments?
+- What is a likelihood ratio test, and when would you use it to compare two models?
+- How does the concept of model selection apply to choosing between competing accounts of behavioral data?
+- What is the difference between a frequentist and a Bayesian approach to parameter estimation? What are the practical implications of each for behavioral researchers?
+- How can simulation be used to evaluate the performance of a probabilistic model? Why might you simulate data from your model before collecting real data?
+- What is a stochastic process, and how might it describe the sequence of responses an organism emits during a session?
+- How do the authors suggest balancing mathematical tractability with biological (or behavioral) realism when building probabilistic models?
+
+---
+
 ## Key Takeaways
 
 - **Behavioral data are inherently variable.** Probabilistic models treat variability as a feature to be modeled, not noise to be eliminated.

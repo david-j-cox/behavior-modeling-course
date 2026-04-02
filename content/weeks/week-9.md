@@ -546,6 +546,69 @@ These references collectively illustrate that both multilevel and time-series me
 
 ---
 
+## Key Readings
+
+**Required:**
+
+- Peugh, J. L. (2010). A practical guide to multilevel modeling. *Journal of School Psychology, 48*(1), 85--112.
+- Young, M. E. (2018). Discounting: A practical guide to multilevel analysis of choice data. *Journal of the Experimental Analysis of Behavior, 109*(2), 293--312.
+- Cox, D. J., & Vladescu, J. C. (2023). This math and time thing is cool: Time series decomposition and forecasting behavior. In D. J. Cox & J. C. Vladescu (Eds.), *Statistics for applied behavior analysis practitioners and researchers* (Ch. 9).
+
+**Supplemental:**
+
+- Quené, H., & van den Bergh, H. (2004). On multi-level modeling of data from repeated measures designs: A tutorial. *Speech Communication, 43*(1--2), 103--121.
+- Adhikari, R., & Agrawal, R. K. (2013). An introductory study on time series modeling and forecasting. *arXiv preprint arXiv:1302.6613*.
+
+---
+
+## Reading Guide
+
+### Peugh (2010)
+
+- What is multilevel modeling (MLM), and why is it necessary when data have a nested structure?
+- What are "levels" in a multilevel model? Give a behavioral example with at least two levels.
+- What is the intraclass correlation coefficient (ICC), and what does it tell you about the data structure?
+- At what ICC value does ignoring the nesting become problematic? Why?
+- What is the difference between a fixed effect and a random effect in a multilevel model?
+- What is a random intercept model? What behavioral question does it answer?
+- What is a random slope model? When would you need random slopes in addition to random intercepts?
+- How does MLM handle unbalanced data (different numbers of observations per unit)? Why is this advantage important for behavioral research?
+- What assumptions does MLM make about the distribution of random effects?
+- How do you determine whether adding a random effect improves the model? What test is used?
+- What is the difference between Level-1 and Level-2 predictors? Give a behavioral example of each.
+- Why does Peugh argue that ordinary least squares (OLS) regression is inappropriate for nested data?
+- What happens to standard errors and p-values when nesting is ignored? Why is this a problem?
+- How does MLM relate to repeated-measures ANOVA? What advantages does MLM offer?
+- What practical recommendations does Peugh provide for researchers new to multilevel modeling?
+
+### Young (2018)
+
+- How does Young apply multilevel modeling specifically to delay discounting data?
+- Why is discounting data inherently multilevel (what are the levels)?
+- What are the advantages of fitting discounting models within a multilevel framework compared to fitting each participant separately?
+- How does the multilevel approach handle participants with sparse or noisy data?
+- What is a nonlinear multilevel model, and why is it needed for discounting data?
+- How does the multilevel framework allow researchers to examine individual differences in discounting parameters?
+- What covariates can be included at the participant level, and how does this extend the analysis beyond simple curve fitting?
+- What practical guidance does Young offer for implementing multilevel discounting analyses?
+- How does this approach compare to the traditional method of estimating $k$ for each participant and then analyzing the $k$ values?
+- What are the limitations of the multilevel approach as discussed by Young?
+
+### Cox & Vladescu (2023)
+
+- What is time-series decomposition, and what are the components of a time series?
+- What is the difference between trend, seasonality, and residual components?
+- Why is it important to decompose a behavioral time series before modeling it?
+- What is stationarity, and why does it matter for time-series analysis?
+- How do you test whether a behavioral time series is stationary?
+- What is an autoregressive (AR) model, and what does the autoregressive parameter tell you about behavior?
+- What is the difference between AR, MA, and ARIMA models?
+- How can time-series methods be applied to single-case behavioral data?
+- What are some practical applications of time-series forecasting in behavior analysis?
+- How do the authors suggest interpreting autocorrelation in behavioral data?
+
+---
+
 ## Key Takeaways
 
 - **Nested data require multilevel models.** When observations are grouped (e.g., sessions within participants), treating them as independent inflates Type I error. Multilevel models decompose variance into within-group and between-group components.

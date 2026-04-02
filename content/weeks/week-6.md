@@ -607,13 +607,11 @@ Every model encountered in this course so far has been presented alongside alter
 
 **Week 1 (Introduction):** We introduced the linear cumulative-response model $R = k \cdot t$. This model assumes constant response rate. In a sense, every subsequent week has been an exercise in model comparison: testing whether a more complex model (one with curvature, with multiple processes, with additional parameters) provides a better account of behavior than the simple linear baseline. The tools in this chapter formalize that comparison.
 
-**Week 2 (Matching):** The strict matching law, the generalized matching law, and alternative choice models all describe concurrent-schedule data. We noted that the generalized matching law fits better, but did not have a formal framework for deciding whether the improvement justified the extra parameters. Now we do: AIC and BIC provide that framework. You can revisit the matching data from Week 2 and apply this week's tools to make a formal comparison.
+**Week 2 (Matching and Discounting):** The strict matching law, the generalized matching law, and alternative choice models all describe concurrent-schedule data. We noted that the generalized matching law fits better, but did not have a formal framework for deciding whether the improvement justified the extra parameters. Now we do: AIC and BIC provide that framework. You can revisit the matching data from Week 2 and apply this week's tools to make a formal comparison. The worked example in this chapter also directly addresses the model comparison that was deferred in the discounting portion of Week 2. There, we presented the hyperbolic model; here, we formally justify it against exponential and hyperboloid alternatives.
 
-**Week 3 (Discounting):** The worked example in this chapter directly addresses the model comparison that was deferred in the discounting week. There, we presented the hyperbolic model; here, we formally justify it against exponential and hyperboloid alternatives.
+**Week 3 (Demand):** The exponential demand model was presented as the standard, but alternative demand functions exist. Model comparison using AIC is now standard in demand research, and this week's tools explain why.
 
-**Week 4 (Demand):** The exponential demand model was presented as the standard, but alternative demand functions exist. Model comparison using AIC is now standard in demand research, and this week's tools explain why.
-
-**Week 5 (Learning):** The Rescorla-Wagner model was compared informally with other learning rules. Formal model comparison (e.g., using AIC to compare Rescorla-Wagner with Pearce-Hall or other associative models) is an active area of research in computational learning theory.
+**Week 4 (Associative Learning):** The Rescorla-Wagner model was compared informally with other learning rules. Formal model comparison (e.g., using AIC to compare Rescorla-Wagner with Pearce-Hall or other associative models) is an active area of research in computational learning theory.
 
 ### Connecting Forward: Model Comparison in Later Weeks
 
@@ -636,6 +634,53 @@ Model comparison will remain a recurring theme throughout the rest of the course
 3. Consider the bias-variance tradeoff in the context of single-subject research. With data from a single participant across 5 conditions, how does the small sample size affect the tradeoff? Would you generally lean toward simpler or more complex models in this context, and why? How might your answer change if you had data from 50 conditions?
 
 4. A research team uses cross-validation to compare models and finds that the hyperbolic discounting model has lower cross-validated RMSE than the exponential model, but higher cross-validated RMSE than the hyperboloid model. However, AIC and BIC both favor the hyperbolic. How would you reconcile these findings? What might explain the discrepancy between cross-validation and information criteria in this case?
+
+---
+
+## Key Readings
+
+**Required:**
+
+- Cox, D. J., & Vladescu, J. C. (2023). Oh, shoot! I forgot about that! Estimating the influence of uncontrolled variables. In D. J. Cox & J. C. Vladescu (Eds.), *Statistics for applied behavior analysis practitioners and researchers* (pp. 135--174). Starting at p. 154, "Brief primer on interpreting models."
+- Mazur, J. E. (2001). Hyperbolic value addition and general models of animal choice. *Psychological Review, 108*(1), 96--112.
+
+**Supplemental:**
+
+- Mazur, J. E. (2006). Mathematical models and the experimental analysis of behavior. *Journal of the Experimental Analysis of Behavior, 85*(2), 275--291.
+- McDowell, J. J. (2005). On the classic and modern theories of matching. *Journal of the Experimental Analysis of Behavior, 84*(1), 111--127.
+
+---
+
+## Reading Guide
+
+### Cox & Vladescu (2023)
+
+- What are the two phases involved in interpreting the output of a statistical model?
+- What does a "loss metric" represent in the context of model evaluation? Why is it needed?
+- Why is the raw data considered the most accurate description of observed behavior? What is the tradeoff in using a model instead?
+- What are residuals, and how are they calculated from observed and predicted values? What does a residual plot display, and what should it ideally look like for a good model fit?
+- What might it indicate if residuals show a systematic trend as the IV increases?
+- What is variance accounted for ($r^2$ or VAC), and how is it calculated from residuals?
+- When is $r^2$ an appropriate fit metric, and why is it not suitable for nonlinear models?
+- As a rule of thumb, what value of $r^2$ would be considered acceptable in (a) experimental lab settings, and (b) complex applied settings?
+- What is mean absolute error (MAE), and why might it be preferred for nonlinear models?
+- How is mean squared error (MSE) different from MAE, and what tradeoffs does it involve?
+- What is root mean squared error (RMSE), and how does it combine benefits of both MSE and MAE?
+- What limitation do MAE, MSE, and RMSE share when comparing model complexity?
+- What are AIC and BIC, and what do they add to our understanding of model performance beyond loss?
+- How does AIC penalize model complexity, and how is this different from BIC?
+- When would you choose BIC over AIC in a model comparison?
+- Why is it important to balance model fit with parsimony (Occam's Razor) in behavior analysis?
+- What is accuracy in classification models, and when is it appropriate as a fit metric?
+- What alternative metrics might be better than accuracy when dealing with imbalanced classes or asymmetric errors?
+
+### Mazur (2001)
+
+- What are the two major goals of a general model of animal choice, according to Mazur?
+- What are the "three main procedures used to study animal choice" described by the author? What are your reactions to these three preparations being the dominant methods to study "animal choice"?
+- What are the three quantitative models compared in this article? Be able to state their name, provide the equation, and identify what each parameter represents.
+- What data were used to compare the three models for concurrent-chain performance? What fit metric was used? What were the results?
+- What data were used to compare the models for choice between fixed and variable terminal links? What fit metric was used? What were the results?
 
 ---
 

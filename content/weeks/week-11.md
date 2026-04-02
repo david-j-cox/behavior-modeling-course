@@ -22,9 +22,19 @@ Consider the problem of modeling a social group in which each individual's behav
 
 Or consider an organism learning to navigate a complex environment with multiple choice points, where each choice leads to a different location with different reinforcement contingencies, and where the optimal strategy requires planning several steps ahead. The matching law tells you about steady-state allocation between two concurrent alternatives; it says nothing about sequential decision-making in a multi-step environment. A dynamical systems model (Week 10) could track the trajectory of state variables, but the number of interacting variables in a multi-step navigation task quickly exceeds what ODEs can handle tractably. A computational model — specifically, a reinforcement learning agent — can learn to navigate this environment through trial and error, discovering the optimal sequence of choices without any explicit programming of the solution.
 
-This week also marks the point where behavior science meets modern artificial intelligence. **Q-learning** and **reinforcement learning (RL)** — the computational frameworks behind many of today's most impressive AI systems — originated from the same prediction-error ideas as the Rescorla-Wagner model we studied in Week 5. The intellectual lineage is direct: from Pavlovian conditioning theory, through the mathematical psychology of the 1970s, to the algorithms that now play chess, control robots, and generate language. Understanding this lineage is not merely historical trivia; it reveals deep structural parallels between how organisms learn and how machines can be designed to learn.
+This week also marks the point where behavior science meets modern artificial intelligence. **Q-learning** and **reinforcement learning (RL)** — the computational frameworks behind many of today's most impressive AI systems — originated from the same prediction-error ideas as the Rescorla-Wagner model we studied in Week 4. The intellectual lineage is direct: from Pavlovian conditioning theory, through the mathematical psychology of the 1970s, to the algorithms that now play chess, control robots, and generate language. Understanding this lineage is not merely historical trivia; it reveals deep structural parallels between how organisms learn and how machines can be designed to learn.
 
 By the end of this chapter, you will understand three major families of computational models — agent-based models, Monte Carlo simulation, and reinforcement learning — and you will be able to apply the 8-step modeling framework to build a Q-learning model of operant choice.
+
+---
+
+## Connecting Backward: From Dynamics to Algorithms
+
+In Week 10, we modeled behavior as a dynamical system — writing differential equations that described how state variables like response rate evolve over time. The logistic acquisition model, coupled ODEs for competing responses, and phase-portrait analysis all shared a common structure: specify the rules of change, then trace the trajectory forward. For simple systems, we could solve the equations analytically. For more complex systems, we solved them numerically — using a computer to step the ODE forward in time.
+
+This week takes that logic to its conclusion. **Computational models are dynamical systems that can only be run, never solved.** The Q-learning update rule is a difference equation, just like Rescorla-Wagner. McDowell's evolutionary model iterates a selection process across generations of behaviors, just as a coupled ODE iterates state variables across time steps. The mathematical structure is the same; what changes is the complexity. When the number of interacting variables, the stochasticity, and the heterogeneity of agents exceed what closed-form solutions can handle, simulation becomes not just convenient but necessary.
+
+The progression across the course is worth making explicit. In Weeks 2–5, we worked with **static models** — equations that describe equilibrium states (matching, discounting, demand, asymptotic associative strength). In Week 10, we added **dynamics** — models that describe how the system moves toward those equilibria over time. This week, we add **computation** — models where the dynamics are too complex for analytical treatment, and the only way to generate predictions is to build the system in code and run it. Each step preserves the commitment to formal, quantitative, testable models; what changes is the mathematical machinery required to express them.
 
 ---
 
@@ -108,7 +118,7 @@ The formal structure of an RL problem consists of:
 
 The core idea of RL is that the agent maintains an estimate of the **expected future reward** associated with each state or action, and it **updates this estimate based on experience**. When an action leads to more reward than expected, the agent increases its estimate for that action. When an action leads to less reward than expected, it decreases the estimate. This update process is driven by **prediction error** — the discrepancy between expected and received reward.
 
-If this sounds familiar, it should. The Rescorla-Wagner model from Week 5 is driven by the same logic: $\Delta V = \alpha \beta (\lambda - V)$, where $(\lambda - V)$ is the prediction error. Reinforcement learning extends this logic to sequential decision-making, where actions have consequences that unfold over time and across states.
+If this sounds familiar, it should. The Rescorla-Wagner model from Week 4 is driven by the same logic: $\Delta V = \alpha \beta (\lambda - V)$, where $(\lambda - V)$ is the prediction error. Reinforcement learning extends this logic to sequential decision-making, where actions have consequences that unfold over time and across states.
 
 The RL framework distinguishes between **model-free** and **model-based** learning. A model-free agent (like Q-learning) learns values directly from experience without building an internal representation of how the environment works. A model-based agent learns the structure of the environment (which states lead to which other states, and with what probabilities) and uses this internal model to plan ahead. Both types are relevant to behavior science: model-free learning corresponds to habitual, reflexive responding, while model-based learning corresponds to goal-directed, deliberative behavior. This distinction maps onto the habitual vs. goal-directed dichotomy that has become central in behavioral neuroscience.
 
@@ -125,7 +135,7 @@ Let us unpack each component:
 - $Q(s, a)$: The current estimate of the value of taking action $a$ in state $s$.
 - $\alpha$: The **learning rate** (0 < $\alpha$ < 1). Controls how much the estimate changes on each update. Larger $\alpha$ means faster learning but more sensitivity to noise. Smaller $\alpha$ means slower learning but more stability.
 - $r$: The **immediate reward** received after taking action $a$ in state $s$.
-- $\gamma$: The **discount factor** (0 $\leq$ $\gamma$ < 1). Controls how much the agent values future reward relative to immediate reward. When $\gamma = 0$, the agent is completely myopic — it cares only about the immediate reward and ignores all future consequences. When $\gamma$ is close to 1, the agent is far-sighted — it values future reward almost as much as immediate reward. This parameter plays a role similar to the $k$ parameter in hyperbolic discounting (Week 3): it determines how quickly future outcomes lose their influence on current behavior.
+- $\gamma$: The **discount factor** (0 $\leq$ $\gamma$ < 1). Controls how much the agent values future reward relative to immediate reward. When $\gamma = 0$, the agent is completely myopic — it cares only about the immediate reward and ignores all future consequences. When $\gamma$ is close to 1, the agent is far-sighted — it values future reward almost as much as immediate reward. This parameter plays a role similar to the $k$ parameter in hyperbolic discounting (Week 2): it determines how quickly future outcomes lose their influence on current behavior.
 - $\max_{a'} Q(s', a')$: The maximum Q-value over all possible actions $a'$ in the next state $s'$. This represents the agent's estimate of the best possible future from the state it lands in.
 - $r + \gamma \cdot \max_{a'} Q(s', a') - Q(s, a)$: The **temporal difference (TD) error** — the discrepancy between what the agent expected and what it actually experienced plus its updated estimate of the future. This is the prediction error that drives learning.
 
@@ -139,7 +149,7 @@ It is worth noting that Q-learning is an **off-policy** algorithm: it updates Q-
 
 The intellectual lineage from the Rescorla-Wagner model to Q-learning is direct and well-documented. Placing the two update rules side by side reveals the structural parallel:
 
-**Rescorla-Wagner (Week 5):**
+**Rescorla-Wagner (Week 4):**
 
 $$\Delta V = \alpha \beta (\lambda - V)$$
 
@@ -465,6 +475,14 @@ More recently, research has shown that different brain circuits may implement mo
 
 ---
 
+## Connecting Forward: From Implementing Rules to Discovering Them
+
+This week, every model started with a **specified mechanism**. We told the Q-learning agent how to update its values. We told McDowell's evolutionary model how selection, mutation, and reproduction work. We told the ABM what rules each agent follows. The power of computational modeling is that it shows us what those mechanisms produce when implemented in full detail — but the mechanisms themselves came from us, the modelers, drawing on behavioral theory.
+
+Next week reverses the direction. **Machine learning** does not start with a mechanism. It starts with data and searches for patterns — mappings from inputs to outputs — without requiring the modeler to specify the underlying process. Where this week's models ask "What does this mechanism produce?", ML asks "What function best predicts these data?" The Q-learning agent we built this week is, in fact, the intellectual ancestor of much of modern ML: the same prediction-error framework, scaled up to high-dimensional function approximation. But the goals diverge. Computational models in behavior science are built to **explain**; ML models are built to **predict**. Week 12 explores when prediction without explanation is useful, when it is not, and how the two cultures of modeling can complement each other.
+
+---
+
 ## Exercises for Reflection
 
 1. In the worked example, the Q-learning agent converged toward matching on a concurrent VI 30-s VI 60-s schedule. What would happen if you changed the discount factor from $\gamma = 0.9$ to $\gamma = 0$? How would the agent's behavior differ, and would it still approximate matching? Explain your reasoning in terms of what $\gamma$ does to the prediction-error calculation.
@@ -474,6 +492,54 @@ More recently, research has shown that different brain circuits may implement mo
 3. A colleague argues that computational models are "just curve fitting with extra steps" — they have so many moving parts that they can fit any data. How would you respond? What distinguishes a computational model that has genuine explanatory power from one that merely recapitulates the data it was designed to fit? Consider the role of **a priori predictions**, **parameter parsimony**, and **emergent properties** in your answer.
 
 4. You want to build an agent-based model of a classroom in which students' on-task behavior is influenced by both teacher-delivered reinforcement and peer attention. What would be the agents, states, rules, and environment in your ABM? What group-level patterns might you expect to emerge, and how would you test whether the model produces realistic dynamics?
+
+---
+
+## Key Readings
+
+**Required:**
+
+- McDowell, J. J. (2019). On the current status of the evolutionary theory of behavior dynamics. *Journal of the Experimental Analysis of Behavior, 111*(1), 130--145.
+- Cox, D. J., & Santos, J. (2025). Predicting the next response: Demonstrating the utility of integrating AI-based RL with behavior science. *Journal of the Experimental Analysis of Behavior*.
+
+---
+
+## Reading Guide
+
+### McDowell (2019)
+
+- What is the evolutionary theory of behavior dynamics (ETBD), and how does it differ from traditional mathematical models of behavior?
+- How does the ETBD use concepts from evolutionary biology (selection, variation, reproduction) to model operant behavior?
+- What is the "population of behaviors" concept in the ETBD? How does this differ from treating behavior as a single response rate?
+- How does reinforcement operate in the ETBD? What is being "selected"?
+- What predictions does the ETBD make about matching, and how do these compare to the predictions of Herrnstein's hyperbola?
+- Does the ETBD derive matching from first principles, or is matching built into its assumptions? Why does this distinction matter?
+- What role does mutation play in the ETBD? How does it relate to behavioral variability?
+- How does the ETBD handle phenomena like extinction and spontaneous recovery?
+- What is the relationship between the ETBD and the generalized matching law? Does the ETBD predict sensitivity and bias parameters?
+- What empirical evidence does McDowell cite in support of the ETBD?
+- What are the main criticisms or limitations of the ETBD that McDowell acknowledges?
+- How does the ETBD relate to other computational approaches to behavior (e.g., reinforcement learning, neural networks)?
+- Why does McDowell argue that computational models like the ETBD are valuable even when closed-form equations exist?
+- What does it mean to say the ETBD is a "generative" model? How does this differ from a descriptive or curve-fitting model?
+- What are the implications of the ETBD for understanding behavior at a mechanistic level?
+
+### Cox & Santos (2025)
+
+- What is the central argument of the paper regarding the integration of AI-based reinforcement learning (RL) with behavior science?
+- How do the authors define reinforcement learning in the AI/computational sense? How does this relate to the behavioral definition of reinforcement?
+- What specific RL algorithm is used in the paper, and how does it work?
+- What behavioral preparation or task do the authors model using RL?
+- What does "predicting the next response" mean in this context? How is it different from predicting aggregate response rates?
+- How well does the RL model perform at predicting individual responses? What metrics are used to evaluate performance?
+- What are the parallels between Q-learning parameters (learning rate, discount factor) and behavioral concepts?
+- How do the authors address the concern that computational models are "black boxes" that don't explain behavior?
+- What implications does this work have for applied behavior analysis? Could RL models inform treatment decisions?
+- How does this paper connect to the matching law and other quantitative models covered earlier in the course?
+- What are the limitations of the approach, as discussed by the authors?
+- What does this paper suggest about the future relationship between AI/ML and behavior science?
+- How does this work differ from McDowell's ETBD in its approach to computational modeling of behavior?
+- Why is predicting individual responses (molecular level) important in addition to predicting molar measures like response rates?
 
 ---
 

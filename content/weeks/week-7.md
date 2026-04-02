@@ -723,6 +723,63 @@ The DRA example illustrates why systems of equations are important. If you model
 
 ---
 
+## Key Readings
+
+**Required:**
+
+- Otto, S. P., & Day, T. (2007). How to construct a model. In S. P. Otto & T. Day (Eds.), *A biologist's guide to mathematical modeling in ecology and evolution* (pp. 17--53). Princeton University Press.
+- Otto, S. P., & Day, T. (2007). Numerical and graphical techniques---Developing a feeling for your model. In S. P. Otto & T. Day (Eds.), *A biologist's guide to mathematical modeling in ecology and evolution* (pp. 110--150). Princeton University Press.
+
+---
+
+## Reading Guide
+
+### Otto & Day (2007) --- How to Construct a Model
+
+- What is the primary hurdle most new modelers face, and what first step do Otto & Day suggest to overcome it?
+- The authors introduce seven steps for model construction (Box 2.1). List these seven steps. Why might it be helpful to treat them as iterative rather than strictly sequential?
+- According to the authors, how does modeling start conceptually, even before equations are written down? What's the benefit of beginning with toy examples?
+- What distinguishes a dynamical model from other types of models in biology? Give one example of a behavior-analytic phenomenon that would benefit from a dynamical modeling approach.
+- Explain the difference between deterministic and stochastic models. Why might deterministic models be more appropriate for the current course and lab work?
+- What makes Step 1---formulating a good question---so difficult for many students? How do Otto & Day suggest you find a starting point?
+- What are some strategies for simplifying reality when choosing model variables? Why is simplification critical at early stages of modeling?
+- How can notational conventions like $n(t)$ help prevent errors in reasoning when working with models?
+- When deciding between a discrete-time and continuous-time model, what key conceptual and behavioral tradeoffs should you consider?
+- Why do modelers often treat inherently discrete quantities (e.g., number of individuals) as continuous variables? When might this abstraction break down?
+- Explain the difference between a recursion equation, a difference equation, and a differential equation. What kind of model uses each?
+- What is the purpose of identifying constraints on variables and parameters during model construction?
+- Why is it useful to build a table of all variables and parameters before writing your model equations?
+- Describe the difference between a life-cycle diagram and a flow diagram. When is each most useful?
+- Describe a situation in behavior analysis where a "life-cycle diagram" might be useful. Do the same for a "flow diagram."
+- Why is the order of events especially important in discrete-time models?
+- What does it mean to say a model "fails to capture the essence of the biological process"?
+- What is the process for turning a flow diagram into equations for a continuous-time model?
+- How do you know when your model is "done"?
+
+### Otto & Day (2007) --- Numerical and Graphical Techniques
+
+- What are the two broad reasons Otto & Day give for using numerical techniques instead of analytical solutions?
+- What is the Euler method, and in what types of models is it used?
+- What are the limitations of the Euler method?
+- How do numerical approaches relate to the concept of iteration in behavior analysis?
+- What are difference equations, and how do they differ from differential equations?
+- Why is it useful to simulate your model with different parameter values?
+- What is a phase-plane diagram, and what kind of model does it apply to?
+- Describe a behavior-analytic phenomenon that might benefit from visualizing its dynamics using a phase-plane diagram.
+- What is a nullcline, and how does it help identify equilibrium points in a system?
+- Why are vector fields useful in analyzing model behavior?
+- How do you interpret the arrows in a vector field plot?
+- Otto & Day describe both local and global stability. What's the difference?
+- Describe a scenario in behavior analysis where local stability might matter more than global stability.
+- What role does simulation play in understanding complex or nonlinear behavior systems?
+- How can graphical tools help you detect whether your model is behaving unrealistically?
+- What are bifurcation diagrams, and what kind of question do they help answer?
+- Think of a behavior-analytic example where a bifurcation diagram could reveal an important insight.
+- What are the advantages of using computer simulations for model analysis?
+- What are the risks of relying too much on simulations without doing checks and balances?
+
+---
+
 ## Key Takeaways
 
 - **Model building is iterative.** Start simple, check, revise. The first model is always wrong in important ways, and that is fine---its purpose is to give you something concrete to improve.
