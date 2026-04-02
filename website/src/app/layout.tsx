@@ -23,6 +23,9 @@ export default function RootLayout({
             </Link>
             <ul className="nav-links">
               <li>
+                <Link href="/syllabus">Syllabus</Link>
+              </li>
+              <li>
                 <Link href="/framework">Framework</Link>
               </li>
               <li>
