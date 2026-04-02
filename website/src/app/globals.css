@@ -218,11 +218,13 @@ strong {
 .nav-inner {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0.5rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 3.5rem;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  min-height: 3.5rem;
 }
 
 .nav-brand {
@@ -240,7 +242,8 @@ strong {
 
 .nav-links {
   display: flex;
-  gap: 1.5rem;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
   list-style: none;
 }
 
