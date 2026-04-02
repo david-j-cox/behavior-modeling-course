@@ -681,6 +681,83 @@ This is one of the most striking examples of a behavioral model's reach extendin
 
 ---
 
+## Key Readings
+
+**Required:**
+
+- Nevin, J. A., Mandell, C., & Atak, J. R. (1983). The analysis of behavioral momentum. *Journal of the Experimental Analysis of Behavior, 39*(1), 49--59.
+- Mackintosh, N. J. (1975). A theory of attention: Variations in the associability of stimuli with reinforcement. *Psychological Review, 82*(4), 276--298.
+- Matzel, L. D., Held, F. P., & Miller, R. R. (1988). Information and expression of simultaneous and backward associations: Implications for contiguity theory. *Learning & Motivation, 19*, 317--344.
+
+**Supplemental:**
+
+- Rescorla, R. A., & Wagner, A. R. (1972). A theory of Pavlovian conditioning: The effectiveness of reinforcement and non-reinforcement. In A. H. Black & W. F. Prokasy (Eds.), *Classical conditioning II* (pp. 64--99). Appleton-Century-Crofts.
+- Nevin, J. A. (1998). Choice and momentum. In W. O'Donohue (Ed.), *Learning and behavior therapy* (pp. 230--251). Allyn and Bacon.
+- Nevin, J. A. (2002). Measuring behavioral momentum. *Behavioural Processes, 57*(2--3), 187--198.
+- Stout, S. C., & Miller, R. R. (2007). Sometimes-competing retrieval (SOCR): A formalization of the comparator hypothesis. *Psychological Review, 114*(3), 759--783.
+- Nevin, J. A., & Shahan, T. A. (2011). Behavioral momentum theory: Equations and applications. *Journal of Applied Behavior Analysis, 44*(4), 877--895.
+- Esber, G. R., et al. (2025). The Rescorla-Wagner model: It is not what you think it is. *Journal of Experimental Psychology: Animal Learning and Cognition*.
+
+---
+
+## Reading Guide
+
+### Nevin, Mandell, & Atak (1983)
+
+- What is behavioral momentum, and how does it relate to reinforcement? Why is it a model of respondent conditioning?
+- How do the authors draw an analogy between behavioral momentum and Newtonian physics?
+- What does "behavioral mass" represent in this analogy?
+- Why is the log response rate used instead of the raw rate in their analysis?
+- How did the researchers manipulate reinforcement to study behavioral momentum?
+- What key question do the authors aim to answer with their experimental design?
+- Why were response-independent food and extinction chosen as disruptors?
+- How was resistance to change operationally defined in the study?
+- What is the purpose of the lateral shift (log c) in their graphs?
+- How did extinction data compare to dark-key food in estimating behavioral mass?
+- Why might extinction not serve as a clean "external force" in this framework? How is behavioral momentum often measured in experiments?
+- What implications does behavioral momentum have for understanding response persistence?
+- How could this model inform treatment planning in applied behavior analysis?
+- What do the authors conclude about the theoretical value of the momentum analogy?
+
+### Mackintosh (1975)
+
+- What core problem in associative learning does Mackintosh's theory aim to address?
+- How does Mackintosh define "associability" in this context?
+- What role does attention play in his theory of learning?
+- What key idea distinguishes Mackintosh's theory from purely associative (e.g., Rescorla-Wagner) models?
+- According to the theory, what increases a stimulus's associability? What decreases it?
+- How does this model describe the adaptive capabilities of an organism within its environment?
+- What kind of empirical findings prompted Mackintosh to revise traditional associative learning theories?
+- What is the significance of the Pearce-Hall model in relation to Mackintosh's?
+- How does Mackintosh's model explain the phenomenon of "blocking"?
+- How does this theory account for "learned irrelevance"?
+- Why is the notion of relative predictiveness central to this theory?
+- How does the model deal with compound stimuli (e.g., AX vs. BX)?
+- How are attentional shifts implemented computationally in the model?
+- What are some criticisms or limitations of the model acknowledged by Mackintosh?
+- How might this theory relate to behavior analytic perspectives on discrimination learning?
+- What implications might this theory have for behavior-change interventions (e.g., in ABA)?
+
+### Matzel, Held, & Miller (1988)
+
+- What central assumption of traditional contiguity theory do the authors challenge?
+- What is "simultaneous conditioning"? What is "backward conditioning"? How do these differ?
+- According to traditional contiguity theory, how effective should simultaneous and backward conditioning be?
+- What evidence do the authors provide that contradicts the predictions of contiguity theory?
+- What is the distinction between the acquisition of an association and its behavioral expression?
+- What experimental strategy did the authors use to reveal "hidden" learning?
+- How did the authors demonstrate that simultaneous conditioning can produce excitation?
+- What do the results of their summation tests imply about backward associations?
+- How is the expression of learned associations influenced by test conditions, according to the authors?
+- What role does information theory play in the authors' interpretation of conditioning?
+- How do the findings challenge the idea that temporal ordering determines association strength?
+- Why do the authors argue for a distinction between learning and performance?
+- What implications do the findings have for real-world learning situations?
+- How do the results speak to the flexibility and complexity of associative learning systems?
+- What broader implications does this work have for conditioning models in behavior science?
+
+---
+
 ## Key Takeaways
 
 - **Prediction error drives learning.** The Rescorla-Wagner model formalizes the idea that organisms learn when outcomes are surprising ($\lambda - V \neq 0$) and stop learning when outcomes are fully predicted ($\lambda - V = 0$). This was a revolutionary shift from contiguity-based accounts.

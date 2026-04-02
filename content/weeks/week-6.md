@@ -639,6 +639,53 @@ Model comparison will remain a recurring theme throughout the rest of the course
 
 ---
 
+## Key Readings
+
+**Required:**
+
+- Cox, D. J., & Vladescu, J. C. (2023). Oh, shoot! I forgot about that! Estimating the influence of uncontrolled variables. In D. J. Cox & J. C. Vladescu (Eds.), *Statistics for applied behavior analysis practitioners and researchers* (pp. 135--174). Starting at p. 154, "Brief primer on interpreting models."
+- Mazur, J. E. (2001). Hyperbolic value addition and general models of animal choice. *Psychological Review, 108*(1), 96--112.
+
+**Supplemental:**
+
+- Mazur, J. E. (2006). Mathematical models and the experimental analysis of behavior. *Journal of the Experimental Analysis of Behavior, 85*(2), 275--291.
+- McDowell, J. J. (2005). On the classic and modern theories of matching. *Journal of the Experimental Analysis of Behavior, 84*(1), 111--127.
+
+---
+
+## Reading Guide
+
+### Cox & Vladescu (2023)
+
+- What are the two phases involved in interpreting the output of a statistical model?
+- What does a "loss metric" represent in the context of model evaluation? Why is it needed?
+- Why is the raw data considered the most accurate description of observed behavior? What is the tradeoff in using a model instead?
+- What are residuals, and how are they calculated from observed and predicted values? What does a residual plot display, and what should it ideally look like for a good model fit?
+- What might it indicate if residuals show a systematic trend as the IV increases?
+- What is variance accounted for ($r^2$ or VAC), and how is it calculated from residuals?
+- When is $r^2$ an appropriate fit metric, and why is it not suitable for nonlinear models?
+- As a rule of thumb, what value of $r^2$ would be considered acceptable in (a) experimental lab settings, and (b) complex applied settings?
+- What is mean absolute error (MAE), and why might it be preferred for nonlinear models?
+- How is mean squared error (MSE) different from MAE, and what tradeoffs does it involve?
+- What is root mean squared error (RMSE), and how does it combine benefits of both MSE and MAE?
+- What limitation do MAE, MSE, and RMSE share when comparing model complexity?
+- What are AIC and BIC, and what do they add to our understanding of model performance beyond loss?
+- How does AIC penalize model complexity, and how is this different from BIC?
+- When would you choose BIC over AIC in a model comparison?
+- Why is it important to balance model fit with parsimony (Occam's Razor) in behavior analysis?
+- What is accuracy in classification models, and when is it appropriate as a fit metric?
+- What alternative metrics might be better than accuracy when dealing with imbalanced classes or asymmetric errors?
+
+### Mazur (2001)
+
+- What are the two major goals of a general model of animal choice, according to Mazur?
+- What are the "three main procedures used to study animal choice" described by the author? What are your reactions to these three preparations being the dominant methods to study "animal choice"?
+- What are the three quantitative models compared in this article? Be able to state their name, provide the equation, and identify what each parameter represents.
+- What data were used to compare the three models for concurrent-chain performance? What fit metric was used? What were the results?
+- What data were used to compare the models for choice between fixed and variable terminal links? What fit metric was used? What were the results?
+
+---
+
 ## Key Takeaways
 
 - **Overfitting** occurs when a model captures noise rather than signal. Adding parameters always improves fit to the training data but can worsen predictions for new data. With the small sample sizes common in behavior science, overfitting is a constant concern.

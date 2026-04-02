@@ -165,6 +165,69 @@ More broadly, this week's introduction connects to the entire tradition of quant
 
 4. The 8-step framework asks you to state your assumptions explicitly (Step 4). Why might this be the most important step? What are the consequences of unstated assumptions in a published model?
 
+---
+
+## Key Readings
+
+**Required:**
+
+- Critchfield, T. S., & Reed, D. D. (2009). What are we doing when we translate from quantitative models? *The Behavior Analyst, 32*(2), 339--362.
+- Dallery, J., & Soto, P. L. (2013). Quantitative description of environment-behavior relations. In G. J. Madden et al. (Eds.), *APA handbook of behavior analysis, Vol. 1* (pp. 219--249). American Psychological Association.
+- Cox, D. J. (pre-print). Of models, vectors, and matrices: Advancing analyses of the multiple control of behavior. *Advances in the Experimental Analysis of Behavior*.
+
+---
+
+## Reading Guide
+
+### Critchfield & Reed (2009)
+
+- Why has quantitative analysis become increasingly central in basic behavior analysis, according to the authors?
+- What do the authors mean by "translation" in the context of quantitative models, and how is this different from creating clinical applications?
+- What risk do the authors identify if basic and applied branches of behavior analysis stop "speaking the same language"?
+- What are the four core features of a quantitative model as outlined in the article?
+- How do fitted parameters contribute to the explanatory power of a quantitative model?
+- How does the use of equations in behavioral science provide greater precision than narrative descriptions alone?
+- What considerations must be made when choosing a quantitative model for translation?
+- What challenges arise when applying laboratory-based equations to field data?
+- Why might fitted parameters be more important than just verifying the presence of a core functional relation?
+- What examples do the authors give of everyday behaviors that can be modeled using quantitative principles like the matching law or delay discounting?
+- What constitutes a "standard equation," and how do they help guide translational work?
+- What does it mean for a model to offer "unique, testable predictions," and why is this a gold standard for theoretical utility?
+- How can translational work using quantitative models lead to improvements in both science and practice, even if the models are not perfect?
+
+### Dallery & Soto (2013)
+
+- What is the primary purpose of using quantitative models in behavior analysis according to Dallery & Soto?
+- How do the authors define a quantitative model?
+- Why do the authors argue that narrative and quantitative models are complementary?
+- What do the authors describe as the minimum requirements for a quantitative model?
+- What is the difference between descriptive and functional models?
+- Why is it important to include parameters in quantitative models?
+- What does a "good fit" indicate when using quantitative models?
+- Why do the authors caution against equating model fit with explanatory power?
+- What are some benefits of quantitative models in applied settings?
+- How can quantitative models contribute to individualized treatment planning?
+- How do the authors link model development to theory-building in behavior analysis?
+- Why is simplicity (parsimony) a valued feature in model selection?
+- How do quantitative models promote scientific communication?
+
+### Cox (pre-print)
+
+- What is meant by "multiple control" in behavior analysis?
+- Why does the author argue that a comprehensive understanding of behavior requires analyzing multiple control?
+- What is one limitation of traditional approaches to analyzing multiple control?
+- How do visual models like the "Four-Term Contingency" fall short?
+- According to the author, what is a model in the context of behavioral science?
+- Why are models necessary for advancing the science of behavior?
+- What are some general forms that models can take in behavior analysis?
+- What distinguishes a model from a theory or conceptual framework?
+- Why does the author emphasize the need for formalization in modeling multiple control?
+- How can mathematical models help resolve ambiguity in multiple control situations?
+- What is the potential benefit of adopting mathematical tools like matrices and vectors in behavioral analysis?
+- What does the author suggest is the next frontier for analyzing multiple control?
+
+---
+
 ## Key Takeaways
 
 - **What is a model?** A formal (mathematical or computational) representation of a system or process, built to predict, explain, or both.

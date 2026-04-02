@@ -693,6 +693,77 @@ Together, these lines of research show that delay discounting is not merely an a
 
 ---
 
+## Reading Guide
+
+### Critchfield & Kollins (2001)
+
+- What is temporal discounting?
+- How does temporal discounting relate to self-control?
+- How do the authors distinguish behavior analysis from cognitive models of choice?
+- What experimental procedure is commonly used to assess temporal discounting in humans?
+- What does the $k$ parameter represent in Mazur's hyperbolic model?
+- How well does Mazur's hyperbolic equation fit human discounting data?
+- Why are hypothetical rewards used instead of real rewards in many studies?
+- How do temporal discounting patterns differ across populations?
+- What findings support the stability of temporal discounting measures?
+- How can delay sensitivity be functionally relevant for understanding ADHD?
+- What predictions does the temporal discounting model make for ADHD behavior?
+- How might methylphenidate impact delay discounting in ADHD?
+- Why is temporal discounting a useful construct for applied behavior analysis (ABA)?
+- How does the concept of molar behavior relate to temporal discounting?
+- How have discounting concepts informed our understanding of substance abuse?
+- What did Vuchinich and Tucker's work contribute to this literature?
+- How might ABA practitioners apply discounting research to treatment planning?
+- Why might traditional single-subject designs be insufficient for studying discounting?
+- What challenges do discounting studies pose for ABA methodology?
+- What broader message do the authors convey about ABA's future?
+
+### Rachlin (2006)
+
+- How does Rachlin define discounting in the context of behavioral choice?
+- What is the difference between exponential and hyperbolic discounting?
+- Why does Rachlin argue that hyperbolic discounting leads to preference reversals?
+- What is a "preference reversal" in discounting?
+- How does Rachlin explain self-control in terms of temporal discounting?
+- What role do commitment strategies play in self-control according to Rachlin?
+- How does Rachlin critique the idea of "irrationality" in discounting?
+- Why does Rachlin consider discounting to be a function of choice context?
+- What is meant by "bundling" in Rachlin's theory of self-control? How does bundling alter the shape of the discounting function?
+- How does Rachlin relate discounting to melioration theory?
+- What is the key difference between molar and molecular views of self-control?
+- What evidence supports the molar interpretation of self-control?
+- What is the significance of Rachlin's analogy to social dilemmas?
+- Why is it important to treat discounting as a behavioral process rather than a cognitive one?
+- What implications does Rachlin draw for public health and policy?
+- How does Rachlin distinguish between impulsiveness and selfishness?
+- What is Rachlin's argument against viewing steep discounting as "bad"?
+- What does Rachlin say about the role of rules in self-control?
+- What broader view of behavior does Rachlin advocate through his discounting framework?
+
+### Odum et al. (2020)
+
+- What does it mean to say discounting is "outcome-specific"?
+- What are the two main theoretical frameworks reviewed for modeling discounting?
+- What is the hyperboloid discounting model and what are its parameters?
+- How does monetary discounting compare to discounting of other outcomes?
+- What is the magnitude effect in delay discounting?
+- Do the authors find that the magnitude effect generalizes to consumable outcomes?
+- How is discounting of sexual outcomes unique?
+- What role does framing play in discounting?
+- What is the sign effect in discounting research?
+- What is the commodity effect?
+- How do individual differences influence discounting?
+- What is the proposed evolutionary explanation for outcome-specific discounting?
+- What is cross-commodity discounting?
+- Why is domain-specificity important for understanding real-world behavior?
+- How do the authors propose integrating behavioral economics and choice theory?
+- What implications do the findings have for intervention design?
+- How is discounting relevant for understanding substance use disorders?
+- What open questions do the authors identify for future research?
+- What is the authors' main theoretical contribution?
+
+---
+
 ## Exercises for Reflection
 
 1. A participant shows an indifference point of \$75 for \$100 delayed by 4 weeks and an indifference point of \$25 for \$100 delayed by 52 weeks. Estimate $k$ from each data point using Mazur's equation. Are the two estimates similar? What would it mean if they were very different? What model form might better describe data where the hyperbolic $k$ estimates diverge substantially?

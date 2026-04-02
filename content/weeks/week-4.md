@@ -639,6 +639,59 @@ For now, the demand equation stands as a powerful empirical tool: it summarizes 
 
 ---
 
+## Key Readings
+
+**Required:**
+
+- Hursh, S. R., & Silberberg, A. (2008). Economic demand and essential value. *Psychological Review, 115*(1), 186--198.
+- Francisco, M. T., Madden, G. J., & Borrero, J. (2009). Behavioral economics: Principles, procedures, and utility for applied behavior analysis. *The Behavior Analyst, 10*(2), 277--294.
+
+**Supplemental:**
+
+- Hursh, S. R., Madden, G. J., Spiga, R., DeLeon, I. G., & Francisco, M. T. (2013). The translational utility of behavioral economics. *The Behavior Analyst, 36*(2), 191--197.
+
+---
+
+## Reading Guide
+
+### Hursh & Silberberg (2008)
+
+- According to these authors, what are the 5 ways response strength has been defined historically? What are the benefits and drawbacks of each?
+- What is the exponential demand equation proposed by Hursh & Silberberg (2008)?
+- What does the parameter $Q_0$ represent?
+- What does the parameter $\alpha$ (alpha) represent?
+- What is "essential value," and how is it defined in the paper?
+- What is the role of the parameter $k$?
+- What theoretical advantage does the exponential model provide?
+- Why is essential value considered a better reinforcer metric than $Q_0$ or break point?
+- What is the general shape of the demand curve predicted by the exponential model?
+- How does the model allow comparisons across reinforcers?
+- What kind of reinforcers were used to validate the model?
+- How did the exponential model perform in terms of data fit?
+- How is essential value different from matching or discounting parameters?
+- What is meant by "reinforcer magnitude" and how does it differ from essential value?
+- What does the model predict about the effect of increasing reinforcer magnitude on $Q_0$ and $\alpha$?
+- What is a potential limitation or caution in interpreting essential value?
+
+### Francisco, Madden, & Borrero (2009)
+
+- What is behavioral economics and how does it differ from traditional economics?
+- What is the primary dependent variable in behavioral economics?
+- Define "demand" in the context of behavioral economics.
+- What does it mean for demand to be "elastic" or "inelastic"?
+- What is a demand curve and what does it depict?
+- How is "price" typically operationalized in behavioral economics?
+- What is "unit price" and why is it useful?
+- How can behavioral economics inform drug abuse research?
+- What is a "closed economy" vs. an "open economy"?
+- How does economy type (open vs. closed) affect demand?
+- What is "income" in behavioral economic terms?
+- What is substitution in the context of behavioral economics?
+- How might behavioral economics help in designing interventions?
+- What is a practical takeaway for clinicians from this primer?
+
+---
+
 ## Key Takeaways
 
 - **Demand analysis** quantifies the relationship between the price of a reinforcer and the amount consumed. It provides a richer picture of reinforcer value than preference assessments alone.

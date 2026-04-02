@@ -620,6 +620,15 @@ These exercises are designed to deepen your understanding of the probabilistic t
 
 ---
 
+## Key Readings
+
+**Required:**
+
+- Otto, S. P., & Day, T. (2007). Probability theory. In S. P. Otto & T. Day (Eds.), *A biologist's guide to mathematical modeling in ecology and evolution* (pp. 54--80). Princeton University Press.
+- Otto, S. P., & Day, T. (2007). Probabilistic models. In S. P. Otto & T. Day (Eds.), *A biologist's guide to mathematical modeling in ecology and evolution* (pp. 81--109). Princeton University Press.
+
+---
+
 ## Key Takeaways
 
 - **Behavioral data are inherently variable.** Probabilistic models treat variability as a feature to be modeled, not noise to be eliminated.

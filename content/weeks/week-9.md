@@ -546,6 +546,21 @@ These references collectively illustrate that both multilevel and time-series me
 
 ---
 
+## Key Readings
+
+**Required:**
+
+- Peugh, J. L. (2010). A practical guide to multilevel modeling. *Journal of School Psychology, 48*(1), 85--112.
+- Young, M. E. (2018). Discounting: A practical guide to multilevel analysis of choice data. *Journal of the Experimental Analysis of Behavior, 109*(2), 293--312.
+- Cox, D. J., & Vladescu, J. C. (2023). This math and time thing is cool: Time series decomposition and forecasting behavior. In D. J. Cox & J. C. Vladescu (Eds.), *Statistics for applied behavior analysis practitioners and researchers* (Ch. 9).
+
+**Supplemental:**
+
+- Quené, H., & van den Bergh, H. (2004). On multi-level modeling of data from repeated measures designs: A tutorial. *Speech Communication, 43*(1--2), 103--121.
+- Adhikari, R., & Agrawal, R. K. (2013). An introductory study on time series modeling and forecasting. *arXiv preprint arXiv:1302.6613*.
+
+---
+
 ## Key Takeaways
 
 - **Nested data require multilevel models.** When observations are grouped (e.g., sessions within participants), treating them as independent inflates Type I error. Multilevel models decompose variance into within-group and between-group components.

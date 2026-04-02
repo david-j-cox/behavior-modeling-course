@@ -477,6 +477,15 @@ More recently, research has shown that different brain circuits may implement mo
 
 ---
 
+## Key Readings
+
+**Required:**
+
+- McDowell, J. J. (2019). On the current status of the evolutionary theory of behavior dynamics. *Journal of the Experimental Analysis of Behavior, 111*(1), 130--145.
+- Cox, D. J., & Santos, J. (2025). Predicting the next response: Demonstrating the utility of integrating AI-based RL with behavior science. *Journal of the Experimental Analysis of Behavior*.
+
+---
+
 ## Key Takeaways
 
 - **Computational models** implement behavioral processes as algorithms that are *run* rather than *solved*; the model is the program.

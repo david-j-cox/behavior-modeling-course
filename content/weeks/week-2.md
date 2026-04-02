@@ -493,6 +493,68 @@ Quantitative analyses of matching have also been applied to behavioral economics
 
 ---
 
+## Key Readings
+
+**Required:**
+
+- Reed, D. D., & Kaplan, B. A. (2011). The matching law: A tutorial for practitioners. *Behavior Analysis in Practice, 4*(2), 15--24.
+- McDowell, J. J. (1989). Two modern developments in matching theory. *The Behavior Analyst, 12*(2), 153--166.
+- Fisher, W. W., & Mazur, J. E. (1997). Basic and applied research on choice responding. *Journal of Applied Behavior Analysis, 30*(3), 387--410.
+
+---
+
+## Reading Guide
+
+### Reed & Kaplan (2011)
+
+- How do the authors define "choice" from a behavior analytic perspective?
+- What is the matching law, and what does it predict?
+- Describe how Herrnstein's original experiment with pigeons led to the matching law.
+- How can relative response rates be used to infer preference?
+- Why use ratios (B1/B2 and R1/R2) in matching analyses?
+- How is matching observed in real-world behavior (e.g., classrooms, playgrounds)?
+- What is the Generalized Matching Equation (GME), and how does it build on the original?
+- What do the parameters b (bias) and s (sensitivity) represent in the GME?
+- How can we interpret the slope and intercept of a matching line?
+- What are common sources of bias in applied matching analyses?
+- What kind of data would you need to conduct a matching analysis in practice?
+- How do different reinforcer dimensions (rate, quality, effort, delay) affect matching outcomes?
+- How might one use matching analyses to evaluate the effectiveness of intervention strategies?
+- How can matching help us understand reinforcer substitutability?
+- How can a practitioner use the bias parameter to tailor treatment?
+- What are some limitations of matching law applications in applied contexts?
+
+### McDowell (1989)
+
+- What is meant by "asymmetrical choice situations"?
+- Why are most natural human choice situations considered asymmetrical?
+- What mathematical form does McDowell discuss for asymmetrical choice?
+- How does this power function differ from the original (linear) matching law?
+- Why might a power function better describe human choice behavior?
+- What does McDowell refer to by "indifferent responding"?
+- How is indifferent responding incorporated into the model?
+- Why might indifference occur even when reinforcement rates differ?
+- Why are these developments considered "modern"?
+- Why does McDowell believe biased responding IS NOT a big deal for matching theory?
+- Why does McDowell believe undermatching IS a big deal for matching theory?
+
+### Fisher & Mazur (1997)
+
+- What is the primary focus of this article in terms of research synthesis?
+- How do the authors define "choice responding"?
+- What is the role of concurrent schedules in studying choice?
+- What kinds of dependent variables are typically used in choice research?
+- What are some of the reinforcer dimensions shown to influence choice responding?
+- How have researchers used choice procedures to study problem behavior?
+- What are some examples from the article of how choice analyses have informed functional analyses?
+- What are the potential benefits of analyzing choice behavior in clinical populations?
+- How do Fisher and Mazur connect laboratory-based findings with applied intervention strategies?
+- Why is it important to distinguish between molar and molecular analyses of behavior?
+- What recommendations do the authors give for future research in applied choice responding?
+- How can quantitative modeling support individualized treatment planning?
+
+---
+
 ## Key Takeaways
 
 - **Choice is behavior allocation.** From a behavior-analytic perspective, choice is the measurable distribution of behavior across available alternatives, not a private mental event. This framing makes choice a continuous variable amenable to quantitative modeling.

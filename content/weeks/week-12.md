@@ -615,6 +615,57 @@ Several challenges are specific to behavior science:
 
 ---
 
+## Key Readings
+
+**Required:**
+
+- Badillo, S., Banfai, B., Birzele, F., Davydov, I. I., Hutchinson, L., Kam-Thong, T., ..., & Zhang, J. D. (2020). An introduction to machine learning. *Clinical Pharmacology & Therapeutics, 107*(4), 871--885.
+- Bloice, M. D., & Holzinger, A. (2016). A tutorial on machine learning and data science tools with Python. In A. Holzinger (Ed.), *Machine learning for health informatics* (pp. 435--480). Springer International Publishing.
+
+**Supplemental:**
+
+- Turgeon, S., & Lanovaz, M. J. (2020). Tutorial: Applying machine learning in behavioral research. *Perspectives on Behavior Science, 43*(4), 697--723.
+- Kliegr, T., Bahnik, S., & Furnkranz, J. (2019). Advances in machine learning for the behavioral sciences. *American Behavioral Scientist, 64*(2), 145--175.
+- Morales, G. B., & Escalante, H. J. (2022). A brief introduction to supervised, unsupervised, and reinforcement learning. In *Biosignal processing and classification using computational learning and intelligence* (pp. 111--134). Academic Press.
+- Yates, L. A., Aandahl, Z., Richards, S. A., & Brook, B. W. (2022). Cross validation for model selection: A review with examples from ecology. *Ecological Monographs, 93*(1), e1557.
+- Raschka, S. (2020). Model evaluation, model selection, and algorithm selection in machine learning. *arXiv preprint arXiv:1811.12808*.
+
+---
+
+## Reading Guide
+
+### Badillo et al. (2020)
+
+- What distinction do the authors draw between Culture 1 and Culture 2 approaches to statistical modeling, and how does this difference affect interpretability?
+- How do the terms weights, learning, and generalization in ML correspond to more traditional statistical terminology? Why is this translation important?
+- What is the "black box" problem in ML, and what tools exist to improve interpretability?
+- How are data points, features, and feature spaces defined in ML, and why is the notion of a feature vector central?
+- What is the curse of dimensionality, and why does it pose problems for biomedical data?
+- How can time be incorporated into ML, and what limitations exist?
+- What role does feature engineering play in model performance?
+- How can missing data and selection bias undermine ML models? What strategies help?
+- What are imbalanced datasets, and why are they problematic?
+- Define and contrast Euclidean distance and cosine similarity.
+- What are strengths and weaknesses of k-means clustering?
+- How does density-based clustering differ from k-means?
+- What does hierarchical clustering add, and how is the resulting tree interpreted?
+- Why is dimensionality reduction useful beyond visualization?
+- What lesson does the wolf-husky example illustrate?
+- What is the bias-variance tradeoff, and how does it relate to underfitting and overfitting?
+- What is regularization (L1 vs. L2), and how does it improve generalizability?
+
+### Bloice & Holzinger (2016)
+
+- What are the five core tools highlighted for a Python ML pipeline?
+- What do the symbols X and y typically represent in ML data structures?
+- What distinguishes supervised from unsupervised learning in this framework?
+- What is the role of SciKit-Learn in the Python ML stack?
+- What is Keras, and how does it differ from SciKit-Learn?
+- Why is reproducibility emphasized in this tutorial?
+- Find 2--3 topics in the chapter that were surprising or intriguing to you. Come prepared to discuss what that topic was and why you found it surprising or intriguing.
+
+---
+
 ## Key Takeaways
 
 - **Two cultures of modeling.** Culture 1 (data modeling) starts from a hypothesized mechanism and fits parameters. Culture 2 (algorithmic modeling) lets the algorithm find patterns without specifying a mechanism. Most behavior science is Culture 1; ML is Culture 2.
