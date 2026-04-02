@@ -403,13 +403,15 @@ These limitations define where the model applies and where extensions are needed
 
 **Required:**
 
-- Nevin, J. A., Mandell, C., & Atak, J. R. (1983). The analysis of behavioral momentum. *Journal of the Experimental Analysis of Behavior, 39*(1), 49--59.
+**Nevin, Mandell, and Atak (1983)** presented the foundational empirical and quantitative analysis of behavioral momentum, demonstrating that resistance to change is a function of the reinforcement context rather than the response-reinforcer contingency alone. Using multiple-schedule procedures with pigeons, they showed that behavior in components with higher reinforcement rates was more resistant to disruption by extinction and response-independent food, even when baseline response rates were similar or lower. The paper formalized the analogy to Newtonian momentum---with response rate as velocity and resistance to change as mass---and introduced the quantitative methods (log-proportion change, lateral shift analysis) that became standard in the field. This is the seminal paper for the week's topic and the origin of the formal model that students will analyze using the 8-step framework.
 
 **Supplemental:**
 
-- Nevin, J. A. (1998). Choice and momentum. In W. O'Donohue (Ed.), *Learning and behavior therapy* (pp. 230--251). Allyn and Bacon.
-- Nevin, J. A. (2002). Measuring behavioral momentum. *Behavioural Processes, 57*(2--3), 187--198.
-- Nevin, J. A., & Shahan, T. A. (2011). Behavioral momentum theory: Equations and applications. *Journal of Applied Behavior Analysis, 44*(4), 877--895.
+**Nevin (1998)** connected behavioral momentum theory to choice behavior, arguing that the persistence of behavior in a given context can be understood through the same Pavlovian stimulus-reinforcer relationships that govern preference in concurrent schedules. He showed that momentum and choice are not separate phenomena but two manifestations of the same underlying reinforcement variables. This paper broadens the week's framework by demonstrating that behavioral momentum theory is not an isolated model but part of a larger quantitative account of how reinforcement history governs both the allocation and the persistence of behavior.
+
+**Nevin (2002)** addressed the methodological challenges of measuring behavioral momentum, including the choice of disruption operations, the appropriate dependent variable for quantifying resistance to change, and the conditions under which the momentum metaphor does and does not hold. He discussed practical issues such as floor effects, the distinction between within-session and between-session disruption, and when log-proportion measures are preferable to raw proportions. This paper is essential reading for anyone who wants to apply the momentum model to data, because it makes explicit the measurement decisions that can make or break a quantitative analysis.
+
+**Nevin and Shahan (2011)** extended behavioral momentum theory to applied contexts, deriving predictions about treatment relapse, resurgence, and the design of interventions that maximize the persistence of appropriate behavior while minimizing the persistence of problem behavior. They showed that the same quantitative framework that describes pigeon key pecking under disruption generates specific, testable predictions about clinical outcomes. This paper completes the translational arc for the week: from basic laboratory demonstration to formal model to applied prediction, illustrating how a well-specified quantitative model can guide clinical decision making.
 
 ---
 

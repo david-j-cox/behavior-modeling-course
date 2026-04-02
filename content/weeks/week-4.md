@@ -522,14 +522,17 @@ The discovery that dopamine neurons in the midbrain encode a signal resembling t
 
 **Required:**
 
-- Mackintosh, N. J. (1975). A theory of attention: Variations in the associability of stimuli with reinforcement. *Psychological Review, 82*(4), 276--298.
-- Matzel, L. D., Held, F. P., & Miller, R. R. (1988). Information and expression of simultaneous and backward associations: Implications for contiguity theory. *Learning & Motivation, 19*, 317--344.
+**Mackintosh (1975)** proposed a theory of selective attention in associative learning in which the associability of a stimulus---its capacity to enter into new associations---changes with experience. Stimuli that are good predictors of outcomes gain associability; stimuli that are poor predictors lose it. This model addressed phenomena like learned irrelevance and the relative validity effect that the Rescorla-Wagner model could not easily explain, because Rescorla-Wagner treats the learning rate parameters as fixed constants. For the course, Mackintosh's model illustrates a critical modeling move: when a model fails on specific phenomena, the response is not to abandon it but to identify which assumption is too restrictive and relax it---in this case, making the learning rate itself a learnable quantity.
+
+**Matzel, Held, and Miller (1988)** challenged the contiguity assumption that temporal ordering of CS and US is the primary determinant of conditioning. They presented evidence that simultaneous and backward CS-US pairings produce associations that are acquired but not always expressed in behavior, drawing a distinction between learning and performance that contiguity theory conflates. This paper matters for the week because it forces a confrontation with a fundamental modeling question: does the Rescorla-Wagner equation describe learning itself, or does it describe the behavioral expression of learning? The answer has consequences for how we interpret every parameter in associative learning models.
 
 **Supplemental:**
 
-- Rescorla, R. A., & Wagner, A. R. (1972). A theory of Pavlovian conditioning: The effectiveness of reinforcement and non-reinforcement. In A. H. Black & W. F. Prokasy (Eds.), *Classical conditioning II* (pp. 64--99). Appleton-Century-Crofts.
-- Esber, G. R., et al. (2025). The Rescorla-Wagner model: It is not what you think it is. *Journal of Experimental Psychology: Animal Learning and Cognition*.
-- Stout, S. C., & Miller, R. R. (2007). Sometimes-competing retrieval (SOCR): A formalization of the comparator hypothesis. *Psychological Review, 114*(3), 759--783.
+**Rescorla and Wagner (1972)** presented the original formal statement of the prediction-error learning rule that became the foundation of modern associative learning theory. Their model---$\Delta V = \alpha\beta(\lambda - V)$---proposed that the change in associative strength on each trial is proportional to the discrepancy between what is expected and what occurs. This single equation unified a wide range of conditioning phenomena including acquisition, extinction, blocking, and conditioned inhibition under one quantitative framework. It is the canonical example of a formal model in behavior science and the starting point for everything covered this week.
+
+**Esber et al. (2025)** revisited the Rescorla-Wagner model and argued that common textbook presentations misrepresent key aspects of the original formulation, particularly regarding the scope of the model's predictions and the role of its parameters. They clarified what the model actually claims versus what has been attributed to it through decades of secondary citation. This paper is a valuable corrective that demonstrates how formal models can drift from their original specification as they are transmitted through the literature---a cautionary lesson for any modeler.
+
+**Stout and Miller (2007)** formalized the comparator hypothesis as the Sometimes-Competing Retrieval (SOCR) model, which proposes that conditioned responding depends not on the absolute associative strength of a CS but on a comparison between the CS-US association and competing associations from the training context. Unlike Rescorla-Wagner, which locates all the action in the learning rule, SOCR places much of it in the retrieval and expression process. This paper broadens the week's perspective by showing that two models can agree on the learning mechanism yet diverge sharply on what controls the behavioral output---a distinction that has direct implications for how we design experiments to test between competing models.
 
 ---
 

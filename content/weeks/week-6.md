@@ -641,13 +641,15 @@ Model comparison will remain a recurring theme throughout the rest of the course
 
 **Required:**
 
-- Cox, D. J., & Vladescu, J. C. (2023). Oh, shoot! I forgot about that! Estimating the influence of uncontrolled variables. In D. J. Cox & J. C. Vladescu (Eds.), *Statistics for applied behavior analysis practitioners and researchers* (pp. 135--174). Starting at p. 154, "Brief primer on interpreting models."
-- Mazur, J. E. (2001). Hyperbolic value addition and general models of animal choice. *Psychological Review, 108*(1), 96--112.
+**Cox and Vladescu (2023)** provided a practical primer on interpreting the output of fitted models, covering residual analysis, variance accounted for ($r^2$), mean absolute error, mean squared error, root mean squared error, AIC, and BIC. They explained when each metric is appropriate---$r^2$ for linear models, information criteria when comparing models of different complexity---and emphasized the distinction between a model that fits the training data well and a model that will generalize to new data. This chapter is the methodological foundation for the week: it gives students the concrete tools they need to evaluate and compare every model encountered in the course, and it makes the abstract principle of parsimony operational through specific fit metrics.
+
+**Mazur (2001)** compared three quantitative models of animal choice---the hyperbolic value addition model, the contextual choice model, and the incentive theory model---across concurrent-chain and variable-delay procedures. He evaluated each model not just on overall fit but on its ability to handle specific empirical patterns that competing models could not accommodate. The paper exemplifies the model-comparison process that is this week's central topic: rather than asking which model fits best on a single dataset, Mazur asked which model provides the most consistent account across diverse experimental conditions, demonstrating that model comparison is about generality, not just goodness of fit.
 
 **Supplemental:**
 
-- Mazur, J. E. (2006). Mathematical models and the experimental analysis of behavior. *Journal of the Experimental Analysis of Behavior, 85*(2), 275--291.
-- McDowell, J. J. (2005). On the classic and modern theories of matching. *Journal of the Experimental Analysis of Behavior, 84*(1), 111--127.
+**Mazur (2006)** offered a broader reflection on the role of mathematical models in the experimental analysis of behavior, discussing what makes a model useful, how models relate to theories, and what standards should govern model evaluation. He argued that models should be judged not only by their quantitative fit but by their ability to organize existing findings and generate novel predictions. This paper provides philosophical context for the week's technical material, grounding the fit metrics and comparison tools in a larger vision of what the modeling enterprise is trying to accomplish.
+
+**McDowell (2005)** contrasted the classic matching theory (Herrnstein's original formulation) with modern matching theory (the generalized matching equation and its computational extensions), evaluating their relative strengths and weaknesses as accounts of concurrent-schedule performance. He used this comparison to illustrate broader principles of model evaluation, including the importance of parameter interpretability, the danger of post hoc modifications, and the value of deriving predictions from first principles rather than fitting flexible functions to data. This paper provides a concrete case study in model comparison using the matching law---a model students have already studied---making the week's abstract tools tangible.
 
 ---
 

@@ -497,10 +497,9 @@ Next week reverses the direction. **Machine learning** does not start with a mec
 
 ## Key Readings
 
-**Required:**
+**McDowell (2019)** reviewed the current status of the evolutionary theory of behavior dynamics (ETBD), a computational model that treats operant behavior as a population of responses undergoing selection by reinforcement, mutation through behavioral variability, and reproduction of successful variants across successive time steps. Unlike the closed-form models from earlier weeks (matching, discounting, demand), the ETBD derives molar regularities---including matching and Herrnstein's hyperbola---from first principles implemented as an algorithm that must be run rather than solved. This paper is central to the week because it demonstrates the defining feature of computational models: complex behavioral patterns emerge from simple rules iterated over time, and the only way to discover what those rules predict is to simulate them.
 
-- McDowell, J. J. (2019). On the current status of the evolutionary theory of behavior dynamics. *Journal of the Experimental Analysis of Behavior, 111*(1), 130--145.
-- Cox, D. J., & Santos, J. (2025). Predicting the next response: Demonstrating the utility of integrating AI-based RL with behavior science. *Journal of the Experimental Analysis of Behavior*.
+**Cox and Santos (2025)** demonstrated the utility of integrating AI-based reinforcement learning with behavior science by using a Q-learning agent to predict individual responses (not just aggregate response rates) in an operant preparation. They showed that the RL framework---which descends directly from the prediction-error ideas of the Rescorla-Wagner model (Week 4)---can generate molecular-level predictions about which response an organism will emit next, given its history of states, actions, and reinforcement. This paper bridges the course's earlier content on associative learning with the computational tools of modern AI, and it raises the practical question of whether RL models could inform real-time clinical decision making in applied behavior analysis.
 
 ---
 

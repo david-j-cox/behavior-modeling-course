@@ -643,12 +643,13 @@ For now, the demand equation stands as a powerful empirical tool: it summarizes 
 
 **Required:**
 
-- Hursh, S. R., & Silberberg, A. (2008). Economic demand and essential value. *Psychological Review, 115*(1), 186--198.
-- Francisco, M. T., Madden, G. J., & Borrero, J. (2009). Behavioral economics: Principles, procedures, and utility for applied behavior analysis. *The Behavior Analyst, 10*(2), 277--294.
+**Hursh and Silberberg (2008)** introduced the exponential demand equation and the concept of essential value as a normalized metric of reinforcer efficacy. Their model solved a long-standing problem in behavioral economics: earlier demand models used power functions whose parameters were not comparable across commodities or species. By building normalization into the equation itself---through the $Q_0$ term in the exponent---Hursh and Silberberg created a framework in which the single parameter $\alpha$ (and its inverse, essential value) provides a universal index of how rapidly consumption declines as price increases. This paper is the mathematical backbone of the week and exemplifies how thoughtful model design---not just curve fitting---can transform a descriptive tool into a translational one.
+
+**Francisco, Madden, and Borrero (2009)** provided a primer on behavioral economics for applied behavior analysts, explaining core concepts such as demand, elasticity, unit price, open versus closed economies, and substitution in accessible language. They demonstrated how these concepts can inform the design of reinforcement-based interventions, token economies, and preference assessments. This paper bridges the gap between the formal demand models and clinical practice, showing that the quantitative framework is not an abstraction but a practical tool for understanding why clients consume some reinforcers vigorously and abandon others when the price rises.
 
 **Supplemental:**
 
-- Hursh, S. R., Madden, G. J., Spiga, R., DeLeon, I. G., & Francisco, M. T. (2013). The translational utility of behavioral economics. *The Behavior Analyst, 36*(2), 191--197.
+**Hursh, Madden, Spiga, DeLeon, and Francisco (2013)** reviewed the translational applications of the exponential demand model across substance abuse research, developmental disabilities, and health behavior. They argued that demand analysis provides a common quantitative language for comparing reinforcer value across populations and settings, making it one of the most portable tools in behavioral economics. This paper extends the week's core content by demonstrating the range of applied domains where the exponential demand equation has proven useful and reinforcing the course theme that formal models gain their greatest value when they travel across contexts.
 
 ---
 

@@ -622,10 +622,9 @@ These exercises are designed to deepen your understanding of the probabilistic t
 
 ## Key Readings
 
-**Required:**
+**Otto and Day (2007, Chapter 3)** provided a self-contained introduction to probability theory, covering random variables, expected values, variance, and the key distributions---binomial, Poisson, and normal---that arise most frequently in biological and behavioral data. They also developed conditional probability and Bayes' theorem from first principles, connecting these ideas to the problem of updating beliefs in light of new evidence. This chapter builds the mathematical foundation that supports everything else this week: without a working understanding of probability distributions, students cannot meaningfully engage with maximum likelihood estimation, model comparison via likelihood ratios, or the interpretation of stochastic behavioral data.
 
-- Otto, S. P., & Day, T. (2007). Probability theory. In S. P. Otto & T. Day (Eds.), *A biologist's guide to mathematical modeling in ecology and evolution* (pp. 54--80). Princeton University Press.
-- Otto, S. P., & Day, T. (2007). Probabilistic models. In S. P. Otto & T. Day (Eds.), *A biologist's guide to mathematical modeling in ecology and evolution* (pp. 81--109). Princeton University Press.
+**Otto and Day (2007, Chapter 4)** extended the probability theory foundation into probabilistic modeling, showing how to incorporate randomness into models that had previously been treated as deterministic. They introduced likelihood functions, maximum likelihood estimation, confidence intervals, and likelihood ratio tests as tools for fitting probabilistic models to data and choosing between competing accounts. This chapter is the direct technical complement to Week 6's model-comparison material: where Week 6 introduced information criteria as principled ways to select among models, this chapter provides the likelihood-based machinery on which those criteria are built. Together, the two chapters give students the complete toolkit for fitting, evaluating, and comparing probabilistic models of behavior.
 
 ---
 
