@@ -44,3 +44,16 @@ export interface FrameworkStep {
   description: string;
   commonMistakes: string;
 }
+
+export interface LabNotebook {
+  filename: string;
+  title: string;
+}
+
+export interface LabMeta {
+  week: number;
+  title: string;
+  description: string;
+  notebooks: LabNotebook[];
+  dataFiles: string[];
+}
