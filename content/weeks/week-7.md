@@ -725,10 +725,9 @@ The DRA example illustrates why systems of equations are important. If you model
 
 ## Key Readings
 
-**Required:**
+**Otto and Day (2007, Chapter 2)** presented a systematic recipe for constructing mathematical models from scratch, organized as a sequence of steps: formulate the question, identify the variables, draw a diagram, write the equations, and analyze the result. They emphasized that model building is iterative---the first version will be wrong, and the value lies in having something concrete to criticize and improve. For this week, the chapter provides the scaffolding that transforms the 8-step framework from an abstract checklist into a practical workflow. The life-cycle and flow diagrams they introduce are especially important, because they make the intellectual work of model construction visual and explicit before any equations are written.
 
-- Otto, S. P., & Day, T. (2007). How to construct a model. In S. P. Otto & T. Day (Eds.), *A biologist's guide to mathematical modeling in ecology and evolution* (pp. 17--53). Princeton University Press.
-- Otto, S. P., & Day, T. (2007). Numerical and graphical techniques---Developing a feeling for your model. In S. P. Otto & T. Day (Eds.), *A biologist's guide to mathematical modeling in ecology and evolution* (pp. 110--150). Princeton University Press.
+**Otto and Day (2007, Chapters 5--6)** covered numerical and graphical techniques for understanding model behavior when analytical solutions are unavailable or uninformative. They introduced Euler's method for numerically solving differential equations, phase-plane diagrams for visualizing two-variable systems, nullclines for locating equilibria, and sensitivity analysis for determining how model outputs depend on parameter values. These techniques are the practical tools of model building: they allow the modeler to develop intuition about what a model predicts, identify parameter regions where behavior changes qualitatively, and detect unrealistic predictions before investing in formal analysis. For the course, this chapter completes the transition from model consumer to model constructor by equipping students with the computational skills to explore their own models.
 
 ---
 

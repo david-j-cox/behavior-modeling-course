@@ -41,6 +41,10 @@ A model is a formal representation of a system or process. "Formal" means the re
 
 These categories overlap. A mathematical model can be implemented computationally; a simulation can be based on a mathematical model. The distinctions are about emphasis, not rigid boundaries.
 
+![Model Matrix](/images/model_matrix.jpeg)
+
+*Figure: A matrix of models organized by number of variables (columns) and degree of nonlinearity (rows). Linear models with few variables (upper left) are the simplest; nonlinear models with many variables or continuous dimensions (lower right) represent the frontier of modeling complexity. Adapted from Strogatz (2015).*
+
 ### Description vs. Explanation
 
 A descriptive model summarizes a pattern in data. It tells you the shape of a function and the values of its parameters. An explanatory (or mechanistic) model proposes a process that generates the pattern. Both are valuable, but they answer different questions.
@@ -169,11 +173,11 @@ More broadly, this week's introduction connects to the entire tradition of quant
 
 ## Key Readings
 
-**Required:**
+**Critchfield and Reed (2009)** examined what it means to "translate" from quantitative models of basic behavioral processes to applied contexts. They argued that translation is not simply applying a laboratory equation to a clinical setting but rather a principled process of identifying which features of a quantitative model---its functional form, its parameters, its boundary conditions---carry over to new domains. This paper sets the stage for the course by making explicit that quantitative models are not just tools for curve fitting; they are vehicles for moving knowledge from basic to applied science, and doing so requires understanding the model's structure, not just its output.
 
-- Critchfield, T. S., & Reed, D. D. (2009). What are we doing when we translate from quantitative models? *The Behavior Analyst, 32*(2), 339--362.
-- Dallery, J., & Soto, P. L. (2013). Quantitative description of environment-behavior relations. In G. J. Madden et al. (Eds.), *APA handbook of behavior analysis, Vol. 1* (pp. 219--249). American Psychological Association.
-- Cox, D. J. (pre-print). Of models, vectors, and matrices: Advancing analyses of the multiple control of behavior. *Advances in the Experimental Analysis of Behavior*.
+**Dallery and Soto (2013)** provided a comprehensive overview of how quantitative models describe environment-behavior relations across a range of basic behavioral phenomena. They distinguished between descriptive models that summarize data patterns and functional models that propose mechanisms, and they articulated the minimum requirements a quantitative model must meet---specifying variables, parameters, and the functional form linking them. For a course on modeling, this chapter serves as a foundational reference that catalogs the major quantitative regularities in behavior analysis and demonstrates that the field already possesses a rich tradition of formal modeling, even if that tradition is not always recognized as such.
+
+**Cox (pre-print)** argued that behavior is typically under multiple simultaneous sources of control---stimulus, motivational, historical---and that traditional analytic approaches handle these sources one at a time rather than jointly. The paper introduced vector and matrix representations as tools for formalizing the multiple control of behavior within a single quantitative framework. This reading connects directly to the course's emphasis on mathematical formalization: it shows that moving from verbal descriptions of "multiple control" to precise mathematical representations reveals structure that verbal accounts obscure, and it previews the kind of mathematical thinking that will be developed throughout the semester.
 
 ---
 

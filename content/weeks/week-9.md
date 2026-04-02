@@ -550,14 +550,17 @@ These references collectively illustrate that both multilevel and time-series me
 
 **Required:**
 
-- Peugh, J. L. (2010). A practical guide to multilevel modeling. *Journal of School Psychology, 48*(1), 85--112.
-- Young, M. E. (2018). Discounting: A practical guide to multilevel analysis of choice data. *Journal of the Experimental Analysis of Behavior, 109*(2), 293--312.
-- Cox, D. J., & Vladescu, J. C. (2023). This math and time thing is cool: Time series decomposition and forecasting behavior. In D. J. Cox & J. C. Vladescu (Eds.), *Statistics for applied behavior analysis practitioners and researchers* (Ch. 9).
+**Peugh (2010)** provided a practical, step-by-step guide to multilevel modeling for researchers in education and psychology, covering the rationale for multilevel analysis, the intraclass correlation coefficient, random intercepts and slopes, and model-building strategies. He demonstrated why ignoring nested data structure leads to inflated Type I error rates and showed how multilevel models correct this by partitioning variance into within-group and between-group components. This paper is the methodological backbone of the week's first topic: it gives students the conceptual and practical tools to handle the hierarchical data structures---trials within sessions, sessions within participants---that are ubiquitous in behavior science.
+
+**Young (2018)** applied the multilevel modeling framework specifically to delay discounting data, showing how to fit nonlinear discounting functions within a hierarchical structure that accounts for individual differences in discounting parameters. He demonstrated that the multilevel approach is superior to the traditional method of fitting each participant separately because it borrows strength across individuals, handles sparse data gracefully, and allows researchers to model covariates of individual differences in a single integrated analysis. This paper connects the week's statistical methodology directly to a model students already know---hyperbolic discounting from Week 2---showing that the tools from this week enhance rather than replace the models from earlier weeks.
+
+**Cox and Vladescu (2023)** introduced time-series decomposition and forecasting methods for behavioral data, covering trend extraction, seasonal components, autoregressive models, and ARIMA. They demonstrated how these techniques can be applied to the kind of repeated within-subject observations that characterize applied behavior analysis, enabling practitioners to forecast future behavior and detect changes in level or trend that signal treatment effects. This chapter addresses the temporal-dependence side of the week's content: where multilevel models handle the between-person nesting, time-series methods handle the within-person sequential structure that makes today's observation depend on yesterday's.
 
 **Supplemental:**
 
-- Quené, H., & van den Bergh, H. (2004). On multi-level modeling of data from repeated measures designs: A tutorial. *Speech Communication, 43*(1--2), 103--121.
-- Adhikari, R., & Agrawal, R. K. (2013). An introductory study on time series modeling and forecasting. *arXiv preprint arXiv:1302.6613*.
+**Quene and van den Bergh (2004)** provided a tutorial on multilevel modeling for repeated-measures designs, using examples from speech and communication research to illustrate the advantages over traditional repeated-measures ANOVA. They emphasized the flexibility of multilevel models in handling unbalanced designs, missing data, and continuous time variables---all features that make the approach particularly well suited to behavioral datasets, where participants often contribute different numbers of sessions and missing data are common. This paper reinforces the week's core message from a different disciplinary angle, helping students see that the multilevel framework is a general-purpose tool, not a domain-specific technique.
+
+**Adhikari and Agrawal (2013)** provided a broad introduction to time-series modeling and forecasting, covering the mathematical foundations of stationarity, autocorrelation, ARIMA models, and model selection criteria. They presented the material with an emphasis on practical implementation, including step-by-step procedures for model identification, estimation, and diagnostic checking. This paper complements the Cox and Vladescu chapter by providing deeper mathematical detail on the time-series methods, giving students who want to move beyond the applied primer a more rigorous treatment of the underlying theory.
 
 ---
 
