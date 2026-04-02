@@ -8,6 +8,7 @@ import type {
   AppendixMeta,
   InstructorNoteMeta,
   LabMeta,
+  ReadingWeek,
 } from "./types";
 
 const contentDir = path.resolve(
@@ -133,6 +134,26 @@ export function getFrameworkContent(): string {
   const raw = fs.readFileSync(filePath, "utf-8");
   const { content } = matter(raw);
   return content;
+}
+
+// --- Readings ---
+
+export function getAllReadings(): ReadingWeek[] {
+  const dir = path.join(contentDir, "readings");
+  if (!fs.existsSync(dir)) return [];
+
+  const files = fs
+    .readdirSync(dir)
+    .filter((f) => f.endsWith(".md"))
+    .sort();
+
+  return files
+    .map((file) => {
+      const raw = fs.readFileSync(path.join(dir, file), "utf-8");
+      const { data } = matter(raw);
+      return data as ReadingWeek;
+    })
+    .sort((a, b) => a.week - b.week);
 }
 
 // --- Labs ---

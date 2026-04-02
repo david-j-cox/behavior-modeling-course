@@ -38,6 +38,9 @@ export default function RootLayout({
                 <Link href="/problems">Problems</Link>
               </li>
               <li>
+                <Link href="/readings">Readings</Link>
+              </li>
+              <li>
                 <Link href="/glossary">Glossary</Link>
               </li>
               <li>
