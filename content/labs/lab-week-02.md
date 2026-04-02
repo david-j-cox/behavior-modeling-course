@@ -7,6 +7,11 @@ notebooks:
     title: "Matching Law Lab"
   - filename: "discounting_analyses.ipynb"
     title: "Discounting Analyses"
+instructorNotebooks:
+  - filename: "gme_lab_dataset_creation.ipynb"
+    title: "Dataset Creation (Matching)"
+  - filename: "discounting_data_creation.ipynb"
+    title: "Dataset Creation (Discounting)"
 dataFiles:
   - "gme_data_P01.csv"
   - "gme_data_P02.csv"
