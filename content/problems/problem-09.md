@@ -1,7 +1,7 @@
 ---
 id: 9
 title: "Fitting the Hursh-Silberberg Exponential Demand Equation"
-week: 4
+week: 3
 difficulty: "Intermediate"
 modelingSteps: [3, 5, 8]
 tags: ["demand", "Hursh-Silberberg", "essential value", "exponential demand", "nonlinear fitting"]

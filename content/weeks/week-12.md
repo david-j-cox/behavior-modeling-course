@@ -30,6 +30,18 @@ A final note before we begin: ML is not a replacement for theory. It is a tool. 
 
 ---
 
+## Connecting Backward: From Mechanism to Pattern Discovery
+
+The course has traced an arc from simple to complex models, but there is a deeper arc running alongside it: a shift in where the **knowledge** lives.
+
+In Weeks 2–5, knowledge lived in the **equations**. The generalized matching law, the hyperbolic discounting function, and behavioral momentum theory each encoded a behavioral principle directly — you could read the mechanism off the equation. In Week 10, knowledge lived in the **dynamics** — the differential equations specified how behavioral state variables change over time, and the equilibria and trajectories followed from the math. In Week 11, knowledge lived in the **algorithm** — we specified the rules (Q-learning updates, selection operators, agent interaction rules) and ran the simulation forward to see what those rules produce.
+
+This week, knowledge lives in the **data**. Machine learning algorithms do not require the modeler to specify a mechanism, a dynamical rule, or an algorithmic process. Instead, the algorithm searches through a space of possible functions and finds one that maps inputs to outputs as accurately as possible. The mechanism, if one exists, is implicit in the learned function — but it may be unrecoverable.
+
+This is not a rejection of everything that came before. It is a complement. The theory-driven models from earlier weeks tell us **why** behavior takes the form it does. ML models can tell us **what patterns exist** in behavioral data that we might not have hypothesized — patterns involving high-dimensional interactions, nonlinear thresholds, and combinatorial feature spaces that exceed human intuition. The most productive use of ML in behavior science is not to replace mechanistic models but to discover regularities that mechanistic models can then explain. Data-driven pattern discovery feeds theory-driven explanation, and the cycle continues.
+
+---
+
 ## Core Concepts
 
 ### Two Cultures of Modeling
@@ -583,7 +595,7 @@ Machine learning has begun to appear in the behavior-analytic literature in seve
 
 ### Connections to Other Modeling Frameworks
 
-It is worth noting how ML relates to models covered in earlier weeks of this course. In Week 5 (Signal Detection Theory), we built models that classified stimuli based on noisy evidence---a task structurally similar to classification in supervised learning. The difference is that SDT specifies the decision process (a criterion on a strength-of-evidence continuum), while a decision tree or neural network learns the decision process from data. In Week 11 (Computational Models), we built agent-based models and Q-learning models that generate behavior from internal processes. ML models can be seen as the inverse problem: given observed behavior, infer the mapping from environment to action, without specifying the internal process that produces it.
+It is worth noting how ML relates to models covered in earlier weeks of this course. In Week 4 (Associative Learning), we built models that classified stimuli based on noisy evidence---a task structurally similar to classification in supervised learning. The difference is that SDT specifies the decision process (a criterion on a strength-of-evidence continuum), while a decision tree or neural network learns the decision process from data. In Week 11 (Computational Models), we built agent-based models and Q-learning models that generate behavior from internal processes. ML models can be seen as the inverse problem: given observed behavior, infer the mapping from environment to action, without specifying the internal process that produces it.
 
 This complementarity is important. Computational models generate predictions from mechanisms (forward modeling). ML models infer patterns from observed data (inverse modeling). A complete science of behavior may need both: forward models to test mechanistic theories, and inverse models to discover patterns that the theories should explain.
 

@@ -607,13 +607,11 @@ Every model encountered in this course so far has been presented alongside alter
 
 **Week 1 (Introduction):** We introduced the linear cumulative-response model $R = k \cdot t$. This model assumes constant response rate. In a sense, every subsequent week has been an exercise in model comparison: testing whether a more complex model (one with curvature, with multiple processes, with additional parameters) provides a better account of behavior than the simple linear baseline. The tools in this chapter formalize that comparison.
 
-**Week 2 (Matching):** The strict matching law, the generalized matching law, and alternative choice models all describe concurrent-schedule data. We noted that the generalized matching law fits better, but did not have a formal framework for deciding whether the improvement justified the extra parameters. Now we do: AIC and BIC provide that framework. You can revisit the matching data from Week 2 and apply this week's tools to make a formal comparison.
+**Week 2 (Matching and Discounting):** The strict matching law, the generalized matching law, and alternative choice models all describe concurrent-schedule data. We noted that the generalized matching law fits better, but did not have a formal framework for deciding whether the improvement justified the extra parameters. Now we do: AIC and BIC provide that framework. You can revisit the matching data from Week 2 and apply this week's tools to make a formal comparison. The worked example in this chapter also directly addresses the model comparison that was deferred in the discounting portion of Week 2. There, we presented the hyperbolic model; here, we formally justify it against exponential and hyperboloid alternatives.
 
-**Week 3 (Discounting):** The worked example in this chapter directly addresses the model comparison that was deferred in the discounting week. There, we presented the hyperbolic model; here, we formally justify it against exponential and hyperboloid alternatives.
+**Week 3 (Demand):** The exponential demand model was presented as the standard, but alternative demand functions exist. Model comparison using AIC is now standard in demand research, and this week's tools explain why.
 
-**Week 4 (Demand):** The exponential demand model was presented as the standard, but alternative demand functions exist. Model comparison using AIC is now standard in demand research, and this week's tools explain why.
-
-**Week 5 (Learning):** The Rescorla-Wagner model was compared informally with other learning rules. Formal model comparison (e.g., using AIC to compare Rescorla-Wagner with Pearce-Hall or other associative models) is an active area of research in computational learning theory.
+**Week 4 (Associative Learning):** The Rescorla-Wagner model was compared informally with other learning rules. Formal model comparison (e.g., using AIC to compare Rescorla-Wagner with Pearce-Hall or other associative models) is an active area of research in computational learning theory.
 
 ### Connecting Forward: Model Comparison in Later Weeks
 

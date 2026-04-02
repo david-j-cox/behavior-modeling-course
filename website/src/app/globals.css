@@ -355,6 +355,44 @@ strong {
   box-shadow: 0 0 0 2px var(--color-accent-light);
 }
 
+.password-gate {
+  max-width: 24rem;
+  margin: 4rem auto;
+  text-align: center;
+}
+
+.password-gate h2 {
+  border: none;
+  padding: 0;
+}
+
+.password-gate form {
+  text-align: left;
+}
+
+.password-gate-error {
+  color: var(--color-danger);
+  font-size: 0.875rem;
+  margin: -0.5rem 0 0.75rem;
+}
+
+.password-gate-btn {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  font-family: var(--font-sans);
+  background: var(--color-accent);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.password-gate-btn:hover {
+  background: var(--color-accent-dark);
+}
+
 .filter-bar {
   display: flex;
   flex-wrap: wrap;

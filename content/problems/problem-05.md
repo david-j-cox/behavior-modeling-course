@@ -1,7 +1,7 @@
 ---
 id: 5
 title: "Rescorla-Wagner Acquisition"
-week: 5
+week: 4
 difficulty: "Introductory"
 modelingSteps: [3, 5]
 tags: ["Rescorla-Wagner", "classical conditioning", "acquisition", "associative strength"]

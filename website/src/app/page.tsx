@@ -87,10 +87,10 @@ export default function HomePage() {
           <tbody>
             {[
               "Introduction to Modeling",
-              "Historical Models -- Matching Law",
-              "Historical Models -- Discounting",
+              "Historical Models -- Matching and Discounting",
               "Historical Models -- Demand",
-              "Historical Models -- Respondent Conditioning",
+              "Associative Learning Models",
+              "Behavioral Momentum and Response Persistence",
               "Model Comparisons",
               "How to Construct a Model",
               "Probability Theory & Probabilistic Models",

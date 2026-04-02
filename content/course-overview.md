@@ -13,10 +13,10 @@ Models matter because they force clarity. A verbal claim like "reinforcement str
 | Week | Topic |
 |:-----|:------|
 | 1 | Introduction to Modeling in Behavior Science |
-| 2 | Historical Models -- Matching Law |
-| 3 | Historical Models -- Discounting |
-| 4 | Historical Models -- Demand |
-| 5 | Historical Models -- Respondent Conditioning |
+| 2 | Historical Models -- Matching and Discounting |
+| 3 | Historical Models -- Demand |
+| 4 | Associative Learning Models |
+| 5 | Behavioral Momentum and Response Persistence |
 | 6 | Model Comparisons |
 | 7 | How to Construct a Model |
 | 8 | Probability Theory & Probabilistic Models |

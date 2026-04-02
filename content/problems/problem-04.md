@@ -1,7 +1,7 @@
 ---
 id: 4
 title: "Fitting Mazur's Hyperbolic Discounting Model"
-week: 3
+week: 2
 difficulty: "Intermediate"
 modelingSteps: [3, 5, 8]
 tags: ["delay discounting", "hyperbolic model", "Mazur", "nonlinear fitting"]
