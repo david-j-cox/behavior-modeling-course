@@ -7,6 +7,7 @@ import type {
   GlossaryEntry,
   AppendixMeta,
   InstructorNoteMeta,
+  LabMeta,
 } from "./types";
 
 const contentDir = path.resolve(
@@ -132,6 +133,26 @@ export function getFrameworkContent(): string {
   const raw = fs.readFileSync(filePath, "utf-8");
   const { content } = matter(raw);
   return content;
+}
+
+// --- Labs ---
+
+export function getAllLabs(): { meta: LabMeta; content: string }[] {
+  const dir = path.join(contentDir, "labs");
+  if (!fs.existsSync(dir)) return [];
+
+  const files = fs
+    .readdirSync(dir)
+    .filter((f) => f.endsWith(".md"))
+    .sort();
+
+  return files
+    .map((file) => {
+      const raw = fs.readFileSync(path.join(dir, file), "utf-8");
+      const { data, content } = matter(raw);
+      return { meta: data as LabMeta, content };
+    })
+    .sort((a, b) => a.meta.week - b.meta.week);
 }
 
 // --- Syllabus ---

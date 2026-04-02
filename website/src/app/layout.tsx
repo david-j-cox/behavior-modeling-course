@@ -32,6 +32,9 @@ export default function RootLayout({
                 <Link href="/weeks">Weeks</Link>
               </li>
               <li>
+                <Link href="/labs">Labs</Link>
+              </li>
+              <li>
                 <Link href="/problems">Problems</Link>
               </li>
               <li>
