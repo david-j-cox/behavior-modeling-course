@@ -486,6 +486,45 @@ More recently, research has shown that different brain circuits may implement mo
 
 ---
 
+## Reading Guide
+
+### McDowell (2019)
+
+- What is the evolutionary theory of behavior dynamics (ETBD), and how does it differ from traditional mathematical models of behavior?
+- How does the ETBD use concepts from evolutionary biology (selection, variation, reproduction) to model operant behavior?
+- What is the "population of behaviors" concept in the ETBD? How does this differ from treating behavior as a single response rate?
+- How does reinforcement operate in the ETBD? What is being "selected"?
+- What predictions does the ETBD make about matching, and how do these compare to the predictions of Herrnstein's hyperbola?
+- Does the ETBD derive matching from first principles, or is matching built into its assumptions? Why does this distinction matter?
+- What role does mutation play in the ETBD? How does it relate to behavioral variability?
+- How does the ETBD handle phenomena like extinction and spontaneous recovery?
+- What is the relationship between the ETBD and the generalized matching law? Does the ETBD predict sensitivity and bias parameters?
+- What empirical evidence does McDowell cite in support of the ETBD?
+- What are the main criticisms or limitations of the ETBD that McDowell acknowledges?
+- How does the ETBD relate to other computational approaches to behavior (e.g., reinforcement learning, neural networks)?
+- Why does McDowell argue that computational models like the ETBD are valuable even when closed-form equations exist?
+- What does it mean to say the ETBD is a "generative" model? How does this differ from a descriptive or curve-fitting model?
+- What are the implications of the ETBD for understanding behavior at a mechanistic level?
+
+### Cox & Santos (2025)
+
+- What is the central argument of the paper regarding the integration of AI-based reinforcement learning (RL) with behavior science?
+- How do the authors define reinforcement learning in the AI/computational sense? How does this relate to the behavioral definition of reinforcement?
+- What specific RL algorithm is used in the paper, and how does it work?
+- What behavioral preparation or task do the authors model using RL?
+- What does "predicting the next response" mean in this context? How is it different from predicting aggregate response rates?
+- How well does the RL model perform at predicting individual responses? What metrics are used to evaluate performance?
+- What are the parallels between Q-learning parameters (learning rate, discount factor) and behavioral concepts?
+- How do the authors address the concern that computational models are "black boxes" that don't explain behavior?
+- What implications does this work have for applied behavior analysis? Could RL models inform treatment decisions?
+- How does this paper connect to the matching law and other quantitative models covered earlier in the course?
+- What are the limitations of the approach, as discussed by the authors?
+- What does this paper suggest about the future relationship between AI/ML and behavior science?
+- How does this work differ from McDowell's ETBD in its approach to computational modeling of behavior?
+- Why is predicting individual responses (molecular level) important in addition to predicting molar measures like response rates?
+
+---
+
 ## Key Takeaways
 
 - **Computational models** implement behavioral processes as algorithms that are *run* rather than *solved*; the model is the program.
