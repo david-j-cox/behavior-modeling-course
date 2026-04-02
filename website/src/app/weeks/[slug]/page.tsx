@@ -1,8 +1,9 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getWeek, getWeekSlugs, getInstructorNote } from "@/lib/content";
-import { renderMarkdown } from "@/lib/markdown";
+import { renderMarkdown, extractToc } from "@/lib/markdown";
 import MathContent from "@/components/MathContent";
+import TableOfContents from "@/components/TableOfContents";
 import WeekNav from "@/components/WeekNav";
 
 interface Props {
@@ -27,6 +28,7 @@ export default async function WeekPage({ params }: Props) {
 
   const { meta, content } = data;
   const html = await renderMarkdown(content);
+  const toc = extractToc(content);
   const hasInstructorNotes = getInstructorNote(meta.number) !== null;
 
   return (
@@ -78,6 +80,7 @@ export default async function WeekPage({ params }: Props) {
           ))}
         </div>
       )}
+      <TableOfContents entries={toc} />
       <MathContent html={html} />
       <WeekNav current={meta.number} />
     </div>
