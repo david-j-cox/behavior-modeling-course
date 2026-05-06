@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ThemeToggle from "@/components/ThemeToggle";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -8,6 +9,15 @@ export const metadata: Metadata = {
     "Course companion for doctoral-level mathematical and computational modeling in behavior science.",
 };
 
+const themeInitScript = `
+(function(){try{
+  var s=localStorage.getItem('theme');
+  var d=s?s:(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+  if(s==='system'){d=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  document.documentElement.setAttribute('data-theme',d);
+}catch(e){}})();
+`;
+
 export default function RootLayout({
   children,
 }: {
@@ -15,6 +25,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body>
         <nav className="nav">
           <div className="nav-inner">
@@ -47,6 +60,7 @@ export default function RootLayout({
                 <Link href="/appendices">Appendices</Link>
               </li>
             </ul>
+            <ThemeToggle />
           </div>
         </nav>
         <main>{children}</main>
