@@ -683,6 +683,16 @@ Several challenges are specific to behavior science:
 
 ---
 
+## References
+
+Badillo, S., Banfai, B., Birzele, F., Davydov, I. I., Hutchinson, L., Kam-Thong, T., Siebourg-Polster, J., Steiert, B., & Zhang, J. D. (2020). An introduction to machine learning. *Clinical Pharmacology & Therapeutics, 107*(4), 871--885. https://doi.org/10.1002/cpt.1796
+
+Bloice, M. D., & Holzinger, A. (2016). A tutorial on machine learning and data science tools with Python. In A. Holzinger (Ed.), *Machine learning for health informatics* (pp. 435--480). Springer. https://doi.org/10.1007/978-3-319-50478-0_22
+
+Breiman, L. (2001). Statistical modeling: The two cultures. *Statistical Science, 16*(3), 199--231. https://doi.org/10.1214/ss/1009213726
+
+---
+
 ## Key Takeaways
 
 - **Two cultures of modeling.** Culture 1 (data modeling) starts from a hypothesized mechanism and fits parameters. Culture 2 (algorithmic modeling) lets the algorithm find patterns without specifying a mechanism. Most behavior science is Culture 1; ML is Culture 2.

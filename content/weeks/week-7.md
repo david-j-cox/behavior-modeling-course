@@ -779,6 +779,22 @@ The DRA example illustrates why systems of equations are important. If you model
 
 ---
 
+## References
+
+Baum, W. M. (1974). On two types of deviation from the matching law: Bias and undermatching. *Journal of the Experimental Analysis of Behavior, 22*(1), 231--242. https://doi.org/10.1901/jeab.1974.22-231
+
+Estes, W. K. (1950). Toward a statistical theory of learning. *Psychological Review, 57*(2), 94--107. https://doi.org/10.1037/h0058559
+
+Herrnstein, R. J. (1961). Relative and absolute strength of response as a function of frequency of reinforcement. *Journal of the Experimental Analysis of Behavior, 4*(3), 267--272. https://doi.org/10.1901/jeab.1961.4-267
+
+Hull, C. L. (1943). *Principles of behavior: An introduction to behavior theory*. Appleton-Century.
+
+Mazur, J. E. (1987). An adjusting procedure for studying delayed reinforcement. In M. L. Commons, J. E. Mazur, J. A. Nevin, & H. Rachlin (Eds.), *Quantitative analyses of behavior: Vol. 5. The effect of delay and of intervening events on reinforcement value* (pp. 55--73). Erlbaum.
+
+Otto, S. P., & Day, T. (2007). *A biologist's guide to mathematical modeling in ecology and evolution*. Princeton University Press.
+
+---
+
 ## Key Takeaways
 
 - **Model building is iterative.** Start simple, check, revise. The first model is always wrong in important ways, and that is fine---its purpose is to give you something concrete to improve.

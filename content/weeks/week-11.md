@@ -542,6 +542,22 @@ Next week reverses the direction. **Machine learning** does not start with a mec
 
 ---
 
+## References
+
+Barto, A. G., Sutton, R. S., & Anderson, C. W. (1983). Neuronlike adaptive elements that can solve difficult learning control problems. *IEEE Transactions on Systems, Man, and Cybernetics, SMC-13*(5), 834--846. https://doi.org/10.1109/TSMC.1983.6313077
+
+Cox, D. J., & Santos, J. E. (2025). *Predicting the next response: Demonstrating the utility of integrating AI-based reinforcement learning with behavior science.* [Manuscript].
+
+McDowell, J. J. (2019). On the current status of the evolutionary theory of behavior dynamics. *Journal of the Experimental Analysis of Behavior, 111*(1), 130--145. https://doi.org/10.1002/jeab.495
+
+Rescorla, R. A., & Wagner, A. R. (1972). A theory of Pavlovian conditioning: Variations in the effectiveness of reinforcement and nonreinforcement. In A. H. Black & W. F. Prokasy (Eds.), *Classical conditioning II: Current research and theory* (pp. 64--99). Appleton-Century-Crofts.
+
+Schultz, W., Dayan, P., & Montague, P. R. (1997). A neural substrate of prediction and reward. *Science, 275*(5306), 1593--1599. https://doi.org/10.1126/science.275.5306.1593
+
+Sutton, R. S. (1988). Learning to predict by the methods of temporal differences. *Machine Learning, 3*(1), 9--44. https://doi.org/10.1007/BF00115009
+
+---
+
 ## Key Takeaways
 
 - **Computational models** implement behavioral processes as algorithms that are *run* rather than *solved*; the model is the program.

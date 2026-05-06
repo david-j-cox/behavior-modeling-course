@@ -686,6 +686,26 @@ Model comparison will remain a recurring theme throughout the rest of the course
 
 ---
 
+## References
+
+Burnham, K. P., & Anderson, D. R. (2002). *Model selection and multimodel inference: A practical information-theoretic approach* (2nd ed.). Springer.
+
+Cox, D. J., & Vladescu, J. C. (2023). *Statistics for applied behavior analysis practitioners and researchers*. Academic Press.
+
+Hursh, S. R., & Silberberg, A. (2008). Economic demand and essential value. *Psychological Review, 115*(1), 186--198. https://doi.org/10.1037/0033-295X.115.1.186
+
+Mazur, J. E. (1987). An adjusting procedure for studying delayed reinforcement. In M. L. Commons, J. E. Mazur, J. A. Nevin, & H. Rachlin (Eds.), *Quantitative analyses of behavior: Vol. 5. The effect of delay and of intervening events on reinforcement value* (pp. 55--73). Erlbaum.
+
+Mazur, J. E. (2001). Hyperbolic value addition and general models of animal choice. *Psychological Review, 108*(1), 96--112. https://doi.org/10.1037/0033-295X.108.1.96
+
+Mazur, J. E. (2006). Mathematical models and the experimental analysis of behavior. *Journal of the Experimental Analysis of Behavior, 85*(2), 275--291. https://doi.org/10.1901/jeab.2006.65-05
+
+McDowell, J. J. (2005). On the classic and modern theories of matching. *Journal of the Experimental Analysis of Behavior, 84*(1), 111--127. https://doi.org/10.1901/jeab.2005.59-04
+
+Myerson, J., & Green, L. (1995). Discounting of delayed rewards: Models of individual choice. *Journal of the Experimental Analysis of Behavior, 64*(3), 263--276. https://doi.org/10.1901/jeab.1995.64-263
+
+---
+
 ## Key Takeaways
 
 - **Overfitting** occurs when a model captures noise rather than signal. Adding parameters always improves fit to the training data but can worsen predictions for new data. With the small sample sizes common in behavior science, overfitting is a constant concern.

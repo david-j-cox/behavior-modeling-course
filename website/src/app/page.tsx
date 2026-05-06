@@ -48,18 +48,18 @@ export default function HomePage() {
           model construction, evaluation, and comparison.
         </p>
         <p>
-          This course closes that gap. Over thirteen weeks, students learn to
-          read, evaluate, build, and communicate quantitative models of
-          behavior. The backbone of the course is an 8-step modeling framework
+          This course seeks to help close that gap. Over thirteen weeks, students
+          learn to read, evaluate, build, and communicate quantitative models of
+          behavior. The backbone of the course is an eight-step modeling framework
           adapted from engineering and the physical sciences, translated into
           behavior-science language, and applied to every model encountered.
         </p>
         <p>
-          The goal is fluency, not mastery of pure mathematics. Fluency means
-          you can read a model and understand what it claims, evaluate whether
-          its assumptions are reasonable, build a simple model from scratch, fit
-          it to data, compare it to alternatives, and communicate the results
-          clearly.
+          The goal is fluency in approach, not mastery of pure mathematics.
+          Here, fluency means you can read a model and understand what it claims,
+          evaluate whether its assumptions are reasonable, build a simple model from 
+          scratch, fit it to data, compare it to alternatives, and communicate
+          the results clearly.
         </p>
       </section>
 

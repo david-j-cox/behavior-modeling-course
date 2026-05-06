@@ -573,6 +573,34 @@ Next week, we turn to a different but deeply related question: once behavior has
 
 ---
 
+## References
+
+Gallistel, C. R., & Gibbon, J. (2000). Time, rate, and conditioning. *Psychological Review, 107*(2), 289--344. https://doi.org/10.1037/0033-295X.107.2.289
+
+Kamin, L. J. (1969). Predictability, surprise, attention, and conditioning. In B. A. Campbell & R. M. Church (Eds.), *Punishment and aversive behavior* (pp. 279--296). Appleton-Century-Crofts.
+
+Le Pelley, M. E. (2004). The role of associative history in models of associative learning: A selective review and a hybrid model. *Quarterly Journal of Experimental Psychology Section B, 57*(3), 193--243. https://doi.org/10.1080/02724990344000141
+
+Mackintosh, N. J. (1975). A theory of attention: Variations in the associability of stimuli with reinforcement. *Psychological Review, 82*(4), 276--298. https://doi.org/10.1037/h0076778
+
+Matzel, L. D., Held, F. P., & Miller, R. R. (1988). Information and expression of simultaneous and backward associations: Implications for contiguity theory. *Learning and Motivation, 19*(4), 317--344. https://doi.org/10.1016/0023-9690(88)90044-6
+
+Miller, R. R., & Matzel, L. D. (1988). The comparator hypothesis: A response rule for the expression of associations. *Psychology of Learning and Motivation, 22*, 51--92. https://doi.org/10.1016/S0079-7421(08)60038-9
+
+Pearce, J. M., & Hall, G. (1980). A model for Pavlovian learning: Variations in the effectiveness of conditioned but not of unconditioned stimuli. *Psychological Review, 87*(6), 532--552. https://doi.org/10.1037/0033-295X.87.6.532
+
+Rescorla, R. A. (1969). Pavlovian conditioned inhibition. *Psychological Bulletin, 72*(2), 77--94. https://doi.org/10.1037/h0027760
+
+Rescorla, R. A., & Wagner, A. R. (1972). A theory of Pavlovian conditioning: Variations in the effectiveness of reinforcement and nonreinforcement. In A. H. Black & W. F. Prokasy (Eds.), *Classical conditioning II: Current research and theory* (pp. 64--99). Appleton-Century-Crofts.
+
+Schultz, W., Dayan, P., & Montague, P. R. (1997). A neural substrate of prediction and reward. *Science, 275*(5306), 1593--1599. https://doi.org/10.1126/science.275.5306.1593
+
+Sutton, R. S., & Barto, A. G. (1981). Toward a modern theory of adaptive networks: Expectation and prediction. *Psychological Review, 88*(2), 135--170. https://doi.org/10.1037/0033-295X.88.2.135
+
+Sutton, R. S., & Barto, A. G. (1998). *Reinforcement learning: An introduction*. MIT Press.
+
+---
+
 ## Key Takeaways
 
 - **Prediction error drives learning.** The Rescorla-Wagner model formalizes the idea that organisms learn when outcomes are surprising ($\lambda - V \neq 0$) and stop learning when outcomes are fully predicted ($\lambda - V = 0$). This was a revolutionary shift from contiguity-based accounts.

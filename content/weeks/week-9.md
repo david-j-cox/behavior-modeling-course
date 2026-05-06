@@ -612,6 +612,22 @@ These references collectively illustrate that both multilevel and time-series me
 
 ---
 
+## References
+
+Adhikari, R., & Agrawal, R. K. (2013). *An introductory study on time series modeling and forecasting*. LAP Lambert Academic Publishing. https://doi.org/10.48550/arXiv.1302.6613
+
+Cox, D. J., & Vladescu, J. C. (2023). *Statistics for applied behavior analysis practitioners and researchers*. Academic Press.
+
+Mazur, J. E. (1987). An adjusting procedure for studying delayed reinforcement. In M. L. Commons, J. E. Mazur, J. A. Nevin, & H. Rachlin (Eds.), *Quantitative analyses of behavior: Vol. 5. The effect of delay and of intervening events on reinforcement value* (pp. 55--73). Erlbaum.
+
+Peugh, J. L. (2010). A practical guide to multilevel modeling. *Journal of School Psychology, 48*(1), 85--112. https://doi.org/10.1016/j.jsp.2009.09.002
+
+Quené, H., & van den Bergh, H. (2004). On multi-level modeling of data from repeated measures designs: A tutorial. *Speech Communication, 43*(1--2), 103--121. https://doi.org/10.1016/j.specom.2004.02.004
+
+Young, M. E. (2018). Discounting: A practical guide to multilevel analysis of choice data. *Journal of the Experimental Analysis of Behavior, 109*(2), 293--312. https://doi.org/10.1002/jeab.316
+
+---
+
 ## Key Takeaways
 
 - **Nested data require multilevel models.** When observations are grouped (e.g., sessions within participants), treating them as independent inflates Type I error. Multilevel models decompose variance into within-group and between-group components.

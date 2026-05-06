@@ -447,6 +447,20 @@ Next week, in **Week 6**, we turn to the tools of model comparison: information 
 
 ---
 
+## References
+
+Nevin, J. A. (1998). Choice and momentum. In W. T. O'Donohue (Ed.), *Learning and behavior therapy* (pp. 230--251). Allyn & Bacon.
+
+Nevin, J. A. (2002). Measuring behavioral momentum. *Behavioural Processes, 57*(2--3), 187--198. https://doi.org/10.1016/S0376-6357(02)00013-X
+
+Nevin, J. A., Mandell, C., & Atak, J. R. (1983). The analysis of behavioral momentum. *Journal of the Experimental Analysis of Behavior, 39*(1), 49--59. https://doi.org/10.1901/jeab.1983.39-49
+
+Nevin, J. A., & Shahan, T. A. (2011). Behavioral momentum theory: Equations and applications. *Journal of Applied Behavior Analysis, 44*(4), 877--895. https://doi.org/10.1901/jaba.2011.44-877
+
+Shahan, T. A., & Craig, A. R. (2017). Resurgence as choice. *Behavioural Processes, 141*(Pt 1), 100--127. https://doi.org/10.1016/j.beproc.2017.01.006
+
+---
+
 ## Key Takeaways
 
 - **Behavioral momentum theory formalizes resistance to change.** The theory uses a physics metaphor---mass, velocity, force---to describe how behavior persists under disruption. Richer reinforcement contexts produce more persistent behavior.
