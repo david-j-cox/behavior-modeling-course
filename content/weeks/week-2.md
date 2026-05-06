@@ -893,6 +893,32 @@ Quantitative analyses of matching have also been applied to behavioral economics
 
 ---
 
+## References
+
+Baum, W. M. (1974). On two types of deviation from the matching law: Bias and undermatching. *Journal of the Experimental Analysis of Behavior, 22*(1), 231--242. https://doi.org/10.1901/jeab.1974.22-231
+
+Cox, D. J., & Dallery, J. (2018). Influence of second outcome on monetary discounting. *Behavioural Processes, 157*, 165--171. https://doi.org/10.1016/j.beproc.2018.09.011
+
+Critchfield, T. S., & Kollins, S. H. (2001). Temporal discounting: Basic research and the analysis of socially important behavior. *Journal of Applied Behavior Analysis, 34*(1), 101--122. https://doi.org/10.1901/jaba.2001.34-101
+
+Fisher, W. W., & Mazur, J. E. (1997). Basic and applied research on choice responding. *Journal of Applied Behavior Analysis, 30*(3), 387--410. https://doi.org/10.1901/jaba.1997.30-387
+
+Herrnstein, R. J. (1961). Relative and absolute strength of response as a function of frequency of reinforcement. *Journal of the Experimental Analysis of Behavior, 4*(3), 267--272. https://doi.org/10.1901/jeab.1961.4-267
+
+Herrnstein, R. J. (1970). On the law of effect. *Journal of the Experimental Analysis of Behavior, 13*(2), 243--266. https://doi.org/10.1901/jeab.1970.13-243
+
+Mazur, J. E. (1987). An adjusting procedure for studying delayed reinforcement. In M. L. Commons, J. E. Mazur, J. A. Nevin, & H. Rachlin (Eds.), *Quantitative analyses of behavior: Vol. 5. The effect of delay and of intervening events on reinforcement value* (pp. 55--73). Erlbaum.
+
+McDowell, J. J. (1989). Two modern developments in matching theory. *The Behavior Analyst, 12*(2), 153--166. https://doi.org/10.1007/BF03392492
+
+Odum, A. L., Becker, R. J., Haynes, J. M., Galizio, A., Frye, C. C. J., Downey, H., Friedel, J. E., & Perez, D. M. (2020). Delay discounting of different outcomes: Review and theory. *Journal of the Experimental Analysis of Behavior, 113*(3), 657--679. https://doi.org/10.1002/jeab.589
+
+Rachlin, H. (2006). Notes on discounting. *Journal of the Experimental Analysis of Behavior, 85*(3), 425--435. https://doi.org/10.1901/jeab.2006.85-05
+
+Reed, D. D., & Kaplan, B. A. (2011). The matching law: A tutorial for practitioners. *Behavior Analysis in Practice, 4*(2), 15--24. https://doi.org/10.1007/BF03391780
+
+---
+
 ## Key Takeaways
 
 - **Choice is behavior allocation.** From a behavior-analytic perspective, choice is the measurable distribution of behavior across available alternatives, not a private mental event. This framing makes choice a continuous variable amenable to quantitative modeling.

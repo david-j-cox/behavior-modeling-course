@@ -41,6 +41,8 @@ A model is a formal representation of a system or process. "Formal" means the re
 
 These categories overlap. A mathematical model can be implemented computationally; a simulation can be based on a mathematical model. The distinctions are about emphasis, not rigid boundaries.
 
+Other fields cut the taxonomy differently. Earth scientists, for example, distinguish *conceptual*, *statistical/probabilistic*, *analogue*, *analytical*, and *numerical* models (Gudmundsson, 2020). Conceptual models are roughly our verbal models but broader---they include diagrams, maps, and physical scale models. Analytical and numerical split what we call mathematical by whether the solution is closed-form (solved "by hand" for simple geometries) or discretized into elements and solved approximately (suitable for complex geometries and heterogeneous properties). Analogue models---scaled physical systems whose behavior is mapped onto a target system through scaling factors---have no clean parallel in behavior science, though animal models arguably play a related role. The vocabulary differs across disciplines, but the underlying activity is the same: building simplified representations whose structure supports the question at hand.
+
 ![Model Matrix](/images/model_matrix.jpeg)
 
 *Figure: A matrix of models organized by number of variables (columns) and degree of nonlinearity (rows). Linear models with few variables (upper left) are the simplest; nonlinear models with many variables or continuous dimensions (lower right) represent the frontier of modeling complexity. Adapted from Strogatz (2015).*
@@ -229,6 +231,20 @@ More broadly, this week's introduction connects to the entire tradition of quant
 - How can mathematical models help resolve ambiguity in multiple control situations?
 - What is the potential benefit of adopting mathematical tools like matrices and vectors in behavioral analysis?
 - What does the author suggest is the next frontier for analyzing multiple control?
+
+---
+
+## References
+
+Cox, D. J. (in press). Of models, vectors, and matrices: Advancing analyses of the multiple control of behavior. *Advances in the Experimental Analysis of Behavior*. Pre-print: https://doi.org/10.13140/RG.2.2.11144.94723
+
+Critchfield, T. S., & Reed, D. D. (2009). What are we doing when we translate from quantitative models? *The Behavior Analyst, 32*(2), 339--362. https://doi.org/10.1007/BF03392199
+
+Dallery, J., & Soto, P. L. (2013). Quantitative descriptions of environment-behavior relations. In G. J. Madden (Ed.), *APA handbook of behavior analysis: Vol. 1. Methods and principles* (pp. 219--249). American Psychological Association. https://doi.org/10.1037/13937-010
+
+Gudmundsson, A. (2020). *Volcanotectonics: Understanding the structure, deformation and dynamics of volcanoes*. Cambridge University Press. https://doi.org/10.1017/9781139176217
+
+Strogatz, S. H. (2015). *Nonlinear dynamics and chaos: With applications to physics, biology, chemistry, and engineering* (2nd ed.). Westview Press.
 
 ---
 

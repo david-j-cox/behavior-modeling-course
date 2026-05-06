@@ -693,6 +693,20 @@ For now, the demand equation stands as a powerful empirical tool: it summarizes 
 
 ---
 
+## References
+
+Francisco, M. T., Madden, G. J., & Borrero, J. (2009). Behavioral economics: Principles, procedures, and utility for applied behavior analysis. *The Behavior Analyst Today, 10*(2), 277--294. https://doi.org/10.1037/h0100669
+
+Hursh, S. R. (1980). Economic concepts for the analysis of behavior. *Journal of the Experimental Analysis of Behavior, 34*(2), 219--238. https://doi.org/10.1901/jeab.1980.34-219
+
+Hursh, S. R., & Silberberg, A. (2008). Economic demand and essential value. *Psychological Review, 115*(1), 186--198. https://doi.org/10.1037/0033-295X.115.1.186
+
+Koffarnus, M. N., Franck, C. T., Stein, J. S., & Bickel, W. K. (2015). A modified exponential behavioral economic demand model to better describe consumption data. *Experimental and Clinical Psychopharmacology, 23*(6), 504--512. https://doi.org/10.1037/pha0000045
+
+Nevin, J. A., & Grace, R. C. (2000). Behavioral momentum and the law of effect. *Behavioral and Brain Sciences, 23*(1), 73--90. https://doi.org/10.1017/S0140525X00002405
+
+---
+
 ## Key Takeaways
 
 - **Demand analysis** quantifies the relationship between the price of a reinforcer and the amount consumed. It provides a richer picture of reinforcer value than preference assessments alone.

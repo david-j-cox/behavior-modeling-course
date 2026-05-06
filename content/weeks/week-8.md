@@ -665,6 +665,18 @@ These exercises are designed to deepen your understanding of the probabilistic t
 
 ---
 
+## References
+
+Anger, D. (1956). The dependence of interresponse times upon the relative reinforcement of different interresponse times. *Journal of Experimental Psychology, 52*(3), 145--161. https://doi.org/10.1037/h0041255
+
+Hammond, L. J. (1980). The effect of contingency upon the appetitive conditioning of free-operant behavior. *Journal of the Experimental Analysis of Behavior, 34*(3), 297--304. https://doi.org/10.1901/jeab.1980.34-297
+
+Otto, S. P., & Day, T. (2007). *A biologist's guide to mathematical modeling in ecology and evolution*. Princeton University Press.
+
+Shull, R. L., Gaynor, S. T., & Grimes, J. A. (2001). Response rate viewed as engagement bouts: Effects of relative reinforcement and schedule type. *Journal of the Experimental Analysis of Behavior, 75*(3), 247--274. https://doi.org/10.1901/jeab.2001.75-247
+
+---
+
 ## Key Takeaways
 
 - **Behavioral data are inherently variable.** Probabilistic models treat variability as a feature to be modeled, not noise to be eliminated.

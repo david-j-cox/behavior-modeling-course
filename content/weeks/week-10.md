@@ -361,6 +361,22 @@ After completing all three readings, answer the following:
 
 ---
 
+## References
+
+Herrnstein, R. J., & Vaughan, W., Jr. (1980). Melioration and behavioral allocation. In J. E. R. Staddon (Ed.), *Limits to action: The allocation of individual behavior* (pp. 143--176). Academic Press.
+
+Marr, M. J. (1992). Behavior dynamics: One perspective. *Journal of the Experimental Analysis of Behavior, 57*(3), 249--266. https://doi.org/10.1901/jeab.1992.57-249
+
+Myerson, J., & Hale, S. (1988). Choice in transition: A comparison of melioration and the kinetic model. *Journal of the Experimental Analysis of Behavior, 49*(2), 291--302. https://doi.org/10.1901/jeab.1988.49-291
+
+Myerson, J., & Miezin, F. M. (1980). The kinetics of choice: An operant systems analysis. *Psychological Review, 87*(2), 160--174. https://doi.org/10.1037/0033-295X.87.2.160
+
+Nevin, J. A., & Grace, R. C. (2000). Behavioral momentum and the law of effect. *Behavioral and Brain Sciences, 23*(1), 73--90. https://doi.org/10.1017/S0140525X00002405
+
+Strogatz, S. H. (2015). *Nonlinear dynamics and chaos: With applications to physics, biology, chemistry, and engineering* (2nd ed.). Westview Press.
+
+---
+
 ## Key Takeaways
 
 - **Dynamical systems models** describe how behavioral state variables change over time, using ODEs (continuous time) or difference equations (discrete time).
