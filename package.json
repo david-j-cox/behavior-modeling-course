@@ -6,11 +6,10 @@
   "scripts": {
     "dev": "cd website && npm run dev",
     "build:website": "cd website && npm run build",
-    "build:manuscript": "npx tsx scripts/build-manuscript.ts",
-    "build:problems": "npx tsx scripts/generate-problems.ts",
+    "build:leanpub": "npx tsx scripts/build-leanpub.ts",
     "validate": "npx tsx scripts/validate-metadata.ts",
-    "build:all": "npm run validate && npm run build:manuscript && npm run build:problems && npm run build:website",
-    "clean": "rm -rf manuscript/build/* website/.next"
+    "build:all": "npm run validate && npm run build:leanpub && npm run build:website",
+    "clean": "rm -rf website/.next"
   },
   "devDependencies": {
     "tsx": "^4.19.0",

@@ -42,12 +42,11 @@ Students should have completed the courses *Introduction to Scientific Programmi
 
 ## Teaching and Learning Strategies
 
-The course consists of required assignments and highly recommended activities---all of which can be found on the website. The primary learning strategy is through active student responding and engagement with the activities. The more responses emitted by the learner, the more likely to learn! This course is designed in such a way as to encourage learner responding as opposed to simply absorbing content presentation.
+The course consists of required assignments and highly recommended activities which can be found on the website. The primary learning strategy is through active student responding and engagement with the activities. 
 
 Teaching and learning strategies may include the following:
-
 - Written material (textbook chapters, articles)
-- Study guide questions
+- Reading guide questions
 - Projects
 - Article summaries
 - Group discussion
@@ -59,13 +58,13 @@ Teaching and learning strategies may include the following:
 
 ## Readings
 
-Each week will include **required readings** that form the basis for the weekly quizzes. Each required reading will coincide with a reading guide with questions about the main points the professor hopes you take away from that week. For the interested students, there will also be a set of **optional readings** that supplement or expand upon the main skills targeted for that week, and that will provide a more holistic understanding of the course content.
+Each week will include required readings that form the basis for the weekly quizzes. Each required reading will coincide with a reading guide with questions about the main points you should take away from that week. For the interested students, there will also be a set of optional readings that supplement or expand upon the main skills targeted for that week and that provide a more holistic understanding of the course content.
 
 ---
 
 ## Evaluation Methods
 
-The course is competency based, so you are expected to demonstrate mastery of each component of each assignment. In order to receive an "A" for this course, you must complete your assignments on time. Late assignments will not be accepted without prior permission from the instructor.
+The course is competency based, so you are expected to demonstrate mastery of each component of each assignment. In order to receive an "A" for this course, you must complete your assignments on time. Late assignments will not be accepted without prior permission from the instructor. Given the pace and cumulative nature of this work, falling too far behind will have detrimental impact on your learning. 
 
 | Evaluation Method | Points |
 |:---|:---|
@@ -77,11 +76,11 @@ The course is competency based, so you are expected to demonstrate mastery of ea
 ## Assignment Descriptions
 
 - **Final Project (Paper):** You have three options:
-  - Use a dataset you currently have access to or find out on the interwebs. Build and evaluate a suite of models aimed at describing behavior-environment relations and determine which one is most effective for the end goal of model building, specific to that dataset.
-  - Convert a concept or topic from behavior science into a formal model of behavior-environment relations. Demonstrate the model's utility with hypothetical or simulated data and convert the model into a recursive format to demonstrate its predictive capabilities.
+  - Use a dataset you currently have access to or find out on the interwebs. Build and evaluate a suite of models (4-5) aimed at describing behavior-environment relations and determine which one is most effective for the end goal of model building, specific to that dataset.
+  - Convert a concept or topic from behavior science into a formal model of behavior-environment relations. Demonstrate the model's utility with hypothetical or simulated data and convert the model into a recursive format to demonstrate its dynamic predictive capabilities.
   - An alternative option you are interested in pursuing with approval from the instructor.
 
-- **Quizzes:** Each week you will take a quiz based on the assigned weekly readings and provided study objectives in the prep guide. Each quiz will have 3--4 questions and you will choose any 2 of the questions to answer. All responses will be in short, written form. Notes are allowed when answering (this is the Internet age, after all).
+- **Quizzes:** Each week you will take a quiz based on the assigned weekly readings and provided study objectives in the prep guide. Each quiz will have 3--4 questions and you will choose any 2 of the questions to answer. All responses will be in short, written form. Notes are allowed when answering (this is the age of the Internet and AI, after all).
 
 - **Weekly Labs:** Each week, you will be given an experiential-based notebook that requires you to apply what you have learned to that point in the Semester. You should be able to complete it by the end of the class. However, if you need more time to finish it, you will have until Fridays at 11:59 PM ET to turn it in for credit.
 
@@ -104,8 +103,8 @@ Endicott College requires a "B+" or higher to graduate with a Doctoral ABA degre
 | Week | Topic | Assignments |
 |:---|:---|:---|
 | 1 | Introduction to Modeling in Behavior Science | Prep Guide |
-| 2 | Historical Models -- Matching and Discounting | Prep Guide, Lab |
-| 3 | Historical Models -- Demand | Prep Guide, Lab |
+| 2 | Historical Models: Matching and Discounting | Prep Guide, Lab |
+| 3 | Historical Models: Demand | Prep Guide, Lab |
 | 4 | Associative Learning Models | Prep Guide, Lab |
 | 5 | Behavioral Momentum and Response Persistence | Prep Guide, Lab |
 | 6 | Model Comparisons | Prep Guide, Lab |
@@ -139,7 +138,7 @@ Students are required to abide by the Academic Integrity Policy of Endicott Coll
 
 Students are required to abide by the AI Policy of Endicott College, and violations are subject to the college's Academic Integrity Policy.
 
-It is the expectation that all students submit their own unique work. AI tools can mask a lack of mastery over course material, which is particularly concerning in fields like human service provision, where competency and understanding are critical.
+It is the expectation that all students submit their own unique work. Research has shown fairly well at this point that AI tools mask mastery over course material. That is, students using AI to learn often do not actually learn the material even though they think they do. You have a choice over what skills you want to gain and be proficient at in life. If modeling is one of them (which I assume because you chose to take this course), then I strongly recommend using AI only to explain concepts and clarify methods, but not to actually do any of the modeling work. 
 
 In your IABS courses, any use of AI-based tools in completing coursework or assessments must be done in accordance with the following:
 

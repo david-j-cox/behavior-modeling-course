@@ -1,6 +1,4 @@
----
-title: "The 8-Step Modeling Framework"
----
+# The 8-Step Modeling Framework
 
 ## Introduction
 
@@ -71,7 +69,7 @@ Below, each step is presented first in its original engineering and physical sci
 
 **Why it matters.** The two-stage approach catches logical errors before they become algebraic ones. If you cannot state in words what the model claims, you do not yet understand it well enough to write it in symbols. 
 
-**Behavioral example.** Verbal: "Response rate on a schedule is a hyperbolic function of the reinforcement rate on that schedule, with an asymptote determined by the organism's maximum response output and the half-maximum point determined by extraneous reinforcement." Mathematical: $R = \frac{k \cdot r}{r + r_e}$.
+**Behavioral example.** Verbal: "Response rate on a schedule is a hyperbolic function of the reinforcement rate on that schedule, with an asymptote determined by the organism's maximum response output and the half-maximum point determined by extraneous reinforcement." Mathematical: {$$}R = \frac{k \cdot r}{r + r_e}{/$$}.
 
 **Common mistakes.** Writing equations without first articulating the verbal logic. Using symbols before defining them. Producing equations that do not match the verbal description.
 
@@ -81,7 +79,7 @@ Below, each step is presented first in its original engineering and physical sci
 
 **Why it matters.** Unit checking is a simple but powerful error-detection tool. It also significantly improves your understanding. If you cannot state the units of every term in your model, you may not fully understand what the model claims. Many published errors in modeling could have been caught by a unit check.
 
-**Behavioral example.** In $R = \frac{k \cdot r}{r + r_e}$: $R$ is in responses/min, $k$ is in responses/min, $r$ is in reinforcers/min, $r_e$ is in reinforcers/min. The fraction $\frac{r}{r + r_e}$ is dimensionless. So the right side is responses/min, matching the left side.
+**Behavioral example.** In {$$}R = \frac{k \cdot r}{r + r_e}{/$$}: {$$}R{/$$} is in responses/min, {$$}k{/$$} is in responses/min, {$$}r{/$$} is in reinforcers/min, {$$}r_e{/$$} is in reinforcers/min. The fraction {$$}\frac{r}{r + r_e}{/$$} is dimensionless. So the right side is responses/min, matching the left side.
 
 **Common mistakes.** Adding quantities with different units. Failing to check units at all. Assuming a parameter is dimensionless without verifying.
 
@@ -91,9 +89,9 @@ Below, each step is presented first in its original engineering and physical sci
 
 **Why it matters.** These conditions determine when and where the model's predictions are valid. A model without boundary conditions is a model that claims to apply everywhere, which is almost never true. Starting values matter particularly for dynamic models, where different initial conditions can produce qualitatively different trajectories.
 
-**Behavioral example.** For $R = \frac{k \cdot r}{r + r_e}$: $k > 0$, $r_e > 0$, the model applies to steady-state VI performance, typically after 20--30 sessions of stable responding.
+**Behavioral example.** For {$$}R = \frac{k \cdot r}{r + r_e}{/$$}: {$$}k > 0{/$$}, {$$}r_e > 0{/$$}, the model applies to steady-state VI performance, typically after 20--30 sessions of stable responding.
 
-**Common mistakes.** Applying a model outside its stated boundary conditions. Failing to specify what happens at extreme values ($r = 0$, $r \to \infty$). Not stating the range of conditions over which the model has been validated.
+**Common mistakes.** Applying a model outside its stated boundary conditions. Failing to specify what happens at extreme values ({$$}r = 0{/$$}, {$$}r \to \infty{/$$}). Not stating the range of conditions over which the model has been validated.
 
 ### Step 8: Check the Math, Test Against Data, and Derive Predictions
 
@@ -101,7 +99,7 @@ Below, each step is presented first in its original engineering and physical sci
 
 **Why it matters.** A model that has not been tested is a conjecture (which is okay, just not the end of the story). Verification catches mathematical errors. Validation catches theoretical errors. Solving is what makes the model useful: It is how you generate the predictions that motivate experiments and applications.
 
-**Behavioral example.** For Herrnstein's hyperbola: Verification: at $r = 0$, $R = 0$ (sensible); as $r \to \infty$, $R \to k$ (sensible ceiling). Validation: fit the model to data from multiple VI schedule values and assess goodness of fit via $R^2$, residual analysis, or information criteria. Solving: given $k = 80$ responses/min and $r_e = 5$ reinforcers/min, predict $R$ at $r = 10$: $R = \frac{80 \cdot 10}{10 + 5} \approx 53.3$ responses/min.
+**Behavioral example.** For Herrnstein's hyperbola: Verification: at {$$}r = 0{/$$}, {$$}R = 0{/$$} (sensible); as {$$}r \to \infty{/$$}, {$$}R \to k{/$$} (sensible ceiling). Validation: fit the model to data from multiple VI schedule values and assess goodness of fit via {$$}R^2{/$$}, residual analysis, or information criteria. Solving: given {$$}k = 80{/$$} responses/min and {$$}r_e = 5{/$$} reinforcers/min, predict {$$}R{/$$} at {$$}r = 10{/$$}: {$$}R = \frac{80 \cdot 10}{10 + 5} \approx 53.3{/$$} responses/min.
 
 **Common mistakes.** Skipping verification ("the math must be right"). Validating against only one dataset. Confusing good curve fit with theoretical support. Not deriving novel predictions that could distinguish the model from competitors.
 
@@ -124,8 +122,8 @@ We invoke the matching principle: organisms distribute behavior in proportion to
 ### Step 4: Assumptions
 
 1. The organism is at steady state (response rate is stable within and across sessions).
-2. There exists a constant level of extraneous reinforcement ($r_e$) from unmeasured sources.
-3. The organism has a finite maximum response rate ($k$) determined by physical and motivational constraints.
+2. There exists a constant level of extraneous reinforcement ({$$}r_e{/$$}) from unmeasured sources.
+3. The organism has a finite maximum response rate ({$$}k{/$$}) determined by physical and motivational constraints.
 4. Motivation (deprivation level) is constant across conditions for measured and unmeasured reinforcement.
 5. The VI schedule arranges reinforcement independently of response rate (no feedback function is modeled).
 
@@ -135,45 +133,45 @@ We invoke the matching principle: organisms distribute behavior in proportion to
 
 **Mathematical:**
 
-$$R = \frac{k \cdot r}{r + r_e}$$
+{$$}R = \frac{k \cdot r}{r + r_e}{/$$}
 
 where:
-- $R$ = response rate (responses/min)
-- $k$ = asymptotic response rate (responses/min)
-- $r$ = obtained reinforcement rate on the measured alternative (reinforcers/min)
-- $r_e$ = extraneous reinforcement rate (reinforcers/min)
+- {$$}R{/$$} = response rate (responses/min)
+- {$$}k{/$$} = asymptotic response rate (responses/min)
+- {$$}r{/$$} = obtained reinforcement rate on the measured alternative (reinforcers/min)
+- {$$}r_e{/$$} = extraneous reinforcement rate (reinforcers/min)
 
-In plain language: the equation describes a hyperbolic curve. When reinforcement is low relative to extraneous reinforcement, responding is low. As reinforcement increases, responding rises but gradually levels off at a ceiling of $k$. The parameter $r_e$ governs the curvature, where larger $r_e$ means more extraneous reinforcement competing with the measured source, so it takes more reinforcement to increase measured responding toward the ceiling.
+In plain language: the equation describes a hyperbolic curve. When reinforcement is low relative to extraneous reinforcement, responding is low. As reinforcement increases, responding rises but gradually levels off at a ceiling of {$$}k{/$$}. The parameter {$$}r_e{/$$} governs the curvature, where larger {$$}r_e{/$$} means more extraneous reinforcement competing with the measured source, so it takes more reinforcement to increase measured responding toward the ceiling.
 
 ### Step 6: Unit Check
 
-- Left side: $R$ in responses/min.
-- Right side: $k$ in responses/min; $r$ in reinforcers/min; $r_e$ in reinforcers/min.
-- $\frac{r}{r + r_e} = \frac{\text{reinforcers/min}}{\text{reinforcers/min}} = \text{dimensionless}$.
-- $k \times \text{dimensionless} = \text{responses/min}$.
+- Left side: {$$}R{/$$} in responses/min.
+- Right side: {$$}k{/$$} in responses/min; {$$}r{/$$} in reinforcers/min; {$$}r_e{/$$} in reinforcers/min.
+- {$$}\frac{r}{r + r_e} = \frac{\text{reinforcers/min}}{\text{reinforcers/min}} = \text{dimensionless}{/$$}.
+- {$$}k \times \text{dimensionless} = \text{responses/min}{/$$}.
 
 Units match.
 
 ### Step 7: Starting Values and Constraints
 
-- $k > 0$: maximum response rate must be positive.
-- $r_e > 0$: extraneous reinforcement must be positive (zero would mean the measured alternative is the only source of reinforcement, which is biologically implausible).
+- {$$}k > 0{/$$}: maximum response rate must be positive.
+- {$$}r_e > 0{/$$}: extraneous reinforcement must be positive (zero would mean the measured alternative is the only source of reinforcement, which is biologically implausible).
 - The model applies to stable-state VI performance, typically after 20-30 sessions per condition.
 - The model is intended for VI schedules where the feedback function between response rate and reinforcement rate is relatively flat.
 
 ### Step 8: Verify, Validate, Solve
 
-**Verify.** When $r = 0$: $R = \frac{k \cdot 0}{0 + r_e} = 0$. No reinforcement, no responding. Sensible. When $r \to \infty$: $R \to \frac{k \cdot r}{r} = k$. Response rate approaches the ceiling. Sensible. When $r = r_e$: $R = \frac{k}{2}$. Response rate is half-maximal when reinforcement from the measured source equals extraneous reinforcement. This gives $r_e$ a clear behavioral interpretation.
+**Verify.** When {$$}r = 0{/$$}: {$$}R = \frac{k \cdot 0}{0 + r_e} = 0{/$$}. No reinforcement, no responding. Sensible. When {$$}r \to \infty{/$$}: {$$}R \to \frac{k \cdot r}{r} = k{/$$}. Response rate approaches the ceiling. Sensible. When {$$}r = r_e{/$$}: {$$}R = \frac{k}{2}{/$$}. Response rate is half-maximal when reinforcement from the measured source equals extraneous reinforcement. This gives {$$}r_e{/$$} a clear behavioral interpretation.
 
-**Validate.** Fit the model to data from de Villiers and Herrnstein (1976), who compiled VI schedule data from multiple species and laboratories. Assess fit using $R^2$ and residual plots. The model typically accounts for 90% or more of the variance in steady-state VI data (https://psycnet.apa.org/record/1977-20426-001).
+**Validate.** Fit the model to data from de Villiers and Herrnstein (1976), who compiled VI schedule data from multiple species and laboratories. Assess fit using {$$}R^2{/$$} and residual plots. The model typically accounts for 90% or more of the variance in steady-state VI data (https://psycnet.apa.org/record/1977-20426-001).
 
-**Solve.** Suppose $k = 80$ responses/min and $r_e = 5$ reinforcers/min. Predict response rate at $r = 10$ reinforcers/min:
+**Solve.** Suppose {$$}k = 80{/$$} responses/min and {$$}r_e = 5{/$$} reinforcers/min. Predict response rate at {$$}r = 10{/$$} reinforcers/min:
 
-$$R = \frac{80 \cdot 10}{10 + 5} = \frac{800}{15} \approx 53.3 \text{ responses/min}$$
+{$$}R = \frac{80 \cdot 10}{10 + 5} = \frac{800}{15} \approx 53.3 \text{ responses/min}{/$$}
 
-At $r = 2$ reinforcers/min:
+At {$$}r = 2{/$$} reinforcers/min:
 
-$$R = \frac{80 \cdot 2}{2 + 5} = \frac{160}{7} \approx 22.9 \text{ responses/min}$$
+{$$}R = \frac{80 \cdot 2}{2 + 5} = \frac{160}{7} \approx 22.9 \text{ responses/min}{/$$}
 
 These predictions can be compared to observed data to evaluate the model.
 

@@ -1,7 +1,8 @@
 ---
 slug: "week-2"
 number: 2
-title: "Historical Models -- Matching and Discounting"
+published: true
+title: "Historical Models: Matching and Discounting"
 subtitle: "Two hyperbolic models of how reinforcement parameters govern behavior"
 description: "The matching law, generalized matching equation, hyperbolic discounting, and model comparison across choice and delay paradigms."
 keyModels:
@@ -18,13 +19,13 @@ keyEquations:
 
 ## Why This Topic Matters
 
-Choice is among the most pervasive features of behavior. At every moment, an organism is doing one thing rather than another---pressing a lever rather than grooming, studying rather than scrolling, ordering one menu item rather than another. Because choice is ubiquitous, a science of behavior must have something quantitative to say about it. For most of the twentieth century, behavior science could describe choice qualitatively---organisms prefer more reinforcement to less, sooner to later---but it could not predict the precise allocation of behavior across alternatives. The matching law changed that.
+All behavior is choice. At every moment, an organism is emitting one (or more) responses out of the dozens, hundreds, maybe thousands of behaviors they could emit. Because all behavior involves choice, a science of behavior must have something quantitative to say about it. For most of the twentieth century, behavior science described choice qualitatively (e.g., organisms prefer more reinforcement to less, sooner to later) but we could not predict the precise allocation of behavior across alternatives. The matching law changed that.
 
 In 1961, Richard Herrnstein placed pigeons in operant chambers with two response keys, each associated with an independent variable-interval (VI) schedule of food reinforcement. He measured the proportion of pecks directed at each key and the proportion of reinforcers obtained from each key. The result was striking in its simplicity: the relative rate of responding on a key approximately equaled the relative rate of reinforcement obtained from that key. If 70% of the reinforcers came from the left key, about 70% of the pecks went to the left key. This was not a loose tendency; it was a tight quantitative regularity that held across a wide range of schedule parameters, across species, and across response types. Herrnstein called it the matching law.
 
-The matching law matters for this course because it was the first demonstration that behavior science could produce quantitative laws comparable to those in physics and economics. It showed that organisms are not merely sensitive to reinforcement---they are exquisitely calibrated to the relative rates, amounts, and delays of reinforcement across alternatives. The matching law also generated an entire research tradition aimed at refining, extending, and explaining the original finding. The generalized matching equation, Herrnstein's single-alternative hyperbola, and modern computational accounts of choice all trace their lineage to that initial discovery.
+The matching law matters for this course because it was the first demonstration that behavior science could produce quantitative laws comparable to those in physics and economics. It showed that organisms are not merely sensitive to reinforcement. Rather, their behavior is finely calibrated to the relative rates, amounts, and delays of reinforcement contacted by each response option. The matching law also generated an entire research tradition aimed at refining, extending, and explaining the original finding. The generalized matching equation, Herrnstein's single-alternative hyperbola, and modern computational accounts of choice all trace their lineage to that initial discovery.
 
-But the matching law is not the only hyperbolic model in the behavioral repertoire. Delay discounting---the decline in subjective value of a reinforcer as the delay to its receipt increases---follows the same mathematical family. Mazur's hyperbolic discounting equation, $V = A/(1 + kD)$, describes how value changes with delay just as Herrnstein's hyperbola describes how response rate changes with reinforcement rate. Both are rectangular hyperbolas. Both capture a fundamental regularity: diminishing sensitivity to a schedule parameter (reinforcement rate in one case, delay in the other). Both were landmark discoveries that transformed qualitative intuitions into precise quantitative predictions. This week, we study both models together, apply the 8-step modeling framework to matching, and then extend the same logic to discounting.
+Delay discounting is another currently popular model in behavior analysis that is technically derivable from the matching law. Delay discounting describes the decline in subjective value of a reinforcer as the delay to its receipt increases. Mazur's hyperbolic discounting equation describes how value changes with delay just as Herrnstein's hyperbola describes how response rate changes with reinforcement rate. Both capture a fundamental regularity: diminishing sensitivity to a schedule parameter (reinforcement rate in one case, delay in the other). Both were landmark discoveries that transformed qualitative intuitions into precise quantitative predictions. This week, we study both models together, apply the 8-step modeling framework to matching, and then extend the same logic to discounting.
 
 ---
 
@@ -32,17 +33,17 @@ But the matching law is not the only hyperbolic model in the behavioral repertoi
 
 ### Choice as Behavior Allocation
 
-From a behavior-analytic perspective, **choice** is not a mental event or a decision process hidden inside the organism. Choice is simply the allocation of behavior across available alternatives. When two keys are available and the pigeon pecks the left key more often than the right, the pigeon is "choosing" the left key in the only sense that matters for a natural science of behavior: it is allocating more behavior to that alternative.
+From a behavior-analytic perspective, **choice** is not a mental event or a decision process hidden inside the organism. Choice is simply the allocation of behavior across available alternatives. When two keys are available and the pigeon pecks the left key more often than the right, the pigeon "chooses" the left key in the only sense that matters for a natural science of behavior: it allocates more behavior to that alternative.
 
-This framing has an important consequence: choice becomes a continuous, measurable variable rather than a discrete, all-or-nothing event. We do not ask "Which key did the pigeon choose?" as if each peck were an independent decision. Instead, we ask "How did the pigeon distribute its behavior across the two keys over the session?" The answer is a ratio---and ratios are what the matching law describes.
+This framing has an important consequence. Choice, under this framing, becomes a continuous, measurable variable rather than a discrete, all-or-nothing event. This framing is sometimes referred to as a "molar view" of behavior. Under this molar view of choice, the question is not "Which key did the pigeon choose?" as if each peck were an independent decision. Instead, the question is "How did the pigeon distribute its behavior across the two keys over the session?" The matching law states that the answer is a ratio.
 
 The behavior-allocation view also means that choice is always happening, even when we do not set up an explicit choice procedure. In a single-schedule arrangement, the organism is still choosing between the measured operant and all other available activities (grooming, exploring, resting). Herrnstein's insight was to recognize that the single-schedule case is just a special case of choice, and that recognizing this fact leads directly to quantitative predictions about response rate.
 
-This conceptual shift---from "choice as decision" to "choice as allocation"---is foundational for everything that follows. It turns choice into a dependent variable that can be measured on a continuous scale, modeled with equations, and predicted from environmental parameters. It also means that the matching law is not merely a finding about concurrent schedules; it is a general statement about how behavior is distributed in any environment where multiple sources of reinforcement are available.
+This conceptual shift from "choice as decision" to "choice as allocation" is foundational for everything that follows. It turns choice into a dependent variable that can be measured on a continuous scale, modeled with equations, and predicted from environmental parameters. It also means that the matching law is often taken as a general statement about how behavior is distributed in any environment where multiple sources of reinforcement are available (though see boundary conditions and the preparations that do and do not lead to the matching "law" being observed).
 
 ### Herrnstein's Single-Alternative Matching
 
-Herrnstein (1970) extended the matching law to the single-schedule case by reasoning as follows: if an organism always distributes behavior in proportion to relative reinforcement, then behavior on a single measured schedule depends not only on the reinforcement that schedule provides but also on all other sources of reinforcement available in the environment. These unmeasured sources---reinforcement from grooming, exploring, resting, and other activities---are collectively called **extraneous reinforcement** and denoted $r_e$.
+Herrnstein (1970) extended the matching law to the single-schedule case by reasoning as follows: if an organism always distributes behavior in proportion to relative reinforcement, then behavior on a single measured schedule depends on the reinforcement that schedule provides as well as on all other sources of reinforcement available in the environment. Unmeasured sources of reinforcement from alternative responses such as grooming, exploring, resting, and other activities are collectively called **extraneous reinforcement** and denoted $r_e$.
 
 The resulting model is known as **Herrnstein's hyperbola**:
 
@@ -52,14 +53,14 @@ where:
 
 - $R$ is the observed response rate on the measured alternative (responses per minute)
 - $r$ is the obtained reinforcement rate on the measured alternative (reinforcers per minute)
-- $k$ is the **asymptotic response rate**---the maximum rate the organism would achieve if all reinforcement in the environment came from the measured alternative. It reflects motor capacity and motivational ceiling.
-- $r_e$ is the **extraneous reinforcement rate**---the aggregate reinforcement from all unmeasured sources. It controls the curvature of the function.
+- $k$ is the **asymptotic response rate**: the maximum rate the organism would achieve if all reinforcement in the environment came from the measured alternative. It reflects motor capacity and motivational ceiling.
+- $r_e$ is the **extraneous reinforcement rate**: the aggregate reinforcement from all unmeasured sources. It controls the curvature of the function.
 
-The equation describes a rectangular hyperbola. When $r$ is small relative to $r_e$, the function is approximately linear---small increases in reinforcement produce proportional increases in responding. As $r$ grows large relative to $r_e$, the function negatively accelerates and response rate approaches $k$ asymptotically. The half-maximum point occurs at $r = r_e$, where $R = k/2$. This gives $r_e$ a direct behavioral interpretation: it is the reinforcement rate at which responding reaches half its ceiling.
+The equation describes a rectangular hyperbola. When $r$ is small relative to $r_e$, the function is approximately linear and small increases in reinforcement produce proportional increases in responding. As $r$ grows large relative to $r_e$, the function negatively accelerates and response rate approaches $k$ asymptotically. The half-maximum point occurs at $r = r_e$, where $R = k/2$. This gives $r_e$ a direct behavioral interpretation as the reinforcement rate at which responding reaches half its ceiling.
 
-To build further intuition, consider the two extreme cases. When $r$ is very small---say, the organism earns only one reinforcer per hour---the extraneous reinforcement from all other activities in the chamber dominates. The term $r + r_e$ is approximately $r_e$, and the equation simplifies to $R \approx (k/r_e) \cdot r$, which is a straight line through the origin with slope $k/r_e$. Responding increases linearly with reinforcement in this range. At the other extreme, when $r$ is very large---say, several reinforcers per minute---the term $r + r_e$ is approximately $r$, and the equation simplifies to $R \approx k$. No matter how much reinforcement is added, the organism cannot respond faster than $k$. The transition between these regimes is governed by $r_e$: a small $r_e$ means the organism reaches its ceiling at relatively low reinforcement rates, while a large $r_e$ means the organism needs more reinforcement before saturation effects appear.
+To build further intuition, consider the two extreme cases. When $r$ is very small (e.g., the organism contacts only one reinforcer per hour), extraneous reinforcement from all other activities in the chamber dominates. The term $r + r_e$ is approximately $r_e$, and the equation simplifies to $R \approx (k/r_e) \cdot r$, which is a straight line through the origin with slope $k/r_e$. Responding increases linearly with reinforcement in this range. At the other extreme, when $r$ is very large (e.g., several reinforcers per second), the term $r + r_e$ is approximately $r$, and the equation simplifies to $R \approx k$. No matter how much reinforcement is added, the organism cannot respond faster than $k$. The transition between these regimes is governed by the amount of extraneous reinforcement available, $r_e$. A small $r_e$ means the organism reaches its ceiling at relatively low reinforcement rates, while a large $r_e$ means the organism needs to contact more reinforcement before saturation effects appear.
 
-Herrnstein's hyperbola was a landmark because it derived the well-known negatively accelerated relationship between VI reinforcement rate and response rate from a single principle---matching---applied to the total reinforcement context. It unified single-schedule performance with concurrent-schedule choice under one quantitative framework. The equation also has practical significance: it provides a way to estimate how much "background" reinforcement is available in a given environment, which is relevant to applied questions about the effectiveness of reinforcement-based interventions.
+Herrnstein's hyperbola was a landmark because it derived the well-known negatively accelerated relationship between VI reinforcement rate and response rate from a single principle-matching-applied to the total reinforcement context. It unified single-schedule performance with concurrent-schedule choice under one quantitative framework. The equation also has practical significance as it provides a way to estimate how much "background" reinforcement is available in a given environment, which is relevant to applied questions about the effectiveness of reinforcement-based interventions.
 
 Why does the hyperbolic form arise? Consider the matching principle in its simplest form for the single-schedule case. The organism distributes its total behavioral output ($k$) across the measured operant and extraneous alternatives in proportion to the reinforcement each provides:
 
@@ -69,7 +70,7 @@ The fraction $r / (r + r_e)$ is the proportion of total reinforcement that comes
 
 ### The Generalized Matching Equation (GME)
 
-The original matching law states that relative response rate equals relative reinforcement rate. In practice, however, the match is rarely exact. Organisms sometimes **undermatch** (allocating behavior less extremely than reinforcement ratios would predict) or show a systematic **bias** toward one alternative. To accommodate these deviations, Baum (1974) proposed the **generalized matching equation**:
+The original matching law states that relative response rate equals relative reinforcement rate. In practice, however, the match is rarely exact. Organisms sometimes **undermatch** (i.e., allocating behavior less extremely than reinforcement ratios would predict) or show a systematic **bias** toward one alternative (i.e., preference toward one alternative without correspondence to measured schedules of reinforcement). To accommodate these deviations, Baum (1974) proposed the **generalized matching equation**:
 
 $$\log\left(\frac{B_1}{B_2}\right) = s \cdot \log\left(\frac{r_1}{r_2}\right) + \log(b)$$
 
@@ -86,7 +87,7 @@ $$\frac{B_1}{B_2} = b \left(\frac{r_1}{r_2}\right)^s$$
 
 The log-ratio transformation linearizes this relationship, making it easy to fit with ordinary least-squares regression. A plot of $\log(B_1/B_2)$ against $\log(r_1/r_2)$ should yield a straight line with slope $s$ and intercept $\log(b)$.
 
-The key parameter is **sensitivity** ($s$). When $s = 1$, the organism is **strictly matching**---the behavior ratio exactly equals the reinforcement ratio. When $s < 1$, the organism is **undermatching**---behavior ratios are less extreme than reinforcement ratios, meaning the organism distributes behavior more evenly across alternatives than reinforcement alone would predict. When $s > 1$, the organism is **overmatching**---behavior ratios are more extreme than reinforcement ratios, meaning the organism concentrates behavior on the richer alternative even more than the reinforcement differential warrants.
+The key parameter is **sensitivity** ($s$). When $s = 1$, the organism is **strictly matching**: the behavior ratio exactly equals the reinforcement ratio. When $s < 1$, the organism is **undermatching**: behavior ratios are less extreme than reinforcement ratios, meaning the organism distributes behavior more evenly across alternatives than reinforcement alone would predict. When $s > 1$, the organism is **overmatching**: behavior ratios are more extreme than reinforcement ratios, meaning the organism concentrates behavior on the richer alternative even more than the reinforcement differential between schedules predicts.
 
 To understand why the log-ratio transformation is used, recall the basic algebra. Starting from the power-function form:
 
@@ -116,19 +117,19 @@ Several factors contribute to undermatching:
 
 - **Changeover cost.** If switching between alternatives is effortless, organisms may switch frequently, sampling both alternatives more evenly. This frequent switching tends to equalize response allocations, producing undermatching. If switching is costly (e.g., a changeover delay is imposed), organisms tend to stay longer on the richer alternative, increasing sensitivity toward 1.0. Thus, procedural details about the cost of switching directly affect the degree of undermatching.
 
-- **Discriminability.** If the organism cannot easily distinguish which alternative is richer---perhaps because the reinforcement rates are similar, or the stimuli associated with the alternatives are not distinctive---behavior allocation will be less differentiated, producing undermatching. When alternatives are made more discriminable (e.g., by adding distinct colors or locations), sensitivity tends to increase.
+- **Discriminability.** If the organism cannot easily distinguish which alternative is richer (e.g., reinforcement rates are similar, stimuli associated with the alternatives are not distinctive) behavior allocation will be less differentiated, producing undermatching. When alternatives are made more discriminable (e.g., by adding distinct colors or locations), sensitivity tends to increase.
 
 - **Local reinforcement effects.** Organisms may track local reinforcement histories (e.g., the last few reinforcers obtained) rather than overall session-wide reinforcement rates. Local tracking can produce undermatching when measured against global reinforcement ratios, because local reinforcement rates fluctuate considerably within a session.
 
-- **Time allocation vs. response allocation.** Sensitivity values can differ depending on whether behavior is measured as responses or as time spent on each alternative. Time-allocation measures sometimes yield sensitivity values closer to 1.0, suggesting that response allocation may underestimate the organism's true tracking of reinforcement ratios.
+- **Time allocation vs. response allocation.** Sensitivity values can differ depending on whether behavior is measured as responses or as time spent on each alternative. Time-allocation measures sometimes yield sensitivity values closer to 1.0, suggesting that response allocation may underestimate the organism's tracking of reinforcement ratios.
 
-**Overmatching** ($s > 1$) is rarer but does occur. When an organism overmatches, it concentrates behavior on the richer alternative more than strict matching predicts. Overmatching has been observed in situations where switching is very costly, where alternatives are highly discriminable, or where the data are analyzed at a fine temporal grain. Some researchers have argued that overmatching is an artifact of certain measurement procedures, while others treat it as a genuine behavioral phenomenon under specific conditions.
+**Overmatching** ($s > 1$) is rarer but does occur. When an organism overmatches, behavior is allocated to the richer alternative more than strict matching predicts. Overmatching has been observed in situations where switching is very costly, where alternatives are highly discriminable, or where the data are analyzed at a fine temporal grain. Some researchers have argued that overmatching is an artifact of certain measurement procedures, while others treat it as a genuine behavioral phenomenon under specific conditions.
 
-Understanding whether and why organisms deviate from strict matching is not merely an academic exercise. In applied settings, the sensitivity parameter tells you how sharply the client's behavior differentiates between better and worse reinforcement options---information that is directly relevant to treatment design. A client with low sensitivity may require larger reinforcement differentials to produce meaningful shifts in behavior allocation.
+Understanding whether and why organisms deviate from strict matching is more than an academic exercise. In applied settings, the sensitivity parameter tells you how well a client's behavior differentiates between better and worse reinforcement options which might be directly relevant to treatment design. A client with low sensitivity may require larger reinforcement differentials to produce meaningful shifts in behavior allocation.
 
 ### Bias
 
-The **bias** parameter ($b$, or equivalently $\log(b)$ as the intercept of the log-ratio regression) captures a systematic preference for one alternative that is not explained by the reinforcement rates. When $b = 1$ (i.e., $\log(b) = 0$), there is no bias---any preference is entirely attributable to differential reinforcement. When $b > 1$, the organism shows a systematic preference for alternative 1 even after reinforcement rates are accounted for. When $b < 1$, the preference favors alternative 2.
+The **bias** parameter ($b$, or equivalently $\log(b)$ as the intercept of the log-ratio regression) captures a systematic preference for one alternative that is not explained by the reinforcement rates. When $b = 1$ (i.e., $\log(b) = 0$), there is no bias and any preference is entirely attributable to observed differential reinforcement. When $b > 1$, the organism shows a systematic preference for alternative 1 even after reinforcement rates are accounted for. When $b < 1$, the preference favors alternative 2.
 
 Bias can arise from several sources:
 
@@ -136,23 +137,23 @@ Bias can arise from several sources:
 
 - **Spatial or positional preference.** Organisms often show side preferences that persist across conditions. These may be innate tendencies or may develop through early experience. In human participants, right-hand biases or left-field attentional preferences can produce measurable bias.
 
-- **Qualitative reinforcer differences.** If the reinforcers delivered by the two alternatives differ in quality, magnitude, or type (e.g., food vs. water, preferred food vs. non-preferred food), the bias parameter absorbs this asymmetry. This application of the GME is deliberate: researchers sometimes manipulate reinforcer quality across alternatives specifically to estimate how much bias a given quality difference produces, using the GME as a measurement tool.
+- **Qualitative reinforcer differences.** If the reinforcers delivered by the two alternatives differ in quality, magnitude, or type (e.g., food vs. water, preferred food vs. non-preferred food), the bias parameter may account this asymmetry if not accounted for in the reinforcement amount measure. This application of the GME is deliberate: researchers sometimes manipulate reinforcer quality across alternatives specifically to estimate how much bias a given quality difference produces, using the GME as a measurement tool.
 
 - **Stimulus properties.** Color preferences, key location, or other non-reinforcement-related stimulus features can contribute to bias. If one key is associated with a preferred color, the organism may allocate more behavior to that key regardless of the reinforcement schedule.
 
 - **Historical effects.** An organism's reinforcement history with particular alternatives, stimuli, or locations can produce bias that persists even when current reinforcement conditions are equated.
 
-In practice, bias is often small in well-controlled laboratory preparations---typically $|\log(b)| < 0.1$ in pigeon concurrent VI-VI experiments. Its importance increases in applied settings where the alternatives may differ in many ways beyond scheduled reinforcement rate. In such settings, identifying and quantifying bias is crucial for understanding the full picture of behavior allocation.
+In practice, bias is often small in well-controlled laboratory preparations, typically $|\log(b)| < 0.1$ in pigeon concurrent VI-VI experiments. Its importance increases in applied settings where the alternatives may differ in many ways beyond scheduled reinforcement rate. In such settings, identifying and quantifying bias can be crucial to understand the full picture of behavior allocation.
 
 ---
 
 ## Applying the 8-Step Framework: Matching
 
-We now walk through all eight steps of the modeling framework for a concrete problem: modeling concurrent VI-VI schedule performance using the generalized matching equation.
+We now will walk through all eight steps of the modeling framework for a concrete problem: modeling concurrent VI-VI schedule performance using the generalized matching equation.
 
 ### Step 1: Get the Behavioral Phenomenon Clearly in Mind
 
-A pigeon is placed in an operant chamber with two response keys (left and right). Each key is associated with an independent VI schedule of food reinforcement. In the condition of interest, the left key operates on a **VI 60-s** schedule (on average, one reinforcer becomes available every 60 seconds, yielding approximately 1 reinforcer per minute) and the right key operates on a **VI 120-s** schedule (on average, one reinforcer becomes available every 120 seconds, yielding approximately 0.5 reinforcers per minute). A 2-second changeover delay (COD) is in effect: after switching from one key to the other, the first peck on the new key cannot produce a reinforcer for 2 seconds.
+A pigeon is placed in an operant chamber with two response keys (left and right). Each key is associated with an independent VI schedule of food reinforcement. In the condition of interest, the left key operates on a VI 60-s schedule (on average, one reinforcer becomes available every 60 seconds, yielding approximately 1 reinforcer per minute) and the right key operates on a VI 120-s schedule (on average, one reinforcer becomes available every 120 seconds, yielding approximately 0.5 reinforcers per minute). A 2-second changeover delay (COD) is in effect: after switching from one key to the other, the first peck on the new key cannot produce a reinforcer for 2 seconds.
 
 The procedural details matter. The two VI schedules run independently and simultaneously. When a reinforcer is arranged by one schedule, it waits ("holds") on that key until the pigeon pecks the key and collects it. The pigeon can freely alternate between keys, but the COD penalizes rapid switching. Sessions end after a fixed time (e.g., 60 minutes) or a fixed number of reinforcers.
 
@@ -176,7 +177,7 @@ The model does **not** cover:
 - Effects of reinforcer magnitude, quality, or delay (these are held constant across alternatives)
 - The mechanism by which matching arises (e.g., melioration, momentary maximizing)
 
-These exclusions are deliberate. The GME is a molar, steady-state description. Its power lies in summarizing the endpoint of the choice process with two interpretable parameters, not in describing the process that generates matching.
+These exclusions are deliberate. The GME is a molar, steady-state description. Its utility lies in summarizing the endpoint of the choice process with two interpretable parameters, not in describing the process that generates matching.
 
 ### Step 3: Identify the Behavioral Principles and Quantitative Laws
 
@@ -188,7 +189,7 @@ In log-ratio form:
 
 $$\log\left(\frac{B_1}{B_2}\right) = s \cdot \log\left(\frac{r_1}{r_2}\right) + \log(b)$$
 
-This is the candidate quantitative law we will apply. It has been validated extensively across species (pigeons, rats, monkeys, humans), response types (key pecks, lever presses, time allocation, eye movements), and reinforcer types (food, water, brain stimulation, money, social interaction).
+This is the candidate quantitative law we will apply. It has been validated extensively across species (e.g., pigeons, rats, monkeys, humans), response types (e.g., key pecks, lever presses, time allocation, eye movements), and reinforcer types (e.g., food, water, brain stimulation, money, social interaction).
 
 ### Step 4: State All Simplifying Assumptions
 
@@ -202,7 +203,7 @@ This is the candidate quantitative law we will apply. It has been validated exte
 
 5. **Molar account.** The model describes session-wide aggregates (total responses, total reinforcers) rather than moment-to-moment dynamics.
 
-6. **Log-ratio linearity.** The relationship between log behavior ratios and log reinforcement ratios is linear. This is an empirical claim that holds well across a wide range of concurrent VI-VI preparations.
+6. **Log-ratio linearity.** The relationship between log behavior ratios and log reinforcement ratios is linear. This is an empirical claim that holds well across a wide range of concurrent VI-VI preparations. But it is an assumption nonetheless. 
 
 7. **Constant motivation.** Deprivation level is the same across all conditions and does not change systematically within sessions.
 
@@ -210,7 +211,7 @@ This is the candidate quantitative law we will apply. It has been validated exte
 
 ### Step 5: Write the Model Verbally, Then Mathematically
 
-**Verbal description:** The log of the ratio of response rates on the two alternatives is a linear function of the log of the ratio of reinforcement rates on the two alternatives. The slope of this linear function captures how sensitively the organism tracks reinforcement ratios. The intercept captures any systematic bias toward one alternative that is not due to reinforcement rate differences.
+**Verbal description:** The log ratio of response rates on the two alternatives is a linear function of the log ratio of reinforcement rates on the two alternatives. The slope of this linear function captures how sensitive the organism is to changing reinforcement ratios. The intercept captures any systematic bias toward one alternative that is not due to reinforcement rate differences.
 
 **Mathematical expression:**
 
@@ -239,7 +240,7 @@ Both sides of the equation are dimensionless. Units are consistent. Note that th
 - $b > 0$: bias must be positive (it is a ratio). $b = 1$ (equivalently, $\log(b) = 0$) indicates no bias.
 - Typical range for $\log(b)$: $-0.2 \leq \log(b) \leq 0.2$ in well-controlled pigeon experiments.
 - The model applies to concurrent VI-VI schedules at steady state.
-- Data should include at least 3--5 conditions (different schedule-value pairs) to estimate the two parameters reliably. More conditions are better, especially if they span a wide range of reinforcement ratios.
+- Data should include at least three or more conditions (different schedule-value pairs) to estimate the two parameters reliably. More conditions are better, especially if they span a wide range of reinforcement ratios.
 - Reinforcement rates should span a range wide enough that the log-ratio values cover a meaningful interval (e.g., from $\log(r_1/r_2) = -0.5$ to $\log(r_1/r_2) = 0.5$ or wider). A wider range provides more leverage for estimating the slope.
 - Both $B_1$ and $B_2$ must be greater than zero in every condition. If the organism stops responding on one alternative entirely (exclusive preference), the log ratio is undefined, and that condition cannot be included in the analysis.
 
@@ -247,13 +248,13 @@ Both sides of the equation are dimensionless. Units are consistent. Note that th
 
 **Verify.** We check the model's predictions at informative boundary conditions:
 
-- When $r_1 = r_2$ (equal reinforcement rates): $\log(r_1/r_2) = 0$, so $\log(B_1/B_2) = \log(b)$. If there is no bias ($b = 1$), then $\log(B_1/B_2) = 0$, meaning $B_1 = B_2$---the pigeon pecks both keys equally. This is sensible: equal reinforcement should produce equal responding in the absence of bias.
+- When $r_1 = r_2$ (equal reinforcement rates): $\log(r_1/r_2) = 0$, so $\log(B_1/B_2) = \log(b)$. If there is no bias ($b = 1$), then $\log(B_1/B_2) = 0$, meaning $B_1 = B_2$: the pigeon pecks both keys equally. This is sensible as equal reinforcement should produce equal responding in the absence of bias.
 
 - When $r_1 > r_2$: $\log(r_1/r_2) > 0$, and $\log(B_1/B_2) > 0$ (assuming $s > 0$), meaning the pigeon pecks key 1 more. This is sensible.
 
 - When $r_1 \gg r_2$ (extreme reinforcement asymmetry): $\log(r_1/r_2)$ is large and positive, so $\log(B_1/B_2)$ is large and positive, meaning the pigeon strongly prefers key 1. This is sensible.
 
-- If $s = 1$ and $b = 1$, the equation reduces to $\log(B_1/B_2) = \log(r_1/r_2)$, or equivalently $B_1/B_2 = r_1/r_2$---strict matching. This is the special case from which the model was generalized, confirming that the GME nests the original matching law.
+- If $s = 1$ and $b = 1$, the equation reduces to $\log(B_1/B_2) = \log(r_1/r_2)$, or equivalently $B_1/B_2 = r_1/r_2$: strict matching. This is the special case from which the model was generalized, confirming that the GME nests the original matching law.
 
 **Validate.** Fit the linear equation to data from our pigeon across multiple concurrent VI-VI conditions using ordinary least-squares regression. Compute $R^2$ and examine residuals for systematic patterns. In well-conducted experiments, $R^2$ values above 0.95 are typical, and residuals should show no systematic curvature.
 
@@ -303,7 +304,7 @@ A pigeon is exposed to five conditions of concurrent VI-VI schedules. In each co
 | 4         | 45          | 90           | 1.28               | 0.63               | 40.1              | 18.6              |
 | 5         | 90          | 45           | 0.64               | 1.31               | 19.2              | 38.4              |
 
-Notice several features of this dataset. The reinforcement rates are the *obtained* rates---the rates the pigeon actually earned---not the programmed rates. Obtained rates are typically slightly lower than programmed rates because the pigeon does not always collect reinforcers immediately. The schedule values span a range from VI 30-s (rich) to VI 120-s (lean), and the assignment of rich vs. lean to left vs. right key varies across conditions. This counterbalancing allows separation of sensitivity from side bias.
+Notice several features of this dataset. The reinforcement rates are the *obtained* rates (i.e., the rates the pigeon actually contacted) not the programmed rates. Obtained rates are typically slightly lower than programmed rates because the pigeon does not always contact reinforcers immediately upon them becoming available. The schedule values span a range from VI 30-s (rich) to VI 120-s (lean), and the assignment of rich vs. lean to left vs. right key varies across conditions. This counterbalancing allows separation of sensitivity from side bias.
 
 ### Step 1: Compute Ratios
 
@@ -317,7 +318,7 @@ For each condition, compute the response ratio $B_1/B_2$ and the reinforcement r
 | 4         | $1.28/0.63 = 2.032$ | $40.1/18.6 = 2.156$ |
 | 5         | $0.64/1.31 = 0.489$ | $19.2/38.4 = 0.500$ |
 
-Already we can see the matching pattern: when the reinforcement ratio favors the left key (Conditions 1, 2, 4), the response ratio also favors the left key, and vice versa (Conditions 3, 5). The response ratios are close to the reinforcement ratios but not identical---this is where the GME's sensitivity and bias parameters earn their keep.
+Already we can see the matching pattern: when the reinforcement ratio favors the left key (Conditions 1, 2, 4), the response ratio also favors the left key, and vice versa (Conditions 3, 5). The response ratios are close to the reinforcement ratios but not identical. This is where the GME's sensitivity and bias parameters earn their keep.
 
 ### Step 2: Compute Log Ratios
 
@@ -369,7 +370,7 @@ $$\log(B_1/B_2) = 1.042 \cdot \log(r_1/r_2) + 0.019$$
 
 ### Step 4: Interpret the Parameters
 
-**Sensitivity: $s = 1.04$.** This value is very close to 1.0, indicating that this pigeon is approximately **strict matching**. The behavior ratio tracks the reinforcement ratio almost exactly. There is a very slight tendency toward overmatching, but a deviation of 0.04 from 1.0 is well within the range expected from sampling variability in a five-point regression. We would not want to make strong claims about overmatching without more data points and a formal statistical test.
+**Sensitivity: $s = 1.04$.** This value is very close to 1.0, indicating that this pigeon is approximating **strict matching**. The behavior ratio tracks the reinforcement ratio almost exactly. There is a very slight tendency toward overmatching, but a deviation of 0.04 from 1.0 is well within the range expected from sampling variability in a five-point regression. We would not want to make strong claims about overmatching without more data points and a formal statistical test.
 
 In behavioral terms, $s = 1.04$ means that when the reinforcement ratio between the two keys doubles (e.g., from 2:1 to 4:1), the behavior ratio slightly more than doubles. The pigeon is tracking reinforcement ratios with high fidelity.
 
@@ -415,7 +416,7 @@ The model predicts the pigeon will peck the left key about 2.15 times as often a
 
 ## From Matching to Discounting: The Same Mathematical Structure
 
-The matching law and delay discounting are usually taught as separate topics, but they share a deep mathematical kinship that illuminates both. Consider the two core equations side by side:
+The matching law and delay discounting are usually taught as separate topics, but they share a mathematical relationship that illuminates both. Consider the two core equations side by side:
 
 **Herrnstein's hyperbola (matching):**
 
@@ -427,13 +428,13 @@ $$V = \frac{A}{1 + kD}$$
 
 Both are rectangular hyperbolas. Both describe a dependent variable (response rate in one case, subjective value in the other) that changes as a function of an environmental parameter (reinforcement rate, delay). And both capture the same qualitative pattern: **diminishing sensitivity**. In Herrnstein's equation, each additional unit of reinforcement rate produces a smaller increment in response rate as $r$ grows. In Mazur's equation, each additional unit of delay produces a smaller decrement in subjective value as $D$ grows. The first units of the independent variable matter most; subsequent units have progressively less impact.
 
-This is not a coincidence. Mazur himself noted the connection between his discounting model and the matching framework. The matching law says organisms allocate behavior in proportion to relative reinforcement value. If the value of a reinforcer depends hyperbolically on its delay, then matching across alternatives that differ in delay will produce the same kind of systematic, quantifiable patterns seen in concurrent VI-VI schedules. In this sense, the discounting function is a component of the matching framework---it specifies how delay transforms reinforcer value before that value enters the matching equation.
+This is not a coincidence. Mazur noted the connection between his discounting model and the matching framework. The matching law says that organisms allocate behavior in proportion to relative reinforcement value. If the value of a reinforcer depends hyperbolically on its delay, then matching across alternatives that differ in delay will produce the same kind of systematic, quantifiable patterns seen in concurrent VI-VI schedules. In this sense, the discounting function is a component of the matching framework; it specifies how delay transforms reinforcer value before that value enters the matching equation.
 
-The parallel extends to the parameters. In Herrnstein's hyperbola, $r_e$ controls how quickly response rate approaches its ceiling---it is the reinforcement rate at which responding is half-maximal. In Mazur's hyperbola, $1/k$ is the delay at which value drops to half its face value. Both parameters define a "half-life" that characterizes the sensitivity of the system. Both are individual-difference variables: organisms differ in $r_e$ (how much extraneous reinforcement their environment provides) and in $k$ (how steeply they discount delayed outcomes).
+The parallel extends to the parameters. In Herrnstein's hyperbola, $r_e$ controls how quickly response rate approaches its ceiling. In Mazur's hyperbola, $k$ controls how quickly subjective value approaches its floor. Both are individual-difference variables as organisms will differ in how much extraneous reinforcement their environment provides ($r_e$) and in how their learning history interacts with current contingencies to detrermine how steeply they discount delayed outcomes ($k$).
 
-The shared hyperbolic structure also means both models predict a specific pattern of diminishing returns that contrasts with simpler alternatives. A linear model of matching would predict that response rate increases indefinitely with reinforcement rate---it does not. An exponential model of discounting would predict a constant proportional decline per unit delay---it does not. The hyperbolic form, in both domains, captures the empirical reality that organisms show steep sensitivity to changes near the origin and increasingly muted sensitivity further out.
+The shared hyperbolic structure also means both models predict a specific pattern of diminishing returns that contrasts with simpler alternatives. A linear model of matching would predict that response rate increases indefinitely with reinforcement rate which is a physical impossibility. An exponential model of discounting would predict a constant proportional decline per unit delay and unchanging preference between two alternatives with constant relative delays. The hyperbolic form, in both domains, captures robust empirical findings that organisms show steep sensitivity to changes near the origin and increasingly reduced sensitivity further out.
 
-Understanding this shared structure serves a pedagogical purpose as well. If you have mastered the logic of fitting, interpreting, and evaluating Herrnstein's hyperbola for matching data, you already have the conceptual toolkit for doing the same with Mazur's hyperbola for discounting data. The 8-step framework applies identically. The parameters have analogous interpretations. The diagnostic checks (boundary conditions, dimensional analysis, residual patterns) work the same way. What changes is the behavioral domain---from response allocation across concurrent schedules to value decline across delays---not the mathematical or methodological logic.
+Understanding this shared structure serves a pedagogical purpose as well. If you have mastered the logic of fitting, interpreting, and evaluating Herrnstein's hyperbola for matching data, you already have the conceptual toolkit to do the same with Mazur's hyperbola for discounting data. The 8-step framework applies identically. The diagnostic checks (boundary conditions, dimensional analysis, residual patterns) work the same way. What changes is the behavioral domain shifting from response allocation across concurrent schedules to value decline across delays. The mathematical and modeling logic remains unchanged.
 
 ---
 
@@ -441,21 +442,19 @@ Understanding this shared structure serves a pedagogical purpose as well. If you
 
 ### Temporal Discounting
 
-**Temporal discounting** refers to the decrease in subjective value of a reinforcer as the delay to its receipt increases. A reward available now is worth its full face value. The same reward available in a week is worth less, subjectively. The same reward in a year is worth less still. This is not a peculiarity of human cognition; it is observed in every species that has been tested under appropriate conditions.
+**Temporal discounting** refers to the decrease in subjective value of a reinforcer as the delay to its receipt increases. A reinforcer available now is worth its full nominal value and will have an associated maximal amount of behavior it maintains. The same reward available in a week is worth subjectively less as denoted by a reduction in the amount of behavior it will maintain. The same reward in a year is worth less still. This pattern of reduced reinforcer value (i.e., reduced amount of behavior a schedule of reinforcement will maintain) has been observed in every species tested under appropriate conditions.
 
-The phenomenon is distinct from other reasons a delayed reward might be less valuable. A delayed reward might be less certain (the promiser might renege), might be accompanied by opportunity costs (you cannot use money you do not yet have), or might be devalued by inflation. Temporal discounting refers specifically to the decrease in value that occurs even when certainty, opportunity cost, and inflation are controlled---a pure effect of delay on subjective value.
+The phenomenon is distinct from other reasons a delayed reward might be less valuable. A delayed reward might be less certain (the promiser might renege), might be accompanied by opportunity costs (you cannot use money you do not yet have), or might be devalued by inflation. Temporal discounting refers specifically to the decrease in value that occurs even when certainty, opportunity cost, and inflation are controlled. That is, a pure effect of delay on subjective value.
 
 The key empirical tool for studying discounting is the **indifference point**. An indifference point is the amount of an immediate reward that a person (or animal) considers equivalent in value to a larger delayed reward. For example, if a participant is indifferent between receiving \$50 now and \$100 in 6 months, then the indifference point at a 6-month delay for a \$100 delayed reward is \$50. The subjective value of the delayed \$100 is \$50.
 
 Indifference points can be measured in several ways:
 
-- **Adjusting-amount procedures**: The experimenter systematically increases or decreases the immediate amount until the participant is approximately indifferent.
+- **Adjusting-amount procedures**: The experimenter systematically increases or decreases the immediate amount based on the participant's choice until the participant is approximately indifferent.
 - **Titrating procedures**: A staircase method where the immediate amount adjusts up after a "wait" choice and down after a "now" choice, converging on the indifference point.
 - **Fixed-choice arrays**: The participant makes a series of choices at each delay, and the indifference point is estimated from the pattern of choices (e.g., the last "wait" choice before switching to "now").
 
-By measuring indifference points at multiple delays, researchers construct a **discount function**---a curve that shows how subjective value declines with delay. The shape of that curve is the central question of discounting research. Is the decline linear? Exponential? Something else entirely? The answer has both theoretical and practical consequences.
-
-It is important to distinguish temporal discounting from related but distinct processes. **Probability discounting** refers to the decline in value as the probability of receiving a reward decreases. **Effort discounting** refers to the decline in value as the effort required to obtain a reward increases. **Social discounting** refers to the decline in generosity as the social distance to the recipient increases. All of these follow discount-like functions, and many turn out to be hyperbolic, but they involve different independent variables and may reflect different underlying processes. Here we focus exclusively on temporal discounting---the effect of delay on value---while noting that the modeling tools generalize.
+By measuring indifference points at multiple delays, researchers can then fit a **discount function** to the data. The shape of that curve is often one of, if the not the, the central question of discounting research. Is the decline linear? Exponential? Something else entirely? And, how does the shape differ across people with different learning histories and other current behavioral patterns (e.g., substance abuse)? The answer has theoretical and practical consequences.
 
 ### Exponential Discounting
 
@@ -465,7 +464,7 @@ $$V = A \cdot e^{-kD}$$
 
 where:
 - $V$ is the subjective value of the delayed reward
-- $A$ is the amount (face value) of the delayed reward
+- $A$ is the amount (nominal value) of the delayed reward
 - $k$ is the discount rate (a positive constant)
 - $D$ is the delay to the reward
 - $e$ is Euler's number (~2.718)
@@ -478,9 +477,9 @@ $$\frac{V(D+1)}{V(D)} = \frac{A \cdot e^{-k(D+1)}}{A \cdot e^{-kD}} = e^{-k}$$
 
 This ratio does not depend on $D$. Whether you are comparing week 0 to week 1, or week 50 to week 51, the value drops by the same fraction $e^{-k}$. This is the defining property of exponential decay.
 
-Exponential discounting has an important mathematical property: it produces **consistent preferences**. If you prefer \$100 in 52 weeks over \$50 in 51 weeks (when both are far away), you will still prefer \$100 in 1 week over \$50 now (when both are close). The relative preference does not change as both options move closer in time. This is called **stationarity** or **dynamic consistency**, and it is why exponential discounting is considered normatively "rational" and is the standard model in neoclassical economics.
+This mathematical property of exponential discounting has an important behavioral interpretation: it produces consistent preferences. If you prefer \$100 in 52 weeks over \$50 in 51 weeks (when both are temporally far away), you will still prefer \$100 in 1 week over \$50 now (when both are temporally close). The relative preference does not change as both options move closer in time. This is called *stationarity* or *dynamic consistency*, and it is why exponential discounting is considered normatively "rational" and is the standard model in neoclassical economics.
 
-The problem is that organisms---including humans---routinely violate this prediction. Preferences reverse as options approach in time. Exponential discounting cannot account for this.
+The problem is that all organisms routinely violate this prediction. Preferences reverses as options approach in time. For example, we set our alarm to wake up early in the morning for a workout, but hit the snooze button when the alarm goes off; or we vow to quit drinking in the morning but stop in for 'just one beer' when we pass the bar. Exponential discounting cannot account for preference reversals.
 
 ### Hyperbolic Discounting (Mazur)
 
@@ -490,64 +489,63 @@ $$V = \frac{A}{1 + kD}$$
 
 where $V$, $A$, $k$, and $D$ are defined as above.
 
-The critical difference from the exponential is the shape of the decay. The hyperbolic function declines steeply at short delays and then flattens out at longer delays. A reward delayed by one day from now loses much more value than a reward delayed by one additional day when it is already a year away. This is exactly what organisms do.
+The critical difference from the exponential is the shape of the decay. The hyperbolic function declines steeply at short delays and then flattens out at longer delays. A reward delayed by one day from now loses much more value than a reward delayed by one additional day when it is already a year away. This is exactly what biological organisms do.
 
 To see the difference in proportional decline, compute the same ratio as before:
 
 $$\frac{V(D+1)}{V(D)} = \frac{A/(1 + k(D+1))}{A/(1 + kD)} = \frac{1 + kD}{1 + k(D+1)} = \frac{1 + kD}{1 + kD + k}$$
 
-This ratio *does* depend on $D$. As $D$ increases, the ratio approaches 1---meaning each additional unit of delay produces a smaller proportional decline. The loss of value per unit delay is front-loaded: steep at first, increasingly gentle later. This is the mathematical signature of hyperbolic decay.
+This ratio *does* depend on $D$. As $D$ increases, the ratio approaches 1, meaning each additional unit of delay produces a smaller proportional decline. The loss of value per unit delay is front-loaded: steep at first, increasingly shallow later. This is the mathematical signature of hyperbolic decay.
 
 The hyperbolic form was not chosen arbitrarily. Mazur (1987) derived it from experiments with pigeons choosing between smaller-sooner and larger-later food reinforcers and showed that the hyperbolic provided a better quantitative fit than the exponential across a wide range of conditions. Subsequent work confirmed the superiority of the hyperbolic fit in humans choosing among monetary, health, and other outcomes. The hyperbolic form has been replicated in hundreds of studies and is now the standard descriptive model in the field.
 
-It is worth noting what the hyperbolic model is and is not. It is a **descriptive** model: it tells us the shape of the discount function. It is not, by itself, an **explanatory** model: it does not tell us *why* the function is hyperbolic. Several mechanistic accounts have been proposed (e.g., Weber-Fechner-like logarithmic time perception, memory trace decay, competition among temporal representations), but the descriptive model stands on its own empirical merits regardless of which mechanistic account, if any, turns out to be correct.
+It is worth noting what the hyperbolic model is and is not. It is a descriptive model telling us the shape of the discount function. It is not, by itself, an explanatory model. It does not tell us why the function is hyperbolic. Several mechanistic accounts have been proposed (e.g., Weber-Fechner-like logarithmic time perception, memory trace decay, competition among temporal representations), but the descriptive model stands on its own empirical merits regardless of which mechanistic account, if any, turns out to be correct.
 
 ### The k Parameter
 
 The parameter $k$ in both the exponential and hyperbolic models is the **discount rate**. It controls how steeply value declines with delay.
 
-- **Higher $k$**: Steeper discounting. Value drops rapidly. The individual places little weight on delayed outcomes. Behaviorally, this corresponds to **impulsive** choice---preferring smaller-sooner reinforcers.
-- **Lower $k$**: Shallower discounting. Value is relatively well maintained across delays. The individual places substantial weight on delayed outcomes. Behaviorally, this corresponds to **self-controlled** choice---preferring larger-later reinforcers.
-
-A useful way to interpret $k$ concretely: in the hyperbolic model, the **half-life** of value---the delay at which subjective value drops to half the face value---is $D_{1/2} = 1/k$. If $k = 0.10$ per week, then value drops to half at $D = 10$ weeks. If $k = 0.01$ per week, value drops to half at $D = 100$ weeks. This gives $k$ an intuitive temporal meaning: it tells you how quickly the reward loses half its psychological worth.
+- **Higher $k$**: Steeper discounting. Value drops rapidly. The individual places little weight on delayed outcomes. Behaviorally, this corresponds to what is often referenced as impulsive choice (i.e., preferring smaller-sooner reinforcers; though see Strickland & Johnson [2021] on the challenges with imupisivity as a psychological construct).
+- **Lower $k$**: Shallower discounting. Value is relatively well maintained across delays. The individual places greater weight on delayed outcomes. Behaviorally, this corresponds to self-controlled choice (i.e., preferring larger-later reinforcers).
 
 The $k$ parameter varies systematically across populations and conditions:
-
 - Individuals with substance use disorders tend to have higher $k$ values for monetary rewards than matched controls. The effect sizes are typically medium to large.
-- $k$ for health outcomes is often different from $k$ for monetary outcomes within the same individual, suggesting that discounting is at least partly outcome-specific rather than a unitary trait.
-- $k$ for small amounts tends to be larger than $k$ for large amounts (the **magnitude effect**), a finding that represents a well-documented limitation of the simple model. For example, $k$ for \$10 might be five times larger than $k$ for \$1,000.
-- $k$ decreases across development from childhood to adulthood, consistent with the development of self-control.
+- $k$ tends to differ within individuals for different outcomes (e.g., health outcomes vs. monetary outcomes). This suggests that discounting is at least partly outcome-specific rather than a unitary behavioral trait.
+- $k$ for small amounts tends to be larger than $k$ for large amounts (i.e., magnitude effect). For example, $k$ for \$10 might be five times larger than $k$ for \$1,000 within the same individual.
+- $k$ decreases across development from childhood to adulthood, consistent with the other observed behavioral patterns correlating with age and "self-control".
 - $k$ tends to be higher in populations with lower income and less education, though the causal direction of this relationship is debated.
 
-Because $k$ has a clear behavioral interpretation and varies meaningfully across populations, it has become one of the most widely used individual-difference measures in behavioral research. It provides a quantitative index of what clinicians call "impulsivity" and what economists call "time preference."
 
 ### Preference Reversals
+Preference reversals are the signature prediction that distinguishes hyperbolic from exponential discounting. They occur when an organism's preference between two options switches as both options move closer in time.
 
-**Preference reversals** are the signature prediction that distinguishes hyperbolic from exponential discounting. They occur when an organism's preference between two options switches as both options move closer in time.
+For example, consider a choice between \$50 available in 25 weeks and \$100 available in 26 weeks. Many people prefer \$100 in 26 weeks. Now move both options forward in time: \$50 in 25 weeks versus \$100 in 26 weeks becomes \$50 now versus \$100 in 1 week. As the smaller-sooner option approaches immediate availability, preference might switch to the smaller-sooner reward. This is a preference reversal.
 
-Consider a choice between \$50 available immediately and \$100 available in 26 weeks. Many people prefer \$100 in 26 weeks---they show self-control. Now move both options forward in time: \$50 now versus \$100 in 26 weeks becomes \$50 in 26 weeks versus \$100 in 52 weeks. When both options are far away, people often prefer the larger-later reward. But as the smaller-sooner option approaches availability, preference switches to the smaller-sooner reward. This is a preference reversal.
+How does the hyperbolic model account for this? Suppose the smaller-sooner reward is $A_S = 50$ at delay $D_S$, and the larger-later reward is $A_L = 100$ at delay $D_L = D_S + 1$ (the larger reward is always 1 week later than the smaller one). Using $k = 0.05$ per week:
 
-**The hyperbolic case.** Suppose the smaller-sooner reward is $A_S = 50$ at delay $D_S$, and the larger-later reward is $A_L = 100$ at delay $D_L = D_S + 26$ (the larger reward is always 26 weeks later than the smaller one). Using $k = 0.05$ per week:
-
-When $D_S = 26$ (both far away):
-- $V_S = 50/(1 + 0.05 \times 26) = 50/2.30 = 21.74$
-- $V_L = 100/(1 + 0.05 \times 52) = 100/3.60 = 27.78$
+When $D_S = 25$ (both far away):
+- $V_S = 50/(1 + 0.05 \times 25) = 50/2.25 = 22.22$
+- $V_L = 100/(1 + 0.05 \times 26) = 100/2.30 = 43.48$
 - $V_L > V_S$: Prefer the larger-later reward.
 
 When $D_S = 0$ (smaller reward available now):
 - $V_S = 50/(1 + 0.05 \times 0) = 50/1.00 = 50.00$
-- $V_L = 100/(1 + 0.05 \times 26) = 100/2.30 = 43.48$
+- $V_L = 100/(1 + 0.05 \times 1) = 100/1.05 = 47.62$
 - $V_S > V_L$: Prefer the smaller-sooner reward.
 
-Preference has reversed. The crossing point can be found exactly at $D_S = 6$ weeks. When the smaller reward is more than 6 weeks away, the larger-later reward is preferred. When the smaller reward is less than 6 weeks away, preference switches.
+Preference has reversed. Setting $V_S = V_L$ and solving for the crossing point gives $D_S \approx 0.9$ weeks (about 6.3 days). When the smaller reward is more than ~0.9 weeks away, the larger-later reward is preferred. When the smaller reward is less than ~0.9 weeks away, preference switches to the smaller-sooner reward.
 
-**The exponential case.** With the same parameters, the ratio $V_L/V_S$ is constant regardless of $D_S$. Preference never reverses because the ratio of two exponential curves is a constant. This is why preference reversals are the critical test: they are a qualitative prediction that the exponential model cannot produce and the hyperbolic model produces naturally.
+What happens with the exponential model? With the same parameters, the ratio $V_L/V_S$ is constant regardless of $D_S$:
 
-Graphically, a preference reversal occurs when the discount curves for two options **cross**. At long delays, the curve for the larger reward is above the curve for the smaller reward. As both options approach in time, the steeper initial decline of the hyperbolic curve for the smaller-sooner option causes its value to rise faster, and the curves cross.
+$$\frac{V_L}{V_S} = \frac{A_L \cdot e^{-k(D_S + 1)}}{A_S \cdot e^{-k D_S}} = \frac{A_L}{A_S} \cdot e^{-k} = \frac{100}{50} \cdot e^{-0.05} \approx 2 \times 0.951 = 1.90$$
+
+Because this ratio is always greater than 1 and does not depend on $D_S$, the larger-later reward is preferred at every delay and preference never reverses. This is why preference reversals are the critical behavioral test. They are a qualitative prediction that the exponential model cannot produce and the hyperbolic model can.
+
+Graphically, a preference reversal occurs when the discount curves for two options cross. At long delays, the curve for the larger reward is above the curve for the smaller reward. As both options approach in time, the steeper initial decline of the hyperbolic curve for the smaller-sooner option causes its value to rise faster, and the curves cross.
 
 ### Area Under the Curve (AUC)
 
-**Area under the curve (AUC)** is a model-free measure of the degree of discounting (Myerson, Green, & Warusawitharana, 2001). Rather than fitting a parametric model, AUC treats the discount function as a set of empirical points connected by straight lines and computes the total area beneath that piecewise linear function.
+Area under the curve (AUC) is a model-free measure of the degree of discounting (Myerson et al. 2001). Rather than fitting a parametric model, AUC treats the discount function as a set of empirical points connected by straight lines and computes the total area beneath that piecewise linear function.
 
 The computation proceeds as follows:
 
@@ -573,13 +571,13 @@ The **hyperboloid model** (Green & Myerson, 2004; Myerson & Green, 1995) adds a 
 
 $$V = \frac{A}{(1 + kD)^s}$$
 
-where $s$ is a free parameter that governs the overall scaling of the discounting process. When $s = 1$, the hyperboloid reduces to Mazur's hyperbolic model exactly. The hyperboloid provides a superior fit to many datasets, particularly when discounting is assessed across a wide range of delays or when individual differences in the curvature of the discount function are important.
+where $s$ is a free parameter that governs the overall scaling of the discounting process. When $s = 1$, the hyperboloid reduces to Mazur's hyperbolic model exactly. The hyperboloid provides a superior fit to many datasets, particularly human datasets.
 
 The cost of the hyperboloid is an additional free parameter, which must be justified by a meaningful improvement in fit. Model comparison techniques (AIC, BIC, or cross-validation) are used to determine whether the improved fit warrants the added complexity.
 
 ### Comparing the Three Discounting Models
 
-| Feature | Exponential | Hyperbolic (Mazur) | Hyperboloid |
+| Feature | Exponential | Hyperbolic (Mazur) | Hyperboloid (Myerson et al.) |
 |:--------|:------------|:-------------------|:------------|
 | Equation | $V = Ae^{-kD}$ | $V = A/(1+kD)$ | $V = A/(1+kD)^s$ |
 | Free parameters | 1 ($k$) | 1 ($k$) | 2 ($k$, $s$) |
@@ -589,7 +587,7 @@ The cost of the hyperboloid is an additional free parameter, which must be justi
 | Normative status | "Rational" standard | Descriptive standard | Extended descriptive |
 | Special case | --- | Hyperboloid with $s=1$ | General form |
 
-The progression from exponential to hyperbolic to hyperboloid illustrates a general principle in modeling: start simple, add complexity only when the data demand it, and always ask whether the added complexity is justified by improved fit or new qualitative predictions.
+The progression from exponential to hyperbolic to hyperboloid illustrates a general principle in modeling: start simple, add complexity when the data demand it, and always ask whether the added complexity is justified by improved fit or new qualitative predictions.
 
 ---
 
@@ -599,7 +597,7 @@ Following the same 8-step logic applied to matching above, we now fit Mazur's hy
 
 ### The Data
 
-A participant makes choices between an immediate monetary reward and \$100 available at each of seven delays. Using a titrating procedure, we determine the indifference point at each delay:
+A participant makes choices between an immediate monetary reward and \$100 available at each of seven delays. Using an adjusting amount procedure, we determine the indifference point at each delay:
 
 | Delay (weeks) | Indifference Point (\$) |
 |:-:|:-:|
@@ -611,7 +609,7 @@ A participant makes choices between an immediate monetary reward and \$100 avail
 | 26 | 28.00 |
 | 52 | 18.00 |
 
-Notice the pattern before fitting any model. The drop from delay 1 to delay 2 (one additional week) is \$8. The drop from delay 26 to delay 52 (26 additional weeks!) is only \$10. Despite the much larger increase in delay, the decrease in value is only slightly larger. This is the hallmark of hyperbolic, not exponential, decay.
+Notice the pattern before fitting any model. The drop from delay 1 to delay 2 (one additional week) is \$8. The drop from delay 26 to delay 52 (26 additional weeks!) is \$10. Despite the much larger increase in delay, the decrease in value is only slightly larger. This is the hallmark of hyperbolic, not exponential, decay.
 
 ### Fitting the Hyperbolic Model
 
@@ -652,11 +650,11 @@ The estimated $k = 0.10$ per week tells us:
 
 Fitting $V = 100 \cdot e^{-kD}$ reveals a diagnostic problem: the point-by-point $k$ estimates decline systematically from 0.105 at $D = 1$ to 0.033 at $D = 52$. This declining pattern is the signature of data that are hyperbolic, not exponential. No single exponential $k$ can describe these data well.
 
-Using the average exponential $k \approx 0.073$, the exponential model dramatically underpredicts subjective value at long delays (predicting \$2.24 at 52 weeks when the actual indifference point is \$18.00). The exponential $R^2 = 0.887$, compared to the hyperbolic's $R^2 = 0.998$. The hyperbolic model fits roughly 59 times better by sum of squared residuals, with no systematic residual pattern.
+Using the average exponential $k \approx 0.073$, the exponential model significantly underpredicts subjective value at long delays, predicting \$2.24 at 52 weeks when the actual indifference point is \$18.00. The exponential $R^2 = 0.887$, compared to the hyperbolic's $R^2 = 0.998$. The hyperbolic model fits roughly 59 times better by sum of squared residuals.
 
 ### Computing AUC
 
-Normalizing both axes (delay divided by 52, value divided by 100) and summing trapezoid areas yields **AUC = 0.362**, indicating moderately steep discounting. AUC values below 0.50 generally reflect substantial discounting.
+Normalizing both axes (delay divided by 52, value divided by 100) and summing trapezoid areas yields: AUC = 0.362, indicating moderately steep discounting. AUC values below 0.50 generally reflect substantial discounting.
 
 ---
 
@@ -664,79 +662,33 @@ Normalizing both axes (delay divided by 52, value divided by 100) and summing tr
 
 ### Clinical Relevance
 
-The relationship between steep discounting and problematic behavior is among the most replicated findings in clinical behavior science. Individuals with **substance use disorders**---including alcohol, nicotine, cocaine, opioids, and methamphetamine dependence---consistently show higher $k$ values than controls. The effect sizes are typically medium to large, and the relationship holds across diverse samples and measurement methods. This has led to the proposal that steep discounting is a behavioral marker of addiction vulnerability and a potential target for intervention.
+The relationship between steep discounting and clinically relevant behavior is one of the most replicated findings in clinical behavior science. For example, individuals with substance use disorders consistently show higher $k$ values than non-clinical controls. The effect sizes are typically medium to large, and the relationship holds across diverse samples and measurement methods. This has led to the proposal that steep discounting is a behavioral marker of addiction vulnerability and a potential target for intervention.
 
-**ADHD** is characterized, in part, by difficulty waiting for delayed reinforcement. Children and adults with ADHD show steeper discounting than age-matched controls. This connects the clinical presentation (impulsivity, difficulty with delayed tasks, preference for immediate stimulation) to a quantitative behavioral process. It also suggests that interventions that alter the delay structure of reinforcement (e.g., more frequent feedback, shorter intervals between behavior and consequence) may be particularly effective for individuals with ADHD---a prediction with direct implications for classroom and clinical practice.
+As another example, ADHD is characterized, in part, by difficulty "waiting" for delayed reinforcement. Children and adults with ADHD show steeper discounting than age-matched controls. This connects the clinical presentation (impulsivity, difficulty with delayed tasks, preference for immediate stimulation) to a quantitative behavioral process. It also suggests that interventions that alter the delay structure of reinforcement (e.g., more frequent feedback, shorter intervals between behavior and consequence) might be particularly effective for individuals with ADHD. This is a prediction with direct implications for classroom and clinical practice.
 
-**Obesity** has been linked to steep discounting of food and monetary rewards. The preference for immediate food consumption over delayed health benefits is, at its core, a discounting problem. Interventions that make the health consequences of eating more immediate (e.g., daily weigh-ins, immediate feedback on blood glucose) may work partly by reducing the effective delay to the health outcome.
+As a third example, obesity has been linked to steep discounting of food and monetary rewards. The preference for immediate food consumption over delayed health benefits is, at its core, a discounting problem. Interventions that make the health consequences of eating more immediate (e.g., daily weigh-ins, immediate feedback on blood glucose) may work partly by reducing the effective delay to the health outcome.
 
-**Problem gambling** involves choosing an uncertain immediate outcome over the more certain long-term outcome of retaining one's money. Problem gamblers tend to show steeper discounting of delayed rewards, consistent with a general bias toward immediacy.
+As a final example, problem gambling involves choosing an uncertain immediate outcome over the more certain long-term outcome of retaining one's money. Problem gamblers tend to show steeper discounting of delayed rewards, consistent with a general bias toward immediacy.
 
 ### Interventions Informed by Discounting
 
 The discounting framework has informed the design of several evidence-based interventions:
 
-- **Contingency management** programs for substance abuse provide immediate tangible reinforcers (vouchers, prizes) for drug-free urine samples, effectively creating a competing immediate reinforcer that can outcompete the drug. The logic is directly informed by the discount function: if the drug is preferred because its reinforcement is immediate and the benefits of sobriety are delayed, then providing immediate reinforcement for sobriety can shift the balance.
+- Contingency management programs for substance abuse provide immediate tangible reinforcers (vouchers, prizes) for drug-free urine samples, effectively creating a competing immediate reinforcer that can outcompete the drug. The logic is directly informed by the discount function: if the drug is preferred because its reinforcement is immediate and the benefits of sobriety are delayed, then providing immediate reinforcement for sobriety can shift the balance making the overall amount of reinforcement contacted for one alternative greater than the other (note the relation to matching).
 
-- **Episodic future thinking**---asking people to vividly imagine positive future events---has been shown to reduce discounting in laboratory tasks. The mechanism may involve making delayed outcomes feel more immediate and concrete, effectively reducing the psychological distance of the delayed reward.
+- Episodic future thinking (EFT) asks people to vividly imagine positive future events. EFT has been shown to reduce discounting in laboratory tasks. The mechanism may involve making delayed outcomes being perceived as more immediate and concrete, effectively reducing the psychophysical temporal distance of the delayed reward.
 
-- **Precommitment strategies**, such as automatic enrollment in retirement savings plans, exploit the preference reversal phenomenon. At a distance, people prefer the larger-later outcome (retirement savings). A precommitment locks in this preference before the reversal point arrives (the moment when the smaller-sooner option---spending the money now---becomes available and its value surges).
-
----
-
-## Plain-Language Interpretation
-
-### Matching
-
-The matching law, at its core, says something intuitive: organisms distribute their behavior roughly in proportion to what works. If the left option pays off twice as often as the right option, the organism will respond on the left about twice as much as on the right.
-
-Consider a concrete everyday example. Imagine you are at a party with two buffet tables. One table is restocked frequently and always has good food; the other is restocked rarely. Over the course of the evening, you will visit the well-stocked table more often---roughly in proportion to how much more reliably it has food. But you might not go there *exactly* in proportion (maybe you visit the less-stocked table occasionally just to check), and you might have a slight preference for one table because it is closer to the bar. The matching law describes exactly this kind of behavior allocation, with parameters that quantify the "roughly" and the "slight preference."
-
-The generalized matching equation refines the basic intuition in two ways. First, the sensitivity parameter $s$ captures how precisely the organism adjusts its behavior to match the reinforcement ratios. A sensitivity of 0.8 means that a 3:1 reinforcement ratio produces only about a 2.4:1 behavior ratio. Second, the bias parameter $b$ captures non-reinforcement influences on preference.
-
-In clinical terms, the matching law tells a practitioner: if you want to increase appropriate behavior relative to problem behavior, you need to increase the reinforcement ratio in favor of appropriate behavior. The sensitivity parameter tells you how responsive the client is likely to be to such changes. The bias parameter tells you whether there are non-reinforcement factors favoring one behavior over the other that you may need to address separately.
-
-### Discounting
-
-Mazur's equation says something equally intuitive: a reward loses value quickly at first when it is delayed, but the rate of value loss slows down for longer delays.
-
-Consider a concrete example. You are offered \$100. If you can have it right now versus in one week, that one-week delay feels costly. Now consider the same \$100, but the choice is between receiving it in 52 weeks versus 53 weeks. Both options involve waiting a long time. The additional one-week delay barely matters. In both comparisons, the delay difference is exactly one week. But the psychological impact of that one week is vastly different depending on when it occurs. This is the essence of hyperbolic discounting.
-
-The practical consequence is preference reversals. When both a small-soon and a large-late reward are far in the future, you may genuinely prefer the larger reward. But as the small-soon reward draws near, its value surges and your preference flips. You meant to save for retirement, but the impulse purchase is available now. The mathematics of the hyperbolic function is a formal description of this everyday experience.
-
-Understanding the mathematics points toward solutions. If preference reversals occur because the smaller-sooner reward's value rises steeply as it approaches, then **commitment devices** (removing the smaller-sooner option before the reversal point) should work. And indeed they do.
+- Precommitment strategies exploit the preference reversal phenomenon (e.g., automatic enrollment in retirement savings plans). At a temporal distance, people prefer the larger-later outcome (retirement savings). A precommitment locks in this preference before the reversal point arrives (i.e., the moment when the smaller-sooner option of accessing the money now becomes available and its value increases).
 
 ---
 
-## Assumptions and Limitations
+## Assumptions and Limitations of Discounting
 
-### Matching
-
-The generalized matching equation rests on assumptions that define its scope:
-
-- **Steady state.** The model applies only to stable, asymptotic performance. It does not describe how preference develops or how behavior changes within a session. Data must be collected after responding has stabilized, typically requiring 20--30 sessions per condition.
-
-- **Independent schedules.** The two VI schedules are assumed to arrange reinforcement independently.
-
-- **Single reinforcer type.** Both alternatives are assumed to deliver the same reinforcer in the same amount. If the reinforcers differ, the bias parameter absorbs the quality difference, but the model does not explicitly predict how much bias a given quality difference should produce.
-
-- **Molar aggregation.** The model describes session-wide aggregates, not the moment-to-moment dynamics of switching between alternatives.
-
-- **Changeover delay effects.** The COD is not explicitly modeled. Its effects are implicitly captured by the sensitivity parameter.
-
-- **Log-ratio linearity.** The model assumes a linear relationship between log behavior ratios and log reinforcement ratios. This is well-supported for concurrent VI-VI schedules but may not hold for other schedule combinations or very extreme reinforcement ratios.
-
-- **Two alternatives.** The standard GME is formulated for two-alternative choice. Extensions to three or more alternatives exist but are less thoroughly validated.
-
-- **No molecular mechanisms.** The matching law is a molar description. It tells you where behavior ends up at steady state, not how the organism gets there.
-
-### Discounting
-
-Mazur's hyperbolic model also rests on simplifying assumptions:
+Mazur's hyperbolic model rests on several simplifying assumptions:
 
 - **Single reinforcer.** The model considers one delayed outcome in isolation. The interaction between multiple delayed outcomes is not captured.
 
-- **Stable preferences.** The model assumes $k$ is fixed within the experimental session. In practice, discounting can be influenced by mood, stress, cognitive load, and framing.
+- **Stable preferences.** The model assumes $k$ is fixed within the experimental session. In practice, discounting can be influenced by motivating operations, alternative schedules of rienforcement and punishment, stress, effort, and framing.
 
 - **Amount-independent $k$ (the magnitude effect).** Larger amounts are discounted less steeply than smaller amounts. This is one of the most reliable violations of the simple model.
 
@@ -744,45 +696,17 @@ Mazur's hyperbolic model also rests on simplifying assumptions:
 
 - **Static model.** The model describes the steady-state relationship between delay and value. It says nothing about how discounting develops or how it changes with intervention.
 
-- **Functional form.** The hyperbolic is a good empirical description, but it is not derived from first principles. It does not explain *why* discounting is hyperbolic.
+- **Functional form.** The hyperbolic is a good empirical description, but it is not derived from first principles. It does not explain why discounting is hyperbolic.
 
 - **Nonsystematic data.** Some participants produce indifference points that do not decrease monotonically with delay. Such data violate the basic premise of discounting and suggest inattention or misunderstanding.
 
-These assumptions are not flaws---they are the explicit boundaries of each model. Identifying them ensures that we know precisely what each model claims and what it does not.
-
----
-
-## Connection to Empirical Behavior Science
-
-### Laboratory Research on Matching
-
-The matching law has been tested extensively in laboratory settings with pigeons, rats, primates, and humans. The concurrent VI-VI preparation with pigeons remains the gold-standard paradigm. Decades of research have established that sensitivity values typically fall between 0.7 and 1.0 for pigeons on concurrent VI-VI schedules with a changeover delay, and that the GME routinely accounts for 90--99% of the variance in behavior allocation across conditions.
-
-The matching law has also been extended to dimensions of reinforcement beyond rate. Sensitivity to reinforcer amount, delay, and quality have all been measured using modified versions of the GME. The resulting "concatenated" generalized matching law provides a comprehensive framework for predicting behavior allocation when multiple reinforcement dimensions vary simultaneously.
-
-### Applied Behavior Analysis
-
-The matching law has found extensive application in clinical and applied settings. **Functional analysis** of problem behavior implicitly involves concurrent schedules: the client can engage in problem behavior or alternative behavior, and each produces different consequences at different rates. Matching-law analyses can reveal whether problem behavior is maintained by a richer reinforcement schedule and quantify how much the reinforcement ratio would need to change to shift allocation to a clinically meaningful degree.
-
-**Fisher and Mazur (1997)** demonstrated how matching-law analyses can be applied to data from functional analyses and treatment evaluations. **Reed and Kaplan (2011)** provided a tutorial on applying matching-law concepts to clinical decision-making, showing how practitioners can use the GME to understand why a client distributes behavior across available options and how to redesign the reinforcement environment.
-
-### Clinical Significance of Discounting
-
-The relationship between steep discounting and clinical problems has been extensively documented. **Critchfield and Kollins (2001)** provided an influential review arguing that delay discounting is relevant to a wide range of socially important behaviors and highlighting the translational potential of basic discounting research. **Rachlin (2006)** offered a thoughtful treatment of the conceptual and mathematical foundations, arguing that patterns of choice over extended time frames---not individual choices in isolation---are the proper unit of analysis for self-control.
-
-**Odum et al. (2020)** demonstrated that discounting rates can differ substantially across outcome types within the same individual, challenging the view of $k$ as a unitary trait and suggesting that clinical assessment should measure discounting for the specific outcome domain of interest. **Cox and Dallery (2018)** examined how the presence of a second outcome influences discounting of the first, underscoring the importance of considering context when applying discount models.
-
-### Modern Developments
-
-More recent work has connected matching to computational models of reinforcement learning, showing that matching-like behavior emerges from simple learning algorithms that update action values based on experience. This connection between the molar regularity (matching) and molecular process models (reinforcement learning) is an active area of research that bridges the descriptive models covered in this week and the computational models covered later in the course.
-
-Quantitative analyses of matching have also been applied to behavioral economics, where the relative allocation of behavior to commodities at different prices follows matching-like patterns. The connection between matching and demand is particularly noteworthy: both frameworks describe how organisms allocate behavior in response to environmental constraints, and both yield quantitative parameters with clear behavioral interpretations.
+As with the matching law assumptions above, these assumptions for discountinf are not flaws. Rather, they are the explicit boundaries of the model. Identifying them ensures that we know precisely what each model claims and what it does not.
 
 ---
 
 ## Key Readings
 
-**Required (Matching):**
+**Matching:**
 
 **Reed and Kaplan (2011)** provided a practitioner-oriented tutorial on the matching law, demonstrating how to conduct and interpret matching analyses with applied behavioral data. They walked through the generalized matching equation, explained the meaning of the sensitivity and bias parameters, and showed how matching analyses can be used to evaluate reinforcement-based interventions. This paper grounds the matching law in practical application and makes the case that quantitative models of choice are not just for the basic laboratory---they are tools that practitioners can and should use to understand why clients allocate behavior the way they do.
 
@@ -790,8 +714,7 @@ Quantitative analyses of matching have also been applied to behavioral economics
 
 **Fisher and Mazur (1997)** bridged basic and applied research on choice by reviewing how concurrent-schedule procedures and the matching law have been used to understand clinically significant behavior. They demonstrated that choice between appropriate and inappropriate behavior can be analyzed using the same quantitative framework that describes pigeon key pecking, and they reviewed applications including functional analysis and treatment evaluation. This paper connects the formal models of choice covered this week to the applied questions that motivate much of behavior analysis, showing that the matching law is not merely a laboratory curiosity but a quantitative tool for understanding and changing socially important behavior.
 
-**Required (Discounting):**
-
+**Discounting:**
 **Critchfield and Kollins (2001)** made the case that temporal discounting---the decline in reinforcer value with delay---is not just a basic research phenomenon but a variable that underlies many socially important behaviors, including substance abuse, academic performance, and health-related decision making. They reviewed the empirical evidence linking steep discounting to impulsive behavior patterns and argued that the discounting framework provides a quantitative handle on problems that behavior analysts encounter daily. This paper establishes why discounting models matter beyond the laboratory and sets up the course theme that formal models gain their value when they connect to real-world behavioral phenomena.
 
 **Rachlin (2006)** offered a theoretical treatment of discounting that clarified several conceptual issues, including the distinction between delay discounting and probability discounting, the relationship between the two, and the implications of hyperbolic versus exponential functional forms. He argued that the hyperbolic form is not merely a better empirical fit but reflects something fundamental about how organisms integrate information about delayed consequences. This paper deepens the theoretical understanding of the discounting models introduced this week and illustrates how careful attention to functional form---a core theme of the course---can yield insight into behavioral mechanism.
@@ -923,7 +846,7 @@ Reed, D. D., & Kaplan, B. A. (2011). The matching law: A tutorial for practition
 
 - **Choice is behavior allocation.** From a behavior-analytic perspective, choice is the measurable distribution of behavior across available alternatives, not a private mental event. This framing makes choice a continuous variable amenable to quantitative modeling.
 
-- **The matching law** states that the relative rate of responding on an alternative approximately equals the relative rate of reinforcement obtained from that alternative. Discovered by Herrnstein (1961) with pigeons on concurrent VI schedules, it was the first quantitative law of choice in behavior science.
+- **The matching law** states that the relative rate of responding on an alternative approximately equals the relative rate of reinforcement obtained from that alternative. First published by Herrnstein (1961) with pigeons on concurrent VI schedules, it was the first quantitative law of choice in behavior science.
 
 - **Herrnstein's hyperbola**, $R = \frac{k \cdot r}{r + r_e}$, extends matching to the single-schedule case by recognizing that all behavior occurs in a context of competing reinforcement sources. The parameter $k$ is the asymptotic response rate, and $r_e$ is the extraneous reinforcement rate.
 
@@ -931,11 +854,11 @@ Reed, D. D., & Kaplan, B. A. (2011). The matching law: A tutorial for practition
 
 - **Temporal discounting** is the decline in subjective value of a reinforcer as the delay to its receipt increases. It is one of the most robust quantitative regularities in behavior science, observed across species, reinforcer types, and populations.
 
-- **Hyperbolic discounting** ($V = A/(1+kD)$, Mazur, 1987) assumes a decreasing proportional decline---steep at short delays, shallow at long delays. It fits empirical data far better than the **exponential** model ($V = Ae^{-kD}$) and correctly predicts **preference reversals**.
+- **Hyperbolic discounting** ($V = A/(1+kD)$, Mazur, 1987) assumes a decreasing proportional decline in reinforcer value. That is, steep at short delays, shallow at long delays. It often fits empirical data better than the **exponential** model ($V = Ae^{-kD}$) and correctly predicts **preference reversals**.
 
 - **The matching and discounting hyperbolas share the same mathematical structure.** Both are rectangular hyperbolas describing diminishing sensitivity to a schedule parameter. Herrnstein's $r_e$ and Mazur's $1/k$ both define a "half-life" that characterizes the system's sensitivity.
 
-- **The $k$ parameter** in discounting is the discount rate. Higher $k$ = steeper discounting = more impulsive choice. The half-life of value is $1/k$.
+- **The $k$ parameter** in discounting is the discount rate. Higher $k$ = steeper discounting = more "impulsive" choice. The half-life of value is $1/k$.
 
 - **Area under the curve (AUC)** is a model-free measure of discounting, normalized from 0 to 1, that requires no distributional assumptions.
 

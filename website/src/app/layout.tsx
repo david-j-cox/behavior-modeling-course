@@ -59,6 +59,9 @@ export default function RootLayout({
               <li>
                 <Link href="/appendices">Appendices</Link>
               </li>
+              <li>
+                <Link href="/book">Get the Book</Link>
+              </li>
             </ul>
             <ThemeToggle />
           </div>

@@ -87,8 +87,8 @@ export default function HomePage() {
           <tbody>
             {[
               "Introduction to Modeling",
-              "Historical Models -- Matching and Discounting",
-              "Historical Models -- Demand",
+              "Historical Models: Matching and Discounting",
+              "Historical Models: Demand",
               "Associative Learning Models",
               "Behavioral Momentum and Response Persistence",
               "Model Comparisons",
