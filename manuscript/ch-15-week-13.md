@@ -1,14 +1,6 @@
----
-slug: "week-13"
-number: 13
-published: false
-title: "Final Project Presentations"
-subtitle: "Integration and synthesis — applying the full modeling framework to an original question"
-description: "Integration and synthesis -- applying the full modeling framework to an original question."
-keyModels:
-  - "Course Integration"
-keyEquations: []
----
+# Chapter 15: Final Project Presentations
+
+> Week 13 of the 13-week sequence.
 
 ## Why This Topic Matters
 

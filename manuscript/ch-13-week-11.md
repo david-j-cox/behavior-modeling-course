@@ -1,18 +1,6 @@
----
-slug: "week-11"
-number: 11
-published: false
-title: "Computational Models"
-subtitle: "When equations are not enough — simulating behavior algorithmically"
-description: "Agent-based models, Monte Carlo simulation, Q-learning, reinforcement learning."
-keyModels:
-  - "Q-Learning"
-  - "Agent-Based Models"
-  - "Monte Carlo Simulation"
-keyEquations:
-  - "Q(s,a) <- Q(s,a) + alpha[r + gamma*max Q(s',a') - Q(s,a)]"
-  - "McDowell's evolutionary model"
----
+# Chapter 13: Computational Models
+
+> Week 11 of the 13-week sequence.
 
 ## Why This Topic Matters
 
@@ -54,9 +42,9 @@ Why would you choose a computational model over an analytical one? Several reaso
 - **Heterogeneity**: Real populations contain individuals that differ from one another. Computational models can give each simulated organism its own parameter values, learning histories, and behavioral rules.
 - **Temporal complexity**: When reinforcement schedules change over time, when organisms interact dynamically, when there are delays, timeouts, and changeover costs — the combinatorial complexity can exceed what analytical models can handle.
 
-The trade-off is interpretability. An equation like $B_1/B_2 = (R_1/R_2)^a$ tells you directly how behavior relates to reinforcement. A computational model with thousands of lines of code may produce equally accurate predictions, but the relationship between input and output is less transparent. This is why computational models are complements to, not replacements for, analytical models. The ideal scientific workflow often involves both: an analytical model provides insight into the structure of a phenomenon, and a computational model tests whether a proposed mechanism can actually generate the phenomenon when implemented in full detail.
+The trade-off is interpretability. An equation like {$$}B_1/B_2 = (R_1/R_2)^a{/$$} tells you directly how behavior relates to reinforcement. A computational model with thousands of lines of code may produce equally accurate predictions, but the relationship between input and output is less transparent. This is why computational models are complements to, not replacements for, analytical models. The ideal scientific workflow often involves both: an analytical model provides insight into the structure of a phenomenon, and a computational model tests whether a proposed mechanism can actually generate the phenomenon when implemented in full detail.
 
-It is also worth noting that the boundary between "analytical" and "computational" is not always sharp. The Rescorla-Wagner model, for instance, is expressed as a difference equation ($\Delta V = \alpha\beta(\lambda - V)$) that can be solved analytically in simple cases — but when applied to multi-cue, multi-outcome conditioning with hundreds of trials, it is almost always implemented as a computer program that iterates the update rule. Similarly, the logistic ODE from Week 10 has a closed-form solution, but more complex dynamical systems must be solved numerically by computer. Computational modeling is a matter of degree, and this week we focus on models that are fundamentally algorithmic — models for which there is no analytical solution, and simulation is not just convenient but necessary.
+It is also worth noting that the boundary between "analytical" and "computational" is not always sharp. The Rescorla-Wagner model, for instance, is expressed as a difference equation ({$$}\Delta V = \alpha\beta(\lambda - V){/$$}) that can be solved analytically in simple cases — but when applied to multi-cue, multi-outcome conditioning with hundreds of trials, it is almost always implemented as a computer program that iterates the update rule. Similarly, the logistic ODE from Week 10 has a closed-form solution, but more complex dynamical systems must be solved numerically by computer. Computational modeling is a matter of degree, and this week we focus on models that are fundamentally algorithmic — models for which there is no analytical solution, and simulation is not just convenient but necessary.
 
 ### Agent-Based Models (ABMs)
 
@@ -97,7 +85,7 @@ The power of Monte Carlo simulation comes from the **law of large numbers**: as 
 Monte Carlo methods are invaluable in behavior science for several purposes:
 
 - **Estimating probabilities of rare events**: What is the probability that an organism on a VI 60-s schedule will emit a burst of 10 responses in 5 seconds? Analytical computation would require modeling the joint distribution of inter-response times and reinforcer set-ups — a formidable task. Running the schedule simulation 100,000 times and counting such bursts gives a straightforward empirical estimate.
-- **Bootstrap confidence intervals**: When you have fit a model to data and obtained parameter estimates (e.g., sensitivity $a$ and bias $\log b$ in the generalized matching law), you can bootstrap the data (resample with replacement), refit the model to each bootstrap sample, and examine the distribution of parameter estimates. This gives confidence intervals without assuming normality — important because parameter estimates in nonlinear models are often non-normally distributed.
+- **Bootstrap confidence intervals**: When you have fit a model to data and obtained parameter estimates (e.g., sensitivity {$$}a{/$$} and bias {$$}\log b{/$$} in the generalized matching law), you can bootstrap the data (resample with replacement), refit the model to each bootstrap sample, and examine the distribution of parameter estimates. This gives confidence intervals without assuming normality — important because parameter estimates in nonlinear models are often non-normally distributed.
 - **Power analysis**: Before running an experiment, simulate data under your model with assumed effect sizes and sample sizes. How often does the statistical test detect the effect? This is Monte Carlo power analysis, and it is more flexible than formula-based power analysis because it can accommodate any model structure and any test statistic.
 - **Model comparison**: Simulate data under each candidate model and ask: given data generated by Model A, how often does a model-selection criterion (e.g., AIC, BIC) correctly identify Model A over Model B? This reveals the discriminability of competing models under specific experimental designs.
 - **Sensitivity analysis**: How sensitive are the model's predictions to small changes in parameter values? Run the model many times with parameters drawn from a distribution (reflecting uncertainty in parameter estimates), and examine how much the output varies. Large output variance indicates high sensitivity to that parameter.
@@ -110,40 +98,40 @@ Monte Carlo simulation is not a model in itself — it is a **method** for extra
 
 The formal structure of an RL problem consists of:
 
-- **States** ($s$): The situations the agent can be in. In a behavioral experiment, a state might be "left lever extended" or "both levers available after a 5-second changeover delay." In a more complex environment, a state might encode the organism's spatial location, the time since the last reinforcer, or the current schedule component.
-- **Actions** ($a$): The behaviors available to the agent in each state. For a rat on a concurrent schedule, actions might be "press left lever," "press right lever," or "engage in other behavior." The set of available actions can differ across states.
-- **Rewards** ($r$): Numerical signals from the environment that indicate the immediate value of an action. In behavioral terms, rewards correspond to reinforcers. The reward signal is what drives learning: the agent seeks to accumulate as much reward as possible over time.
-- **Policy** ($\pi$): A mapping from states to actions — the agent's behavioral strategy. The goal of learning is to find a policy that maximizes cumulative reward. A policy can be deterministic ($\pi(s) = a$, always the same action in each state) or stochastic ($\pi(a|s)$ gives the probability of each action in each state).
-- **Value function** ($V$ or $Q$): An internal estimate of how much future reward the agent can expect from a given state (or state-action pair). The value function is what the agent learns; the policy is derived from it.
+- **States** ({$$}s{/$$}): The situations the agent can be in. In a behavioral experiment, a state might be "left lever extended" or "both levers available after a 5-second changeover delay." In a more complex environment, a state might encode the organism's spatial location, the time since the last reinforcer, or the current schedule component.
+- **Actions** ({$$}a{/$$}): The behaviors available to the agent in each state. For a rat on a concurrent schedule, actions might be "press left lever," "press right lever," or "engage in other behavior." The set of available actions can differ across states.
+- **Rewards** ({$$}r{/$$}): Numerical signals from the environment that indicate the immediate value of an action. In behavioral terms, rewards correspond to reinforcers. The reward signal is what drives learning: the agent seeks to accumulate as much reward as possible over time.
+- **Policy** ({$$}\pi{/$$}): A mapping from states to actions — the agent's behavioral strategy. The goal of learning is to find a policy that maximizes cumulative reward. A policy can be deterministic ({$$}\pi(s) = a{/$$}, always the same action in each state) or stochastic ({$$}\pi(a|s){/$$} gives the probability of each action in each state).
+- **Value function** ({$$}V{/$$} or {$$}Q{/$$}): An internal estimate of how much future reward the agent can expect from a given state (or state-action pair). The value function is what the agent learns; the policy is derived from it.
 
 The core idea of RL is that the agent maintains an estimate of the **expected future reward** associated with each state or action, and it **updates this estimate based on experience**. When an action leads to more reward than expected, the agent increases its estimate for that action. When an action leads to less reward than expected, it decreases the estimate. This update process is driven by **prediction error** — the discrepancy between expected and received reward.
 
-If this sounds familiar, it should. The Rescorla-Wagner model from Week 4 is driven by the same logic: $\Delta V = \alpha \beta (\lambda - V)$, where $(\lambda - V)$ is the prediction error. Reinforcement learning extends this logic to sequential decision-making, where actions have consequences that unfold over time and across states.
+If this sounds familiar, it should. The Rescorla-Wagner model from Week 4 is driven by the same logic: {$$}\Delta V = \alpha \beta (\lambda - V){/$$}, where {$$}(\lambda - V){/$$} is the prediction error. Reinforcement learning extends this logic to sequential decision-making, where actions have consequences that unfold over time and across states.
 
 The RL framework distinguishes between **model-free** and **model-based** learning. A model-free agent (like Q-learning) learns values directly from experience without building an internal representation of how the environment works. A model-based agent learns the structure of the environment (which states lead to which other states, and with what probabilities) and uses this internal model to plan ahead. Both types are relevant to behavior science: model-free learning corresponds to habitual, reflexive responding, while model-based learning corresponds to goal-directed, deliberative behavior. This distinction maps onto the habitual vs. goal-directed dichotomy that has become central in behavioral neuroscience.
 
 ### Q-Learning
 
-**Q-learning** is one of the most important and widely used RL algorithms. It learns a function $Q(s, a)$ that estimates the expected cumulative future reward for taking action $a$ in state $s$ and then following the optimal policy thereafter. The "Q" stands for "quality" — $Q(s, a)$ represents the quality of an action in a given state.
+**Q-learning** is one of the most important and widely used RL algorithms. It learns a function {$$}Q(s, a){/$$} that estimates the expected cumulative future reward for taking action {$$}a{/$$} in state {$$}s{/$$} and then following the optimal policy thereafter. The "Q" stands for "quality" — {$$}Q(s, a){/$$} represents the quality of an action in a given state.
 
 The Q-learning update rule is:
 
-$$Q(s, a) \leftarrow Q(s, a) + \alpha \left[ r + \gamma \cdot \max_{a'} Q(s', a') - Q(s, a) \right]$$
+{$$}Q(s, a) \leftarrow Q(s, a) + \alpha \left[ r + \gamma \cdot \max_{a'} Q(s', a') - Q(s, a) \right]{/$$}
 
 Let us unpack each component:
 
-- $Q(s, a)$: The current estimate of the value of taking action $a$ in state $s$.
-- $\alpha$: The **learning rate** (0 < $\alpha$ < 1). Controls how much the estimate changes on each update. Larger $\alpha$ means faster learning but more sensitivity to noise. Smaller $\alpha$ means slower learning but more stability.
-- $r$: The **immediate reward** received after taking action $a$ in state $s$.
-- $\gamma$: The **discount factor** (0 $\leq$ $\gamma$ < 1). Controls how much the agent values future reward relative to immediate reward. When $\gamma = 0$, the agent is completely myopic — it cares only about the immediate reward and ignores all future consequences. When $\gamma$ is close to 1, the agent is far-sighted — it values future reward almost as much as immediate reward. This parameter plays a role similar to the $k$ parameter in hyperbolic discounting (Week 2): it determines how quickly future outcomes lose their influence on current behavior.
-- $\max_{a'} Q(s', a')$: The maximum Q-value over all possible actions $a'$ in the next state $s'$. This represents the agent's estimate of the best possible future from the state it lands in.
-- $r + \gamma \cdot \max_{a'} Q(s', a') - Q(s, a)$: The **temporal difference (TD) error** — the discrepancy between what the agent expected and what it actually experienced plus its updated estimate of the future. This is the prediction error that drives learning.
+- {$$}Q(s, a){/$$}: The current estimate of the value of taking action {$$}a{/$$} in state {$$}s{/$$}.
+- {$$}\alpha{/$$}: The **learning rate** (0 < {$$}\alpha{/$$} < 1). Controls how much the estimate changes on each update. Larger {$$}\alpha{/$$} means faster learning but more sensitivity to noise. Smaller {$$}\alpha{/$$} means slower learning but more stability.
+- {$$}r{/$$}: The **immediate reward** received after taking action {$$}a{/$$} in state {$$}s{/$$}.
+- {$$}\gamma{/$$}: The **discount factor** (0 {$$}\leq{/$$} {$$}\gamma{/$$} < 1). Controls how much the agent values future reward relative to immediate reward. When {$$}\gamma = 0{/$$}, the agent is completely myopic — it cares only about the immediate reward and ignores all future consequences. When {$$}\gamma{/$$} is close to 1, the agent is far-sighted — it values future reward almost as much as immediate reward. This parameter plays a role similar to the {$$}k{/$$} parameter in hyperbolic discounting (Week 2): it determines how quickly future outcomes lose their influence on current behavior.
+- {$$}\max_{a'} Q(s', a'){/$$}: The maximum Q-value over all possible actions {$$}a'{/$$} in the next state {$$}s'{/$$}. This represents the agent's estimate of the best possible future from the state it lands in.
+- {$$}r + \gamma \cdot \max_{a'} Q(s', a') - Q(s, a){/$$}: The **temporal difference (TD) error** — the discrepancy between what the agent expected and what it actually experienced plus its updated estimate of the future. This is the prediction error that drives learning.
 
-The update rule says: take your current estimate $Q(s, a)$, and adjust it toward the experienced reward plus the discounted estimate of the best future. The learning rate $\alpha$ controls how large a step you take. If $\alpha = 1$, you replace the old estimate entirely with the new information. If $\alpha$ is small (e.g., 0.01), you make only a tiny adjustment, effectively averaging over many experiences.
+The update rule says: take your current estimate {$$}Q(s, a){/$$}, and adjust it toward the experienced reward plus the discounted estimate of the best future. The learning rate {$$}\alpha{/$$} controls how large a step you take. If {$$}\alpha = 1{/$$}, you replace the old estimate entirely with the new information. If {$$}\alpha{/$$} is small (e.g., 0.01), you make only a tiny adjustment, effectively averaging over many experiences.
 
 Q-learning is a **model-free** algorithm: the agent does not build an internal model of how the environment works (which states lead to which other states). Instead, it learns directly from experience which actions are valuable. This is analogous to an organism that does not "understand" the contingency but nevertheless learns to respond adaptively through direct contact with reinforcement. The organism does not know *why* left-lever presses produce food more often; it simply learns that they do.
 
-It is worth noting that Q-learning is an **off-policy** algorithm: it updates Q-values toward the *best possible* future action (the $\max$), even if the agent did not actually take that action. This means the agent can learn the optimal policy even while exploring suboptimal actions — a property that is important for balancing exploration and exploitation.
+It is worth noting that Q-learning is an **off-policy** algorithm: it updates Q-values toward the *best possible* future action (the {$$}\max{/$$}), even if the agent did not actually take that action. This means the agent can learn the optimal policy even while exploring suboptimal actions — a property that is important for balancing exploration and exploitation.
 
 ### From Rescorla-Wagner to Q-Learning
 
@@ -151,27 +139,27 @@ The intellectual lineage from the Rescorla-Wagner model to Q-learning is direct 
 
 **Rescorla-Wagner (Week 4):**
 
-$$\Delta V = \alpha \beta (\lambda - V)$$
+{$$}\Delta V = \alpha \beta (\lambda - V){/$$}
 
-- $V$: Associative strength of the CS.
-- $\lambda$: Maximum conditioning supported by the US.
-- $(\lambda - V)$: Prediction error — the surprise.
-- $\alpha$, $\beta$: Learning-rate parameters for CS and US salience.
+- {$$}V{/$$}: Associative strength of the CS.
+- {$$}\lambda{/$$}: Maximum conditioning supported by the US.
+- {$$}(\lambda - V){/$$}: Prediction error — the surprise.
+- {$$}\alpha{/$$}, {$$}\beta{/$$}: Learning-rate parameters for CS and US salience.
 
 **Q-learning:**
 
-$$\Delta Q(s, a) = \alpha \left[ r + \gamma \cdot \max_{a'} Q(s', a') - Q(s, a) \right]$$
+{$$}\Delta Q(s, a) = \alpha \left[ r + \gamma \cdot \max_{a'} Q(s', a') - Q(s, a) \right]{/$$}
 
-- $Q(s, a)$: Expected value of taking action $a$ in state $s$.
-- $r + \gamma \cdot \max_{a'} Q(s', a')$: The "target" — what actually happened plus the estimated best future.
-- $\left[ r + \gamma \cdot \max_{a'} Q(s', a') - Q(s, a) \right]$: Prediction error — the temporal difference.
-- $\alpha$: Learning rate.
+- {$$}Q(s, a){/$$}: Expected value of taking action {$$}a{/$$} in state {$$}s{/$$}.
+- {$$}r + \gamma \cdot \max_{a'} Q(s', a'){/$$}: The "target" — what actually happened plus the estimated best future.
+- {$$}\left[ r + \gamma \cdot \max_{a'} Q(s', a') - Q(s, a) \right]{/$$}: Prediction error — the temporal difference.
+- {$$}\alpha{/$$}: Learning rate.
 
-Both models are driven by **prediction error**: the discrepancy between what was expected and what was experienced. Both update an internal estimate by taking a fraction ($\alpha$) of that error. The key extensions in Q-learning are:
+Both models are driven by **prediction error**: the discrepancy between what was expected and what was experienced. Both update an internal estimate by taking a fraction ({$$}\alpha{/$$}) of that error. The key extensions in Q-learning are:
 
-1. **States and actions**: Instead of a single associative strength $V$ for a CS, Q-learning maintains a value for every state-action pair. This allows the agent to learn different values for the same action in different contexts — a form of stimulus control.
-2. **Temporal discounting**: The discount factor $\gamma$ makes future rewards worth less than immediate rewards, introducing a temporal horizon. The R-W model has no temporal horizon; it learns about the immediate US associated with a CS.
-3. **Bootstrapping**: The target includes the agent's own estimate of the future ($\max Q(s', a')$), not just the immediate outcome. The model uses its current knowledge to improve itself. R-W targets only the immediate outcome $\lambda$.
+1. **States and actions**: Instead of a single associative strength {$$}V{/$$} for a CS, Q-learning maintains a value for every state-action pair. This allows the agent to learn different values for the same action in different contexts — a form of stimulus control.
+2. **Temporal discounting**: The discount factor {$$}\gamma{/$$} makes future rewards worth less than immediate rewards, introducing a temporal horizon. The R-W model has no temporal horizon; it learns about the immediate US associated with a CS.
+3. **Bootstrapping**: The target includes the agent's own estimate of the future ({$$}\max Q(s', a'){/$$}), not just the immediate outcome. The model uses its current knowledge to improve itself. R-W targets only the immediate outcome {$$}\lambda{/$$}.
 4. **Sequential decisions**: Q-learning handles chains of decisions where each action leads to a new state with new choices — not just single-trial associations. This is critical for modeling behavior in complex environments where the consequences of an action depend on the sequence of actions that follow it.
 
 This lineage is not merely an analogy. The mathematical psychologists and computer scientists who developed temporal-difference learning in the 1980s and 1990s — including Richard Sutton and Andrew Barto — explicitly drew on animal learning theory. Sutton's early work on temporal-difference methods (1988) cited Rescorla and Wagner directly. Barto, Sutton, and Anderson (1983) used the language of conditioning — "adaptive critic," "associative search" — to describe their algorithms. The field of reinforcement learning grew out of the intersection of animal learning theory, dynamic programming, and control theory.
@@ -182,8 +170,8 @@ The dopamine prediction-error hypothesis (Schultz, Dayan, & Montague, 1997) furt
 
 One of the most powerful features of computational models is that they can be **experimented on** in ways that are impossible, impractical, or unethical with real organisms. A computational model is a virtual laboratory.
 
-- **Parameter sweeps**: Vary a single parameter across a range of values while holding everything else constant, and observe how the model's output changes. For instance, sweep the learning rate $\alpha$ from 0.01 to 1.0 and plot the speed of convergence to matching at each value. This reveals the sensitivity of the phenomenon to that parameter.
-- **Factorial designs**: Cross multiple parameters in a full factorial design, just as you would cross independent variables in an experiment. For example, cross three levels of $\alpha$ with three levels of $\gamma$ and four reinforcement-ratio conditions, yielding 36 cells. The output is a simulated data set that you analyze with the same statistical tools you would use for empirical data (ANOVA, regression, etc.).
+- **Parameter sweeps**: Vary a single parameter across a range of values while holding everything else constant, and observe how the model's output changes. For instance, sweep the learning rate {$$}\alpha{/$$} from 0.01 to 1.0 and plot the speed of convergence to matching at each value. This reveals the sensitivity of the phenomenon to that parameter.
+- **Factorial designs**: Cross multiple parameters in a full factorial design, just as you would cross independent variables in an experiment. For example, cross three levels of {$$}\alpha{/$$} with three levels of {$$}\gamma{/$$} and four reinforcement-ratio conditions, yielding 36 cells. The output is a simulated data set that you analyze with the same statistical tools you would use for empirical data (ANOVA, regression, etc.).
 - **Many replications**: Run thousands of simulated organisms to obtain stable distributions of outcomes. This eliminates sampling error and reveals the true predictions of the model. Where a real experiment might have 6 subjects per condition, a computational experiment can have 10,000.
 - **Perfect control**: In a computational experiment, there are no equipment failures, no sick animals, no attrition, no confounds. Every variable is perfectly controlled because you specified every variable. Any difference between conditions is attributable to the manipulated variable.
 - **Extreme conditions**: Test the model under conditions that would be impossible to implement in a real laboratory — infinite reinforcement rates, zero delay, populations of millions of agents, sessions lasting millions of trials.
@@ -201,7 +189,7 @@ We walk through all eight steps for building a Q-learning model of concurrent-sc
 
 A rat is placed in an operant chamber with two levers, Left and Right. Pressing the left lever is reinforced on a VI 30-s schedule; pressing the right lever is reinforced on a VI 60-s schedule. That is, reinforcement for left-lever presses becomes available on average every 30 seconds, and reinforcement for right-lever presses becomes available on average every 60 seconds. Once a reinforcer is set up on a given lever, it remains available until collected by a press on that lever.
 
-The rat must learn, through trial and error, how to allocate its behavior across the two levers. The matching law predicts that at steady state, the ratio of left to right responses will approximate the ratio of left to right reinforcement rates — roughly $2:1$ in this case.
+The rat must learn, through trial and error, how to allocate its behavior across the two levers. The matching law predicts that at steady state, the ratio of left to right responses will approximate the ratio of left to right reinforcement rates — roughly {$$}2:1{/$$} in this case.
 
 We want to build a Q-learning agent that learns this allocation from experience, without any built-in knowledge of matching. The model should reproduce the gradual acquisition of preference and the eventual steady-state allocation.
 
@@ -223,63 +211,63 @@ What is excluded from the model: within-session satiation, fatigue, other behavi
 
 The governing law is the **Q-learning update rule**:
 
-$$Q(s, a) \leftarrow Q(s, a) + \alpha \left[ r + \gamma \cdot \max_{a'} Q(s, a') - Q(s, a) \right]$$
+{$$}Q(s, a) \leftarrow Q(s, a) + \alpha \left[ r + \gamma \cdot \max_{a'} Q(s, a') - Q(s, a) \right]{/$$}
 
 Because we have a single state, we can drop the state notation and write:
 
-$$Q(a) \leftarrow Q(a) + \alpha \left[ r + \gamma \cdot \max_{a'} Q(a') - Q(a) \right]$$
+{$$}Q(a) \leftarrow Q(a) + \alpha \left[ r + \gamma \cdot \max_{a'} Q(a') - Q(a) \right]{/$$}
 
 The **action-selection rule** is a **softmax (Boltzmann) policy**:
 
-$$P(a_i) = \frac{e^{Q(a_i) / \tau}}{\sum_j e^{Q(a_j) / \tau}}$$
+{$$}P(a_i) = \frac{e^{Q(a_i) / \tau}}{\sum_j e^{Q(a_j) / \tau}}{/$$}
 
-where $\tau$ is a **temperature** parameter controlling exploration vs. exploitation. High $\tau$ means near-random choice (the agent explores widely); low $\tau$ means nearly deterministic choice of the highest-valued action (the agent exploits its current knowledge). At $\tau \to \infty$, the softmax converges to uniform random choice. At $\tau \to 0$, it converges to always choosing the action with the highest Q-value.
+where {$$}\tau{/$$} is a **temperature** parameter controlling exploration vs. exploitation. High {$$}\tau{/$$} means near-random choice (the agent explores widely); low {$$}\tau{/$$} means nearly deterministic choice of the highest-valued action (the agent exploits its current knowledge). At {$$}\tau \to \infty{/$$}, the softmax converges to uniform random choice. At {$$}\tau \to 0{/$$}, it converges to always choosing the action with the highest Q-value.
 
 The softmax is important for producing matching rather than maximizing. An agent that always chose the highest-Q action would allocate all responses to the richer schedule (exclusive preference). The softmax introduces graded preference proportional to Q-value differences, which is necessary for matching to emerge.
 
-The **reinforcement schedule** is modeled as follows. On each trial, time advances by one unit. For each lever independently, a reinforcer is "set up" with probability $p = 1/\text{VI value}$ per time unit. Once set up, a reinforcer remains available until the agent presses that lever. When the agent presses a lever with an available reinforcer, it receives $r = 1$; otherwise, $r = 0$.
+The **reinforcement schedule** is modeled as follows. On each trial, time advances by one unit. For each lever independently, a reinforcer is "set up" with probability {$$}p = 1/\text{VI value}{/$$} per time unit. Once set up, a reinforcer remains available until the agent presses that lever. When the agent presses a lever with an available reinforcer, it receives {$$}r = 1{/$$}; otherwise, {$$}r = 0{/$$}.
 
 ### Step 4: State the Restrictive Assumptions
 
 - **Single state**: The agent does not distinguish between different moments in the session. There is no representation of time, satiation, or prior sequence of responses. This means the model cannot capture within-session changes in preference beyond what Q-learning itself produces.
 - **Discrete trials**: Real concurrent-schedule performance is a continuous free-operant process. We discretize it into trials of fixed duration. This means we cannot model inter-response time distributions or response bursts.
 - **No changeover delay (COD)**: In real concurrent schedules, a changeover delay is typically imposed to prevent rapid alternation. Our model omits this. Adding a COD would require a multi-state representation (e.g., "just switched" vs. "same lever as last trial").
-- **Constant parameters**: The learning rate $\alpha$, discount factor $\gamma$, and temperature $\tau$ do not change over the session. In reality, learning rates may decline with experience, and exploration may decrease as the organism becomes more familiar with the contingencies.
+- **Constant parameters**: The learning rate {$$}\alpha{/$$}, discount factor {$$}\gamma{/$$}, and temperature {$$}\tau{/$$} do not change over the session. In reality, learning rates may decline with experience, and exploration may decrease as the organism becomes more familiar with the contingencies.
 - **Independent schedules**: The two VI schedules operate independently; there are no programmed interactions between them.
 - **Stationary environment**: The schedule parameters do not change during the simulation. The model does not address what happens when contingencies shift (as in a reversal or multiple-schedule probe).
 - **No model of the environment**: The agent does not learn which actions lead to which states (model-free learning). Since we have only one state, this assumption is relatively innocuous here, but it would matter in more complex environments.
-- **Binary reward**: Reinforcement is either present ($r = 1$) or absent ($r = 0$). There is no variation in reinforcer magnitude, quality, or delay.
+- **Binary reward**: Reinforcement is either present ({$$}r = 1{/$$}) or absent ({$$}r = 0{/$$}). There is no variation in reinforcer magnitude, quality, or delay.
 
 ### Step 5: Perform the Balance
 
-The "balance" in a Q-learning model is the update rule itself. At each trial, the change in $Q(a)$ is:
+The "balance" in a Q-learning model is the update rule itself. At each trial, the change in {$$}Q(a){/$$} is:
 
-$$\Delta Q(a) = \alpha \left[ r + \gamma \cdot \max_{a'} Q(a') - Q(a) \right]$$
+{$$}\Delta Q(a) = \alpha \left[ r + \gamma \cdot \max_{a'} Q(a') - Q(a) \right]{/$$}
 
-In words: the change in the value of the chosen action equals the learning rate times the prediction error. The prediction error is the difference between what happened (reward $r$ plus the discounted best future value) and what was expected (current $Q(a)$).
+In words: the change in the value of the chosen action equals the learning rate times the prediction error. The prediction error is the difference between what happened (reward {$$}r{/$$} plus the discounted best future value) and what was expected (current {$$}Q(a){/$$}).
 
-When $r + \gamma \cdot \max_{a'} Q(a') > Q(a)$, the prediction error is positive — things went better than expected — and $Q(a)$ increases.
+When {$$}r + \gamma \cdot \max_{a'} Q(a') > Q(a){/$$}, the prediction error is positive — things went better than expected — and {$$}Q(a){/$$} increases.
 
-When $r + \gamma \cdot \max_{a'} Q(a') < Q(a)$, the prediction error is negative — things went worse than expected — and $Q(a)$ decreases.
+When {$$}r + \gamma \cdot \max_{a'} Q(a') < Q(a){/$$}, the prediction error is negative — things went worse than expected — and {$$}Q(a){/$$} decreases.
 
-At convergence, $\Delta Q(a) \approx 0$ for all actions, meaning the prediction error is approximately zero. The agent's expectations are calibrated to reality. This is the Q-learning analog of the equilibrium concept from Week 10: a fixed point where the system no longer changes.
+At convergence, {$$}\Delta Q(a) \approx 0{/$$} for all actions, meaning the prediction error is approximately zero. The agent's expectations are calibrated to reality. This is the Q-learning analog of the equilibrium concept from Week 10: a fixed point where the system no longer changes.
 
 Note that only the Q-value for the **chosen** action is updated on each trial. The Q-value for the unchosen action remains unchanged. This means that learning about each action requires actually performing that action — the agent cannot learn about an alternative it never tries, which is why exploration (via the softmax temperature) is essential.
 
 ### Step 6: Check Units
 
-- $Q(a)$ is in units of **expected cumulative reward** (dimensionless if reward is a count; otherwise in the units of the reward signal).
-- $r$ is in the same units as $Q$ (reward units).
-- $\gamma$ is dimensionless (a ratio, $0 \leq \gamma < 1$).
-- $\alpha$ is dimensionless (a proportion, $0 < \alpha \leq 1$).
-- $\gamma \cdot \max_{a'} Q(a')$ is in reward units (dimensionless times reward units = reward units).
-- $r + \gamma \cdot \max_{a'} Q(a') - Q(a)$: reward units $+$ reward units $-$ reward units = reward units. This is the prediction error in reward units.
-- $\alpha \cdot [\text{prediction error}]$: dimensionless $\times$ reward units = reward units.
-- Therefore $\Delta Q(a)$ is in reward units. **Units check.**
+- {$$}Q(a){/$$} is in units of **expected cumulative reward** (dimensionless if reward is a count; otherwise in the units of the reward signal).
+- {$$}r{/$$} is in the same units as {$$}Q{/$$} (reward units).
+- {$$}\gamma{/$$} is dimensionless (a ratio, {$$}0 \leq \gamma < 1{/$$}).
+- {$$}\alpha{/$$} is dimensionless (a proportion, {$$}0 < \alpha \leq 1{/$$}).
+- {$$}\gamma \cdot \max_{a'} Q(a'){/$$} is in reward units (dimensionless times reward units = reward units).
+- {$$}r + \gamma \cdot \max_{a'} Q(a') - Q(a){/$$}: reward units {$$}+{/$$} reward units {$$}-{/$$} reward units = reward units. This is the prediction error in reward units.
+- {$$}\alpha \cdot [\text{prediction error}]{/$$}: dimensionless {$$}\times{/$$} reward units = reward units.
+- Therefore {$$}\Delta Q(a){/$$} is in reward units. **Units check.**
 
 ### Step 7: Initial and Boundary Conditions
 
-- **Initial Q-values**: $Q(\text{Left}) = 0$, $Q(\text{Right}) = 0$. The agent starts with no preference. This is the computational analog of a naive organism with no reinforcement history on either lever. Note: setting both initial values to zero ensures that the softmax gives equal probability to both actions at the start — the agent begins by exploring randomly.
+- **Initial Q-values**: {$$}Q(\text{Left}) = 0{/$$}, {$$}Q(\text{Right}) = 0{/$$}. The agent starts with no preference. This is the computational analog of a naive organism with no reinforcement history on either lever. Note: setting both initial values to zero ensures that the softmax gives equal probability to both actions at the start — the agent begins by exploring randomly.
 - **Boundary conditions**: Q-values are unconstrained (they can be any real number), though in practice they will converge to finite values determined by the reinforcement rates and discount factor. Negative Q-values are not expected in this model since the minimum reward is zero.
 - **Simulation length**: We will run the simulation for 1,000 trials and examine the response allocation over the last portion of the simulation to assess steady-state behavior.
 
@@ -295,8 +283,8 @@ Note that only the Q-value for the **chosen** action is updated on each trial. T
 **Validation** (does the model reproduce empirical regularities?):
 
 - Run the simulation many times and compute the average response allocation at steady state.
-- Compare the response ratio $B_L / B_R$ to the reinforcement ratio $R_L / R_R$.
-- If the agent's behavior approximates matching ($B_L / B_R \approx R_L / R_R = 2$), the model is validated against that benchmark.
+- Compare the response ratio {$$}B_L / B_R{/$$} to the reinforcement ratio {$$}R_L / R_R{/$$}.
+- If the agent's behavior approximates matching ({$$}B_L / B_R \approx R_L / R_R = 2{/$$}), the model is validated against that benchmark.
 - Further validation: test additional reinforcement ratios (e.g., VI 20 vs. VI 60, VI 30 vs. VI 30) and check whether the matching relation holds across a range of conditions.
 
 **Solving** the model means running the simulation. Unlike the logistic ODE from Week 10, there is no closed-form solution. The output is a time series of choices, reinforcers, and Q-values that we analyze numerically.
@@ -307,17 +295,17 @@ Note that only the Q-value for the **chosen** action is updated on each trial. T
 
 We implement a Q-learning agent choosing between two levers on a concurrent **VI 30-s VI 60-s** schedule. We use the following parameter values:
 
-- Learning rate: $\alpha = 0.1$
-- Discount factor: $\gamma = 0.9$
-- Temperature: $\tau = 0.5$
-- Initial Q-values: $Q(\text{Left}) = 0$, $Q(\text{Right}) = 0$
+- Learning rate: {$$}\alpha = 0.1{/$$}
+- Discount factor: {$$}\gamma = 0.9{/$$}
+- Temperature: {$$}\tau = 0.5{/$$}
+- Initial Q-values: {$$}Q(\text{Left}) = 0{/$$}, {$$}Q(\text{Right}) = 0{/$$}
 - Trial duration: 1 second per trial
-- Reinforcement probabilities per trial: $p_L = 1/30 \approx 0.0333$, $p_R = 1/60 \approx 0.0167$
+- Reinforcement probabilities per trial: {$$}p_L = 1/30 \approx 0.0333{/$$}, {$$}p_R = 1/60 \approx 0.0167{/$$}
 - Number of trials: 1,000
 
 ### Schedule Mechanics
 
-At each trial, for each lever independently, a reinforcer is set up with probability $p$ if no reinforcer is currently waiting on that lever. Once set up, the reinforcer stays available until collected. When the agent presses a lever with an available reinforcer, it receives $r = 1$ and the reinforcer is consumed.
+At each trial, for each lever independently, a reinforcer is set up with probability {$$}p{/$$} if no reinforcer is currently waiting on that lever. Once set up, the reinforcer stays available until collected. When the agent presses a lever with an available reinforcer, it receives {$$}r = 1{/$$} and the reinforcer is consumed.
 
 This implementation captures the key property of VI schedules: reinforcers accumulate during the time spent responding on the other alternative. If the agent spends many consecutive trials pressing the left lever, a reinforcer is likely to set up on the right lever during that time, and will be available the next time the agent switches to the right. This "stored reinforcer" property is what makes VI schedules produce matching rather than exclusive preference — it pays to sample both alternatives.
 
@@ -325,42 +313,42 @@ This implementation captures the key property of VI schedules: reinforcers accum
 
 We trace the first several trials to illustrate the mechanics. (Random outcomes are fixed for this example to make the trace reproducible.)
 
-**Trial 1**: $Q(L) = 0$, $Q(R) = 0$. Softmax gives $P(L) = P(R) = 0.5$. Agent chooses **Left**. A reinforcer happens to be set up on Left ($r = 1$).
+**Trial 1**: {$$}Q(L) = 0{/$$}, {$$}Q(R) = 0{/$$}. Softmax gives {$$}P(L) = P(R) = 0.5{/$$}. Agent chooses **Left**. A reinforcer happens to be set up on Left ({$$}r = 1{/$$}).
 
-$$Q(L) \leftarrow 0 + 0.1 \times [1 + 0.9 \times \max(0, 0) - 0] = 0 + 0.1 \times 1.0 = 0.10$$
+{$$}Q(L) \leftarrow 0 + 0.1 \times [1 + 0.9 \times \max(0, 0) - 0] = 0 + 0.1 \times 1.0 = 0.10{/$$}
 
-The agent received a reinforcer it did not expect (Q was 0, so the prediction error is $1.0 - 0 = 1.0$). The Q-value jumps upward.
+The agent received a reinforcer it did not expect (Q was 0, so the prediction error is {$$}1.0 - 0 = 1.0{/$$}). The Q-value jumps upward.
 
-**Trial 2**: $Q(L) = 0.10$, $Q(R) = 0$. Softmax gives $P(L) = \frac{e^{0.10/0.5}}{e^{0.10/0.5} + e^{0/0.5}} = \frac{e^{0.2}}{e^{0.2} + 1} = \frac{1.221}{2.221} \approx 0.55$. Agent chooses **Left**. No reinforcer available ($r = 0$).
+**Trial 2**: {$$}Q(L) = 0.10{/$$}, {$$}Q(R) = 0{/$$}. Softmax gives {$$}P(L) = \frac{e^{0.10/0.5}}{e^{0.10/0.5} + e^{0/0.5}} = \frac{e^{0.2}}{e^{0.2} + 1} = \frac{1.221}{2.221} \approx 0.55{/$$}. Agent chooses **Left**. No reinforcer available ({$$}r = 0{/$$}).
 
-$$Q(L) \leftarrow 0.10 + 0.1 \times [0 + 0.9 \times \max(0.10, 0) - 0.10] = 0.10 + 0.1 \times [-0.01] = 0.099$$
+{$$}Q(L) \leftarrow 0.10 + 0.1 \times [0 + 0.9 \times \max(0.10, 0) - 0.10] = 0.10 + 0.1 \times [-0.01] = 0.099{/$$}
 
-Note: The prediction error is $0 + 0.9 \times 0.10 - 0.10 = 0.09 - 0.10 = -0.01$. Things went slightly worse than expected — the agent expected some value from choosing Left (Q was 0.10), but received no reinforcer, and the discounted future ($0.9 \times 0.10 = 0.09$) is slightly less than what was expected. So $Q(L)$ decreases slightly.
+Note: The prediction error is {$$}0 + 0.9 \times 0.10 - 0.10 = 0.09 - 0.10 = -0.01{/$$}. Things went slightly worse than expected — the agent expected some value from choosing Left (Q was 0.10), but received no reinforcer, and the discounted future ({$$}0.9 \times 0.10 = 0.09{/$$}) is slightly less than what was expected. So {$$}Q(L){/$$} decreases slightly.
 
-**Trial 3**: $Q(L) = 0.099$, $Q(R) = 0$. Agent chooses **Right**. A reinforcer is set up on Right ($r = 1$).
+**Trial 3**: {$$}Q(L) = 0.099{/$$}, {$$}Q(R) = 0{/$$}. Agent chooses **Right**. A reinforcer is set up on Right ({$$}r = 1{/$$}).
 
-$$Q(R) \leftarrow 0 + 0.1 \times [1 + 0.9 \times \max(0.099, 0) - 0] = 0 + 0.1 \times [1 + 0.089] = 0.109$$
+{$$}Q(R) \leftarrow 0 + 0.1 \times [1 + 0.9 \times \max(0.099, 0) - 0] = 0 + 0.1 \times [1 + 0.089] = 0.109{/$$}
 
-Note: The max Q-value across both actions is 0.099 (from Left), so the discounted future is $0.9 \times 0.099 = 0.089$. The full target is $1 + 0.089 = 1.089$, and the prediction error is $1.089 - 0 = 1.089$. The Q-value for Right jumps from 0 to 0.109.
+Note: The max Q-value across both actions is 0.099 (from Left), so the discounted future is {$$}0.9 \times 0.099 = 0.089{/$$}. The full target is {$$}1 + 0.089 = 1.089{/$$}, and the prediction error is {$$}1.089 - 0 = 1.089{/$$}. The Q-value for Right jumps from 0 to 0.109.
 
-**Trial 4**: $Q(L) = 0.099$, $Q(R) = 0.109$. Softmax slightly favors Right. Agent chooses **Right**. No reinforcer ($r = 0$).
+**Trial 4**: {$$}Q(L) = 0.099{/$$}, {$$}Q(R) = 0.109{/$$}. Softmax slightly favors Right. Agent chooses **Right**. No reinforcer ({$$}r = 0{/$$}).
 
-$$Q(R) \leftarrow 0.109 + 0.1 \times [0 + 0.9 \times \max(0.099, 0.109) - 0.109]$$
-$$= 0.109 + 0.1 \times [0.098 - 0.109] = 0.109 + 0.1 \times (-0.011) = 0.108$$
+{$$}Q(R) \leftarrow 0.109 + 0.1 \times [0 + 0.9 \times \max(0.099, 0.109) - 0.109]{/$$}
+{$$}= 0.109 + 0.1 \times [0.098 - 0.109] = 0.109 + 0.1 \times (-0.011) = 0.108{/$$}
 
-**Trial 5**: $Q(L) = 0.099$, $Q(R) = 0.108$. Agent chooses **Left**. Reinforcer available ($r = 1$).
+**Trial 5**: {$$}Q(L) = 0.099{/$$}, {$$}Q(R) = 0.108{/$$}. Agent chooses **Left**. Reinforcer available ({$$}r = 1{/$$}).
 
-$$Q(L) \leftarrow 0.099 + 0.1 \times [1 + 0.9 \times 0.108 - 0.099] = 0.099 + 0.1 \times [1.097 - 0.099] = 0.099 + 0.0998 = 0.199$$
+{$$}Q(L) \leftarrow 0.099 + 0.1 \times [1 + 0.9 \times 0.108 - 0.099] = 0.099 + 0.1 \times [1.097 - 0.099] = 0.099 + 0.0998 = 0.199{/$$}
 
-After just 5 trials, $Q(L) = 0.199$ and $Q(R) = 0.108$. The left lever, which has a higher reinforcement rate, is already beginning to accumulate a higher Q-value. The ratio $Q(L)/Q(R) \approx 1.84$, already approaching the $2:1$ reinforcement ratio.
+After just 5 trials, {$$}Q(L) = 0.199{/$$} and {$$}Q(R) = 0.108{/$$}. The left lever, which has a higher reinforcement rate, is already beginning to accumulate a higher Q-value. The ratio {$$}Q(L)/Q(R) \approx 1.84{/$$}, already approaching the {$$}2:1{/$$} reinforcement ratio.
 
-**Trials 6-10** continue this pattern. On trials where the agent presses a lever and receives reinforcement, the Q-value for that lever increases substantially. On trials without reinforcement, the Q-value decreases slightly. Because left-lever presses are reinforced approximately twice as often as right-lever presses, $Q(L)$ receives more positive updates and fewer negative updates than $Q(R)$, causing the values to diverge over time.
+**Trials 6-10** continue this pattern. On trials where the agent presses a lever and receives reinforcement, the Q-value for that lever increases substantially. On trials without reinforcement, the Q-value decreases slightly. Because left-lever presses are reinforced approximately twice as often as right-lever presses, {$$}Q(L){/$$} receives more positive updates and fewer negative updates than {$$}Q(R){/$$}, causing the values to diverge over time.
 
 ### Q-Values at Key Trial Numbers
 
 Running the full simulation with the parameters specified above, the Q-values evolve as follows (values shown are from a single representative run):
 
-| Trial | $Q(\text{Left})$ | $Q(\text{Right})$ | Cumulative $B_L / B_R$ |
+| Trial | {$$}Q(\text{Left}){/$$} | {$$}Q(\text{Right}){/$$} | Cumulative {$$}B_L / B_R{/$$} |
 |-------|-------------------|--------------------|-------------------------|
 | 1     | 0.100             | 0.000              | 1.00                    |
 | 10    | 0.214             | 0.098              | 1.50                    |
@@ -375,9 +363,9 @@ Running the full simulation with the parameters specified above, the Q-values ev
 
 Several features are notable:
 
-1. **Q-values diverge early**: Within the first 50 trials, the left lever's Q-value is already roughly double the right lever's, reflecting the $2:1$ ratio of reinforcement rates. The learning agent quickly picks up on the differential reinforcement.
+1. **Q-values diverge early**: Within the first 50 trials, the left lever's Q-value is already roughly double the right lever's, reflecting the {$$}2:1{/$$} ratio of reinforcement rates. The learning agent quickly picks up on the differential reinforcement.
 
-2. **Response allocation converges toward matching**: The cumulative response ratio $B_L / B_R$ starts near $1.0$ (random, reflecting the equal initial Q-values and the exploratory softmax policy) and gradually approaches $2.0$, the value predicted by strict matching given a $2:1$ reinforcement ratio. By trial 1,000, the ratio is approximately $2.01$ — remarkably close to matching.
+2. **Response allocation converges toward matching**: The cumulative response ratio {$$}B_L / B_R{/$$} starts near {$$}1.0{/$$} (random, reflecting the equal initial Q-values and the exploratory softmax policy) and gradually approaches {$$}2.0{/$$}, the value predicted by strict matching given a {$$}2:1{/$$} reinforcement ratio. By trial 1,000, the ratio is approximately {$$}2.01{/$$} — remarkably close to matching.
 
 3. **Q-values stabilize**: After several hundred trials, the Q-values change very little from trial to trial. The prediction errors are close to zero on average: the agent's expectations are calibrated to the reinforcement contingencies. This is the steady-state condition — the Q-learning analog of the equilibrium from dynamical systems theory.
 
@@ -389,9 +377,9 @@ Several features are notable:
 
 The results above are from a single simulation run and are therefore subject to stochastic variability. Each run involves random reinforcer set-ups and (through the softmax policy) random action selections. A different random seed would produce a different trajectory of Q-values and response allocations.
 
-To draw reliable conclusions, we would run the simulation many times — say, 500 replications — each with the same parameters but different random seeds. We would then report the **mean** and **standard deviation** of the response ratio at trial 1,000 across replications. If the mean is close to $2.0$ with a small standard deviation, we have strong evidence that Q-learning produces matching under these conditions.
+To draw reliable conclusions, we would run the simulation many times — say, 500 replications — each with the same parameters but different random seeds. We would then report the **mean** and **standard deviation** of the response ratio at trial 1,000 across replications. If the mean is close to {$$}2.0{/$$} with a small standard deviation, we have strong evidence that Q-learning produces matching under these conditions.
 
-For example, across 500 replications we might find: mean $B_L / B_R = 1.98$, SD $= 0.15$, 95% CI $= [1.96, 2.00]$. This would constitute strong computational evidence that Q-learning with these parameters produces approximate matching on a concurrent VI 30-s VI 60-s schedule.
+For example, across 500 replications we might find: mean {$$}B_L / B_R = 1.98{/$$}, SD {$$}= 0.15{/$$}, 95% CI {$$}= [1.96, 2.00]{/$$}. This would constitute strong computational evidence that Q-learning with these parameters produces approximate matching on a concurrent VI 30-s VI 60-s schedule.
 
 This is Monte Carlo simulation in action: using many replications of a stochastic model to estimate the central tendency and variability of an outcome. The computational experiment is our data set; we analyze it with the same statistical tools we would use for empirical data.
 
@@ -485,7 +473,7 @@ Next week reverses the direction. **Machine learning** does not start with a mec
 
 ## Exercises for Reflection
 
-1. In the worked example, the Q-learning agent converged toward matching on a concurrent VI 30-s VI 60-s schedule. What would happen if you changed the discount factor from $\gamma = 0.9$ to $\gamma = 0$? How would the agent's behavior differ, and would it still approximate matching? Explain your reasoning in terms of what $\gamma$ does to the prediction-error calculation.
+1. In the worked example, the Q-learning agent converged toward matching on a concurrent VI 30-s VI 60-s schedule. What would happen if you changed the discount factor from {$$}\gamma = 0.9{/$$} to {$$}\gamma = 0{/$$}? How would the agent's behavior differ, and would it still approximate matching? Explain your reasoning in terms of what {$$}\gamma{/$$} does to the prediction-error calculation.
 
 2. McDowell's evolutionary model reproduces matching as an emergent property of selection on a behavioral repertoire. Q-learning reproduces matching as an emergent property of prediction-error-driven value updating. These are two very different mechanisms producing the same macro-level outcome. What does this **convergence from different mechanisms** tell us about the status of the matching law as a scientific principle? Can you think of other examples in science where the same regularity arises from multiple distinct mechanisms?
 
@@ -564,7 +552,7 @@ Sutton, R. S. (1988). Learning to predict by the methods of temporal differences
 - **Agent-based models (ABMs)** specify rules for individual agents and let group-level patterns emerge from their interactions. McDowell's evolutionary theory of behavior dynamics is a prominent behavioral ABM that reproduces the matching law as an emergent property.
 - **Monte Carlo simulation** uses repeated random sampling to estimate probabilities, distributions, and confidence intervals for model outputs. It is a method for analyzing stochastic models, not a model family in itself.
 - **Reinforcement learning (RL)** is a computational framework in which an agent learns to maximize cumulative reward through trial-and-error interaction with an environment. It formalizes the core insight of operant conditioning.
-- **Q-learning** updates state-action values using the rule $Q(s,a) \leftarrow Q(s,a) + \alpha[r + \gamma \cdot \max_{a'} Q(s',a') - Q(s,a)]$, driven by **temporal-difference prediction error**.
+- **Q-learning** updates state-action values using the rule {$$}Q(s,a) \leftarrow Q(s,a) + \alpha[r + \gamma \cdot \max_{a'} Q(s',a') - Q(s,a)]{/$$}, driven by **temporal-difference prediction error**.
 - The **Rescorla-Wagner model** and **Q-learning** share the same core structure: both update an internal estimate by a fraction of the prediction error. Q-learning extends R-W with states, actions, temporal discounting, and bootstrapping.
 - Q-learning is **model-free**: the agent learns from direct experience without building an internal model of the environment, analogous to the behavioral emphasis on functional relations over cognitive representations.
 - **Matching emerges** from Q-learning under concurrent VI schedules — the agent converges toward the matching law without it being programmed in, providing a process-level explanation for a molar regularity.
@@ -572,3 +560,30 @@ Sutton, R. S. (1988). Learning to predict by the methods of temporal differences
 - **Limitations** include discrete state/action assumptions, scalability challenges, stationarity assumptions, reduced interpretability compared to analytical models, and computational cost.
 - The **8-step framework** applies to computational models: define the phenomenon, set boundaries, write the algorithm (governing law), state assumptions, express the update rule (balance), check units, set initial conditions, and verify/validate by running the simulation.
 - The intellectual lineage from **behavior science to AI** runs through prediction error: from Rescorla-Wagner, through temporal-difference learning, to the Q-learning algorithms that power modern reinforcement learning systems. The dopamine prediction-error hypothesis provides biological evidence that the brain may implement a similar computational architecture.
+
+## Recommended Readings
+
+**Required:**
+
+- McDowell, J. J. (2019). On the current status of the evolutionary theory of behavior dynamics. *Journal of the Experimental Analysis of Behavior*, *111*, 130-145.
+- Cox, D. J. & Santos, J. E. (2025). Predicting the next response: Demonstrating the utility of integrating AI-based RL with behavior science.
+
+
+## Lab: Computational Models
+
+A> **Run this lab.** Notebooks and data files are available at:
+A> [https://www.behavioral-data-science.org/book/labs/week-11](https://www.behavioral-data-science.org/book/labs/week-11)
+A>
+A> The companion materials include starter notebooks, the dataset(s) referenced below, and instructor-prepared solutions.
+
+## Computational Models Lab
+
+This week bridges the descriptive models of behavior from earlier in the course with process-level computational models that specify *how* behavior is generated. Rather than fitting equations to existing data, you will build an agent that learns from scratch through trial-and-error interaction with a simulated concurrent VI-VI schedule.
+
+The core question is whether a simple reinforcement learning algorithm -- Q-learning -- produces steady-state choice allocation that resembles the matching law. If it does, this suggests that matching may be an emergent property of basic reinforcement learning dynamics rather than a separate behavioral principle that organisms "follow."
+
+In the lab notebook, you will implement both the environment (concurrent VI 30-s vs VI 60-s schedule) and the agent (Q-learning with softmax action selection). You will then run simulations across multiple sessions, sweep key parameters (learning rate, discount factor), and compare the agent's behavior to the generalized matching equation from Week 2. This exercise illustrates how computational models can serve as mechanistic accounts that give rise to the molar regularities captured by descriptive models.
+
+### Assignment
+
+Complete all tasks in the Jupyter notebook. Each task builds on the previous one. Pay particular attention to the final discussion, where you reflect on the relationship between descriptive models (matching law) and process models (Q-learning).

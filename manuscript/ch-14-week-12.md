@@ -1,18 +1,6 @@
----
-slug: "week-12"
-number: 12
-published: false
-title: "Machine Learning and Artificial Intelligence"
-subtitle: "Data-driven models that learn patterns from behavioral data"
-description: "Supervised and unsupervised learning, decision trees, neural networks, the prediction-explanation gap."
-keyModels:
-  - "Decision Tree"
-  - "Neural Network"
-  - "k-Means Clustering"
-keyEquations:
-  - "Loss = (1/N) * sum(y_i - hat{y}_i)^2"
-  - "Regularized loss = Loss + lambda * ||w||"
----
+# Chapter 14: Machine Learning and Artificial Intelligence
+
+> Week 12 of the 13-week sequence.
 
 ## Why This Topic Matters
 
@@ -66,9 +54,9 @@ The quality of a supervised learning model is measured by its performance on **h
 
 The most common measure of prediction error for regression is the **mean squared error (MSE)**:
 
-$$\text{Loss} = \frac{1}{N} \sum_{i=1}^{N} (y_i - \hat{y}_i)^2$$
+{$$}\text{Loss} = \frac{1}{N} \sum_{i=1}^{N} (y_i - \hat{y}_i)^2{/$$}
 
-where $y_i$ is the true value for observation $i$, $\hat{y}_i$ is the predicted value, and $N$ is the number of observations. The loss function is the algorithm's report card: lower loss means better predictions. The algorithm adjusts its parameters to minimize this loss, a process called **optimization**. Different algorithms use different optimization procedures, but the logic is always the same: find the parameter values that make the predictions as close to the true values as possible.
+where {$$}y_i{/$$} is the true value for observation {$$}i{/$$}, {$$}\hat{y}_i{/$$} is the predicted value, and {$$}N{/$$} is the number of observations. The loss function is the algorithm's report card: lower loss means better predictions. The algorithm adjusts its parameters to minimize this loss, a process called **optimization**. Different algorithms use different optimization procedures, but the logic is always the same: find the parameter values that make the predictions as close to the true values as possible.
 
 For classification, common metrics include **accuracy** (proportion of correct predictions), **precision** (proportion of positive predictions that are truly positive), **recall** (proportion of true positives that are correctly identified), and the **F1 score** (harmonic mean of precision and recall). Each metric answers a different question:
 
@@ -78,7 +66,7 @@ For classification, common metrics include **accuracy** (proportion of correct p
 
 - **Recall** asks: "Of the cases that truly were escape function, how many did I correctly identify?" High recall means few missed cases.
 
-- **F1** is the harmonic mean of precision and recall: $F1 = 2 \cdot \frac{\text{precision} \cdot \text{recall}}{\text{precision} + \text{recall}}$. It balances the two concerns and is especially useful when both false alarms and missed cases are costly.
+- **F1** is the harmonic mean of precision and recall: {$$}F1 = 2 \cdot \frac{\text{precision} \cdot \text{recall}}{\text{precision} + \text{recall}}{/$$}. It balances the two concerns and is especially useful when both false alarms and missed cases are costly.
 
 A concrete behavioral example illustrates why these distinctions matter. Suppose you are building a classifier to predict whether a client will engage in severe problem behavior during a session, so staff can prepare safety procedures. A model with high recall but lower precision will flag many sessions---some unnecessarily---but will rarely miss a dangerous session. A model with high precision but lower recall will rarely cry wolf but will sometimes fail to warn staff about a session that becomes dangerous. In applied behavior analysis, the consequences of each type of error are different, and the choice of metric should reflect those consequences.
 
@@ -93,7 +81,7 @@ The standard procedure is:
 3. **Evaluate** the model on the test set only.
 4. **Report** the test set performance as the estimate of how well the model will perform on new, unseen data.
 
-For small datasets---common in behavior science---**k-fold cross-validation** is preferred. The data are divided into $k$ equally sized subsets (folds). The model is trained $k$ times, each time using $k - 1$ folds for training and the remaining fold for testing. The $k$ test-set performance scores are averaged to produce a single estimate of generalization performance. Five-fold and ten-fold cross-validation are the most common choices.
+For small datasets---common in behavior science---**k-fold cross-validation** is preferred. The data are divided into {$$}k{/$$} equally sized subsets (folds). The model is trained {$$}k{/$$} times, each time using {$$}k - 1{/$$} folds for training and the remaining fold for testing. The {$$}k{/$$} test-set performance scores are averaged to produce a single estimate of generalization performance. Five-fold and ten-fold cross-validation are the most common choices.
 
 ### Unsupervised Learning
 
@@ -101,7 +89,7 @@ In **unsupervised learning**, there are no labels. The algorithm receives only t
 
 Two major types of unsupervised learning are relevant to behavior science:
 
-- **Clustering**: Group observations that are similar to each other. The algorithm partitions the data into clusters such that observations within a cluster are more similar than observations in different clusters. A common algorithm is **k-means clustering**, which partitions $N$ observations into $k$ clusters by minimizing the total within-cluster variance. Example: given behavioral assessment data for 200 learners, identify subtypes of learners who show similar profiles of strengths and challenges.
+- **Clustering**: Group observations that are similar to each other. The algorithm partitions the data into clusters such that observations within a cluster are more similar than observations in different clusters. A common algorithm is **k-means clustering**, which partitions {$$}N{/$$} observations into {$$}k{/$$} clusters by minimizing the total within-cluster variance. Example: given behavioral assessment data for 200 learners, identify subtypes of learners who show similar profiles of strengths and challenges.
 
 - **Dimensionality reduction**: Compress a large set of features into a smaller set that retains most of the information. **Principal component analysis (PCA)** finds linear combinations of features (called components) that explain the most variance in the data. Example: given 50 items from a behavioral rating scale, reduce to 3--5 components that capture the main dimensions of behavioral variation.
 
@@ -111,15 +99,15 @@ Unsupervised learning is exploratory. It does not test hypotheses---it generates
 
 Because clustering is the unsupervised method most relevant to behavior science, it is worth understanding the mechanics of k-means in some detail. The algorithm works as follows:
 
-1. **Choose $k$**, the number of clusters. This must be specified in advance---the algorithm does not determine $k$ for you. Choosing the right $k$ is a substantive decision that requires domain knowledge and diagnostic tools (e.g., the elbow method, silhouette scores).
+1. **Choose {$$}k{/$$}**, the number of clusters. This must be specified in advance---the algorithm does not determine {$$}k{/$$} for you. Choosing the right {$$}k{/$$} is a substantive decision that requires domain knowledge and diagnostic tools (e.g., the elbow method, silhouette scores).
 
-2. **Initialize** $k$ cluster centers (centroids) at random positions in the feature space.
+2. **Initialize** {$$}k{/$$} cluster centers (centroids) at random positions in the feature space.
 
-3. **Assign** each observation to the nearest centroid. "Nearest" is typically defined by Euclidean distance: for observation $\mathbf{x}_i$ and centroid $\boldsymbol{\mu}_j$,
+3. **Assign** each observation to the nearest centroid. "Nearest" is typically defined by Euclidean distance: for observation {$$}\mathbf{x}_i{/$$} and centroid {$$}\boldsymbol{\mu}_j{/$$},
 
-$$d(\mathbf{x}_i, \boldsymbol{\mu}_j) = \sqrt{\sum_{f=1}^{F} (x_{if} - \mu_{jf})^2}$$
+{$$}d(\mathbf{x}_i, \boldsymbol{\mu}_j) = \sqrt{\sum_{f=1}^{F} (x_{if} - \mu_{jf})^2}{/$$}
 
-where $F$ is the number of features.
+where {$$}F{/$$} is the number of features.
 
 4. **Update** each centroid to be the mean of all observations assigned to it.
 
@@ -127,11 +115,11 @@ where $F$ is the number of features.
 
 The algorithm minimizes the **within-cluster sum of squares (WCSS)**:
 
-$$\text{WCSS} = \sum_{j=1}^{k} \sum_{\mathbf{x}_i \in C_j} \|\mathbf{x}_i - \boldsymbol{\mu}_j\|^2$$
+{$$}\text{WCSS} = \sum_{j=1}^{k} \sum_{\mathbf{x}_i \in C_j} \|\mathbf{x}_i - \boldsymbol{\mu}_j\|^2{/$$}
 
-where $C_j$ is the set of observations assigned to cluster $j$ and $\boldsymbol{\mu}_j$ is the centroid of cluster $j$.
+where {$$}C_j{/$$} is the set of observations assigned to cluster {$$}j{/$$} and {$$}\boldsymbol{\mu}_j{/$$} is the centroid of cluster {$$}j{/$$}.
 
-A behavioral example: suppose you have assessment data for 150 children receiving ABA services. Each child has scores on five domains: communication, social interaction, adaptive behavior, repetitive behavior, and problem behavior severity. You suspect there might be distinct subtypes of learners, but you do not know how many or what they look like. Running k-means with $k = 3$ might reveal three clusters: one with high communication and social scores but moderate problem behavior, one with low scores across all domains, and one with high repetitive behavior and problem behavior but moderate communication. These clusters are hypotheses about structure in the data, not confirmed subtypes. Validating them requires external evidence---do the clusters differ in treatment response? Do they map onto known clinical categories?
+A behavioral example: suppose you have assessment data for 150 children receiving ABA services. Each child has scores on five domains: communication, social interaction, adaptive behavior, repetitive behavior, and problem behavior severity. You suspect there might be distinct subtypes of learners, but you do not know how many or what they look like. Running k-means with {$$}k = 3{/$$} might reveal three clusters: one with high communication and social scores but moderate problem behavior, one with low scores across all domains, and one with high repetitive behavior and problem behavior but moderate communication. These clusters are hypotheses about structure in the data, not confirmed subtypes. Validating them requires external evidence---do the clusters differ in treatment response? Do they map onto known clinical categories?
 
 An important caveat: k-means assumes that clusters are roughly spherical in feature space and that all features are on comparable scales. If one feature ranges from 0 to 100 and another from 0 to 1, the high-range feature will dominate the distance calculations. **Standardizing features** (subtracting the mean and dividing by the standard deviation) before clustering is essential.
 
@@ -143,9 +131,9 @@ For example, a decision tree for classifying the function of problem behavior mi
 
 The algorithm builds the tree by choosing, at each step, the split that most reduces the **impurity** of the resulting groups. For classification, a common impurity measure is the **Gini impurity**:
 
-$$G = 1 - \sum_{c=1}^{C} p_c^2$$
+{$$}G = 1 - \sum_{c=1}^{C} p_c^2{/$$}
 
-where $p_c$ is the proportion of observations in class $c$ at a given node, and $C$ is the number of classes. A node where all observations belong to one class has $G = 0$ (perfectly pure). A node where observations are evenly split across classes has the highest Gini impurity.
+where {$$}p_c{/$$} is the proportion of observations in class {$$}c{/$$} at a given node, and {$$}C{/$$} is the number of classes. A node where all observations belong to one class has {$$}G = 0{/$$} (perfectly pure). A node where observations are evenly split across classes has the highest Gini impurity.
 
 Decision trees have appealing properties: they are interpretable, they handle nonlinear relationships naturally, and they can capture interactions between features without the modeler specifying them in advance. However, they have a critical weakness: they are prone to **overfitting**. A tree grown without constraints will keep splitting until every leaf contains a single observation, perfectly memorizing the training data but generalizing poorly to new data.
 
@@ -153,7 +141,7 @@ Decision trees have appealing properties: they are interpretable, they handle no
 
 ### Neural Networks
 
-A **neural network** is a model composed of layers of interconnected nodes (sometimes called neurons, by loose analogy with biological neurons). Each node computes a weighted sum of its inputs, adds a bias term, and passes the result through a nonlinear **activation function** (such as the sigmoid function $\sigma(x) = 1/(1 + e^{-x})$ or the rectified linear unit $\text{ReLU}(x) = \max(0, x)$).
+A **neural network** is a model composed of layers of interconnected nodes (sometimes called neurons, by loose analogy with biological neurons). Each node computes a weighted sum of its inputs, adds a bias term, and passes the result through a nonlinear **activation function** (such as the sigmoid function {$$}\sigma(x) = 1/(1 + e^{-x}){/$$} or the rectified linear unit {$$}\text{ReLU}(x) = \max(0, x){/$$}).
 
 The simplest neural network has three layers: an **input layer** (one node per feature), one **hidden layer** (a set of intermediate nodes), and an **output layer** (one node per predicted class or a single node for regression). Information flows forward from input to output, and the network's predictions depend on the **weights** connecting nodes across layers.
 
@@ -161,37 +149,37 @@ Training a neural network means adjusting the weights to minimize a loss functio
 
 Neural networks are **universal function approximators**: with enough hidden nodes and sufficient data, a neural network with even one hidden layer can approximate any continuous function to arbitrary precision (Cybenko, 1989; Hornik, 1991). This sounds powerful---and it is. Neural networks have achieved state-of-the-art performance in image recognition, natural language processing, and many other domains.
 
-But this power comes at a cost. A neural network with thousands of weights is a **black box**. You cannot inspect the weights and understand, in behavioral terms, what the network "knows." The weights are distributed, nonlinear, and high-dimensional. Unlike a matching-law equation where $s = 0.8$ means "this organism undermatches," a neural network weight of 0.347 connecting hidden node 42 to hidden node 113 means nothing interpretable.
+But this power comes at a cost. A neural network with thousands of weights is a **black box**. You cannot inspect the weights and understand, in behavioral terms, what the network "knows." The weights are distributed, nonlinear, and high-dimensional. Unlike a matching-law equation where {$$}s = 0.8{/$$} means "this organism undermatches," a neural network weight of 0.347 connecting hidden node 42 to hidden node 113 means nothing interpretable.
 
 For behavior science, neural networks raise a fundamental question: is a model useful if it predicts accurately but offers no insight into mechanism?
 
 #### A Simple Neural Network Computation
 
-To make neural networks concrete, consider a tiny network with 2 input nodes, 2 hidden nodes, and 1 output node. The inputs are $x_1$ (rate of problem behavior in the demand condition) and $x_2$ (rate of problem behavior in the play condition). The output is the probability that the function is escape.
+To make neural networks concrete, consider a tiny network with 2 input nodes, 2 hidden nodes, and 1 output node. The inputs are {$$}x_1{/$$} (rate of problem behavior in the demand condition) and {$$}x_2{/$$} (rate of problem behavior in the play condition). The output is the probability that the function is escape.
 
 Each hidden node computes:
 
-$$h_j = \sigma(w_{j1} x_1 + w_{j2} x_2 + b_j)$$
+{$$}h_j = \sigma(w_{j1} x_1 + w_{j2} x_2 + b_j){/$$}
 
-where $w_{j1}$ and $w_{j2}$ are the weights connecting the inputs to hidden node $j$, $b_j$ is the bias of hidden node $j$, and $\sigma$ is the sigmoid activation function:
+where {$$}w_{j1}{/$$} and {$$}w_{j2}{/$$} are the weights connecting the inputs to hidden node {$$}j{/$$}, {$$}b_j{/$$} is the bias of hidden node {$$}j{/$$}, and {$$}\sigma{/$$} is the sigmoid activation function:
 
-$$\sigma(z) = \frac{1}{1 + e^{-z}}$$
+{$$}\sigma(z) = \frac{1}{1 + e^{-z}}{/$$}
 
 The output node then computes:
 
-$$\hat{y} = \sigma(v_1 h_1 + v_2 h_2 + b_{\text{out}})$$
+{$$}\hat{y} = \sigma(v_1 h_1 + v_2 h_2 + b_{\text{out}}){/$$}
 
-where $v_1$ and $v_2$ are weights from the hidden nodes to the output, and $b_{\text{out}}$ is the output bias.
+where {$$}v_1{/$$} and {$$}v_2{/$$} are weights from the hidden nodes to the output, and {$$}b_{\text{out}}{/$$} is the output bias.
 
-Suppose, after training, the weights are: $w_{11} = 2.1$, $w_{12} = -1.5$, $b_1 = -3.0$, $w_{21} = 0.8$, $w_{22} = 0.3$, $b_2 = -1.0$, $v_1 = 4.0$, $v_2 = -2.0$, $b_{\text{out}} = -1.5$. For a new client with demand-condition rate $x_1 = 5.0$ and play-condition rate $x_2 = 0.8$:
+Suppose, after training, the weights are: {$$}w_{11} = 2.1{/$$}, {$$}w_{12} = -1.5{/$$}, {$$}b_1 = -3.0{/$$}, {$$}w_{21} = 0.8{/$$}, {$$}w_{22} = 0.3{/$$}, {$$}b_2 = -1.0{/$$}, {$$}v_1 = 4.0{/$$}, {$$}v_2 = -2.0{/$$}, {$$}b_{\text{out}} = -1.5{/$$}. For a new client with demand-condition rate {$$}x_1 = 5.0{/$$} and play-condition rate {$$}x_2 = 0.8{/$$}:
 
-$$h_1 = \sigma(2.1 \times 5.0 + (-1.5) \times 0.8 + (-3.0)) = \sigma(10.5 - 1.2 - 3.0) = \sigma(6.3) \approx 0.998$$
+{$$}h_1 = \sigma(2.1 \times 5.0 + (-1.5) \times 0.8 + (-3.0)) = \sigma(10.5 - 1.2 - 3.0) = \sigma(6.3) \approx 0.998{/$$}
 
-$$h_2 = \sigma(0.8 \times 5.0 + 0.3 \times 0.8 + (-1.0)) = \sigma(4.0 + 0.24 - 1.0) = \sigma(3.24) \approx 0.962$$
+{$$}h_2 = \sigma(0.8 \times 5.0 + 0.3 \times 0.8 + (-1.0)) = \sigma(4.0 + 0.24 - 1.0) = \sigma(3.24) \approx 0.962{/$$}
 
-$$\hat{y} = \sigma(4.0 \times 0.998 + (-2.0) \times 0.962 + (-1.5)) = \sigma(3.992 - 1.924 - 1.5) = \sigma(0.568) \approx 0.638$$
+{$$}\hat{y} = \sigma(4.0 \times 0.998 + (-2.0) \times 0.962 + (-1.5)) = \sigma(3.992 - 1.924 - 1.5) = \sigma(0.568) \approx 0.638{/$$}
 
-The network predicts a 63.8% probability that this client's behavior is escape-maintained. You can trace the arithmetic, but can you interpret it? Hidden node 1 seems to activate strongly when the demand-condition rate is high relative to the play-condition rate (positive weight on $x_1$, negative weight on $x_2$). Hidden node 2 activates when both rates are moderately high. The output combines these activations with a positive weight on $h_1$ and a negative weight on $h_2$. But "seems to" is doing a lot of work in those sentences. With only 2 hidden nodes and 9 parameters, this network is barely interpretable. Real networks have hundreds or thousands of hidden nodes and tens of thousands of parameters. Interpretation becomes impossible.
+The network predicts a 63.8% probability that this client's behavior is escape-maintained. You can trace the arithmetic, but can you interpret it? Hidden node 1 seems to activate strongly when the demand-condition rate is high relative to the play-condition rate (positive weight on {$$}x_1{/$$}, negative weight on {$$}x_2{/$$}). Hidden node 2 activates when both rates are moderately high. The output combines these activations with a positive weight on {$$}h_1{/$$} and a negative weight on {$$}h_2{/$$}. But "seems to" is doing a lot of work in those sentences. With only 2 hidden nodes and 9 parameters, this network is barely interpretable. Real networks have hundreds or thousands of hidden nodes and tens of thousands of parameters. Interpretation becomes impossible.
 
 This example illustrates both the power and the limitation. The network produces a graded probability (not just a yes/no classification), which is useful for clinical decision-making. But the path from inputs to output runs through a tangle of weights and nonlinearities that resists human understanding.
 
@@ -205,17 +193,17 @@ Earlier in this course, we discussed how models can be too simple or too complex
 
 The total prediction error can be decomposed as:
 
-$$\text{Total Error} = \text{Bias}^2 + \text{Variance} + \text{Irreducible Noise}$$
+{$$}\text{Total Error} = \text{Bias}^2 + \text{Variance} + \text{Irreducible Noise}{/$$}
 
 The modeler's job is to find the sweet spot: a model complex enough to capture the real patterns (low bias) but constrained enough to generalize to new data (low variance).
 
 **Regularization** is a technique for controlling model complexity. It adds a penalty to the loss function that discourages large parameter values:
 
-$$\text{Regularized Loss} = \text{Loss} + \lambda \|\mathbf{w}\|$$
+{$$}\text{Regularized Loss} = \text{Loss} + \lambda \|\mathbf{w}\|{/$$}
 
-where $\mathbf{w}$ is the vector of model weights, $\|\mathbf{w}\|$ is a measure of the size of the weights (L1 norm for Lasso, L2 norm for Ridge), and $\lambda$ is a **regularization parameter** that controls the strength of the penalty. Larger $\lambda$ means more penalty, simpler model, lower variance, but potentially higher bias.
+where {$$}\mathbf{w}{/$$} is the vector of model weights, {$$}\|\mathbf{w}\|{/$$} is a measure of the size of the weights (L1 norm for Lasso, L2 norm for Ridge), and {$$}\lambda{/$$} is a **regularization parameter** that controls the strength of the penalty. Larger {$$}\lambda{/$$} means more penalty, simpler model, lower variance, but potentially higher bias.
 
-**Cross-validation** is the standard tool for selecting the right level of complexity. The data are split into $k$ subsets (folds). For each fold, the model is trained on $k-1$ folds and evaluated on the held-out fold. The process is repeated $k$ times, and the average performance across folds is the estimate of how well the model will generalize. The model (or the value of $\lambda$) that produces the best cross-validated performance is selected.
+**Cross-validation** is the standard tool for selecting the right level of complexity. The data are split into {$$}k{/$$} subsets (folds). For each fold, the model is trained on {$$}k-1{/$$} folds and evaluated on the held-out fold. The process is repeated {$$}k{/$$} times, and the average performance across folds is the estimate of how well the model will generalize. The model (or the value of {$$}\lambda{/$$}) that produces the best cross-validated performance is selected.
 
 A concrete example helps ground these abstractions. Suppose you are building a model to predict session-by-session rates of problem behavior from 10 features (schedule parameters, time of day, therapist, previous session rate, etc.). You try three models:
 
@@ -337,23 +325,23 @@ The quantitative tool is the **decision tree algorithm**: at each node, choose t
 
 **Verbal description:** The decision tree examines features of functional analysis data (rate of problem behavior in each condition, difference in rates between conditions) and applies a series of if-then rules to classify the function. At each branch point, the tree asks a question about one feature (e.g., "Is the rate in the demand condition greater than 2.5 per minute?") and splits the data based on the answer. The process continues until a leaf node is reached, which provides the classification.
 
-**Mathematical expression:** At each internal node $t$, the tree selects the feature $j$ and threshold $\theta$ that minimize the weighted average Gini impurity of the two child nodes:
+**Mathematical expression:** At each internal node {$$}t{/$$}, the tree selects the feature {$$}j{/$$} and threshold {$$}\theta{/$$} that minimize the weighted average Gini impurity of the two child nodes:
 
-$$\text{Split cost} = \frac{N_{\text{left}}}{N_t} G_{\text{left}} + \frac{N_{\text{right}}}{N_t} G_{\text{right}}$$
+{$$}\text{Split cost} = \frac{N_{\text{left}}}{N_t} G_{\text{left}} + \frac{N_{\text{right}}}{N_t} G_{\text{right}}{/$$}
 
-where $N_t$ is the number of observations at node $t$, $N_{\text{left}}$ and $N_{\text{right}}$ are the numbers of observations in the left and right child nodes, and $G_{\text{left}}$ and $G_{\text{right}}$ are the Gini impurities of the child nodes:
+where {$$}N_t{/$$} is the number of observations at node {$$}t{/$$}, {$$}N_{\text{left}}{/$$} and {$$}N_{\text{right}}{/$$} are the numbers of observations in the left and right child nodes, and {$$}G_{\text{left}}{/$$} and {$$}G_{\text{right}}{/$$} are the Gini impurities of the child nodes:
 
-$$G = 1 - \sum_{c=1}^{C} p_c^2$$
+{$$}G = 1 - \sum_{c=1}^{C} p_c^2{/$$}
 
 The tree grows recursively until a stopping criterion is met (e.g., maximum depth, minimum observations per leaf, or no further reduction in impurity).
 
 ### Step 6: Verify Dimensional Consistency
 
-- $p_c$ is a proportion (dimensionless, between 0 and 1).
-- $p_c^2$ is dimensionless.
-- $\sum p_c^2$ is dimensionless.
-- $G = 1 - \sum p_c^2$ is dimensionless (a purity measure between 0 and 1).
-- $N_{\text{left}} / N_t$ is a proportion (dimensionless).
+- {$$}p_c{/$$} is a proportion (dimensionless, between 0 and 1).
+- {$$}p_c^2{/$$} is dimensionless.
+- {$$}\sum p_c^2{/$$} is dimensionless.
+- {$$}G = 1 - \sum p_c^2{/$$} is dimensionless (a purity measure between 0 and 1).
+- {$$}N_{\text{left}} / N_t{/$$} is a proportion (dimensionless).
 - The split cost is a weighted average of dimensionless quantities, so it is dimensionless.
 
 All terms are consistent. The Gini impurity is a unitless measure of heterogeneity, and the split cost is a unitless measure of the quality of a split.
@@ -362,7 +350,7 @@ All terms are consistent. The Gini impurity is a unitless measure of heterogenei
 
 - **Maximum tree depth:** Constrain the tree to a maximum depth of 3--5 levels to prevent overfitting and maintain interpretability. A tree deeper than 5 levels is unlikely to be inspectable by a clinician.
 - **Minimum samples per leaf:** Require at least 5--10 observations in each leaf node. This prevents the tree from creating leaves based on a single unusual case.
-- **Number of classes:** $C = 4$ (attention, escape, tangible, automatic).
+- **Number of classes:** {$$}C = 4{/$$} (attention, escape, tangible, automatic).
 - **Features:** Rate of problem behavior in each of the four FA conditions (attention, demand, tangible, play), plus derived features such as the maximum rate, the condition with the maximum rate, and the ratio of the highest rate to the play-condition rate.
 - **Training data:** At least 50--100 labeled cases are needed to fit a reliable tree. More is better, especially for rare classes.
 - **Evaluation metric:** Because classes may be imbalanced (automatic functions are less common), use the macro-averaged F1 score rather than raw accuracy.
@@ -416,7 +404,7 @@ At the root node, all 12 cases are present. The class distribution is:
 - Tangible: 3/12 = 0.25
 - Automatic: 3/12 = 0.25
 
-$$G_{\text{root}} = 1 - (0.25^2 + 0.25^2 + 0.25^2 + 0.25^2) = 1 - 4(0.0625) = 1 - 0.25 = 0.75$$
+{$$}G_{\text{root}} = 1 - (0.25^2 + 0.25^2 + 0.25^2 + 0.25^2) = 1 - 4(0.0625) = 1 - 0.25 = 0.75{/$$}
 
 The root node has maximum impurity (0.75 for a 4-class problem with equal class proportions). We need to find a split that reduces this.
 
@@ -428,15 +416,15 @@ The algorithm must now consider all possible splits on all features and choose t
 
 Consider splitting on the **Antecedent** feature. Since it has four values, consider the split "Antecedent = Demand?" (i.e., is the antecedent a demand, yes or no?):
 
-**Left child (Antecedent = Demand):** Cases 4, 5, 6. All Escape. $G_{\text{left}} = 1 - 1.0^2 = 0$.
+**Left child (Antecedent = Demand):** Cases 4, 5, 6. All Escape. {$$}G_{\text{left}} = 1 - 1.0^2 = 0{/$$}.
 
-**Right child (Antecedent $\neq$ Demand):** Cases 1, 2, 3, 7, 8, 9, 10, 11, 12. Distribution: Attention 3/9, Tangible 3/9, Automatic 3/9.
+**Right child (Antecedent {$$}\neq{/$$} Demand):** Cases 1, 2, 3, 7, 8, 9, 10, 11, 12. Distribution: Attention 3/9, Tangible 3/9, Automatic 3/9.
 
-$$G_{\text{right}} = 1 - 3(1/3)^2 = 1 - 3(0.111) = 1 - 0.333 = 0.667$$
+{$$}G_{\text{right}} = 1 - 3(1/3)^2 = 1 - 3(0.111) = 1 - 0.333 = 0.667{/$$}
 
 **Weighted split cost:**
 
-$$\text{Cost} = \frac{3}{12}(0) + \frac{9}{12}(0.667) = 0 + 0.500 = 0.500$$
+{$$}\text{Cost} = \frac{3}{12}(0) + \frac{9}{12}(0.667) = 0 + 0.500 = 0.500{/$$}
 
 This reduces impurity from 0.75 to 0.50---a substantial improvement. The left child is perfectly pure (all Escape), so no further splits are needed there.
 
@@ -446,15 +434,15 @@ Now consider splitting on the continuous feature, Rate. Try the threshold 4.5:
 
 **Left child (Rate > 4.5):** Cases 1, 2, 4, 5, 9. Distribution: Attention 2/5, Escape 2/5, Tangible 1/5.
 
-$$G_{\text{left}} = 1 - (0.4^2 + 0.4^2 + 0.2^2) = 1 - (0.16 + 0.16 + 0.04) = 1 - 0.36 = 0.64$$
+{$$}G_{\text{left}} = 1 - (0.4^2 + 0.4^2 + 0.2^2) = 1 - (0.16 + 0.16 + 0.04) = 1 - 0.36 = 0.64{/$$}
 
-**Right child (Rate $\leq$ 4.5):** Cases 3, 6, 7, 8, 10, 11, 12. Distribution: Attention 1/7, Escape 1/7, Tangible 2/7, Automatic 3/7.
+**Right child (Rate {$$}\leq{/$$} 4.5):** Cases 3, 6, 7, 8, 10, 11, 12. Distribution: Attention 1/7, Escape 1/7, Tangible 2/7, Automatic 3/7.
 
-$$G_{\text{right}} = 1 - \left(\frac{1}{7}\right)^2 - \left(\frac{1}{7}\right)^2 - \left(\frac{2}{7}\right)^2 - \left(\frac{3}{7}\right)^2 = 1 - 0.020 - 0.020 - 0.082 - 0.184 = 0.694$$
+{$$}G_{\text{right}} = 1 - \left(\frac{1}{7}\right)^2 - \left(\frac{1}{7}\right)^2 - \left(\frac{2}{7}\right)^2 - \left(\frac{3}{7}\right)^2 = 1 - 0.020 - 0.020 - 0.082 - 0.184 = 0.694{/$$}
 
 **Weighted split cost:**
 
-$$\text{Cost} = \frac{5}{12}(0.64) + \frac{7}{12}(0.694) = 0.267 + 0.405 = 0.672$$
+{$$}\text{Cost} = \frac{5}{12}(0.64) + \frac{7}{12}(0.694) = 0.267 + 0.405 = 0.672{/$$}
 
 This split reduces impurity from 0.75 to only 0.672---much worse than the Antecedent = Demand split (which achieved 0.500). The rate feature does not cleanly separate the functions because the rate distributions overlap substantially across classes. This is an important lesson: the feature that a human might think is most informative (rate of behavior) is not necessarily the feature that the algorithm finds most useful for splitting. The antecedent condition provides a much cleaner separation because it is directly linked to the experimental manipulation.
 
@@ -464,15 +452,15 @@ This split reduces impurity from 0.75 to only 0.672---much worse than the Antece
 
 Now consider splitting on **Consequence** at the right child node (9 remaining cases). Try "Consequence = Attention?":
 
-**Left child (Consequence = Attention):** Cases 1, 2, 3. All Attention. $G = 0$.
+**Left child (Consequence = Attention):** Cases 1, 2, 3. All Attention. {$$}G = 0{/$$}.
 
-**Right child (Consequence $\neq$ Attention):** Cases 7, 8, 9, 10, 11, 12. Distribution: Tangible 3/6, Automatic 3/6.
+**Right child (Consequence {$$}\neq{/$$} Attention):** Cases 7, 8, 9, 10, 11, 12. Distribution: Tangible 3/6, Automatic 3/6.
 
-$$G = 1 - (0.5^2 + 0.5^2) = 1 - 0.50 = 0.50$$
+{$$}G = 1 - (0.5^2 + 0.5^2) = 1 - 0.50 = 0.50{/$$}
 
 **Weighted split cost** (within this 9-case node):
 
-$$\text{Cost} = \frac{3}{9}(0) + \frac{6}{9}(0.50) = 0 + 0.333 = 0.333$$
+{$$}\text{Cost} = \frac{3}{9}(0) + \frac{6}{9}(0.50) = 0 + 0.333 = 0.333{/$$}
 
 Impurity within this subgroup drops from 0.667 to 0.333. The left child is pure (all Attention).
 
@@ -480,13 +468,13 @@ Impurity within this subgroup drops from 0.667 to 0.333. The left child is pure 
 
 At the remaining right child (6 cases: 3 Tangible, 3 Automatic), split on "Antecedent = Alone?":
 
-**Left child (Antecedent = Alone):** Cases 10, 11, 12. All Automatic. $G = 0$.
+**Left child (Antecedent = Alone):** Cases 10, 11, 12. All Automatic. {$$}G = 0{/$$}.
 
-**Right child (Antecedent $\neq$ Alone):** Cases 7, 8, 9. All Tangible. $G = 0$.
+**Right child (Antecedent {$$}\neq{/$$} Alone):** Cases 7, 8, 9. All Tangible. {$$}G = 0{/$$}.
 
 **Weighted split cost:**
 
-$$\text{Cost} = \frac{3}{6}(0) + \frac{3}{6}(0) = 0$$
+{$$}\text{Cost} = \frac{3}{6}(0) + \frac{3}{6}(0) = 0{/$$}
 
 Both children are pure. The tree is complete.
 
@@ -714,3 +702,43 @@ Breiman, L. (2001). Statistical modeling: The two cultures. *Statistical Science
 - **Responsible ML use** requires validation on held-out data, appropriate metrics for imbalanced classes, interpretability tools, careful documentation, and awareness that correlation does not imply causation.
 
 - **The 8-step framework still applies.** Even when using ML, you must clearly define the phenomenon, state assumptions, specify the model, verify its properties, and validate against data. The framework is algorithm-agnostic.
+
+## Recommended Readings
+
+**Required:**
+
+- Bloice, M. D. & Holzinger, A. (2016). A tutorial on machine learning and data science tools with Python. *Machine Learning for Health Informatics*, 435-480.
+- Badillo, S. et al. (2020). An introduction to machine learning. *Clinical Pharmacology & Therapeutics*, *107*, 871-885.
+
+**Optional:**
+
+- Kliegr, T. et al. (2019). Advances in machine learning for the behavioral sciences. *Behavior Research Methods*, *52*, 1-17.
+- Raschka, S. (2020). Model evaluation, model selection, and algorithm selection in machine learning. *arXiv preprint*.
+- Jiang, T. et al. (2020). Supervised machine learning: A brief primer. *Behavior Therapy*, *51*, 675-687.
+- Turgeon, S. & Lanovaz, M. J. (2020). Tutorial: Applying machine learning in behavioral research. *Perspectives on Behavior Science*, *43*, 697-723.
+- Morales, E. F. & Escalante, H. J. (2022). A brief introduction to supervised, unsupervised, and reinforcement learning. In *Biosignal Processing and Classification Using Computational Learning and Intelligence*.
+- Yates, L. A. et al. (2022). Cross validation for model selection: A review with examples from ecology. *Ecological Monographs*, *93*, e1557.
+- Gupta, V. (2022). MLOps: Machine learning lifecycle.
+- Woods, A. D. et al. (2023). Best practices for addressing missing data through multiple imputation. *Infant and Child Development*, *33*, e2407.
+- Cote, A. et al. (2024). Data cleaning and machine learning: A systematic literature review.
+- DataHeroes. (2025). 5 data cleaning techniques for better ML models.
+
+
+## Lab: Machine Learning and Artificial Intelligence
+
+A> **Run this lab.** Notebooks and data files are available at:
+A> [https://www.behavioral-data-science.org/book/labs/week-12](https://www.behavioral-data-science.org/book/labs/week-12)
+A>
+A> The companion materials include starter notebooks, the dataset(s) referenced below, and instructor-prepared solutions.
+
+## Machine Learning and Artificial Intelligence Lab
+
+This week introduces supervised machine learning as a tool for prediction and classification in behavior science. The specific application is classifying the function of problem behavior from functional analysis (FA) summary data -- a task that clinicians perform routinely based on visual inspection of FA graphs.
+
+You will work with a simulated dataset of 60 participants, each characterized by response rates across four FA conditions (attention, escape, tangible, and play/control). Your goal is to build a classifier that can predict the behavioral function from these features. You will start with a single decision tree, which is highly interpretable and mirrors the kind of rule-based reasoning clinicians use (e.g., "if the rate in the attention condition is elevated relative to play, the function is likely social-positive reinforcement").
+
+From there, you will explore overfitting by comparing training and test accuracy across different tree depths, then build a random forest to see whether an ensemble of trees improves predictive performance. The lab concludes with a discussion of the prediction-explanation tradeoff: more complex models may predict better, but simpler models are easier to interpret and communicate to practitioners.
+
+### Assignment
+
+Complete all tasks in the Jupyter notebook. You will need scikit-learn, pandas, and matplotlib. Focus not only on model accuracy but on understanding *why* the models make the predictions they do.

@@ -1,18 +1,6 @@
----
-slug: "week-9"
-number: 9
-published: false
-title: "Multilevel Modeling and Time-Series Forecasting"
-subtitle: "Handling nested data and temporal dependencies"
-description: "Random effects, ICC, shrinkage, autoregressive models, ARIMA."
-keyModels:
-  - "Multilevel Model"
-  - "AR(1)"
-  - "ARIMA"
-keyEquations:
-  - "y_ij = gamma_00 + u_0j + e_ij"
-  - "x_t = phi * x_{t-1} + epsilon_t"
----
+# Chapter 11: Multilevel Modeling and Time-Series Forecasting
+
+> Week 9 of the 13-week sequence.
 
 ## Why This Topic Matters
 
@@ -48,23 +36,19 @@ The **intraclass correlation coefficient (ICC)** quantifies how much of the tota
 
 The ICC is defined as:
 
-$$
-\text{ICC} = \frac{\tau^2}{\tau^2 + \sigma^2}
-$$
+{$$}\text{ICC} = \frac{\tau^2}{\tau^2 + \sigma^2}{/$$}
 
 where:
-- $\tau^2$ is the between-group (Level 2) variance---the variance of group means around the grand mean
-- $\sigma^2$ is the within-group (Level 1) variance---the variance of individual observations around their group mean
+- {$$}\tau^2{/$$} is the between-group (Level 2) variance---the variance of group means around the grand mean
+- {$$}\sigma^2{/$$} is the within-group (Level 1) variance---the variance of individual observations around their group mean
 
 An ICC of 0 means that knowing which group an observation belongs to tells you nothing---all the variance is within groups. An ICC of 1 means that all observations within a group are identical---all the variance is between groups.
 
 In behavioral data, ICCs are often substantial. If you measure response rate across sessions for several participants, it is common to find ICCs of 0.3 to 0.7, meaning that 30--70% of the variance in response rate is due to stable differences between participants. When the ICC is nontrivial (a common rule of thumb is ICC > 0.05), multilevel modeling is warranted.
 
-**Example computation.** Suppose you estimate $\tau^2 = 120$ and $\sigma^2 = 80$. Then:
+**Example computation.** Suppose you estimate {$$}\tau^2 = 120{/$$} and {$$}\sigma^2 = 80{/$$}. Then:
 
-$$
-\text{ICC} = \frac{120}{120 + 80} = \frac{120}{200} = 0.60
-$$
+{$$}\text{ICC} = \frac{120}{120 + 80} = \frac{120}{200} = 0.60{/$$}
 
 Sixty percent of the variance in the outcome is between participants. This is a strong signal that a multilevel model is needed.
 
@@ -78,27 +62,21 @@ In a multilevel model, some coefficients are **random effects**: they vary acros
 
 Consider modeling response rate as a function of session number (to capture a learning trend). In a fixed-effects-only model:
 
-$$
-y_{ij} = \beta_0 + \beta_1 \cdot \text{Session}_{ij} + e_{ij}
-$$
+{$$}y_{ij} = \beta_0 + \beta_1 \cdot \text{Session}_{ij} + e_{ij}{/$$}
 
-Every participant has the same intercept $\beta_0$ and the same slope $\beta_1$. This is unrealistic. Participants differ in where they start and how quickly they learn.
+Every participant has the same intercept {$$}\beta_0{/$$} and the same slope {$$}\beta_1{/$$}. This is unrealistic. Participants differ in where they start and how quickly they learn.
 
 In a random-intercept model:
 
-$$
-y_{ij} = \gamma_{00} + u_{0j} + \beta_1 \cdot \text{Session}_{ij} + e_{ij}
-$$
+{$$}y_{ij} = \gamma_{00} + u_{0j} + \beta_1 \cdot \text{Session}_{ij} + e_{ij}{/$$}
 
-Each participant $j$ has their own intercept: $\gamma_{00} + u_{0j}$. The term $u_{0j}$ is the deviation of participant $j$'s intercept from the grand mean $\gamma_{00}$. We assume $u_{0j} \sim N(0, \tau^2)$.
+Each participant {$$}j{/$$} has their own intercept: {$$}\gamma_{00} + u_{0j}{/$$}. The term {$$}u_{0j}{/$$} is the deviation of participant {$$}j{/$$}'s intercept from the grand mean {$$}\gamma_{00}{/$$}. We assume {$$}u_{0j} \sim N(0, \tau^2){/$$}.
 
 In a random-intercept, random-slope model:
 
-$$
-y_{ij} = \gamma_{00} + u_{0j} + (\gamma_{10} + u_{1j}) \cdot \text{Session}_{ij} + e_{ij}
-$$
+{$$}y_{ij} = \gamma_{00} + u_{0j} + (\gamma_{10} + u_{1j}) \cdot \text{Session}_{ij} + e_{ij}{/$$}
 
-Now participant $j$ also has their own slope: $\gamma_{10} + u_{1j}$. The $u_{1j}$ terms capture how much each participant's learning rate deviates from the average learning rate.
+Now participant {$$}j{/$$} also has their own slope: {$$}\gamma_{10} + u_{1j}{/$$}. The {$$}u_{1j}{/$$} terms capture how much each participant's learning rate deviates from the average learning rate.
 
 The key insight: random effects are not nuisance parameters to be controlled for. They are the between-person differences that behavior scientists care about. How much do individuals vary in their baseline response rate? How much do they vary in their sensitivity to an intervention? Multilevel models answer these questions directly.
 
@@ -115,7 +93,7 @@ Multilevel models address this by "shrinking" group-level estimates toward the g
 
 Shrinkage is not an ad hoc correction. It is a natural consequence of the multilevel model's structure. It is also equivalent to a form of **regularization**---the same principle that ridge regression and Bayesian priors use to prevent overfitting. The multilevel model automatically regularizes group-level estimates, producing more accurate predictions than either ignoring groups entirely (complete pooling) or estimating each group independently (no pooling).
 
-**Why this matters for small-$n$ research.** Behavior science often works with small numbers of participants, each observed across many sessions. Shrinkage is especially valuable here: it prevents the model from overreacting to extreme data from participants who happen to have fewer or noisier observations.
+**Why this matters for small-{$$}n{/$$} research.** Behavior science often works with small numbers of participants, each observed across many sessions. Shrinkage is especially valuable here: it prevents the model from overreacting to extreme data from participants who happen to have fewer or noisier observations.
 
 ---
 
@@ -123,31 +101,25 @@ Shrinkage is not an ad hoc correction. It is a natural consequence of the multil
 
 The simplest multilevel model---a random-intercept model with no predictors---is called the **unconditional means model** or **empty model**:
 
-$$
-y_{ij} = \gamma_{00} + u_{0j} + e_{ij}
-$$
+{$$}y_{ij} = \gamma_{00} + u_{0j} + e_{ij}{/$$}
 
 where:
-- $y_{ij}$ is the outcome for observation $i$ in group $j$
-- $\gamma_{00}$ is the **grand mean** (the fixed intercept)
-- $u_{0j}$ is the **random intercept** for group $j$, with $u_{0j} \sim N(0, \tau^2)$
-- $e_{ij}$ is the **residual** for observation $i$ in group $j$, with $e_{ij} \sim N(0, \sigma^2)$
+- {$$}y_{ij}{/$$} is the outcome for observation {$$}i{/$$} in group {$$}j{/$$}
+- {$$}\gamma_{00}{/$$} is the **grand mean** (the fixed intercept)
+- {$$}u_{0j}{/$$} is the **random intercept** for group {$$}j{/$$}, with {$$}u_{0j} \sim N(0, \tau^2){/$$}
+- {$$}e_{ij}{/$$} is the **residual** for observation {$$}i{/$$} in group {$$}j{/$$}, with {$$}e_{ij} \sim N(0, \sigma^2){/$$}
 
 This model decomposes each observation into three parts: the overall average, the group's deviation from that average, and the individual observation's deviation from its group average. This is the Level 1 and Level 2 decomposition:
 
 **Level 1 (within-person):**
 
-$$
-y_{ij} = \beta_{0j} + e_{ij}
-$$
+{$$}y_{ij} = \beta_{0j} + e_{ij}{/$$}
 
 **Level 2 (between-person):**
 
-$$
-\beta_{0j} = \gamma_{00} + u_{0j}
-$$
+{$$}\beta_{0j} = \gamma_{00} + u_{0j}{/$$}
 
-Substituting the Level 2 equation into Level 1 gives the combined equation above. The beauty of this framework is that it separates within-person variability ($\sigma^2$) from between-person variability ($\tau^2$), and the ICC is directly computed from these two variance components.
+Substituting the Level 2 equation into Level 1 gives the combined equation above. The beauty of this framework is that it separates within-person variability ({$$}\sigma^2{/$$}) from between-person variability ({$$}\tau^2{/$$}), and the ICC is directly computed from these two variance components.
 
 Adding predictors at Level 1 (e.g., session number, condition) and Level 2 (e.g., participant characteristics, treatment group) allows you to explain variance at each level. This is where multilevel models become powerful tools for testing hypotheses about both individual trajectories and group differences.
 
@@ -157,13 +129,11 @@ Adding predictors at Level 1 (e.g., session number, condition) and Level 2 (e.g.
 
 In many behavioral datasets, observations are ordered in time, and adjacent observations are correlated. A participant who responds at a high rate in Session 5 is likely to respond at a high rate in Session 6. This phenomenon is **temporal autocorrelation**.
 
-The **autocorrelation function (ACF)** quantifies this. For a time series $x_1, x_2, \ldots, x_T$, the autocorrelation at lag $k$ is the correlation between $x_t$ and $x_{t-k}$:
+The **autocorrelation function (ACF)** quantifies this. For a time series {$$}x_1, x_2, \ldots, x_T{/$$}, the autocorrelation at lag {$$}k{/$$} is the correlation between {$$}x_t{/$$} and {$$}x_{t-k}{/$$}:
 
-$$
-\rho_k = \frac{\text{Cov}(x_t, x_{t-k})}{\text{Var}(x_t)}
-$$
+{$$}\rho_k = \frac{\text{Cov}(x_t, x_{t-k})}{\text{Var}(x_t)}{/$$}
 
-At lag 0, $\rho_0 = 1$ (a series is perfectly correlated with itself). At lag 1, $\rho_1$ tells you how strongly today's value predicts tomorrow's. At lag 2, $\rho_2$ tells you how strongly today's value predicts the day after tomorrow's. And so on.
+At lag 0, {$$}\rho_0 = 1{/$$} (a series is perfectly correlated with itself). At lag 1, {$$}\rho_1{/$$} tells you how strongly today's value predicts tomorrow's. At lag 2, {$$}\rho_2{/$$} tells you how strongly today's value predicts the day after tomorrow's. And so on.
 
 In behavioral data, lag-1 autocorrelations are often positive and substantial. Session-to-session response rates, daily self-monitoring data, and within-session interresponse times all tend to show autocorrelation. When autocorrelation is present and ignored, standard errors from ordinary regression are biased, and forecasts fail to exploit the temporal structure of the data.
 
@@ -175,32 +145,28 @@ Plotting the ACF is an essential first step in any time-series analysis. It tell
 
 The simplest model for temporal dependence is the **autoregressive model of order 1**, or **AR(1)**:
 
-$$
-x_t = \phi \cdot x_{t-1} + \epsilon_t
-$$
+{$$}x_t = \phi \cdot x_{t-1} + \epsilon_t{/$$}
 
 where:
-- $x_t$ is the value of the series at time $t$
-- $\phi$ is the **autoregressive coefficient**, capturing the strength of temporal dependence
-- $\epsilon_t$ is white noise (independent, identically distributed error), with $\epsilon_t \sim N(0, \sigma^2_\epsilon)$
+- {$$}x_t{/$$} is the value of the series at time {$$}t{/$$}
+- {$$}\phi{/$$} is the **autoregressive coefficient**, capturing the strength of temporal dependence
+- {$$}\epsilon_t{/$$} is white noise (independent, identically distributed error), with {$$}\epsilon_t \sim N(0, \sigma^2_\epsilon){/$$}
 
-The AR(1) model says: the current value equals a fraction of the previous value, plus random noise. If $\phi = 0.8$, then 80% of the current value is "inherited" from the previous time point, and 20% is new random input.
+The AR(1) model says: the current value equals a fraction of the previous value, plus random noise. If {$$}\phi = 0.8{/$$}, then 80% of the current value is "inherited" from the previous time point, and 20% is new random input.
 
 Key properties of AR(1):
-- If $|\phi| < 1$, the series is **stationary**---it fluctuates around a stable mean and does not drift off to infinity.
-- If $\phi > 0$, adjacent values tend to be similar (positive autocorrelation). This is the typical case in behavioral data.
-- If $\phi < 0$, adjacent values tend to alternate (negative autocorrelation). This is less common but can occur in some behavioral contexts (e.g., contrast effects).
-- If $\phi = 1$, the series is a **random walk**---it drifts without returning to a mean. This is a nonstationary process.
+- If {$$}|\phi| < 1{/$$}, the series is **stationary**---it fluctuates around a stable mean and does not drift off to infinity.
+- If {$$}\phi > 0{/$$}, adjacent values tend to be similar (positive autocorrelation). This is the typical case in behavioral data.
+- If {$$}\phi < 0{/$$}, adjacent values tend to alternate (negative autocorrelation). This is less common but can occur in some behavioral contexts (e.g., contrast effects).
+- If {$$}\phi = 1{/$$}, the series is a **random walk**---it drifts without returning to a mean. This is a nonstationary process.
 
-More generally, an **AR(p)** model includes $p$ lags:
+More generally, an **AR(p)** model includes {$$}p{/$$} lags:
 
-$$
-x_t = \phi_1 \cdot x_{t-1} + \phi_2 \cdot x_{t-2} + \cdots + \phi_p \cdot x_{t-p} + \epsilon_t
-$$
+{$$}x_t = \phi_1 \cdot x_{t-1} + \phi_2 \cdot x_{t-2} + \cdots + \phi_p \cdot x_{t-p} + \epsilon_t{/$$}
 
 AR(2) says the current value depends on the two most recent values. In practice, behavioral time series are often well described by AR(1) or AR(2).
 
-**Interpreting $\phi$ in behavioral terms.** A high $\phi$ (close to 1) means behavior is highly persistent---today's response rate is very similar to yesterday's. A low $\phi$ (close to 0) means behavior is relatively unpredictable from one time point to the next. Interventions that aim to disrupt behavioral patterns should, in principle, reduce $\phi$.
+**Interpreting {$$}\phi{/$$} in behavioral terms.** A high {$$}\phi{/$$} (close to 1) means behavior is highly persistent---today's response rate is very similar to yesterday's. A low {$$}\phi{/$$} (close to 0) means behavior is relatively unpredictable from one time point to the next. Interventions that aim to disrupt behavioral patterns should, in principle, reduce {$$}\phi{/$$}.
 
 ---
 
@@ -208,20 +174,18 @@ AR(2) says the current value depends on the two most recent values. In practice,
 
 **ARIMA** stands for **AutoRegressive Integrated Moving Average**. It extends the AR model in two ways:
 
-1. **Differencing (I):** If a series has a trend (e.g., response rate gradually increases across sessions), the series is nonstationary. Differencing transforms the series by computing changes: $\Delta x_t = x_t - x_{t-1}$. This can remove trends and make the series stationary. The "I" in ARIMA indicates how many times differencing is applied.
+1. **Differencing (I):** If a series has a trend (e.g., response rate gradually increases across sessions), the series is nonstationary. Differencing transforms the series by computing changes: {$$}\Delta x_t = x_t - x_{t-1}{/$$}. This can remove trends and make the series stationary. The "I" in ARIMA indicates how many times differencing is applied.
 
 2. **Moving Average (MA):** While AR models regress the current value on past values, MA models regress the current value on past errors:
 
-$$
-x_t = \mu + \epsilon_t + \theta_1 \cdot \epsilon_{t-1} + \theta_2 \cdot \epsilon_{t-2} + \cdots + \theta_q \cdot \epsilon_{t-q}
-$$
+{$$}x_t = \mu + \epsilon_t + \theta_1 \cdot \epsilon_{t-1} + \theta_2 \cdot \epsilon_{t-2} + \cdots + \theta_q \cdot \epsilon_{t-q}{/$$}
 
-The MA component captures short-lived shocks. If something unusual happened yesterday (a large $\epsilon_{t-1}$), the MA term lets that shock influence today's value.
+The MA component captures short-lived shocks. If something unusual happened yesterday (a large {$$}\epsilon_{t-1}{/$$}), the MA term lets that shock influence today's value.
 
 An **ARIMA(p, d, q)** model combines all three:
-- $p$ = number of autoregressive terms
-- $d$ = number of differences needed for stationarity
-- $q$ = number of moving average terms
+- {$$}p{/$$} = number of autoregressive terms
+- {$$}d{/$$} = number of differences needed for stationarity
+- {$$}q{/$$} = number of moving average terms
 
 For example:
 - **ARIMA(1,0,0)** is simply an AR(1) model (no differencing, no MA).
@@ -229,8 +193,8 @@ For example:
 - **ARIMA(1,1,1)** uses one AR term, one difference, and one MA term.
 
 **Selecting ARIMA orders.** The ACF and partial autocorrelation function (PACF) guide model selection:
-- An AR(p) process shows a PACF that cuts off after lag $p$ and an ACF that decays gradually.
-- An MA(q) process shows an ACF that cuts off after lag $q$ and a PACF that decays gradually.
+- An AR(p) process shows a PACF that cuts off after lag {$$}p{/$$} and an ACF that decays gradually.
+- An MA(q) process shows an ACF that cuts off after lag {$$}q{/$$} and a PACF that decays gradually.
 - Mixed processes show gradual decay in both.
 
 Information criteria (AIC, BIC) are used to compare candidate models. The model with the lowest information criterion is preferred, balancing fit against complexity.
@@ -243,14 +207,12 @@ Information criteria (AIC, BIC) are used to compare candidate models. The model 
 
 A behavioral time series can often be decomposed into interpretable components:
 
-$$
-x_t = T_t + S_t + R_t
-$$
+{$$}x_t = T_t + S_t + R_t{/$$}
 
 where:
-- $T_t$ is the **trend** component: the long-term increase or decrease
-- $S_t$ is the **seasonal** (or cyclical) component: regular repeating patterns
-- $R_t$ is the **residual** (or remainder): what is left after removing trend and seasonality
+- {$$}T_t{/$$} is the **trend** component: the long-term increase or decrease
+- {$$}S_t{/$$} is the **seasonal** (or cyclical) component: regular repeating patterns
+- {$$}R_t{/$$} is the **residual** (or remainder): what is left after removing trend and seasonality
 
 For example, consider a participant's daily self-monitoring data collected over 90 days. The trend might show a gradual increase in the target behavior over the course of treatment. The seasonal component might reveal a weekly cycle---the participant consistently performs better on weekdays than weekends. The residual captures day-to-day fluctuations that are not explained by trend or cycle.
 
@@ -264,51 +226,45 @@ Classical decomposition methods (additive and multiplicative) and more modern ap
 
 We apply the 8-step framework to a multilevel modeling problem: modeling delay discounting across multiple participants.
 
-**Step 1: Get the behavioral phenomenon clearly in mind.** Delay discounting is the decrease in the subjective value of a reward as the delay to its receipt increases. Participants are asked to choose between smaller-sooner and larger-later rewards across a range of delays. From these choices, we estimate a discounting rate parameter $k$ for each participant. We have data from 20 participants, each completing the task at 6 different delays.
+**Step 1: Get the behavioral phenomenon clearly in mind.** Delay discounting is the decrease in the subjective value of a reward as the delay to its receipt increases. Participants are asked to choose between smaller-sooner and larger-later rewards across a range of delays. From these choices, we estimate a discounting rate parameter {$$}k{/$$} for each participant. We have data from 20 participants, each completing the task at 6 different delays.
 
-**Step 2: Define the behavioral processes and scope of the model.** We will model how subjective value declines with delay, allowing the discounting rate $k$ to vary across participants. The scope includes both the within-person discounting function and the between-person variability in $k$. We will not model how discounting develops over time or how it is affected by specific interventions.
+**Step 2: Define the behavioral processes and scope of the model.** We will model how subjective value declines with delay, allowing the discounting rate {$$}k{/$$} to vary across participants. The scope includes both the within-person discounting function and the between-person variability in {$$}k{/$$}. We will not model how discounting develops over time or how it is affected by specific interventions.
 
 **Step 3: Identify the behavioral principles and quantitative laws.** Mazur's (1987) hyperbolic discounting model:
 
-$$
-V = \frac{A}{1 + k \cdot D}
-$$
+{$$}V = \frac{A}{1 + k \cdot D}{/$$}
 
-where $V$ is subjective value, $A$ is the amount of the delayed reward, $D$ is the delay, and $k$ is the discounting rate. Higher $k$ means steeper discounting (more impulsive choice).
+where {$$}V{/$$} is subjective value, {$$}A{/$$} is the amount of the delayed reward, {$$}D{/$$} is the delay, and {$$}k{/$$} is the discounting rate. Higher {$$}k{/$$} means steeper discounting (more impulsive choice).
 
 **Step 4: State all simplifying assumptions.**
 - The hyperbolic form adequately describes each individual's discounting.
-- The parameter $k$ captures stable individual differences.
-- Log-transformed $k$ values are normally distributed across participants.
+- The parameter {$$}k{/$$} captures stable individual differences.
+- Log-transformed {$$}k{/$$} values are normally distributed across participants.
 - Within-person deviations from the hyperbolic function are normally distributed.
 - All participants experienced the same set of delays and reward amounts.
 
-**Step 5: Write the model verbally, then mathematically.** Verbally: Each participant's subjective value at a given delay follows a hyperbolic function, but the steepness of discounting varies from person to person. Some people discount steeply (high $k$), others shallowly (low $k$). We model this variation explicitly.
+**Step 5: Write the model verbally, then mathematically.** Verbally: Each participant's subjective value at a given delay follows a hyperbolic function, but the steepness of discounting varies from person to person. Some people discount steeply (high {$$}k{/$$}), others shallowly (low {$$}k{/$$}). We model this variation explicitly.
 
-To linearize for multilevel modeling, we work with $\ln(k)$ and reformulate. One common approach is to estimate $k_j$ for each participant and then model $\ln(k_j)$ at Level 2. But a fully integrated approach fits the nonlinear model with random effects:
+To linearize for multilevel modeling, we work with {$$}\ln(k){/$$} and reformulate. One common approach is to estimate {$$}k_j{/$$} for each participant and then model {$$}\ln(k_j){/$$} at Level 2. But a fully integrated approach fits the nonlinear model with random effects:
 
 **Level 1 (within-person):**
 
-$$
-V_{ij} = \frac{A}{1 + k_j \cdot D_{ij}} + e_{ij}
-$$
+{$$}V_{ij} = \frac{A}{1 + k_j \cdot D_{ij}} + e_{ij}{/$$}
 
 **Level 2 (between-person):**
 
-$$
-\ln(k_j) = \gamma_0 + u_j, \quad u_j \sim N(0, \tau^2)
-$$
+{$$}\ln(k_j) = \gamma_0 + u_j, \quad u_j \sim N(0, \tau^2){/$$}
 
-In the combined model, each participant has their own discounting rate $k_j$, which is drawn from a log-normal distribution centered on $\exp(\gamma_0)$.
+In the combined model, each participant has their own discounting rate {$$}k_j{/$$}, which is drawn from a log-normal distribution centered on {$$}\exp(\gamma_0){/$$}.
 
-**Step 6: Verify dimensional consistency.** $V$ is in dollars (or whatever unit the reward is in). $A$ is in dollars. $k$ is in units of inverse time (e.g., 1/days). $D$ is in time units (e.g., days). The product $k \cdot D$ is dimensionless. Thus $\frac{A}{1 + k \cdot D}$ is in dollars. The residual $e_{ij}$ is in dollars. Units are consistent.
+**Step 6: Verify dimensional consistency.** {$$}V{/$$} is in dollars (or whatever unit the reward is in). {$$}A{/$$} is in dollars. {$$}k{/$$} is in units of inverse time (e.g., 1/days). {$$}D{/$$} is in time units (e.g., days). The product {$$}k \cdot D{/$$} is dimensionless. Thus {$$}\frac{A}{1 + k \cdot D}{/$$} is in dollars. The residual {$$}e_{ij}{/$$} is in dollars. Units are consistent.
 
-**Step 7: Specify starting values and constraints.** $k_j > 0$ for all participants (working on the log scale ensures this). $A$ is known (set by the experimenter). $D$ values are known (set by the experimenter). Starting values for $\gamma_0$ can be based on published norms---log($k$) values in the range of $-4$ to $0$ are common for monetary discounting with delays in days. The variance $\tau^2$ can be initialized at 1.
+**Step 7: Specify starting values and constraints.** {$$}k_j > 0{/$$} for all participants (working on the log scale ensures this). {$$}A{/$$} is known (set by the experimenter). {$$}D{/$$} values are known (set by the experimenter). Starting values for {$$}\gamma_0{/$$} can be based on published norms---log({$$}k{/$$}) values in the range of {$$}-4{/$$} to {$$}0{/$$} are common for monetary discounting with delays in days. The variance {$$}\tau^2{/$$} can be initialized at 1.
 
 **Step 8: Check the math, test against data, and derive predictions.**
-- **Verify:** When $D = 0$, $V = A$ for all participants (no discounting at zero delay). As $D \to \infty$, $V \to 0$. These boundary conditions are correct.
-- **Validate:** Fit the model to the 20-participant dataset. Examine residuals for systematic patterns. Compare the multilevel model to a model that ignores individual differences (all participants share the same $k$) using a likelihood ratio test or information criterion. The multilevel model should fit substantially better if individuals truly differ.
-- **Solve:** Given the estimated distribution of $k$ values, predict discounting for a new participant (using the population distribution as a prior), or predict a specific participant's subjective value at an untested delay.
+- **Verify:** When {$$}D = 0{/$$}, {$$}V = A{/$$} for all participants (no discounting at zero delay). As {$$}D \to \infty{/$$}, {$$}V \to 0{/$$}. These boundary conditions are correct.
+- **Validate:** Fit the model to the 20-participant dataset. Examine residuals for systematic patterns. Compare the multilevel model to a model that ignores individual differences (all participants share the same {$$}k{/$$}) using a likelihood ratio test or information criterion. The multilevel model should fit substantially better if individuals truly differ.
+- **Solve:** Given the estimated distribution of {$$}k{/$$} values, predict discounting for a new participant (using the population distribution as a prior), or predict a specific participant's subjective value at an untested delay.
 
 ---
 
@@ -327,43 +283,37 @@ In the combined model, each participant has their own discounting rate $k_j$, wh
 
 **Step 1: Compute group means and the grand mean.**
 
-- $\bar{y}_{P1} = (22+25+23+24+21)/5 = 23.0$
-- $\bar{y}_{P2} = (38+40+37+41+39)/5 = 39.0$
-- $\bar{y}_{P3} = (15+18+14+16+17)/5 = 16.0$
-- $\bar{y}_{P4} = (30+28+32+31+29)/5 = 30.0$
-- Grand mean: $\bar{y}_{..} = (23.0 + 39.0 + 16.0 + 30.0)/4 = 27.0$
+- {$$}\bar{y}_{P1} = (22+25+23+24+21)/5 = 23.0{/$$}
+- {$$}\bar{y}_{P2} = (38+40+37+41+39)/5 = 39.0{/$$}
+- {$$}\bar{y}_{P3} = (15+18+14+16+17)/5 = 16.0{/$$}
+- {$$}\bar{y}_{P4} = (30+28+32+31+29)/5 = 30.0{/$$}
+- Grand mean: {$$}\bar{y}_{..} = (23.0 + 39.0 + 16.0 + 30.0)/4 = 27.0{/$$}
 
 **Step 2: Compute the ICC.**
 
-We need the between-group variance ($\tau^2$) and the within-group variance ($\sigma^2$).
+We need the between-group variance ({$$}\tau^2{/$$}) and the within-group variance ({$$}\sigma^2{/$$}).
 
 Between-group variance (variance of group means around the grand mean):
 
-$$
-\tau^2 = \frac{(23-27)^2 + (39-27)^2 + (16-27)^2 + (30-27)^2}{4-1} = \frac{16 + 144 + 121 + 9}{3} = \frac{290}{3} = 96.67
-$$
+{$$}\tau^2 = \frac{(23-27)^2 + (39-27)^2 + (16-27)^2 + (30-27)^2}{4-1} = \frac{16 + 144 + 121 + 9}{3} = \frac{290}{3} = 96.67{/$$}
 
 Within-group variance (average of within-group variances):
 
-For P1: $s^2_{P1} = \frac{(22-23)^2+(25-23)^2+(23-23)^2+(24-23)^2+(21-23)^2}{4} = \frac{1+4+0+1+4}{4} = 2.50$
+For P1: {$$}s^2_{P1} = \frac{(22-23)^2+(25-23)^2+(23-23)^2+(24-23)^2+(21-23)^2}{4} = \frac{1+4+0+1+4}{4} = 2.50{/$$}
 
-For P2: $s^2_{P2} = \frac{(38-39)^2+(40-39)^2+(37-39)^2+(41-39)^2+(39-39)^2}{4} = \frac{1+1+4+4+0}{4} = 2.50$
+For P2: {$$}s^2_{P2} = \frac{(38-39)^2+(40-39)^2+(37-39)^2+(41-39)^2+(39-39)^2}{4} = \frac{1+1+4+4+0}{4} = 2.50{/$$}
 
-For P3: $s^2_{P3} = \frac{(15-16)^2+(18-16)^2+(14-16)^2+(16-16)^2+(17-16)^2}{4} = \frac{1+4+4+0+1}{4} = 2.50$
+For P3: {$$}s^2_{P3} = \frac{(15-16)^2+(18-16)^2+(14-16)^2+(16-16)^2+(17-16)^2}{4} = \frac{1+4+4+0+1}{4} = 2.50{/$$}
 
-For P4: $s^2_{P4} = \frac{(30-30)^2+(28-30)^2+(32-30)^2+(31-30)^2+(29-30)^2}{4} = \frac{0+4+4+1+1}{4} = 2.50$
+For P4: {$$}s^2_{P4} = \frac{(30-30)^2+(28-30)^2+(32-30)^2+(31-30)^2+(29-30)^2}{4} = \frac{0+4+4+1+1}{4} = 2.50{/$$}
 
 Pooled within-group variance:
 
-$$
-\sigma^2 = \frac{2.50 + 2.50 + 2.50 + 2.50}{4} = 2.50
-$$
+{$$}\sigma^2 = \frac{2.50 + 2.50 + 2.50 + 2.50}{4} = 2.50{/$$}
 
 Now compute the ICC:
 
-$$
-\text{ICC} = \frac{\tau^2}{\tau^2 + \sigma^2} = \frac{96.67}{96.67 + 2.50} = \frac{96.67}{99.17} = 0.975
-$$
+{$$}\text{ICC} = \frac{\tau^2}{\tau^2 + \sigma^2} = \frac{96.67}{96.67 + 2.50} = \frac{96.67}{99.17} = 0.975{/$$}
 
 **Interpretation.** The ICC is 0.975. Nearly 98% of the variance in response rate is between participants. Participants differ enormously in their response rates, while within-participant session-to-session variability is small. A multilevel model is clearly warranted.
 
@@ -371,29 +321,27 @@ $$
 
 The model is:
 
-$$
-y_{ij} = \gamma_{00} + u_{0j} + e_{ij}
-$$
+{$$}y_{ij} = \gamma_{00} + u_{0j} + e_{ij}{/$$}
 
 The estimated parameters are:
-- $\hat{\gamma}_{00} = 27.0$ (the grand mean response rate)
-- $\hat{\tau}^2 = 96.67$ (between-participant variance)
-- $\hat{\sigma}^2 = 2.50$ (within-participant variance)
+- {$$}\hat{\gamma}_{00} = 27.0{/$$} (the grand mean response rate)
+- {$$}\hat{\tau}^2 = 96.67{/$$} (between-participant variance)
+- {$$}\hat{\sigma}^2 = 2.50{/$$} (within-participant variance)
 
 **Step 4: Interpret the random effects.**
 
-Each participant's estimated intercept is $\hat{\gamma}_{00} + \hat{u}_{0j}$:
+Each participant's estimated intercept is {$$}\hat{\gamma}_{00} + \hat{u}_{0j}{/$$}:
 
-- P1: $27.0 + (-4.0) = 23.0$
-- P2: $27.0 + 12.0 = 39.0$
-- P3: $27.0 + (-11.0) = 16.0$
-- P4: $27.0 + 3.0 = 30.0$
+- P1: {$$}27.0 + (-4.0) = 23.0{/$$}
+- P2: {$$}27.0 + 12.0 = 39.0{/$$}
+- P3: {$$}27.0 + (-11.0) = 16.0{/$$}
+- P4: {$$}27.0 + 3.0 = 30.0{/$$}
 
 With only 4 participants and 5 sessions each, shrinkage is minimal in this example because each group has the same amount of data. In practice, with unbalanced data (some participants having more sessions than others), shrinkage would pull estimates from data-poor participants toward the grand mean.
 
 **Step 5: Interpret the fixed effect.**
 
-The fixed effect $\hat{\gamma}_{00} = 27.0$ is the estimated average response rate across all participants. It represents the "typical" participant in this sample. The variance of random effects ($\hat{\tau}^2 = 96.67$) tells us how much participants vary around this average. The standard deviation of random intercepts is $\sqrt{96.67} \approx 9.83$, meaning that about 95% of participants' true mean response rates fall within $27.0 \pm 2 \times 9.83$, or roughly 7.3 to 46.7 responses per minute.
+The fixed effect {$$}\hat{\gamma}_{00} = 27.0{/$$} is the estimated average response rate across all participants. It represents the "typical" participant in this sample. The variance of random effects ({$$}\hat{\tau}^2 = 96.67{/$$}) tells us how much participants vary around this average. The standard deviation of random intercepts is {$$}\sqrt{96.67} \approx 9.83{/$$}, meaning that about 95% of participants' true mean response rates fall within {$$}27.0 \pm 2 \times 9.83{/$$}, or roughly 7.3 to 46.7 responses per minute.
 
 ---
 
@@ -420,63 +368,51 @@ The series shows a gradual upward trend and positive autocorrelation---adjacent 
 
 The series has a visible trend (values increase from about 20 to 34 over 30 days). For an AR(1) model, we need stationarity. We can either detrend the series or work with first differences. Let us mean-center and detrend by fitting a linear trend and working with residuals.
 
-The mean is approximately $\bar{x} = 27.7$. A linear trend yields roughly $x_t \approx 19.5 + 0.47t$. The detrended residuals $r_t = x_t - (19.5 + 0.47t)$ fluctuate around zero.
+The mean is approximately {$$}\bar{x} = 27.7{/$$}. A linear trend yields roughly {$$}x_t \approx 19.5 + 0.47t{/$$}. The detrended residuals {$$}r_t = x_t - (19.5 + 0.47t){/$$} fluctuate around zero.
 
-Alternatively, we can use first differences: $\Delta x_t = x_t - x_{t-1}$.
+Alternatively, we can use first differences: {$$}\Delta x_t = x_t - x_{t-1}{/$$}.
 
 **Step 2: Fit the AR(1) model.**
 
 Working with the detrended residuals, we fit:
 
-$$
-r_t = \phi \cdot r_{t-1} + \epsilon_t
-$$
+{$$}r_t = \phi \cdot r_{t-1} + \epsilon_t{/$$}
 
-Computing the lag-1 autocorrelation of the detrended residuals (which estimates $\phi$), we obtain approximately:
+Computing the lag-1 autocorrelation of the detrended residuals (which estimates {$$}\phi{/$$}), we obtain approximately:
 
-$$
-\hat{\phi} \approx 0.45
-$$
+{$$}\hat{\phi} \approx 0.45{/$$}
 
-The residual variance is $\hat{\sigma}^2_\epsilon \approx 1.2$.
+The residual variance is {$$}\hat{\sigma}^2_\epsilon \approx 1.2{/$$}.
 
-**Step 3: Interpret $\phi$.**
+**Step 3: Interpret {$$}\phi{/$$}.**
 
-$\hat{\phi} = 0.45$ means that 45% of each day's deviation from trend is "carried over" from the previous day. If the participant had an unusually high day yesterday (positive residual), today's response rate is expected to be somewhat elevated as well, though the effect decays. After two days, the carryover is $0.45^2 = 0.20$ (20%). After three days, $0.45^3 = 0.09$ (9%). The temporal dependence fades quickly.
+{$$}\hat{\phi} = 0.45{/$$} means that 45% of each day's deviation from trend is "carried over" from the previous day. If the participant had an unusually high day yesterday (positive residual), today's response rate is expected to be somewhat elevated as well, though the effect decays. After two days, the carryover is {$$}0.45^2 = 0.20{/$$} (20%). After three days, {$$}0.45^3 = 0.09{/$$} (9%). The temporal dependence fades quickly.
 
 **Step 4: Make a 1-step forecast.**
 
-Suppose on Day 30, the detrended residual is $r_{30} = 33.5 - (19.5 + 0.47 \times 30) = 33.5 - 33.6 = -0.1$.
+Suppose on Day 30, the detrended residual is {$$}r_{30} = 33.5 - (19.5 + 0.47 \times 30) = 33.5 - 33.6 = -0.1{/$$}.
 
 The predicted detrended residual for Day 31 is:
 
-$$
-\hat{r}_{31} = \hat{\phi} \cdot r_{30} = 0.45 \times (-0.1) = -0.045
-$$
+{$$}\hat{r}_{31} = \hat{\phi} \cdot r_{30} = 0.45 \times (-0.1) = -0.045{/$$}
 
 The trend-predicted value for Day 31 is:
 
-$$
-\hat{T}_{31} = 19.5 + 0.47 \times 31 = 34.07
-$$
+{$$}\hat{T}_{31} = 19.5 + 0.47 \times 31 = 34.07{/$$}
 
 The forecast for Day 31 is:
 
-$$
-\hat{x}_{31} = \hat{T}_{31} + \hat{r}_{31} = 34.07 + (-0.045) = 34.0
-$$
+{$$}\hat{x}_{31} = \hat{T}_{31} + \hat{r}_{31} = 34.07 + (-0.045) = 34.0{/$$}
 
 We predict the participant will respond at approximately 34.0 responses per minute on Day 31.
 
 **Step 5: Assess uncertainty.**
 
-The forecast error variance for a 1-step-ahead prediction from an AR(1) model is simply $\sigma^2_\epsilon$. A 95% prediction interval is approximately:
+The forecast error variance for a 1-step-ahead prediction from an AR(1) model is simply {$$}\sigma^2_\epsilon{/$$}. A 95% prediction interval is approximately:
 
-$$
-\hat{x}_{31} \pm 1.96 \times \hat{\sigma}_\epsilon = 34.0 \pm 1.96 \times \sqrt{1.2} = 34.0 \pm 2.15
-$$
+{$$}\hat{x}_{31} \pm 1.96 \times \hat{\sigma}_\epsilon = 34.0 \pm 1.96 \times \sqrt{1.2} = 34.0 \pm 2.15{/$$}
 
-So the 95% prediction interval for Day 31 is approximately $[31.9, 36.2]$ responses per minute.
+So the 95% prediction interval for Day 31 is approximately {$$}[31.9, 36.2]{/$$} responses per minute.
 
 ---
 
@@ -484,7 +420,7 @@ So the 95% prediction interval for Day 31 is approximately $[31.9, 36.2]$ respon
 
 **Multilevel models** say: "People are different, and I will model those differences explicitly rather than ignoring them." Rather than assuming every participant has the same baseline or the same response to an intervention, the multilevel model gives each participant their own parameters---but it does so in a disciplined way, by assuming those parameters come from a distribution. This means the model learns about each individual from their own data and from the data of others. Participants with little data are gently pulled toward the group average, which is almost always more accurate than taking their sparse data at face value.
 
-**Time-series models** say: "What happened recently tells you something about what will happen next." If you know that a participant's response rate was high yesterday, a time-series model uses that information to make a better prediction for today than you could make by ignoring yesterday entirely. The autoregressive coefficient $\phi$ quantifies how much the recent past matters. When $\phi$ is large, behavior is persistent and predictable from its own history. When $\phi$ is small, each day is relatively fresh.
+**Time-series models** say: "What happened recently tells you something about what will happen next." If you know that a participant's response rate was high yesterday, a time-series model uses that information to make a better prediction for today than you could make by ignoring yesterday entirely. The autoregressive coefficient {$$}\phi{/$$} quantifies how much the recent past matters. When {$$}\phi{/$$} is large, behavior is persistent and predictable from its own history. When {$$}\phi{/$$} is small, each day is relatively fresh.
 
 Together, these tools respect the two most fundamental features of behavioral data: **people differ from one another** and **behavior unfolds over time**. Any analysis that ignores both of these features is leaving information on the table.
 
@@ -494,9 +430,9 @@ Together, these tools respect the two most fundamental features of behavioral da
 
 ### Multilevel Models
 
-- **Normality of random effects.** The random effects $u_{0j}$ (and $u_{1j}$, etc.) are assumed to follow a normal distribution. If the true distribution is heavily skewed or bimodal, estimates may be biased. With small numbers of groups, it is difficult to assess this assumption.
+- **Normality of random effects.** The random effects {$$}u_{0j}{/$$} (and {$$}u_{1j}{/$$}, etc.) are assumed to follow a normal distribution. If the true distribution is heavily skewed or bimodal, estimates may be biased. With small numbers of groups, it is difficult to assess this assumption.
 
-- **Sufficient number of groups.** Multilevel models estimate variance components, and variance estimation requires a reasonable number of groups. With fewer than about 10--15 groups (participants), estimates of $\tau^2$ can be unstable. Fixed-effects approaches may be preferred when the number of groups is very small.
+- **Sufficient number of groups.** Multilevel models estimate variance components, and variance estimation requires a reasonable number of groups. With fewer than about 10--15 groups (participants), estimates of {$$}\tau^2{/$$} can be unstable. Fixed-effects approaches may be preferred when the number of groups is very small.
 
 - **Correct specification of random structure.** Choosing which effects should be random is a modeling decision. Including too many random effects can lead to convergence problems. Including too few can misattribute between-group variance to within-group variance.
 
@@ -514,7 +450,7 @@ Together, these tools respect the two most fundamental features of behavioral da
 
 - **Single-subject focus.** Traditional time-series models are fit to one individual's data. Extending them to multiple individuals requires either fitting separate models to each person (losing the ability to borrow strength) or embedding them within a multilevel framework (adding complexity).
 
-- **Choosing model orders.** Selecting $p$, $d$, and $q$ for ARIMA is partly art and partly science. Automatic selection algorithms (e.g., auto.arima) help, but they are not infallible. Model misspecification can lead to poor forecasts.
+- **Choosing model orders.** Selecting {$$}p{/$$}, {$$}d{/$$}, and {$$}q{/$$} for ARIMA is partly art and partly science. Automatic selection algorithms (e.g., auto.arima) help, but they are not infallible. Model misspecification can lead to poor forecasts.
 
 - **Assumption of equal spacing.** Standard time-series models assume observations are equally spaced in time. Missing sessions or irregular scheduling can cause problems that require specialized methods.
 
@@ -594,7 +530,7 @@ These references collectively illustrate that both multilevel and time-series me
 - How does the multilevel framework allow researchers to examine individual differences in discounting parameters?
 - What covariates can be included at the participant level, and how does this extend the analysis beyond simple curve fitting?
 - What practical guidance does Young offer for implementing multilevel discounting analyses?
-- How does this approach compare to the traditional method of estimating $k$ for each participant and then analyzing the $k$ values?
+- How does this approach compare to the traditional method of estimating {$$}k{/$$} for each participant and then analyzing the {$$}k{/$$} values?
 - What are the limitations of the multilevel approach as discussed by Young?
 
 ### Cox & Vladescu (2023)
@@ -632,7 +568,7 @@ Young, M. E. (2018). Discounting: A practical guide to multilevel analysis of ch
 
 - **Nested data require multilevel models.** When observations are grouped (e.g., sessions within participants), treating them as independent inflates Type I error. Multilevel models decompose variance into within-group and between-group components.
 
-- **The ICC tells you how much nesting matters.** ICC = $\tau^2 / (\tau^2 + \sigma^2)$. When ICC is nontrivial, you need a multilevel model.
+- **The ICC tells you how much nesting matters.** ICC = {$$}\tau^2 / (\tau^2 + \sigma^2){/$$}. When ICC is nontrivial, you need a multilevel model.
 
 - **Random effects capture individual differences.** Random intercepts allow each participant to have their own baseline. Random slopes allow the effect of a predictor to vary across participants. These are not nuisance parameters---they are often the quantities of greatest scientific interest.
 
@@ -640,10 +576,49 @@ Young, M. E. (2018). Discounting: A practical guide to multilevel analysis of ch
 
 - **Temporal autocorrelation is the norm in behavioral data.** Adjacent observations tend to be correlated. The ACF quantifies this structure.
 
-- **AR(1) is the simplest time-series model.** $x_t = \phi \cdot x_{t-1} + \epsilon_t$. The parameter $\phi$ captures the strength of temporal persistence.
+- **AR(1) is the simplest time-series model.** {$$}x_t = \phi \cdot x_{t-1} + \epsilon_t{/$$}. The parameter {$$}\phi{/$$} captures the strength of temporal persistence.
 
 - **ARIMA extends AR to handle trends and shocks.** ARIMA(p,d,q) combines autoregressive terms, differencing, and moving average terms. It is the workhorse of time-series forecasting.
 
 - **Time-series decomposition separates trend, seasonality, and noise.** This is a crucial descriptive step before building a forecasting model.
 
 - **Together, multilevel and time-series models address the two fundamental structures in behavioral data:** people are different from each other, and behavior unfolds over time.
+
+## Recommended Readings
+
+**Required:**
+
+- Peugh, J. L. (2010). A practical guide to multilevel modeling. *Journal of School Psychology*, *48*, 85-112.
+- Young, M. E. (2018). Discounting: A practical guide to multilevel analysis of choice data. *Journal of the Experimental Analysis of Behavior*, *109*, 293-312.
+
+**Optional:**
+
+- Quene, H. (2004). On multi-level modeling of data from repeated measures designs: A tutorial. *Speech Communication*, *43*, 103-121.
+- Adhikari, R. & Agrawal, R. K. (2013). An introductory study on time series modeling and forecasting.
+
+
+## Lab: Multilevel Modeling and Time-Series Forecasting
+
+A> **Run this lab.** Notebooks and data files are available at:
+A> [https://www.behavioral-data-science.org/book/labs/week-09](https://www.behavioral-data-science.org/book/labs/week-09)
+A>
+A> The companion materials include starter notebooks, the dataset(s) referenced below, and instructor-prepared solutions.
+
+## Multilevel Modeling and Time-Series Forecasting Lab
+
+Behavioral data are almost always nested: responses are nested within sessions, sessions are nested within participants, and participants may be nested within groups or settings. Ignoring this nesting structure when fitting statistical models can lead to biased parameter estimates and artificially narrow confidence intervals.
+
+In this lab you will work with a dataset containing session-level response rates from eight participants, each observed across twenty sessions under varying reinforcement rates. You will begin by fitting a single-level ordinary least squares regression that ignores the nesting of sessions within participants. You will then fit a multilevel (mixed-effects) model that accounts for participant-level variation in both intercepts and slopes, compare the two approaches using information criteria, and interpret the fixed and random effects in behavioral terms.
+
+As an optional extension, you will decompose the session-by-session data for a single participant into trend and residual components, providing a brief introduction to time-series thinking that will be developed further in later weeks.
+
+### Assignment
+
+1. Load and explore the nested behavioral dataset.
+2. Fit an OLS regression pooling all data and examine the residuals.
+3. Fit a random-intercept mixed-effects model using `statsmodels.formula.api.mixedlm`.
+4. Extend to a random-intercept-and-slope model.
+5. Compare single-level and multilevel models using AIC and BIC.
+6. Interpret the fixed effects and random effects in the context of the matching law and reinforcement rate-response rate relations.
+7. Visualize participant-level regression lines.
+8. (Optional) Perform a simple time-series decomposition on one participant's data.

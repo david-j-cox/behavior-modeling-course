@@ -1,17 +1,6 @@
----
-slug: "week-1"
-number: 1
-published: true
-title: "Introduction to Modeling in Behavior Science"
-subtitle: "What models are, why they matter, and a framework to build them"
-description: "Types of models, description vs explanation, parameters vs variables, and a first pass through an 8-step modeling framework."
-keyModels:
-  - "Linear Model"
-  - "Verbal Models"
-  - "Mathematical Models"
-keyEquations:
-  - "R = k * t"
----
+# Chapter 3: Introduction to Modeling in Behavior Science
+
+> Week 1 of the 13-week sequence.
 
 ## Why This Topic Matters
 Behavior science aspires to be a natural science of behavior, and natural sciences make quantitative predictions. They do this through models: formal representations of how processes work that can be tested against observation. The experimental analysis of behavior has produced impressive quantitative regularities (the matching law, delay discounting functions, demand curves). This week highlights how each of these are instances of a general modeling framework commong among all natural sciences.
@@ -32,7 +21,7 @@ A model is a formal representation of a system or process. "Formal" means the re
 
 **Verbal models** state claims in natural language. "Behavior is a function of its consequences" is a verbal model. Verbal models are useful starting points but are often imprecise in description and prediction and, therefore, difficult to test rigorously.
 
-**Mathematical models** express claims as equations. $R = \frac{k \cdot r}{r + r_e}$ is a mathematical model (Herrnstein's hyperbola). The relationships are explicit, the parameters are defined, and predictions are quantitative.
+**Mathematical models** express claims as equations. {$$}R = \frac{k \cdot r}{r + r_e}{/$$} is a mathematical model (Herrnstein's hyperbola). The relationships are explicit, the parameters are defined, and predictions are quantitative.
 
 **Computational models** implement processes as algorithms. Rather than writing a closed-form equation, a computational model specifies rules that are executed step by step. Much of machine learning and artificial intelligence falls in this category.
 
@@ -42,7 +31,7 @@ These categories overlap. A mathematical model can be implemented computationall
 
 Other scientific fields may categorize models differently. For example, earth scientists distinguish *conceptual*, *statistical/probabilistic*, *analogue*, *analytical*, and *numerical* models (Gudmundsson, 2020). Conceptual models are similar to verbal models but slightly broader including diagrams, maps, and physical scale models. Analytical and numerical split mathematical models by whether the solution is closed-form (solved "by hand" for simple geometries) or discretized into elements and solved approximately (complex geometries and heterogeneous properties). Analogue models are scaled physical systems whose behavior is mapped onto a target system through scaling factors and have no real parallel in behavior science. The point here is more that the vocabulary might differ across disciplines, but the underlying activity is the same: building simplified representations whose structure supports the question at hand.
 
-![Model Matrix](/images/model_matrix.jpeg)
+![Model Matrix](images/model_matrix.jpeg)
 
 *Figure: A matrix of models organized by number of variables (columns) and degree of nonlinearity (rows). Linear models with few variables (upper left) are the simplest; nonlinear models with many variables or continuous dimensions (lower right) represent the frontier of modeling complexity. Adapted from Strogatz (2015).*
 
@@ -92,32 +81,32 @@ This section walks through each step of the 8-step modeling framework using a co
 
 **Step 5: Write the model verbally, then mathematically.** Verbally: Current response rate equals the ratio of the obtained reinforcement rate to the sum of the obtained reinforcement rate and the extraneous reinforcement rate, with an upper bound response rate controlled by the max response rate physically possible. Mathematically:
 
-$$R = \frac{k \cdot r}{r + r_e}$$
+{$$}R = \frac{k \cdot r}{r + r_e}{/$$}
 
-where $R$ is response rate, $r$ is reinforcement rate for the target response, $r_e$ is extraneous reinforcement rate, and $k$ is the asymptotic response rate.
+where {$$}R{/$$} is response rate, {$$}r{/$$} is reinforcement rate for the target response, {$$}r_e{/$$} is extraneous reinforcement rate, and {$$}k{/$$} is the asymptotic response rate.
 
-In plain language: the equation says that as reinforcement rate increases, response rate increases toward a ceiling ($k$), but with diminishing returns. The parameter $r_e$ controls how quickly responding approaches that ceiling.
+In plain language: the equation says that as reinforcement rate increases, response rate increases toward a ceiling ({$$}k{/$$}), but with diminishing returns. The parameter {$$}r_e{/$$} controls how quickly responding approaches that ceiling.
 
-**Step 6: Verify dimensional consistency.** $R$ is in responses per minute. $k$ is in responses per minute. $r$ is in reinforcers per minute. $r_e$ is in reinforcers per minute. The ratio $\frac{r}{r + r_e}$ is dimensionless (reinforcers per minute divided by reinforcers per minute). Therefore, the right side has units of responses per minute, matching the left side.
+**Step 6: Verify dimensional consistency.** {$$}R{/$$} is in responses per minute. {$$}k{/$$} is in responses per minute. {$$}r{/$$} is in reinforcers per minute. {$$}r_e{/$$} is in reinforcers per minute. The ratio {$$}\frac{r}{r + r_e}{/$$} is dimensionless (reinforcers per minute divided by reinforcers per minute). Therefore, the right side has units of responses per minute, matching the left side.
 
-**Step 7: Specify starting values and constraints.** $k$ must be positive (you cannot have a negative response rate). $r_e$ must be positive. The model applies to VI schedule performance after responding has reached a stable state, typically after at least 20--30 sessions at each reinforcement rate.
+**Step 7: Specify starting values and constraints.** {$$}k{/$$} must be positive (you cannot have a negative response rate). {$$}r_e{/$$} must be positive. The model applies to VI schedule performance after responding has reached a stable state, typically after at least 20--30 sessions at each reinforcement rate.
 
-**Step 8: Check the math, test against data, and derive predictions.** Verify: At $r = 0$, $R = 0$ (no reinforcement yields no responding). As $r$ becomes very large, $R$ approaches $k$ (there is a ceiling on response rate). These are qualitatively sensible. Validate: Fit the equation to data from multiple VI schedule values and assess goodness of fit. Solve: Given estimated $k$ and $r_e$, predict response rate at any new reinforcement rate.
+**Step 8: Check the math, test against data, and derive predictions.** Verify: At {$$}r = 0{/$$}, {$$}R = 0{/$$} (no reinforcement yields no responding). As {$$}r{/$$} becomes very large, {$$}R{/$$} approaches {$$}k{/$$} (there is a ceiling on response rate). These are qualitatively sensible. Validate: Fit the equation to data from multiple VI schedule values and assess goodness of fit. Solve: Given estimated {$$}k{/$$} and {$$}r_e{/$$}, predict response rate at any new reinforcement rate.
 
-## Worked Example: $R = k \cdot t$
+## Worked Example: {$$}R = k \cdot t{/$$}
 
 Consider the simplest possible behavioral model: cumulative responses as a linear function of time.
 
 ### The Model
 
-$$R = k \cdot t$$
+{$$}R = k \cdot t{/$$}
 
 where:
-- $R$ is the cumulative number of responses
-- $k$ is the response rate (responses per unit time), a constant
-- $t$ is elapsed time
+- {$$}R{/$$} is the cumulative number of responses
+- {$$}k{/$$} is the response rate (responses per unit time), a constant
+- {$$}t{/$$} is elapsed time
 
-In plain language: if you know how fast the organism is responding ($k$), you can predict how many total responses will have occurred by any given time ($t$) simply by multiplying. The model treats responding as a steady rate, kind of like water constantly streaming from a faucet filling a bucket.
+In plain language: if you know how fast the organism is responding ({$$}k{/$$}), you can predict how many total responses will have occurred by any given time ({$$}t{/$$}) simply by multiplying. The model treats responding as a steady rate, kind of like water constantly streaming from a faucet filling a bucket.
 
 ### Walking Through All 8 Steps
 
@@ -129,23 +118,23 @@ In plain language: if you know how fast the organism is responding ($k$), you ca
 
 **Step 4: State all simplifying assumptions.** (a) Response rate is constant throughout the session. (b) There are no pauses, warm-up effects, or satiation effects. (c) Each response is identical and countable. (d) Time is measured continuously from session onset.
 
-**Step 5: Write the model verbally, then mathematically.** Verbally: The cumulative number of responses equals the response rate multiplied by the elapsed time. Mathematically: $R = k \cdot t$.
+**Step 5: Write the model verbally, then mathematically.** Verbally: The cumulative number of responses equals the response rate multiplied by the elapsed time. Mathematically: {$$}R = k \cdot t{/$$}.
 
-**Step 6: Verify dimensional consistency.** $R$ is in responses (count). $k$ is in responses per minute. $t$ is in minutes. Responses per minute multiplied by minutes equals responses. The units are consistent.
+**Step 6: Verify dimensional consistency.** {$$}R{/$$} is in responses (count). {$$}k{/$$} is in responses per minute. {$$}t{/$$} is in minutes. Responses per minute multiplied by minutes equals responses. The units are consistent.
 
-**Step 7: Specify starting values and constraints.** At $t = 0$, $R = 0$ (no responses have occurred at the start of the session). $k$ must be non-negative. The model applies from session onset ($t = 0$) to session end ($t = T$), and only during periods when the constant-rate assumption is reasonable.
+**Step 7: Specify starting values and constraints.** At {$$}t = 0{/$$}, {$$}R = 0{/$$} (no responses have occurred at the start of the session). {$$}k{/$$} must be non-negative. The model applies from session onset ({$$}t = 0{/$$}) to session end ({$$}t = T{/$$}), and only during periods when the constant-rate assumption is reasonable.
 
-**Step 8: Check the math, test against data, and derive predictions.** Verify: The model predicts a straight-line cumulative record. If $k = 2$ responses/min and $t = 30$ min, then $R = 60$ responses. Validate: Compare the predicted straight line to actual cumulative records. In practice, real cumulative records show local variability (pauses, bursts), so the linear model will fit the overall trend but not the fine grain. Solve: Given an estimate of $k$ from observed data (e.g., total responses divided by total time), predict cumulative responses at any time point.
+**Step 8: Check the math, test against data, and derive predictions.** Verify: The model predicts a straight-line cumulative record. If {$$}k = 2{/$$} responses/min and {$$}t = 30{/$$} min, then {$$}R = 60{/$$} responses. Validate: Compare the predicted straight line to actual cumulative records. In practice, real cumulative records show local variability (pauses, bursts), so the linear model will fit the overall trend but not the fine grain. Solve: Given an estimate of {$$}k{/$$} from observed data (e.g., total responses divided by total time), predict cumulative responses at any time point.
 
 ## Plain-Language Interpretation
 
-$R = k \cdot t$ says: "If you know how fast the organism is responding ($k$), you can predict how many total responses will have occurred by any given time ($t$) simply by multiplying." Using the water flowing analogy, the rate of flow ($k$) determines how quickly the bucket ($R$) fills as time ($t$) passes.
+{$$}R = k \cdot t{/$$} says: "If you know how fast the organism is responding ({$$}k{/$$}), you can predict how many total responses will have occurred by any given time ({$$}t{/$$}) simply by multiplying." Using the water flowing analogy, the rate of flow ({$$}k{/$$}) determines how quickly the bucket ({$$}R{/$$}) fills as time ({$$}t{/$$}) passes.
 
 This is obviously a simplification. Real organisms pause, accelerate, and decelerate. But the linear model serves as a useful baseline. Deviations from linearity are informative: they point toward phenomena (satiation, ratio strain, schedule effects) that a more complex model would need to capture.
 
 ## Assumptions and Limitations
 
-The linear model $R = k \cdot t$ assumes:
+The linear model {$$}R = k \cdot t{/$$} assumes:
 
 - **Steady-state responding:** The rate is constant. This is approximately true for well-trained organisms on VI schedules during the middle portion of a session, but it is rarely true at the start (warm-up) or end (satiation) of a session.
 - **Linearity:** Cumulative responses grow proportionally with time. Nonlinear growth (e.g., negatively accelerated curves during satiation) violates this assumption.
@@ -156,7 +145,7 @@ Importantly, all of the above limitations should be considered the boundaries of
 
 ## Connection to Empirical Behavior Science
 
-The cumulative record is one of the oldest and most characteristic tools of the experimental analysis of behavior. Skinner used it to visualize response patterns under different schedules of reinforcement. The linear model $R = k \cdot t$ corresponds to the idealized cumulative record for a VI schedule: a straight line whose slope reflects response rate.
+The cumulative record is one of the oldest and most characteristic tools of the experimental analysis of behavior. Skinner used it to visualize response patterns under different schedules of reinforcement. The linear model {$$}R = k \cdot t{/$$} corresponds to the idealized cumulative record for a VI schedule: a straight line whose slope reflects response rate.
 
 More broadly, this week's introduction connects to the entire tradition of quantitative analysis in behavior science. The field has always valued prediction and control. Mathematical models make prediction explicit and testable. The 8-step framework provides a systematic method for constructing models that are clear, testable, and connected to behavioral principles.
 
@@ -164,7 +153,7 @@ More broadly, this week's introduction connects to the entire tradition of quant
 
 1. Consider a behavioral phenomenon you study or find interesting. What would Step 1 (getting the phenomenon clearly in mind) look like for that phenomenon? What features would you need to observe and describe before attempting to model it?
 
-2. The linear model $R = k \cdot t$ is almost certainly wrong for any real dataset if examined closely enough. In what sense can a model be both "wrong" and "useful"? What criteria would you use to decide whether a wrong model is still worth using?
+2. The linear model {$$}R = k \cdot t{/$$} is almost certainly wrong for any real dataset if examined closely enough. In what sense can a model be both "wrong" and "useful"? What criteria would you use to decide whether a wrong model is still worth using?
 
 3. What is the difference between fitting a curve to data and understanding the process that produced the data? Can you think of examples from behavior science where a good curve fit was mistaken for a good explanation?
 
@@ -254,5 +243,13 @@ Strogatz, S. H. (2015). *Nonlinear dynamics and chaos: With applications to phys
 - **Key distinctions:** Description vs. explanation; parameters (estimated) vs. variables (observed or manipulated); curve fitting (tool) vs. mechanistic modeling (theory).
 - **Model families for this course:** Algebraic, differential equation, probabilistic, computational, and machine learning.
 - **The 8-step framework:** (1) Understand the phenomenon. (2) Define scope. (3) Identify principles and laws. (4) State assumptions. (5) Write the model in words, then symbols. (6) Check units. (7) Specify initial/boundary conditions. (8) Verify, validate, solve.
-- **Worked example:** $R = k \cdot t$ models cumulative responding as a linear function of time. The slope $k$ is the response rate. The model assumes constant-rate responding and serves as a baseline against which more complex models can be compared.
+- **Worked example:** {$$}R = k \cdot t{/$$} models cumulative responding as a linear function of time. The slope {$$}k{/$$} is the response rate. The model assumes constant-rate responding and serves as a baseline against which more complex models can be compared.
 - **Takeaway:** Modeling is a disciplined activity with a clear structure. The 8-step framework provides that structure and will be applied to every model encountered in this course.
+
+## Recommended Readings
+
+**Required:**
+
+- Critchfield, T. S. & Reed, D. D. (2009). What are we doing when we translate from quantitative models. *The Behavior Analyst*, *32*, 339-362.
+- Dallery, J. & Soto, P. L. (2013). Quantitative descriptions of environment-behavior relations. In G. J. Madden (Ed.), *APA Handbook of Behavior Analysis*.
+- Cox, D. J. (accepted). Of models, vectors, and matrices: Advancing analyses of the multiple control of behavior. *Advances in the Experimental Analysis of Behavior*. Pre-print: https://doi.org/10.13140/RG.2.2.11144.94723

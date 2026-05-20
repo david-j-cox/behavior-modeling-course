@@ -1,17 +1,6 @@
----
-slug: "week-4"
-number: 4
-published: false
-title: "Associative Learning Models"
-subtitle: "Formalizing how organisms learn predictive relationships"
-description: "The Rescorla-Wagner model, blocking, conditioned inhibition, overshadowing, overexpectation, and Mackintosh's attentional model."
-keyModels:
-  - "Rescorla-Wagner"
-  - "Mackintosh Attention Model"
-keyEquations:
-  - "ΔV = αβ(λ - V)"
-  - "V_total = Σ V_i"
----
+# Chapter 6: Associative Learning Models
+
+> Week 4 of the 13-week sequence.
 
 ## Why This Topic Matters
 
@@ -37,23 +26,23 @@ Together, these models illustrate a core theme of this course: simple mathematic
 
 ### Associative Strength and Prediction Error
 
-The central construct in the Rescorla-Wagner model is **associative strength**, denoted $V$. Associative strength represents the degree to which a CS predicts the US. When $V$ is high, the organism "expects" the US when the CS appears. When $V$ is low or zero, the CS carries no predictive information. When $V$ is negative, the CS actively signals the absence of the US.
+The central construct in the Rescorla-Wagner model is **associative strength**, denoted {$$}V{/$$}. Associative strength represents the degree to which a CS predicts the US. When {$$}V{/$$} is high, the organism "expects" the US when the CS appears. When {$$}V{/$$} is low or zero, the CS carries no predictive information. When {$$}V{/$$} is negative, the CS actively signals the absence of the US.
 
-It is important to understand that $V$ is a theoretical construct, not a directly observable quantity. We never measure associative strength itself. Instead, we infer it from observable behavior: the magnitude of the conditioned response, the probability of responding, the latency to respond. The model assumes that these observable measures are monotonically related to $V$---higher associative strength produces stronger, more probable, and faster conditioned responses. This mapping from $V$ to behavior is sometimes called the **response rule**, and it is a separate assumption from the learning rule itself.
+It is important to understand that {$$}V{/$$} is a theoretical construct, not a directly observable quantity. We never measure associative strength itself. Instead, we infer it from observable behavior: the magnitude of the conditioned response, the probability of responding, the latency to respond. The model assumes that these observable measures are monotonically related to {$$}V{/$$}---higher associative strength produces stronger, more probable, and faster conditioned responses. This mapping from {$$}V{/$$} to behavior is sometimes called the **response rule**, and it is a separate assumption from the learning rule itself.
 
 **Learning** in this framework is a change in associative strength. The critical insight is that learning does not occur simply because the CS and US are paired. Learning occurs when there is a **prediction error**---a discrepancy between what the organism expects and what actually happens.
 
 The prediction error on a given trial is:
 
-$$\text{Prediction Error} = \lambda - V$$
+{$$}\text{Prediction Error} = \lambda - V{/$$}
 
-where $\lambda$ is the **asymptotic associative strength** supported by the US (essentially, the maximum learning the US can support) and $V$ is the current total associative strength of all CSs present on that trial.
+where {$$}\lambda{/$$} is the **asymptotic associative strength** supported by the US (essentially, the maximum learning the US can support) and {$$}V{/$$} is the current total associative strength of all CSs present on that trial.
 
 Three cases are possible:
 
-- When $\lambda - V > 0$, the US is **underpredicted**. The organism is surprised by the occurrence or magnitude of the US, and associative strength increases. This is a **positive prediction error**. It drives excitatory conditioning.
-- When $\lambda - V < 0$, the US is **overpredicted**. The organism expects more than what occurs (including expecting the US when it does not appear), and associative strength decreases. This is a **negative prediction error**. It drives extinction and conditioned inhibition.
-- When $\lambda - V = 0$, the US is **fully predicted**. There is no surprise, no error, and **no learning**. The system is at equilibrium.
+- When {$$}\lambda - V > 0{/$$}, the US is **underpredicted**. The organism is surprised by the occurrence or magnitude of the US, and associative strength increases. This is a **positive prediction error**. It drives excitatory conditioning.
+- When {$$}\lambda - V < 0{/$$}, the US is **overpredicted**. The organism expects more than what occurs (including expecting the US when it does not appear), and associative strength decreases. This is a **negative prediction error**. It drives extinction and conditioned inhibition.
+- When {$$}\lambda - V = 0{/$$}, the US is **fully predicted**. There is no surprise, no error, and **no learning**. The system is at equilibrium.
 
 This framework transforms the question "Why does learning occur?" into the more precise question "Why does prediction error exist on this trial?" The answer to the second question is always traceable to the parameters of the model and the training history.
 
@@ -63,32 +52,32 @@ This framework transforms the question "Why does learning occur?" into the more 
 
 The Rescorla-Wagner model specifies how associative strength changes from one trial to the next:
 
-$$\Delta V = \alpha \beta (\lambda - V)$$
+{$$}\Delta V = \alpha \beta (\lambda - V){/$$}
 
 or equivalently, as an update rule:
 
-$$V_{n+1} = V_n + \alpha \beta (\lambda - V_n)$$
+{$$}V_{n+1} = V_n + \alpha \beta (\lambda - V_n){/$$}
 
 where:
 
-- $\Delta V$ is the change in associative strength on a given trial
-- $V_n$ is the associative strength at the start of trial $n$
-- $V_{n+1}$ is the associative strength after trial $n$
-- $\alpha$ (alpha) is the **salience of the CS**---a fixed parameter between 0 and 1 that reflects how noticeable or attention-grabbing the CS is. A loud tone has a higher $\alpha$ than a dim light.
-- $\beta$ (beta) is the **learning rate parameter associated with the US**---a fixed parameter between 0 and 1 that reflects how effectively the US supports learning. A large food pellet might have a higher $\beta$ than a small one. Note that in some formulations of the model, separate $\beta$ values are used for reinforced and non-reinforced trials ($\beta_1$ and $\beta_2$), because the rate of learning during acquisition may differ from the rate of learning during extinction.
-- $\lambda$ (lambda) is the **asymptotic associative strength** supported by the US. On reinforced trials (CS followed by US), $\lambda$ is typically set to some positive value (often 1.0 for convenience). On non-reinforced trials (CS presented without US), $\lambda = 0$.
+- {$$}\Delta V{/$$} is the change in associative strength on a given trial
+- {$$}V_n{/$$} is the associative strength at the start of trial {$$}n{/$$}
+- {$$}V_{n+1}{/$$} is the associative strength after trial {$$}n{/$$}
+- {$$}\alpha{/$$} (alpha) is the **salience of the CS**---a fixed parameter between 0 and 1 that reflects how noticeable or attention-grabbing the CS is. A loud tone has a higher {$$}\alpha{/$$} than a dim light.
+- {$$}\beta{/$$} (beta) is the **learning rate parameter associated with the US**---a fixed parameter between 0 and 1 that reflects how effectively the US supports learning. A large food pellet might have a higher {$$}\beta{/$$} than a small one. Note that in some formulations of the model, separate {$$}\beta{/$$} values are used for reinforced and non-reinforced trials ({$$}\beta_1{/$$} and {$$}\beta_2{/$$}), because the rate of learning during acquisition may differ from the rate of learning during extinction.
+- {$$}\lambda{/$$} (lambda) is the **asymptotic associative strength** supported by the US. On reinforced trials (CS followed by US), {$$}\lambda{/$$} is typically set to some positive value (often 1.0 for convenience). On non-reinforced trials (CS presented without US), {$$}\lambda = 0{/$$}.
 
 Several features of this equation deserve emphasis:
 
 1. **It is a difference equation**, not a differential equation. It updates in discrete steps, trial by trial. This makes it natural for trial-based conditioning procedures but less suited for continuous, real-time processes where events unfold continuously.
 
-2. **The product $\alpha \beta$ governs the learning rate.** Higher CS salience or more effective US processing produces faster learning. But note that $\alpha$ and $\beta$ have the same mathematical effect---they multiply together to form a single rate parameter. Their theoretical distinction matters, however, for predictions about compound stimuli (where different CSs have different $\alpha$ values but share the same $\beta$).
+2. **The product {$$}\alpha \beta{/$$} governs the learning rate.** Higher CS salience or more effective US processing produces faster learning. But note that {$$}\alpha{/$$} and {$$}\beta{/$$} have the same mathematical effect---they multiply together to form a single rate parameter. Their theoretical distinction matters, however, for predictions about compound stimuli (where different CSs have different {$$}\alpha{/$$} values but share the same {$$}\beta{/$$}).
 
-3. **$V$ in the prediction error term is the sum of all CSs present on the trial.** If stimuli A and B are both present, the prediction error is $\lambda - (V_A + V_B)$. This summation rule is what allows the model to explain compound stimulus phenomena like blocking. It is also what produces predictions about overexpectation and superconditioning. The summation assumption is arguably the most consequential assumption in the model.
+3. **{$$}V{/$$} in the prediction error term is the sum of all CSs present on the trial.** If stimuli A and B are both present, the prediction error is {$$}\lambda - (V_A + V_B){/$$}. This summation rule is what allows the model to explain compound stimulus phenomena like blocking. It is also what produces predictions about overexpectation and superconditioning. The summation assumption is arguably the most consequential assumption in the model.
 
-4. **The model produces negatively accelerated learning curves.** Early in training, $V$ is small, so the prediction error is large and learning is rapid. As $V$ approaches $\lambda$, the prediction error shrinks and learning slows. The learning curve approaches $\lambda$ asymptotically.
+4. **The model produces negatively accelerated learning curves.** Early in training, {$$}V{/$$} is small, so the prediction error is large and learning is rapid. As {$$}V{/$$} approaches {$$}\lambda{/$$}, the prediction error shrinks and learning slows. The learning curve approaches {$$}\lambda{/$$} asymptotically.
 
-5. **The model handles extinction naturally.** If the US is removed ($\lambda = 0$) after conditioning, the prediction error becomes $0 - V = -V$, which is negative. On each extinction trial, $V$ decreases: $\Delta V = \alpha \beta (0 - V) = -\alpha \beta V$. The extinction curve is the mirror image of the acquisition curve---negatively accelerated, approaching zero asymptotically.
+5. **The model handles extinction naturally.** If the US is removed ({$$}\lambda = 0{/$$}) after conditioning, the prediction error becomes {$$}0 - V = -V{/$$}, which is negative. On each extinction trial, {$$}V{/$$} decreases: {$$}\Delta V = \alpha \beta (0 - V) = -\alpha \beta V{/$$}. The extinction curve is the mirror image of the acquisition curve---negatively accelerated, approaching zero asymptotically.
 
 ---
 
@@ -98,23 +87,23 @@ Several features of this equation deserve emphasis:
 
 The procedure is as follows:
 
-- **Phase 1:** CS_A is paired with the US for many trials until $V_A \approx \lambda$. The organism has learned that A predicts the US.
+- **Phase 1:** CS_A is paired with the US for many trials until {$$}V_A \approx \lambda{/$$}. The organism has learned that A predicts the US.
 - **Phase 2:** The compound CS_A + CS_B is paired with the same US for several trials. Both A and B occur together, followed by the US.
 - **Test:** CS_B is presented alone. The question is whether B has acquired any associative strength.
 
 The contiguity account predicts that B should acquire strength---after all, B was paired with the US on every trial in Phase 2. But experimentally, B shows little or no conditioning. A "blocks" learning about B.
 
-The Rescorla-Wagner model explains this elegantly. At the start of Phase 2, $V_A \approx \lambda$ and $V_B = 0$. The total associative strength on compound trials is $V_A + V_B \approx \lambda$. The prediction error is:
+The Rescorla-Wagner model explains this elegantly. At the start of Phase 2, {$$}V_A \approx \lambda{/$$} and {$$}V_B = 0{/$$}. The total associative strength on compound trials is {$$}V_A + V_B \approx \lambda{/$$}. The prediction error is:
 
-$$\lambda - (V_A + V_B) \approx \lambda - \lambda = 0$$
+{$$}\lambda - (V_A + V_B) \approx \lambda - \lambda = 0{/$$}
 
 With no prediction error, neither stimulus gains (or loses) associative strength:
 
-$$\Delta V_B = \alpha_B \beta (0) = 0$$
+{$$}\Delta V_B = \alpha_B \beta (0) = 0{/$$}
 
 B gains nothing because there is nothing left to learn. The US is already fully predicted by A. No special "blocking mechanism" is needed. Blocking emerges from the general prediction-error learning rule combined with the summation of associative strengths.
 
-**Unblocking** provides an important complement. If the US changes between Phase 1 and Phase 2 (e.g., it becomes larger or smaller), prediction error is restored: $\lambda_{\text{new}} - V_A \neq 0$. Now B can gain (or lose) associative strength on compound trials. The fact that changing the US unblocks learning about B confirms that it is the prediction error, not the mere presence of A, that prevents learning in the standard blocking design.
+**Unblocking** provides an important complement. If the US changes between Phase 1 and Phase 2 (e.g., it becomes larger or smaller), prediction error is restored: {$$}\lambda_{\text{new}} - V_A \neq 0{/$$}. Now B can gain (or lose) associative strength on compound trials. The fact that changing the US unblocks learning about B confirms that it is the prediction error, not the mere presence of A, that prevents learning in the standard blocking design.
 
 ---
 
@@ -124,23 +113,23 @@ B gains nothing because there is nothing left to learn. The US is already fully 
 
 The standard procedure for establishing conditioned inhibition uses two trial types interleaved within the same session:
 
-- **A+ trials:** CS_A is presented alone and followed by the US. On these trials, $\lambda > 0$, and $V_A$ increases toward $\lambda$.
-- **AB- trials:** The compound CS_A + CS_B is presented without the US. On these trials, $\lambda = 0$.
+- **A+ trials:** CS_A is presented alone and followed by the US. On these trials, {$$}\lambda > 0{/$$}, and {$$}V_A{/$$} increases toward {$$}\lambda{/$$}.
+- **AB- trials:** The compound CS_A + CS_B is presented without the US. On these trials, {$$}\lambda = 0{/$$}.
 
-On A+ trials, $V_A$ grows as in any standard conditioning procedure. On AB- trials, the prediction error is computed against the compound:
+On A+ trials, {$$}V_A{/$$} grows as in any standard conditioning procedure. On AB- trials, the prediction error is computed against the compound:
 
-$$\lambda - (V_A + V_B) = 0 - (V_A + V_B)$$
+{$$}\lambda - (V_A + V_B) = 0 - (V_A + V_B){/$$}
 
-Since A has positive associative strength (from A+ trials), the compound prediction $V_A + V_B$ is positive, so the prediction error is negative. Both stimuli lose associative strength on these trials:
+Since A has positive associative strength (from A+ trials), the compound prediction {$$}V_A + V_B{/$$} is positive, so the prediction error is negative. Both stimuli lose associative strength on these trials:
 
-$$\Delta V_A = \alpha_A \beta_2 (0 - (V_A + V_B)) < 0$$
-$$\Delta V_B = \alpha_B \beta_2 (0 - (V_A + V_B)) < 0$$
+{$$}\Delta V_A = \alpha_A \beta_2 (0 - (V_A + V_B)) < 0{/$$}
+{$$}\Delta V_B = \alpha_B \beta_2 (0 - (V_A + V_B)) < 0{/$$}
 
 But A is gaining strength on A+ trials and losing it on AB- trials. Over many trials, A reaches a positive equilibrium value. B, which only appears on non-reinforced trials, accumulates more and more negative associative strength with each AB- trial. B becomes a **conditioned inhibitor**.
 
 Two standard tests confirm conditioned inhibition:
 
-1. **The summation test:** Present the putative inhibitor (B) in compound with a separately trained excitatory CS (C, where $V_C > 0$). If B is truly inhibitory ($V_B < 0$), the compound CB should produce less responding than C alone.
+1. **The summation test:** Present the putative inhibitor (B) in compound with a separately trained excitatory CS (C, where {$$}V_C > 0{/$$}). If B is truly inhibitory ({$$}V_B < 0{/$$}), the compound CB should produce less responding than C alone.
 
 2. **The retardation test:** Try to condition B as an excitatory CS by pairing it with the US. If B has negative associative strength, it must first climb from negative to zero before it can become excitatory, so conditioning will be slower than for a novel stimulus.
 
@@ -150,12 +139,12 @@ Both tests were formalized by Rescorla (1969) and provide operational criteria f
 
 ### Overshadowing
 
-A related compound stimulus phenomenon is **overshadowing**. When two CSs of unequal salience are conditioned in compound (AB+), the more salient CS acquires more associative strength than the less salient one, and each acquires less than it would have if conditioned alone. This occurs because both CSs share the same prediction error but receive increments proportional to their respective $\alpha$ values:
+A related compound stimulus phenomenon is **overshadowing**. When two CSs of unequal salience are conditioned in compound (AB+), the more salient CS acquires more associative strength than the less salient one, and each acquires less than it would have if conditioned alone. This occurs because both CSs share the same prediction error but receive increments proportional to their respective {$$}\alpha{/$$} values:
 
-$$\Delta V_A = \alpha_A \beta (\lambda - (V_A + V_B))$$
-$$\Delta V_B = \alpha_B \beta (\lambda - (V_A + V_B))$$
+{$$}\Delta V_A = \alpha_A \beta (\lambda - (V_A + V_B)){/$$}
+{$$}\Delta V_B = \alpha_B \beta (\lambda - (V_A + V_B)){/$$}
 
-If $\alpha_A > \alpha_B$, then $V_A$ grows faster than $V_B$ on every trial. As $V_A$ grows, it "uses up" the prediction error, leaving less for $V_B$. At equilibrium, $V_A + V_B = \lambda$, but $V_A > V_B$. A overshadows B.
+If {$$}\alpha_A > \alpha_B{/$$}, then {$$}V_A{/$$} grows faster than {$$}V_B{/$$} on every trial. As {$$}V_A{/$$} grows, it "uses up" the prediction error, leaving less for {$$}V_B{/$$}. At equilibrium, {$$}V_A + V_B = \lambda{/$$}, but {$$}V_A > V_B{/$$}. A overshadows B.
 
 Overshadowing is a less dramatic version of the same mechanism that produces blocking. In blocking, one CS has already consumed all the prediction error before the second CS is introduced. In overshadowing, the two CSs compete for prediction error from the start, and the more salient one wins a larger share.
 
@@ -167,19 +156,19 @@ Overshadowing is a less dramatic version of the same mechanism that produces blo
 
 The procedure is as follows:
 
-- **Phase 1:** CS_A is conditioned alone until $V_A \approx \lambda$. Separately, CS_B is conditioned alone until $V_B \approx \lambda$.
+- **Phase 1:** CS_A is conditioned alone until {$$}V_A \approx \lambda{/$$}. Separately, CS_B is conditioned alone until {$$}V_B \approx \lambda{/$$}.
 - **Phase 2:** The compound CS_A + CS_B is paired with the **same** US as before.
 
-What happens? The total prediction on compound trials is $V_A + V_B \approx 2\lambda$, but the US only supports $\lambda$. The prediction error is:
+What happens? The total prediction on compound trials is {$$}V_A + V_B \approx 2\lambda{/$$}, but the US only supports {$$}\lambda{/$$}. The prediction error is:
 
-$$\lambda - (V_A + V_B) \approx \lambda - 2\lambda = -\lambda$$
+{$$}\lambda - (V_A + V_B) \approx \lambda - 2\lambda = -\lambda{/$$}
 
-This is a large **negative** prediction error, even though the US is present. Both $V_A$ and $V_B$ decrease:
+This is a large **negative** prediction error, even though the US is present. Both {$$}V_A{/$$} and {$$}V_B{/$$} decrease:
 
-$$\Delta V_A = \alpha_A \beta (\lambda - (V_A + V_B)) < 0$$
-$$\Delta V_B = \alpha_B \beta (\lambda - (V_A + V_B)) < 0$$
+{$$}\Delta V_A = \alpha_A \beta (\lambda - (V_A + V_B)) < 0{/$$}
+{$$}\Delta V_B = \alpha_B \beta (\lambda - (V_A + V_B)) < 0{/$$}
 
-Over multiple compound trials, $V_A$ and $V_B$ both decline until $V_A + V_B = \lambda$. Each CS ends up with associative strength of approximately $\lambda / 2$.
+Over multiple compound trials, {$$}V_A{/$$} and {$$}V_B{/$$} both decline until {$$}V_A + V_B = \lambda{/$$}. Each CS ends up with associative strength of approximately {$$}\lambda / 2{/$$}.
 
 This is counterintuitive: both CSs are paired with the US on every trial in Phase 2, yet both lose associative strength. Contiguity is fully maintained, but learning goes in the "wrong" direction. The Rescorla-Wagner model predicts this because the organism's total expectation overshoots reality, and the model corrects the overshoot by reducing each CS's contribution. Overexpectation has been confirmed experimentally (Rescorla, 1970; Lattal & Nakajima, 1998) and stands as one of the model's most impressive novel predictions.
 
@@ -189,30 +178,30 @@ This is counterintuitive: both CSs are paired with the US on every trial in Phas
 
 **Mackintosh's attention model** (1975) was developed to address phenomena that the Rescorla-Wagner model does not handle well, particularly **learned irrelevance** and certain features of latent inhibition.
 
-The key difference from Rescorla-Wagner is that Mackintosh allows the **associability parameter** $\alpha$ to change with experience. In the Rescorla-Wagner model, $\alpha$ is a fixed property of the CS---a loud tone always has the same salience regardless of the organism's history with it. Mackintosh argued that this is psychologically unrealistic. Organisms learn to attend to stimuli that are good predictors of outcomes and learn to ignore stimuli that are poor predictors. This is attentional selection, and it requires $\alpha$ to be a variable, not a constant.
+The key difference from Rescorla-Wagner is that Mackintosh allows the **associability parameter** {$$}\alpha{/$$} to change with experience. In the Rescorla-Wagner model, {$$}\alpha{/$$} is a fixed property of the CS---a loud tone always has the same salience regardless of the organism's history with it. Mackintosh argued that this is psychologically unrealistic. Organisms learn to attend to stimuli that are good predictors of outcomes and learn to ignore stimuli that are poor predictors. This is attentional selection, and it requires {$$}\alpha{/$$} to be a variable, not a constant.
 
 Mackintosh's learning rule for associative strength is similar to Rescorla-Wagner:
 
-$$\Delta V_{CS} = \alpha_{CS} \beta (\lambda - V_{CS})$$
+{$$}\Delta V_{CS} = \alpha_{CS} \beta (\lambda - V_{CS}){/$$}
 
-Note the important difference: the prediction error in Mackintosh's model is computed for **each CS individually** ($\lambda - V_{CS}$), not for the summed compound ($\lambda - \Sigma V$). This means each stimulus learns independently, based on its own prediction error. The competition between stimuli occurs through the associability rule, not through shared error.
+Note the important difference: the prediction error in Mackintosh's model is computed for **each CS individually** ({$$}\lambda - V_{CS}{/$$}), not for the summed compound ({$$}\lambda - \Sigma V{/$$}). This means each stimulus learns independently, based on its own prediction error. The competition between stimuli occurs through the associability rule, not through shared error.
 
 Mackintosh's rule for updating associability is:
 
-- If $|V_{CS} - \lambda|$ < $|V_{\text{other}} - \lambda|$, then $\alpha_{CS}$ **increases**. The CS is a better predictor of the outcome than other available stimuli, so the organism increases its attention to it.
-- If $|V_{CS} - \lambda|$ > $|V_{\text{other}} - \lambda|$, then $\alpha_{CS}$ **decreases**. The CS is a worse predictor than other stimuli, so the organism decreases its attention to it.
+- If {$$}|V_{CS} - \lambda|{/$$} < {$$}|V_{\text{other}} - \lambda|{/$$}, then {$$}\alpha_{CS}{/$$} **increases**. The CS is a better predictor of the outcome than other available stimuli, so the organism increases its attention to it.
+- If {$$}|V_{CS} - \lambda|{/$$} > {$$}|V_{\text{other}} - \lambda|{/$$}, then {$$}\alpha_{CS}{/$$} **decreases**. The CS is a worse predictor than other stimuli, so the organism decreases its attention to it.
 
 The logic is intuitive: pay attention to informative stimuli and ignore uninformative ones. This is adaptive---organisms with limited processing capacity should allocate attention to the cues that best predict important outcomes.
 
 This produces a rich set of predictions:
 
-1. **Learned irrelevance:** If a stimulus has an extensive history of being uncorrelated with any outcome, its $\alpha$ decreases to a low value. Later, when it is paired with a US, learning is slow because $\alpha$ is already low. The Rescorla-Wagner model, with fixed $\alpha$, cannot account for this.
+1. **Learned irrelevance:** If a stimulus has an extensive history of being uncorrelated with any outcome, its {$$}\alpha{/$$} decreases to a low value. Later, when it is paired with a US, learning is slow because {$$}\alpha{/$$} is already low. The Rescorla-Wagner model, with fixed {$$}\alpha{/$$}, cannot account for this.
 
 2. **Intradimensional-extradimensional shift effects:** After learning to discriminate stimuli along one dimension (e.g., color), organisms learn faster on a new discrimination along the same dimension (intradimensional shift) than along a new dimension (extradimensional shift). Mackintosh's model explains this as a transfer of high associability to the relevant dimension.
 
-3. **Differential blocking:** Some blocking effects are asymmetric in ways that variable $\alpha$ can explain better than fixed $\alpha$.
+3. **Differential blocking:** Some blocking effects are asymmetric in ways that variable {$$}\alpha{/$$} can explain better than fixed {$$}\alpha{/$$}.
 
-4. **Attention as an explanatory variable:** Mackintosh's model provides a formal account of what "attention" means in the context of learning---a specific, quantifiable parameter ($\alpha$) that changes according to a well-defined rule.
+4. **Attention as an explanatory variable:** Mackintosh's model provides a formal account of what "attention" means in the context of learning---a specific, quantifiable parameter ({$$}\alpha{/$$}) that changes according to a well-defined rule.
 
 The Mackintosh model adds complexity but also explanatory power. It represents a move from a purely error-driven account to one that includes **attentional** processes---a theme that recurs in many modern learning theories, including the Pearce-Hall model (1980), the hybrid model of Le Pelley (2004), and various computational accounts.
 
@@ -257,22 +246,22 @@ The governing principle is that **associative learning is driven by prediction e
 
 The quantitative law is the Rescorla-Wagner equation:
 
-$$\Delta V = \alpha \beta (\lambda - V)$$
+{$$}\Delta V = \alpha \beta (\lambda - V){/$$}
 
-This is a linear difference equation with a single stable equilibrium at $V = \lambda$.
+This is a linear difference equation with a single stable equilibrium at {$$}V = \lambda{/$$}.
 
 ---
 
 **Step 4: State all simplifying assumptions.**
 
-1. The CS has a fixed salience ($\alpha$) that does not change with experience. (This is the assumption Mackintosh's model relaxes.)
-2. The US has a fixed processing rate ($\beta$) that does not change with experience.
+1. The CS has a fixed salience ({$$}\alpha{/$$}) that does not change with experience. (This is the assumption Mackintosh's model relaxes.)
+2. The US has a fixed processing rate ({$$}\beta{/$$}) that does not change with experience.
 3. Associative strength is a single scalar quantity that changes trial by trial.
 4. When multiple CSs are present on a trial, their associative strengths sum linearly to produce the total prediction. This is the elemental summation assumption.
 5. All learning occurs at the moment of US presentation (or non-presentation). Nothing changes between trials.
-6. The CR is a monotonic function of $V$---higher associative strength produces stronger conditioned responding.
-7. There is no generalization between stimuli; each CS has its own $V$ value that changes independently, though through the shared error term.
-8. The context (chamber, background cues) is treated as either absent or as a separate CS with its own $V$.
+6. The CR is a monotonic function of {$$}V{/$$}---higher associative strength produces stronger conditioned responding.
+7. There is no generalization between stimuli; each CS has its own {$$}V{/$$} value that changes independently, though through the shared error term.
+8. The context (chamber, background cues) is treated as either absent or as a separate CS with its own {$$}V{/$$}.
 
 ---
 
@@ -282,21 +271,21 @@ Verbally: On each conditioning trial, the associative strength of the tone incre
 
 Mathematically:
 
-$$V_{n+1} = V_n + \alpha \beta (\lambda - V_n)$$
+{$$}V_{n+1} = V_n + \alpha \beta (\lambda - V_n){/$$}
 
 where:
-- $V_n$ is the associative strength of the tone at the start of trial $n$
-- $\alpha = 0.3$ (the tone is moderately salient)
-- $\beta = 0.5$ (the food pellet supports a moderate learning rate)
-- $\lambda = 1.0$ (the asymptotic associative strength supported by the food, set to 1 for convenience)
+- {$$}V_n{/$$} is the associative strength of the tone at the start of trial {$$}n{/$$}
+- {$$}\alpha = 0.3{/$$} (the tone is moderately salient)
+- {$$}\beta = 0.5{/$$} (the food pellet supports a moderate learning rate)
+- {$$}\lambda = 1.0{/$$} (the asymptotic associative strength supported by the food, set to 1 for convenience)
 
-In plain language: after each trial, the tone's predictive strength moves a fraction of the remaining distance toward the maximum level the food supports. The fraction is $\alpha \beta = 0.15$, or 15% of the remaining gap.
+In plain language: after each trial, the tone's predictive strength moves a fraction of the remaining distance toward the maximum level the food supports. The fraction is {$$}\alpha \beta = 0.15{/$$}, or 15% of the remaining gap.
 
 ---
 
 **Step 6: Verify dimensional consistency.**
 
-$V$ represents associative strength, which is a dimensionless quantity on an arbitrary scale (here, 0 to 1). $\alpha$ and $\beta$ are dimensionless proportions (no units). $\lambda$ is in the same arbitrary units as $V$. The product $\alpha \beta (\lambda - V)$ is therefore dimensionless, and $V_{n+1} = V_n + \text{(dimensionless increment)}$ is consistent.
+{$$}V{/$$} represents associative strength, which is a dimensionless quantity on an arbitrary scale (here, 0 to 1). {$$}\alpha{/$$} and {$$}\beta{/$$} are dimensionless proportions (no units). {$$}\lambda{/$$} is in the same arbitrary units as {$$}V{/$$}. The product {$$}\alpha \beta (\lambda - V){/$$} is therefore dimensionless, and {$$}V_{n+1} = V_n + \text{(dimensionless increment)}{/$$} is consistent.
 
 Note that this is a difference equation, not a rate equation, so there are no time units to check. The model steps in units of "trials," and all quantities are expressed per trial or are dimensionless.
 
@@ -304,24 +293,24 @@ Note that this is a difference equation, not a rate equation, so there are no ti
 
 **Step 7: Specify starting values and constraints.**
 
-- $V_0 = 0$: Before any conditioning, the tone has no associative strength.
-- $0 < \alpha \leq 1$: Salience is bounded between 0 (exclusive) and 1.
-- $0 < \beta \leq 1$: The learning rate parameter is similarly bounded.
-- $\lambda \geq 0$: The asymptote is non-negative on reinforced trials. On non-reinforced trials, $\lambda = 0$.
+- {$$}V_0 = 0{/$$}: Before any conditioning, the tone has no associative strength.
+- {$$}0 < \alpha \leq 1{/$$}: Salience is bounded between 0 (exclusive) and 1.
+- {$$}0 < \beta \leq 1{/$$}: The learning rate parameter is similarly bounded.
+- {$$}\lambda \geq 0{/$$}: The asymptote is non-negative on reinforced trials. On non-reinforced trials, {$$}\lambda = 0{/$$}.
 - The model applies from trial 1 onward and is defined only for integer trial numbers.
-- Associative strength is **not** bounded by the model itself---$V$ can exceed $\lambda$ in compound stimulus situations (overexpectation) or become negative (conditioned inhibition).
+- Associative strength is **not** bounded by the model itself---{$$}V{/$$} can exceed {$$}\lambda{/$$} in compound stimulus situations (overexpectation) or become negative (conditioned inhibition).
 
 ---
 
 **Step 8: Check the math, test against data, and derive predictions.**
 
-**Verify:** At $n = 0$, $V_0 = 0$, so $\Delta V = 0.3 \times 0.5 \times (1.0 - 0) = 0.15$, and $V_1 = 0.15$. This is positive and less than $\lambda$, which makes sense.
+**Verify:** At {$$}n = 0{/$$}, {$$}V_0 = 0{/$$}, so {$$}\Delta V = 0.3 \times 0.5 \times (1.0 - 0) = 0.15{/$$}, and {$$}V_1 = 0.15{/$$}. This is positive and less than {$$}\lambda{/$$}, which makes sense.
 
-At $n = 1$, $V_1 = 0.15$, so $\Delta V = 0.15 \times (1.0 - 0.15) = 0.15 \times 0.85 = 0.128$, and $V_2 = 0.278$. The increment is smaller than on trial 1, confirming the negatively accelerated pattern.
+At {$$}n = 1{/$$}, {$$}V_1 = 0.15{/$$}, so {$$}\Delta V = 0.15 \times (1.0 - 0.15) = 0.15 \times 0.85 = 0.128{/$$}, and {$$}V_2 = 0.278{/$$}. The increment is smaller than on trial 1, confirming the negatively accelerated pattern.
 
-**Boundary check:** If $\alpha = 0$, then $\Delta V = 0$ on every trial---a completely non-salient CS supports no learning. If $\beta = 0$, the same. If $V_0 = \lambda$, then $\Delta V = 0$---no learning occurs if the CS already fully predicts the US. All of these are sensible.
+**Boundary check:** If {$$}\alpha = 0{/$$}, then {$$}\Delta V = 0{/$$} on every trial---a completely non-salient CS supports no learning. If {$$}\beta = 0{/$$}, the same. If {$$}V_0 = \lambda{/$$}, then {$$}\Delta V = 0{/$$}---no learning occurs if the CS already fully predicts the US. All of these are sensible.
 
-**Validate:** Fit the model to trial-by-trial conditioning data. Estimate $\alpha$ and $\beta$ by minimizing the discrepancy between predicted $V_n$ and observed CR magnitude on each trial. In practice, the Rescorla-Wagner model fits many acquisition datasets well, though systematic deviations occur.
+**Validate:** Fit the model to trial-by-trial conditioning data. Estimate {$$}\alpha{/$$} and {$$}\beta{/$$} by minimizing the discrepancy between predicted {$$}V_n{/$$} and observed CR magnitude on each trial. In practice, the Rescorla-Wagner model fits many acquisition datasets well, though systematic deviations occur.
 
 **Derive new predictions:** The model predicts blocking, overexpectation, conditioned inhibition, and overshadowing---each a testable, quantitative prediction.
 
@@ -333,18 +322,18 @@ At $n = 1$, $V_1 = 0.15$, so $\Delta V = 0.15 \times (1.0 - 0.15) = 0.15 \times 
 
 We set the parameters as follows:
 
-- $\alpha = 0.3$ (CS salience)
-- $\beta = 0.5$ (US learning rate)
-- $\lambda = 1.0$ (asymptotic associative strength)
-- $V_0 = 0$ (no prior conditioning)
+- {$$}\alpha = 0.3{/$$} (CS salience)
+- {$$}\beta = 0.5{/$$} (US learning rate)
+- {$$}\lambda = 1.0{/$$} (asymptotic associative strength)
+- {$$}V_0 = 0{/$$} (no prior conditioning)
 
-The effective learning rate per trial is $\alpha \beta = 0.15$. On each trial, the update rule is:
+The effective learning rate per trial is {$$}\alpha \beta = 0.15{/$$}. On each trial, the update rule is:
 
-$$V_{n+1} = V_n + 0.15 \times (1.0 - V_n)$$
+{$$}V_{n+1} = V_n + 0.15 \times (1.0 - V_n){/$$}
 
 Computing trial by trial:
 
-| Trial ($n$) | $V_n$ (start) | Prediction Error ($\lambda - V_n$) | $\Delta V = 0.15 \times (\lambda - V_n)$ | $V_{n+1}$ (end) |
+| Trial ({$$}n{/$$}) | {$$}V_n{/$$} (start) | Prediction Error ({$$}\lambda - V_n{/$$}) | {$$}\Delta V = 0.15 \times (\lambda - V_n){/$$} | {$$}V_{n+1}{/$$} (end) |
 |:-----------:|:--------------:|:-----------------------------------:|:-----------------------------------------:|:----------------:|
 | 1           | 0.000          | 1.000                               | 0.150                                     | 0.150            |
 | 2           | 0.150          | 0.850                               | 0.128                                     | 0.278            |
@@ -360,31 +349,31 @@ Computing trial by trial:
 Several patterns are visible:
 
 1. **The prediction error decreases monotonically.** On trial 1, the error is 1.000; by trial 10, it has shrunk to 0.231.
-2. **The increment $\Delta V$ decreases monotonically.** The organism learns the most on the first trial and progressively less on each subsequent trial.
-3. **The learning curve is negatively accelerated.** $V$ rises quickly at first and then levels off.
-4. **After 10 trials, $V \approx 0.80$.** Substantial learning has occurred, but the asymptote has not been reached.
+2. **The increment {$$}\Delta V{/$$} decreases monotonically.** The organism learns the most on the first trial and progressively less on each subsequent trial.
+3. **The learning curve is negatively accelerated.** {$$}V{/$$} rises quickly at first and then levels off.
+4. **After 10 trials, {$$}V \approx 0.80{/$$}.** Substantial learning has occurred, but the asymptote has not been reached.
 
 The general closed-form solution for the Rescorla-Wagner model with a single CS is:
 
-$$V_n = \lambda \left(1 - (1 - \alpha\beta)^n \right)$$
+{$$}V_n = \lambda \left(1 - (1 - \alpha\beta)^n \right){/$$}
 
-Substituting our parameters: $V_n = 1 - 0.85^n$. At $n = 10$: $V_{10} = 1 - 0.85^{10} = 1 - 0.1969 = 0.8031$.
+Substituting our parameters: {$$}V_n = 1 - 0.85^n{/$$}. At {$$}n = 10{/$$}: {$$}V_{10} = 1 - 0.85^{10} = 1 - 0.1969 = 0.8031{/$$}.
 
-We can also ask: how many trials to reach 95% of asymptote? We need $V_n = 0.95$, so $0.85^n = 0.05$, giving $n = \log(0.05) / \log(0.85) \approx 18.4$ trials.
+We can also ask: how many trials to reach 95% of asymptote? We need {$$}V_n = 0.95{/$$}, so {$$}0.85^n = 0.05{/$$}, giving {$$}n = \log(0.05) / \log(0.85) \approx 18.4{/$$} trials.
 
 ---
 
 ### Extinction: Following Acquisition with Non-Reinforced Trials
 
-Suppose that after 20 acquisition trials, we switch to extinction: the tone is presented but no food follows ($\lambda = 0$). At the start of extinction, $V_{20} = 1 - 0.85^{20} = 0.961$.
+Suppose that after 20 acquisition trials, we switch to extinction: the tone is presented but no food follows ({$$}\lambda = 0{/$$}). At the start of extinction, {$$}V_{20} = 1 - 0.85^{20} = 0.961{/$$}.
 
 The update rule during extinction is:
 
-$$V_{n+1} = V_n + \alpha \beta (0 - V_n) = V_n - 0.15 V_n = 0.85 V_n$$
+{$$}V_{n+1} = V_n + \alpha \beta (0 - V_n) = V_n - 0.15 V_n = 0.85 V_n{/$$}
 
-So on each extinction trial, $V$ retains 85% of its previous value:
+So on each extinction trial, {$$}V{/$$} retains 85% of its previous value:
 
-| Extinction Trial | $V_n$ (start) | Prediction Error ($0 - V_n$) | $\Delta V$ | $V_{n+1}$ (end) |
+| Extinction Trial | {$$}V_n{/$$} (start) | Prediction Error ({$$}0 - V_n{/$$}) | {$$}\Delta V{/$$} | {$$}V_{n+1}{/$$} (end) |
 |:----------------:|:--------------:|:----------------------------:|:-----------:|:----------------:|
 | 1                | 0.961          | -0.961                       | -0.144      | 0.817            |
 | 2                | 0.817          | -0.817                       | -0.123      | 0.694            |
@@ -392,7 +381,7 @@ So on each extinction trial, $V$ retains 85% of its previous value:
 | 4                | 0.590          | -0.590                       | -0.088      | 0.501            |
 | 5                | 0.501          | -0.501                       | -0.075      | 0.426            |
 
-After 5 extinction trials, $V$ has dropped from 0.961 to 0.426. The prediction error is negative on every trial: the organism expects the US but it does not occur. This symmetry between acquisition and extinction is a feature of the model---both processes are driven by the same equation; they differ only in the value of $\lambda$.
+After 5 extinction trials, {$$}V{/$$} has dropped from 0.961 to 0.426. The prediction error is negative on every trial: the organism expects the US but it does not occur. This symmetry between acquisition and extinction is a feature of the model---both processes are driven by the same equation; they differ only in the value of {$$}\lambda{/$$}.
 
 ---
 
@@ -400,16 +389,16 @@ After 5 extinction trials, $V$ has dropped from 0.961 to 0.426. The prediction e
 
 Now we demonstrate blocking numerically. Suppose CS_A has been trained extensively in Phase 1:
 
-- **After Phase 1:** $V_A = 0.95$ (approximately at $\lambda = 1.0$).
+- **After Phase 1:** {$$}V_A = 0.95{/$$} (approximately at {$$}\lambda = 1.0{/$$}).
 
-In Phase 2, we present the compound CS_A + CS_B with the US. CS_B is a new stimulus with $V_B = 0$, $\alpha_A = 0.3$, and $\alpha_B = 0.3$.
+In Phase 2, we present the compound CS_A + CS_B with the US. CS_B is a new stimulus with {$$}V_B = 0{/$$}, {$$}\alpha_A = 0.3{/$$}, and {$$}\alpha_B = 0.3{/$$}.
 
-On each compound trial, the total associative strength is $V_A + V_B$. The prediction error is computed against the compound total:
+On each compound trial, the total associative strength is {$$}V_A + V_B{/$$}. The prediction error is computed against the compound total:
 
-$$\Delta V_A = \alpha_A \beta (\lambda - (V_A + V_B))$$
-$$\Delta V_B = \alpha_B \beta (\lambda - (V_A + V_B))$$
+{$$}\Delta V_A = \alpha_A \beta (\lambda - (V_A + V_B)){/$$}
+{$$}\Delta V_B = \alpha_B \beta (\lambda - (V_A + V_B)){/$$}
 
-| Phase 2 Trial | $V_A$ | $V_B$ | $V_A + V_B$ | Prediction Error | $\Delta V_A$ | $\Delta V_B$ | New $V_A$ | New $V_B$ |
+| Phase 2 Trial | {$$}V_A{/$$} | {$$}V_B{/$$} | {$$}V_A + V_B{/$$} | Prediction Error | {$$}\Delta V_A{/$$} | {$$}\Delta V_B{/$$} | New {$$}V_A{/$$} | New {$$}V_B{/$$} |
 |:--------------:|:-----:|:-----:|:------------:|:----------------:|:-------------:|:-------------:|:---------:|:---------:|
 | 1              | 0.950 | 0.000 | 0.950        | 0.050            | 0.008         | 0.008         | 0.958     | 0.008     |
 | 2              | 0.958 | 0.008 | 0.966        | 0.034            | 0.005         | 0.005         | 0.963     | 0.013     |
@@ -417,21 +406,21 @@ $$\Delta V_B = \alpha_B \beta (\lambda - (V_A + V_B))$$
 | 4              | 0.967 | 0.017 | 0.984        | 0.016            | 0.002         | 0.002         | 0.969     | 0.019     |
 | 5              | 0.969 | 0.019 | 0.988        | 0.012            | 0.002         | 0.002         | 0.971     | 0.021     |
 
-After 5 compound trials, $V_B = 0.021$---essentially zero conditioning. Compare this to what would happen if B had been conditioned alone from the start: after 5 solo trials, $V_B$ would be $1 - 0.85^5 = 0.556$. The presence of the already-trained A has **blocked** learning about B by a factor of more than 25.
+After 5 compound trials, {$$}V_B = 0.021{/$$}---essentially zero conditioning. Compare this to what would happen if B had been conditioned alone from the start: after 5 solo trials, {$$}V_B{/$$} would be {$$}1 - 0.85^5 = 0.556{/$$}. The presence of the already-trained A has **blocked** learning about B by a factor of more than 25.
 
 ---
 
 ### Effect of Different Learning Rates
 
-To illustrate the role of the rate parameters, compare three conditions with the same $\lambda = 1.0$ and $V_0 = 0$:
+To illustrate the role of the rate parameters, compare three conditions with the same {$$}\lambda = 1.0{/$$} and {$$}V_0 = 0{/$$}:
 
-| Condition | $\alpha$ | $\beta$ | $\alpha\beta$ | $V$ after 5 trials | $V$ after 10 trials | $V$ after 20 trials |
+| Condition | {$$}\alpha{/$$} | {$$}\beta{/$$} | {$$}\alpha\beta{/$$} | {$$}V{/$$} after 5 trials | {$$}V{/$$} after 10 trials | {$$}V{/$$} after 20 trials |
 |:---------:|:--------:|:-------:|:--------------:|:-------------------:|:--------------------:|:--------------------:|
 | Slow      | 0.1      | 0.2     | 0.02           | 0.096               | 0.183                | 0.332                |
 | Moderate  | 0.3      | 0.5     | 0.15           | 0.556               | 0.803                | 0.961                |
 | Fast      | 0.8      | 0.8     | 0.64           | 0.994               | 1.000                | 1.000                |
 
-The shape of all three curves is the same---negatively accelerated exponential approach to $\lambda$---but the speed differs dramatically.
+The shape of all three curves is the same---negatively accelerated exponential approach to {$$}\lambda{/$$}---but the speed differs dramatically.
 
 ---
 
@@ -439,13 +428,13 @@ The shape of all three curves is the same---negatively accelerated exponential a
 
 The Rescorla-Wagner model says: **organisms learn when they are surprised**.
 
-If the US is fully predicted by the CSs present on a trial, there is no prediction error and no learning occurs. The organism already "knows" what is going to happen, so there is nothing new to encode. This is the state of affairs when $V = \lambda$.
+If the US is fully predicted by the CSs present on a trial, there is no prediction error and no learning occurs. The organism already "knows" what is going to happen, so there is nothing new to encode. This is the state of affairs when {$$}V = \lambda{/$$}.
 
 If the US is unexpected---either because the CS is new or because the US is larger than predicted---there is a **positive prediction error**. The CS gains associative strength. In everyday terms, the organism updates its expectation upward: "This CS is a better predictor of the US than I thought."
 
-If the US fails to appear when expected---or is smaller than predicted---there is a **negative prediction error**. The CS loses associative strength. The organism updates its expectation downward. This is the mechanism behind extinction: when the US stops occurring, prediction error is negative on every trial, and $V$ gradually decreases toward zero. Extinction is not "forgetting" in this model; it is active re-learning.
+If the US fails to appear when expected---or is smaller than predicted---there is a **negative prediction error**. The CS loses associative strength. The organism updates its expectation downward. This is the mechanism behind extinction: when the US stops occurring, prediction error is negative on every trial, and {$$}V{/$$} gradually decreases toward zero. Extinction is not "forgetting" in this model; it is active re-learning.
 
-**Learning is error correction.** Each trial brings the organism's prediction a step closer to reality. The step size depends on $\alpha$ and $\beta$, but the direction and magnitude of the step are determined entirely by the prediction error. This is why the model produces negatively accelerated learning curves: early in training, the error is large and steps are big; late in training, the error is small and steps are tiny.
+**Learning is error correction.** Each trial brings the organism's prediction a step closer to reality. The step size depends on {$$}\alpha{/$$} and {$$}\beta{/$$}, but the direction and magnitude of the step are determined entirely by the prediction error. This is why the model produces negatively accelerated learning curves: early in training, the error is large and steps are big; late in training, the error is small and steps are tiny.
 
 The blocking phenomenon illustrates this logic most starkly. When CS_A already predicts the US, adding CS_B to the compound contributes nothing new. There is no surprise, no error, and no learning about B. Learning is not about contiguity---the sheer co-occurrence of events in time. It is about **informativeness**---whether an event changes the organism's prediction.
 
@@ -463,9 +452,9 @@ The Rescorla-Wagner model, despite its enormous influence, rests on assumptions 
 
 - **Trial-level processing:** The model updates once per trial. It does not represent real-time dynamics within a trial---the timing of the CS, the timing of the US, the moment-to-moment changes in expectation. Real conditioning is exquisitely sensitive to the CS-US interval. Models like the temporal difference (TD) model and the Timing model of Gallistel and Gibbon (2000) address real-time learning.
 
-- **Linear error correction:** The change in $V$ is a linear function of the prediction error. There is no mechanism for accelerating or decelerating learning based on the recent history of errors.
+- **Linear error correction:** The change in {$$}V{/$$} is a linear function of the prediction error. There is no mechanism for accelerating or decelerating learning based on the recent history of errors.
 
-- **Fixed associability ($\alpha$):** The salience of the CS does not change with experience. This is the assumption that Mackintosh (1975) and Pearce and Hall (1980) relaxed. The fixed-$\alpha$ assumption means the model cannot account for **latent inhibition**, **learned irrelevance**, or the effects of prior discrimination training on subsequent learning.
+- **Fixed associability ({$$}\alpha{/$$}):** The salience of the CS does not change with experience. This is the assumption that Mackintosh (1975) and Pearce and Hall (1980) relaxed. The fixed-{$$}\alpha{/$$} assumption means the model cannot account for **latent inhibition**, **learned irrelevance**, or the effects of prior discrimination training on subsequent learning.
 
 - **Summation of associative strengths:** When multiple CSs are present, the model sums their individual associative strengths to produce the total prediction. This **elemental** approach does not allow for **configural** processing, in which the compound AB is treated as a distinct entity from A or B alone. Pearce's configural model (1987) addresses this limitation.
 
@@ -475,7 +464,7 @@ The Rescorla-Wagner model, despite its enormous influence, rests on assumptions 
 
 - **No memory or context effects:** The model has no mechanism for spontaneous recovery, renewal, or reinstatement. These phenomena suggest that extinction does not erase the original association but rather creates a new, context-dependent inhibitory association.
 
-- **US processing is constant:** The parameter $\beta$ does not change with experience. In reality, habituation to the US, changes in motivation, and sensitization all affect how the US is processed.
+- **US processing is constant:** The parameter {$$}\beta{/$$} does not change with experience. In reality, habituation to the US, changes in motivation, and sensitization all affect how the US is processed.
 
 These limitations are not reasons to discard the model. They are the boundaries that define where the model applies and where extensions are needed. The Rescorla-Wagner model remains the starting point for nearly all formal models of associative learning precisely because it is simple enough to understand clearly and powerful enough to generate surprising, testable predictions.
 
@@ -511,11 +500,11 @@ The discovery that dopamine neurons in the midbrain encode a signal resembling t
 
 ## Exercises for Reflection
 
-1. The Rescorla-Wagner model predicts that if two separately trained excitatory CSs (A and B, each with $V \approx \lambda$) are presented together in compound with the US, both will **lose** associative strength. This is called **overexpectation**. Walk through the math: What is the prediction error on the first compound trial if $V_A = 0.95$ and $V_B = 0.95$ with $\lambda = 1.0$? What happens to $V_A$ and $V_B$ over the next few trials? Why is this prediction counterintuitive from a contiguity perspective?
+1. The Rescorla-Wagner model predicts that if two separately trained excitatory CSs (A and B, each with {$$}V \approx \lambda{/$$}) are presented together in compound with the US, both will **lose** associative strength. This is called **overexpectation**. Walk through the math: What is the prediction error on the first compound trial if {$$}V_A = 0.95{/$$} and {$$}V_B = 0.95{/$$} with {$$}\lambda = 1.0{/$$}? What happens to {$$}V_A{/$$} and {$$}V_B{/$$} over the next few trials? Why is this prediction counterintuitive from a contiguity perspective?
 
 2. Consider a clinical example: a client has a severe phobia of dogs (CS) associated with a traumatic bite (US). Describe the phobia in terms of associative strength. How would extinction (exposure therapy) work according to the Rescorla-Wagner model? What does the model predict about the rate of fear reduction across exposure sessions? What does the model fail to capture about real-world exposure therapy? (Think about spontaneous recovery, renewal, and reinstatement.)
 
-3. Mackintosh's model allows $\alpha$ to change with experience, while the Rescorla-Wagner model holds $\alpha$ fixed. Design a thought experiment that would produce different predictions from the two models. Specify the training procedure, the test, and what each model predicts at test. (Hint: consider what happens when a CS has a long history of being irrelevant before it becomes a predictor.)
+3. Mackintosh's model allows {$$}\alpha{/$$} to change with experience, while the Rescorla-Wagner model holds {$$}\alpha{/$$} fixed. Design a thought experiment that would produce different predictions from the two models. Specify the training procedure, the test, and what each model predicts at test. (Hint: consider what happens when a CS has a long history of being irrelevant before it becomes a predictor.)
 
 ---
 
@@ -529,7 +518,7 @@ The discovery that dopamine neurons in the midbrain encode a signal resembling t
 
 **Supplemental:**
 
-**Rescorla and Wagner (1972)** presented the original formal statement of the prediction-error learning rule that became the foundation of modern associative learning theory. Their model---$\Delta V = \alpha\beta(\lambda - V)$---proposed that the change in associative strength on each trial is proportional to the discrepancy between what is expected and what occurs. This single equation unified a wide range of conditioning phenomena including acquisition, extinction, blocking, and conditioned inhibition under one quantitative framework. It is the canonical example of a formal model in behavior science and the starting point for everything covered this week.
+**Rescorla and Wagner (1972)** presented the original formal statement of the prediction-error learning rule that became the foundation of modern associative learning theory. Their model---{$$}\Delta V = \alpha\beta(\lambda - V){/$$}---proposed that the change in associative strength on each trial is proportional to the discrepancy between what is expected and what occurs. This single equation unified a wide range of conditioning phenomena including acquisition, extinction, blocking, and conditioned inhibition under one quantitative framework. It is the canonical example of a formal model in behavior science and the starting point for everything covered this week.
 
 **Esber et al. (2025)** revisited the Rescorla-Wagner model and argued that common textbook presentations misrepresent key aspects of the original formulation, particularly regarding the scope of the model's predictions and the role of its parameters. They clarified what the model actually claims versus what has been attributed to it through decades of secondary citation. This paper is a valuable corrective that demonstrates how formal models can drift from their original specification as they are transmitted through the literature---a cautionary lesson for any modeler.
 
@@ -604,22 +593,75 @@ Sutton, R. S., & Barto, A. G. (1998). *Reinforcement learning: An introduction*.
 
 ## Key Takeaways
 
-- **Prediction error drives learning.** The Rescorla-Wagner model formalizes the idea that organisms learn when outcomes are surprising ($\lambda - V \neq 0$) and stop learning when outcomes are fully predicted ($\lambda - V = 0$). This was a revolutionary shift from contiguity-based accounts.
+- **Prediction error drives learning.** The Rescorla-Wagner model formalizes the idea that organisms learn when outcomes are surprising ({$$}\lambda - V \neq 0{/$$}) and stop learning when outcomes are fully predicted ({$$}\lambda - V = 0{/$$}). This was a revolutionary shift from contiguity-based accounts.
 
-- **The Rescorla-Wagner equation:** $\Delta V = \alpha\beta(\lambda - V)$. A simple difference equation with three parameters: CS salience ($\alpha$), US learning rate ($\beta$), and asymptotic associative strength ($\lambda$). Despite its simplicity, it generates a remarkably wide range of predictions.
+- **The Rescorla-Wagner equation:** {$$}\Delta V = \alpha\beta(\lambda - V){/$$}. A simple difference equation with three parameters: CS salience ({$$}\alpha{/$$}), US learning rate ({$$}\beta{/$$}), and asymptotic associative strength ({$$}\lambda{/$$}). Despite its simplicity, it generates a remarkably wide range of predictions.
 
-- **Negatively accelerated learning curves** emerge naturally from the model because prediction error shrinks as $V$ approaches $\lambda$.
+- **Negatively accelerated learning curves** emerge naturally from the model because prediction error shrinks as {$$}V{/$$} approaches {$$}\lambda{/$$}.
 
 - **Blocking** is explained by the summation of associative strengths: if one CS already predicts the US, there is no prediction error left for a second CS to capture. This showed that contiguity is not sufficient for learning---informativeness matters.
 
-- **Conditioned inhibition** arises when a CS is paired with the absence of an expected US, driving $V$ below zero.
+- **Conditioned inhibition** arises when a CS is paired with the absence of an expected US, driving {$$}V{/$$} below zero.
 
 - **Overshadowing** occurs when CSs of unequal salience compete for a shared prediction error, with the more salient CS gaining a larger share.
 
 - **Overexpectation** demonstrates that associative strength can decrease even when the US is present, if the compound prediction exceeds what the US supports.
 
-- **Mackintosh's attention model** extends the Rescorla-Wagner framework by allowing associability ($\alpha$) to change with experience, accounting for learned irrelevance and other attentional phenomena.
+- **Mackintosh's attention model** extends the Rescorla-Wagner framework by allowing associability ({$$}\alpha{/$$}) to change with experience, accounting for learned irrelevance and other attentional phenomena.
 
-- **Limitations of Rescorla-Wagner** include trial-level processing, fixed $\alpha$, no configural processing, no representation of time within trials, and no mechanism for context-dependent phenomena like spontaneous recovery. These limitations have motivated important extensions and alternative models.
+- **Limitations of Rescorla-Wagner** include trial-level processing, fixed {$$}\alpha{/$$}, no configural processing, no representation of time within trials, and no mechanism for context-dependent phenomena like spontaneous recovery. These limitations have motivated important extensions and alternative models.
 
 - **The prediction error concept has had extraordinary reach**, from animal learning theory to computational neuroscience (dopamine prediction error signals) to artificial intelligence (temporal difference learning).
+
+## Recommended Readings
+
+**Required:**
+
+- Mackintosh, N. J. (1975). A theory of attention: Variations in the associability of stimuli with reinforcement. *Psychological Review*, *82*, 276-298.
+- Nevin, J. A. et al. (1983). The analysis of behavioral momentum. *Journal of the Experimental Analysis of Behavior*, *39*, 49-59.
+- Matzel, L. D. et al. (1988). Information and expression of simultaneous and backward associations: Implications for contiguity theory. *Learning and Motivation*, *19*, 317-344.
+
+**Optional:**
+
+- Rescorla, R. A. & Wagner, A. R. (1972). A theory of Pavlovian conditioning: The effectiveness of reinforcement and non-reinforcement. In A. H. Black & W. F. Prokasy (Eds.), *Classical Conditioning II*.
+- Nevin, J. A. (1998). Choice and momentum. In W. T. O'Donohue (Ed.), *Learning and Behavior Therapy*.
+- Nevin, J. A. (2002). Measuring behavioral momentum. *Behavioural Processes*, *57*, 187-198.
+- Stout, S. C. & Miller, R. R. (2007). Sometimes-competing retrieval (SOCR): A formalization of the comparator hypothesis. *Psychological Review*, *114*, 759-783.
+- Nevin, J. A. & Shahan, T. A. (2011). Behavioral momentum theory: Equations and applications. *Journal of Applied Behavior Analysis*, *44*, 877-895.
+- Esber, G. R. et al. (2025). The Rescorla-Wagner model: It is not what you think it is.
+
+
+## Lab: Associative Learning Models
+
+A> **Run this lab.** Notebooks and data files are available at:
+A> [https://www.behavioral-data-science.org/book/labs/week-04](https://www.behavioral-data-science.org/book/labs/week-04)
+A>
+A> The companion materials include starter notebooks, the dataset(s) referenced below, and instructor-prepared solutions.
+
+## Associative Learning Models Lab
+
+This week, we focus broadly on the area of respondent conditioning -- stimulus-stimulus learning. Two areas, in particular, have arguably been studied more than others from a quantitative modeling perspective. These are behavioral momentum (e.g., Nevin et al., 1983; Nevin & Shahan, 2011) and attempts to quantify changes in stimulus associative value (e.g., Mackintosh, 1975; Rescorla-Wagner, 1972). The purpose of this lab is twofold.
+
+### Part 1: Behavioral Momentum Model Fitting
+
+As with previous weeks, the first goal is to practice fitting an equation to experimentally obtained data. There are two datasets prepared for you to continue practicing this skill. One is a set of behavioral momentum data where extinction was the disruptor. The second is a set of behavioral momentum data where alternative reinforcement was the disruptor. The required reading for this week was the original Nevin and colleagues (1983) article, which was chosen so that you have a good grasp of what behavioral momentum is all about. Thus, to fit a model to the data, you'll want to dig into the supplemental materials to find the right equations.
+
+**Hints for Behavioral Momentum Model Fitting:**
+
+- **Parameter Bounds Matter:** The behavioral momentum equations have specific parameter constraints. For extinction: c and d should be positive, r should be > 0.1, and B0 should be reasonable baseline rates. For alternative reinforcement: p should be positive, r should be > 0.1.
+- **Initial Parameter Guesses:** Think about what reasonable starting values might be: B0 should be close to the baseline response rate in the data; r is the reinforcement rate (look at the experimental conditions); c, d, p are scaling parameters (start with small positive values).
+
+### Part 2: Recursive Models and the Mackintosh Model
+
+The second goal is to introduce the idea of recursive models, which we will spend a lot of time with in later weeks. A recursive model is a model where the output of the model at time t is part of the input to the model at time t+1. Formally:
+
+X(t+1) = f(X(t), I(t))
+
+Here, X(t) is the state of the system at time t (e.g., associative strengths, attention weights), I(t) is the input or event at time t (e.g., CS, US, reinforcer delivery, prediction error), and f is a transition function describing how the system updates over time.
+
+Your second task is to implement the Mackintosh (1975) model in code to visualize how the associative value of a stimulus evolves across trials, depending on different starting values for theta. To deepen your understanding, extend your model to incorporate changes in alpha (attention or salience) across trials. This will allow you to simulate phenomena such as (a) overshadowing, where one stimulus has a higher alpha than another; and (b) blocking, where a previously conditioned stimulus prevents learning about a new one due to its prior associative history.
+
+**Hints for Mackintosh Model Implementation:**
+
+- **Recursive Nature:** The associability (alpha) and association strength (V) update based on previous values.
+- **Phenomenon Validation:** Your outputs should show: basic conditioning (association strength increases and associability adjusts), overshadowing (CS1 with high alpha gains more V than CS2 with low alpha), and blocking (CS2 shows minimal learning when CS1 already predicts the US).

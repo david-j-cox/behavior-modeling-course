@@ -1,17 +1,6 @@
----
-slug: "week-5"
-number: 5
-published: false
-title: "Behavioral Momentum and Response Persistence"
-subtitle: "Why some behaviors resist change while others collapse"
-description: "Behavioral momentum theory as a Pavlovian account of response persistence, with applications to treatment relapse, resurgence, and clinical intervention design."
-keyModels:
-  - "Behavioral Momentum Theory"
-  - "Augmented Model of Momentum"
-keyEquations:
-  - "log(Bx/B0) = -x/(r·d)"
-  - "B/B0 = d·r^b"
----
+# Chapter 7: Behavioral Momentum and Response Persistence
+
+> Week 5 of the 13-week sequence.
 
 ## Why This Topic Matters
 
@@ -49,17 +38,17 @@ This distinction was demonstrated in elegant experiments using multiple schedule
 
 The basic quantitative expression for resistance to change is:
 
-$$\log \left( \frac{B_x}{B_o} \right) = -x \cdot \frac{c}{r}$$
+{$$}\log \left( \frac{B_x}{B_o} \right) = -x \cdot \frac{c}{r}{/$$}
 
 where:
 
-- $B_o$ is the baseline response rate before disruption
-- $B_x$ is the response rate during or after disruption
-- $x$ is the magnitude of the disruptor (e.g., duration of pre-feeding, number of extinction sessions)
-- $r$ is the rate of reinforcement in the component during baseline
-- $c$ is a scaling constant that captures the effectiveness of the disruptor
+- {$$}B_o{/$$} is the baseline response rate before disruption
+- {$$}B_x{/$$} is the response rate during or after disruption
+- {$$}x{/$$} is the magnitude of the disruptor (e.g., duration of pre-feeding, number of extinction sessions)
+- {$$}r{/$$} is the rate of reinforcement in the component during baseline
+- {$$}c{/$$} is a scaling constant that captures the effectiveness of the disruptor
 
-The ratio $B_x / B_o$ is the **proportional change** in behavior. Taking the logarithm means we are modeling proportional change on a log scale, which is natural when comparing across conditions with different baselines.
+The ratio {$$}B_x / B_o{/$$} is the **proportional change** in behavior. Taking the logarithm means we are modeling proportional change on a log scale, which is natural when comparing across conditions with different baselines.
 
 In plain language: the proportional change in behavior during disruption is a function of the ratio of disruption magnitude to reinforcement rate. Higher reinforcement rates produce less proportional change---greater momentum. The behavior has more "mass."
 
@@ -88,16 +77,16 @@ One important extension considers the role of the **reinforcer-response continge
 
 The augmented model can be expressed as:
 
-$$\log \left( \frac{B_x}{B_o} \right) = -x \cdot \frac{c}{r_c + a \cdot r_o}$$
+{$$}\log \left( \frac{B_x}{B_o} \right) = -x \cdot \frac{c}{r_c + a \cdot r_o}{/$$}
 
 where:
 
-- $r_c$ is the rate of contingent reinforcement (reinforcers earned by the target response)
-- $r_o$ is the rate of other (non-contingent) reinforcement in the context
-- $a$ is a parameter that weights the contribution of non-contingent reinforcement relative to contingent reinforcement
+- {$$}r_c{/$$} is the rate of contingent reinforcement (reinforcers earned by the target response)
+- {$$}r_o{/$$} is the rate of other (non-contingent) reinforcement in the context
+- {$$}a{/$$} is a parameter that weights the contribution of non-contingent reinforcement relative to contingent reinforcement
 - The remaining parameters are as in the basic model
 
-When $a = 1$, all reinforcement contributes equally to behavioral mass, and the model reduces to the basic version. When $a < 1$, contingent reinforcement contributes more to resistance to change than non-contingent reinforcement. This captures the empirical finding that while both sources of reinforcement contribute to momentum, contingent reinforcement may have a somewhat larger effect per unit.
+When {$$}a = 1{/$$}, all reinforcement contributes equally to behavioral mass, and the model reduces to the basic version. When {$$}a < 1{/$$}, contingent reinforcement contributes more to resistance to change than non-contingent reinforcement. This captures the empirical finding that while both sources of reinforcement contribute to momentum, contingent reinforcement may have a somewhat larger effect per unit.
 
 Nevin and Shahan (2011) extended the theory further to account for treatment relapse and resurgence, creating a quantitative framework---**Resurgence as Choice (RaC)**---that predicts when and how much previously reinforced behavior will re-emerge after treatment is disrupted. This represents the frontier of behavioral momentum theory as applied to clinical problems.
 
@@ -115,7 +104,7 @@ The framework generates several important predictions:
 
 4. **Relapse prediction:** When treatment is itself disrupted (e.g., a caregiver stops implementing an intervention, or the individual moves to a new setting), the original problem behavior may resurge. Behavioral momentum theory, extended to a quantitative model of resurgence (Shahan & Craig, 2017), predicts the degree of relapse based on the reinforcement history of the problem behavior and the treatment context.
 
-The physics metaphor is worth examining carefully. In Newtonian mechanics, momentum = mass $\times$ velocity, and force = mass $\times$ acceleration. A heavier object requires more force to change its velocity by a given amount. In behavioral momentum theory, "mass" corresponds to the strength of the stimulus-reinforcer relation (the Pavlovian context), "velocity" corresponds to response rate, and "force" corresponds to the disruptor.
+The physics metaphor is worth examining carefully. In Newtonian mechanics, momentum = mass {$$}\times{/$$} velocity, and force = mass {$$}\times{/$$} acceleration. A heavier object requires more force to change its velocity by a given amount. In behavioral momentum theory, "mass" corresponds to the strength of the stimulus-reinforcer relation (the Pavlovian context), "velocity" corresponds to response rate, and "force" corresponds to the disruptor.
 
 However, the metaphor has limits. In physics, momentum is a conserved quantity in closed systems. In behavior, there is no conservation law---reinforcement can be added or removed without compensating changes elsewhere. The metaphor guides thinking but should not be taken literally beyond its intended scope.
 
@@ -158,7 +147,7 @@ The governing principle is that **resistance to change is determined by the Pavl
 
 The quantitative law is the behavioral momentum equation:
 
-$$\log \left( \frac{B_x}{B_o} \right) = -x \cdot \frac{c}{r}$$
+{$$}\log \left( \frac{B_x}{B_o} \right) = -x \cdot \frac{c}{r}{/$$}
 
 This states that the proportional decline in behavior (on a log scale) is a linear function of the disruption magnitude, scaled by the ratio of the disruptor's effectiveness to the reinforcement rate in the context.
 
@@ -166,10 +155,10 @@ This states that the proportional decline in behavior (on a log scale) is a line
 
 **Step 4: State all simplifying assumptions.**
 
-1. All reinforcement in a context contributes equally to behavioral mass (we use the basic model rather than the augmented model, so $a = 1$).
+1. All reinforcement in a context contributes equally to behavioral mass (we use the basic model rather than the augmented model, so {$$}a = 1{/$$}).
 2. The reinforcement rate during baseline is a stable, representative estimate of the Pavlovian S-R* relationship.
 3. The disruptor (extinction + DRA) operates uniformly across both settings with equal effectiveness.
-4. The scaling constant $c$ is the same in both settings (the disruptor itself does not differ between contexts).
+4. The scaling constant {$$}c{/$$} is the same in both settings (the disruptor itself does not differ between contexts).
 5. Baseline response rates are stable and representative.
 6. The model applies to the proportional change in the target behavior only; it does not predict the absolute level of the replacement behavior.
 7. No other major variables (illness, medication changes, schedule changes) intervene during the treatment period.
@@ -182,60 +171,60 @@ Verbally: When the extinction-based intervention is introduced, disruptive behav
 
 Mathematically:
 
-$$\log \left( \frac{B_x}{B_o} \right) = -x \cdot \frac{c}{r}$$
+{$$}\log \left( \frac{B_x}{B_o} \right) = -x \cdot \frac{c}{r}{/$$}
 
 where:
-- $B_o$ (Setting A) = 8 episodes/hr; $B_o$ (Setting B) = 10 episodes/hr
-- $r$ (Setting A) = 40 reinforcers/hr; $r$ (Setting B) = 10 reinforcers/hr
-- $x$ = number of treatment sessions (our unit of disruption magnitude)
-- $c$ = 8 (a scaling constant we estimate from prior clinical data or the literature, representing the effectiveness of the extinction + DRA combination per session)
+- {$$}B_o{/$$} (Setting A) = 8 episodes/hr; {$$}B_o{/$$} (Setting B) = 10 episodes/hr
+- {$$}r{/$$} (Setting A) = 40 reinforcers/hr; {$$}r{/$$} (Setting B) = 10 reinforcers/hr
+- {$$}x{/$$} = number of treatment sessions (our unit of disruption magnitude)
+- {$$}c{/$$} = 8 (a scaling constant we estimate from prior clinical data or the literature, representing the effectiveness of the extinction + DRA combination per session)
 
 ---
 
 **Step 6: Verify dimensional consistency.**
 
-$B_x$ and $B_o$ are both in episodes per hour, so their ratio is dimensionless, and the log of a dimensionless ratio is dimensionless. On the right side, $x$ is in sessions, $c$ is in reinforcers/hr per session (a rate constant), and $r$ is in reinforcers/hr. The ratio $c/r$ is therefore dimensionless per session, and $x \cdot c/r$ is dimensionless. Both sides are dimensionless. The equation is consistent.
+{$$}B_x{/$$} and {$$}B_o{/$$} are both in episodes per hour, so their ratio is dimensionless, and the log of a dimensionless ratio is dimensionless. On the right side, {$$}x{/$$} is in sessions, {$$}c{/$$} is in reinforcers/hr per session (a rate constant), and {$$}r{/$$} is in reinforcers/hr. The ratio {$$}c/r{/$$} is therefore dimensionless per session, and {$$}x \cdot c/r{/$$} is dimensionless. Both sides are dimensionless. The equation is consistent.
 
 ---
 
 **Step 7: Specify starting values and constraints.**
 
-- $B_o$ (Setting A) = 8 episodes/hr; $B_o$ (Setting B) = 10 episodes/hr
-- $r$ (Setting A) = 40; $r$ (Setting B) = 10
-- $c = 8$ (estimated; in practice, this would be fit to early treatment data)
-- $x \geq 0$: disruption magnitude cannot be negative
-- $B_x / B_o$ is bounded between 0 and 1 (behavior cannot go below zero or exceed baseline during extinction)
-- The model applies from the onset of treatment ($x = 0$) onward
+- {$$}B_o{/$$} (Setting A) = 8 episodes/hr; {$$}B_o{/$$} (Setting B) = 10 episodes/hr
+- {$$}r{/$$} (Setting A) = 40; {$$}r{/$$} (Setting B) = 10
+- {$$}c = 8{/$$} (estimated; in practice, this would be fit to early treatment data)
+- {$$}x \geq 0{/$$}: disruption magnitude cannot be negative
+- {$$}B_x / B_o{/$$} is bounded between 0 and 1 (behavior cannot go below zero or exceed baseline during extinction)
+- The model applies from the onset of treatment ({$$}x = 0{/$$}) onward
 
 ---
 
 **Step 8: Check the math, test against data, and derive predictions.**
 
-**Compute predictions for $x = 5$ treatment sessions:**
+**Compute predictions for {$$}x = 5{/$$} treatment sessions:**
 
 **Setting A** (rich context):
 
-$$\log \left( \frac{B_x}{8} \right) = -5 \times \frac{8}{40} = -5 \times 0.2 = -1.0$$
+{$$}\log \left( \frac{B_x}{8} \right) = -5 \times \frac{8}{40} = -5 \times 0.2 = -1.0{/$$}
 
-$$\frac{B_x}{8} = 10^{-1.0} = 0.10$$
+{$$}\frac{B_x}{8} = 10^{-1.0} = 0.10{/$$}
 
-$$B_x = 0.80 \text{ episodes/hr}$$
+{$$}B_x = 0.80 \text{ episodes/hr}{/$$}
 
 Disruption in Setting A drops to about 10% of baseline---from 8 to 0.8 episodes per hour. A substantial reduction, but not elimination.
 
 **Setting B** (lean context):
 
-$$\log \left( \frac{B_x}{10} \right) = -5 \times \frac{8}{10} = -5 \times 0.8 = -4.0$$
+{$$}\log \left( \frac{B_x}{10} \right) = -5 \times \frac{8}{10} = -5 \times 0.8 = -4.0{/$$}
 
-$$\frac{B_x}{10} = 10^{-4.0} = 0.0001$$
+{$$}\frac{B_x}{10} = 10^{-4.0} = 0.0001{/$$}
 
-$$B_x = 0.001 \text{ episodes/hr}$$
+{$$}B_x = 0.001 \text{ episodes/hr}{/$$}
 
 Disruption in Setting B is essentially eliminated---reduced to less than one-thousandth of its baseline level.
 
 **Comparison:** After 5 sessions of the same intervention, Setting A retains 10% of baseline disruption while Setting B retains 0.01%. The four-fold difference in reinforcement rate produces a massive difference in persistence. This is the core prediction of behavioral momentum theory: the richer Pavlovian context in Setting A gives the disruptive behavior more mass, making it substantially harder to eliminate.
 
-**Boundary check:** At $x = 0$, both settings predict $B_x / B_o = 1$ (no change before treatment begins). As $x \to \infty$, both predict $B_x \to 0$ (eventually behavior is eliminated). These are sensible.
+**Boundary check:** At {$$}x = 0{/$$}, both settings predict {$$}B_x / B_o = 1{/$$} (no change before treatment begins). As {$$}x \to \infty{/$$}, both predict {$$}B_x \to 0{/$$} (eventually behavior is eliminated). These are sensible.
 
 **Clinical implication:** The treatment team should expect slower progress in Setting A and should prepare for the possibility that disruption will persist longer there. They might consider strategies to reduce the overall reinforcement density in Setting A (e.g., thinning non-contingent attention) to reduce the behavioral mass of the problem behavior before or during treatment.
 
@@ -250,48 +239,48 @@ Disruption in Setting B is essentially eliminated---reduced to less than one-tho
 
 Consider a multiple schedule with two components, Rich and Lean, each associated with a different reinforcement rate:
 
-- **Rich component:** $r_{\text{rich}} = 60$ reinforcers/hr; baseline response rate $B_o = 40$ resp/min
-- **Lean component:** $r_{\text{lean}} = 15$ reinforcers/hr; baseline response rate $B_o = 40$ resp/min
+- **Rich component:** {$$}r_{\text{rich}} = 60{/$$} reinforcers/hr; baseline response rate {$$}B_o = 40{/$$} resp/min
+- **Lean component:** {$$}r_{\text{lean}} = 15{/$$} reinforcers/hr; baseline response rate {$$}B_o = 40{/$$} resp/min
 
 Note that baseline response rates are the same in both components. This can occur when the response-reinforcer contingency is identical but the stimulus-reinforcer contingency differs (e.g., additional free reinforcers are delivered in the Rich component).
 
-Now suppose we introduce a disruptor of magnitude $x = 1$ (e.g., one session of pre-feeding), with scaling constant $c = 50$.
+Now suppose we introduce a disruptor of magnitude {$$}x = 1{/$$} (e.g., one session of pre-feeding), with scaling constant {$$}c = 50{/$$}.
 
-**Rich component** ($x = 1$):
+**Rich component** ({$$}x = 1{/$$}):
 
-$$\log \left(\frac{B_x}{40}\right) = -1 \times \frac{50}{60} = -0.833$$
+{$$}\log \left(\frac{B_x}{40}\right) = -1 \times \frac{50}{60} = -0.833{/$$}
 
-$$\frac{B_x}{40} = 10^{-0.833} = 0.147$$
+{$$}\frac{B_x}{40} = 10^{-0.833} = 0.147{/$$}
 
-$$B_x \approx 5.9 \text{ resp/min (85% reduction)}$$
+{$$}B_x \approx 5.9 \text{ resp/min (85% reduction)}{/$$}
 
-**Lean component** ($x = 1$):
+**Lean component** ({$$}x = 1{/$$}):
 
-$$\log \left(\frac{B_x}{40}\right) = -1 \times \frac{50}{15} = -3.33$$
+{$$}\log \left(\frac{B_x}{40}\right) = -1 \times \frac{50}{15} = -3.33{/$$}
 
-$$\frac{B_x}{40} = 10^{-3.33} = 0.000468$$
+{$$}\frac{B_x}{40} = 10^{-3.33} = 0.000468{/$$}
 
-$$B_x \approx 0.02 \text{ resp/min (>99% reduction)}$$
+{$$}B_x \approx 0.02 \text{ resp/min (>99% reduction)}{/$$}
 
 The four-fold difference in reinforcement rate produces a massive difference in resistance to disruption. Behavior in the Rich component survives the disruptor; behavior in the Lean component does not.
 
-Now consider a larger disruptor ($x = 5$):
+Now consider a larger disruptor ({$$}x = 5{/$$}):
 
-**Rich component** ($x = 5$):
+**Rich component** ({$$}x = 5{/$$}):
 
-$$\log \left(\frac{B_x}{40}\right) = -5 \times \frac{50}{60} = -4.17$$
+{$$}\log \left(\frac{B_x}{40}\right) = -5 \times \frac{50}{60} = -4.17{/$$}
 
-$$\frac{B_x}{40} = 10^{-4.17} = 0.000068$$
+{$$}\frac{B_x}{40} = 10^{-4.17} = 0.000068{/$$}
 
-$$B_x \approx 0.003 \text{ resp/min}$$
+{$$}B_x \approx 0.003 \text{ resp/min}{/$$}
 
-**Lean component** ($x = 5$):
+**Lean component** ({$$}x = 5{/$$}):
 
-$$\log \left(\frac{B_x}{40}\right) = -5 \times \frac{50}{15} = -16.67$$
+{$$}\log \left(\frac{B_x}{40}\right) = -5 \times \frac{50}{15} = -16.67{/$$}
 
-$$\frac{B_x}{40} = 10^{-16.67} \approx 0$$
+{$$}\frac{B_x}{40} = 10^{-16.67} \approx 0{/$$}
 
-$$B_x \approx 0 \text{ resp/min}$$
+{$$}B_x \approx 0 \text{ resp/min}{/$$}
 
 Both components show dramatic disruption with this large disruptor, but the qualitative difference is clear: behavior in the Rich component retains a trace of responding while the Lean component is completely eliminated. This differential resistance---the hallmark of behavioral momentum---emerges directly from the equation.
 
@@ -470,7 +459,7 @@ Shahan, T. A., & Craig, A. R. (2017). Resurgence as choice. *Behavioural Process
 
 - **Behavioral momentum is a Pavlovian phenomenon.** The "mass" of behavior is determined by the respondent relationship between the discriminative stimulus context and reinforcement, not by the operant contingency. This is the single most important insight of the theory and the one most commonly misunderstood.
 
-- **The basic equation:** $\log(B_x/B_o) = -x \cdot c/r$. The proportional decline in behavior under disruption is a function of the ratio of disruption magnitude to reinforcement rate in the context.
+- **The basic equation:** {$$}\log(B_x/B_o) = -x \cdot c/r{/$$}. The proportional decline in behavior under disruption is a function of the ratio of disruption magnitude to reinforcement rate in the context.
 
 - **Clinical applications are extensive.** The theory provides a quantitative framework for predicting treatment resistance, relapse, and resurgence. It explains why behaviors maintained in rich contexts are harder to treat and why relapse occurs when treatment contingencies are disrupted.
 
@@ -483,3 +472,22 @@ Shahan, T. A., & Craig, A. R. (2017). Resurgence as choice. *Behavioural Process
 - **Limitations include** the log-linear assumption, aggregate-level analysis, static reinforcement rates, and the imperfect physics metaphor. These define the boundary conditions of the theory and point toward extensions.
 
 - **Models build on each other.** Rescorla-Wagner (Week 4) formalized how associations form; behavioral momentum theory formalizes how those associations make behavior persist. The Pavlovian contingency is the thread connecting both.
+
+## Lab: Behavioral Momentum and Response Persistence
+
+A> **Run this lab.** Notebooks and data files are available at:
+A> [https://www.behavioral-data-science.org/book/labs/week-05](https://www.behavioral-data-science.org/book/labs/week-05)
+A>
+A> The companion materials include starter notebooks, the dataset(s) referenced below, and instructor-prepared solutions.
+
+## Behavioral Momentum and Response Persistence Lab
+
+Behavioral momentum theory (Nevin, 1992; Nevin & Shahan, 2011) provides a quantitative framework for understanding why behavior persists in the face of disruption. The central finding is that behavior maintained by higher rates of reinforcement is more resistant to change, analogous to how a more massive object in motion is harder to stop.
+
+In this lab, you will work with data from a simulated multiple-schedule experiment in which subjects responded under both rich and lean reinforcement components. After stable baselines were established, responding was disrupted via prefeeding at graded amounts (0, 25, 50, 75, and 100g). Your task is to calculate proportion of baseline responding under each disruption level, fit the behavioral momentum equation to describe how responding decreases as a function of disruption intensity, and compare resistance to change across the two reinforcement contexts.
+
+The key equation you will fit is:
+
+log(Bx/B0) = -x * c / (r * S)
+
+where Bx is the disrupted response rate, B0 is the baseline rate, x is the disruption level, c is sensitivity to disruption, r is the reinforcement rate in the component, and S captures the stimulus-reinforcer relation. Through this exercise, you will gain hands-on experience with the quantitative tools that behavioral momentum theory offers for predicting and interpreting response persistence.
