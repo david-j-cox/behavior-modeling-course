@@ -883,7 +883,7 @@ Quantitative analyses of matching have also been applied to behavioral economics
 
 Baum, W. M. (1974). On two types of deviation from the matching law: Bias and undermatching. *Journal of the Experimental Analysis of Behavior, 22*(1), 231--242. https://doi.org/10.1901/jeab.1974.22-231
 
-Cox, D. J., & Dallery, J. (2018). Influence of second outcome on monetary discounting. *Behavioural Processes, 157*, 165--171. https://doi.org/10.1016/j.beproc.2018.09.011
+Cox, D. J., & Dallery, J. (2018). Influence of second outcome on monetary discounting. *Behavioural Processes, 153*, 84--91. https://doi.org/10.1016/j.beproc.2018.05.012
 
 Critchfield, T. S., & Kollins, S. H. (2001). Temporal discounting: Basic research and the analysis of socially important behavior. *Journal of Applied Behavior Analysis, 34*(1), 101--122. https://doi.org/10.1901/jaba.2001.34-101
 
@@ -942,8 +942,8 @@ Reed, D. D., & Kaplan, B. A. (2011). The matching law: A tutorial for practition
 
 **Optional:**
 
-- Cox, D. J. & Dallery, J. (2018). Influence of second outcome on monetary discounting. *Behavioural Processes*, *157*, 165-171.
-- Strickland, J. C. & Johnson, M. W. (2021). Rejecting impulsivity as a psychological construct. *Journal of the Experimental Analysis of Behavior*, *116*, 349-362.
+- Cox, D. J. & Dallery, J. (2018). Influence of second outcome on monetary discounting. *Behavioural Processes*, *153*, 84-91. https://doi.org/10.1016/j.beproc.2018.05.012
+- Strickland, J. C. & Johnson, M. W. (2021). Rejecting impulsivity as a psychological construct: A theoretical, empirical, and sociocultural argument. *Psychological Review*, *128*(2), 336-361. https://doi.org/10.1037/rev0000263
 
 
 ## Lab: Matching and Discounting

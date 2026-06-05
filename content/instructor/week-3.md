@@ -1,136 +1,118 @@
 ---
-title: "Instructor Notes: Week 3 — Discounting"
+title: "Instructor Notes: Week 3 — Demand"
 week: 3
 ---
 
 ## Lecture Objectives
 
-- Students should be able to explain why subjective value declines with delay and articulate the difference between exponential and hyperbolic discounting in both verbal and mathematical terms.
-- Students should be able to interpret the $k$ parameter as a measure of discount rate and connect higher/lower $k$ values to impulsive/self-controlled choice.
-- Students should be able to explain what a preference reversal is, why hyperbolic (but not exponential) discounting predicts it, and why this matters for real-world self-control.
-- Students should be able to compute AUC from a set of indifference points and explain its advantages and limitations relative to parametric measures.
-- Students should be able to walk through all 8 steps of the modeling framework applied to Mazur's hyperbolic discounting function.
+- Students should be able to explain the concept of demand and articulate why the relationship between price and consumption is more informative than preference at a single price point.
+- Students should be able to write the exponential demand equation, identify each parameter, and explain what each parameter captures behaviorally.
+- Students should be able to compute essential value ($1/\alpha$) and interpret it in plain language, including comparing essential values across commodities or individuals.
+- Students should be able to distinguish between elastic and inelastic demand, identify $P_{max}$ on a demand curve, and explain its practical significance.
+- Students should be able to apply the 8-step modeling framework to the demand equation and articulate the assumptions underlying the model.
 
 ---
 
 ## Suggested Lecture Walkthrough (~60 min)
 
-### Opening: The Phenomenon (10 min)
+### Opening: From Preference to Demand (10 min)
 
-Start with a live demonstration, not a definition. Pose a choice to the class:
+Begin with a concrete scenario. Present two hypothetical reinforcers that are equally preferred in a paired-stimulus preference assessment. Ask: "If both are chosen 50% of the time when they're free, does that mean they're equally effective reinforcers?" Let students discuss briefly, then introduce the key insight---preference at zero (or near-zero) price does not capture how hard an organism will work. This motivates the demand framework.
 
-> "Would you prefer $50 right now or $100 in 6 months?"
+Show a simple demand curve (consumption on y-axis, price on x-axis) without the equation. Point out the two regions: the flat part (inelastic) and the steep decline (elastic). Introduce the idea that the shape of this curve tells us something fundamental about reinforcer value.
 
-Get a show of hands. Then shift the time frame:
+### Unit Price (5 min)
 
-> "Would you prefer $50 in 12 months or $100 in 18 months?"
+Define unit price as responses per unit of reinforcer. Work through two or three examples: FR 10 with 1 pellet (unit price = 10), FR 20 with 2 pellets (unit price = 10), FR 5 with 0.5 pellets (unit price = 10). Emphasize that unit price allows comparison across different schedule-magnitude combinations. Briefly note the unit price equivalence assumption and flag that it is testable and sometimes violated.
 
-Most students will switch toward the larger-later option when both rewards are far away. Point out what just happened: the delay *between* the two options is identical (6 months), but preferences changed. This is a preference reversal. Ask: "If your preferences are consistent, should this happen?" Use this as the motivating puzzle for the entire lecture.
+### Building the Equation (15 min)
 
-Briefly define temporal discounting and indifference points. Explain how indifference points are measured (titrating or adjusting-amount procedures). Sketch a generic discount curve on the board---value on the y-axis, delay on the x-axis---and note that the shape of this curve is the central question.
+This is the core technical section. Build up to the full equation in stages:
 
-### The Exponential Baseline (10 min)
+1. **Start with the idea**: We need a function that starts at $Q_0$ when price is zero and declines as price increases. What mathematical form would do this?
+2. **Exponential decay**: Introduce $e^{-\alpha C}$ as a decay function. Show that this starts at 1 when $C = 0$ and approaches 0 as $C$ grows. Note that this alone would give linear decay in log space.
+3. **The normalization**: Explain why $Q_0$ appears in the exponent ($\alpha \cdot Q_0 \cdot C$). Without it, $\alpha$ values are not comparable across commodities with different baseline consumption levels. This is a critical conceptual point---spend time on it.
+4. **The $k$ constant**: Explain that $k$ sets the range of the curve in log units. Show what happens when $k$ changes (the floor of the curve moves up or down). Note the convention of fixing $k$ across conditions.
+5. **Full equation**: Write the complete equation and confirm it reduces correctly at $C = 0$.
 
-Introduce exponential discounting ($V = Ae^{-kD}$) as the "rational" benchmark. Explain what constant proportional decline means: each additional unit of delay reduces value by the same percentage. Draw the exponential curve. Emphasize its key prediction: no preference reversals, because the ratio of two exponential curves is constant over time.
+**Common confusions to address explicitly:**
 
-Explain why economists adopted this form: it is time-consistent, it satisfies standard axioms of rational choice, and it is mathematically convenient. Then note that organisms---including the students themselves, as they just demonstrated---do not behave this way.
+- **What $k$ does**: Students often think $k$ controls the steepness of the curve. Clarify that $k$ controls the range (floor), while $\alpha$ controls the steepness (rate of decline). Demonstrate with two curves that have the same $\alpha$ but different $k$ values.
+- **Log-log space**: Students may be unfamiliar with plotting in log-log coordinates. Explain why this is standard: demand curves span orders of magnitude in both price and consumption, so linear axes compress the interesting parts of the curve. Show the same data plotted in linear and log-log space.
+- **Why the exponential form**: Students may wonder why not use a power function or polynomial. The exponential form was chosen because it (a) normalizes for $Q_0$, (b) yields a single rate parameter $\alpha$ that is directly interpretable, and (c) produces essential value as a simple reciprocal. Earlier models (e.g., Hursh et al., 1988) used power functions that lacked these properties.
 
-### Why Hyperbolic Fits Better (15 min)
+### Essential Value and $P_{max}$ (10 min)
 
-Introduce Mazur's hyperbolic ($V = A/(1+kD)$). Draw it alongside the exponential. Highlight the key visual difference: the hyperbolic drops steeply at short delays and flattens at long delays, while the exponential drops at a constant proportional rate throughout.
+Define essential value as $1/\alpha$. Work through a numerical example: if $\alpha = 0.0003$, then $EV = 3{,}333$. Compare to a second commodity with $\alpha = 0.005$ ($EV = 200$). Ask students: "Which commodity would you expect the organism to keep working for at high prices?"
 
-Walk through the preference reversal prediction explicitly. Draw two hyperbolic curves for a smaller-sooner and larger-later reward. Show the crossing point. Explain: at long delays both curves are in their flat tails, and the larger reward dominates. As both options approach, the smaller-sooner curve rises faster (steeper initial slope), and the curves cross. This is the formal basis for the demonstration at the start of class.
+Introduce $P_{max} = 0.368 / (\alpha \cdot Q_0 \cdot k)$. Compute it for the same examples. Explain the behavioral meaning: below $P_{max}$, total output is still increasing with price (the organism works harder); above $P_{max}$, total output is decreasing (the organism is giving up). Connect this to the inelastic/elastic distinction.
 
-Show the worked example from the chapter (or use your own data). Fit the hyperbolic and exponential to the same data. Students should see that the exponential $k$ estimates drift systematically downward across delays---the signature of hyperbolic data being forced into an exponential model. The hyperbolic $k$ estimates are much more stable.
+### Open vs. Closed Economies (5 min)
 
-**Common student confusion #1:** "Why does the hyperbolic beat the exponential?" Students sometimes think it is just a curve-fitting trick. Emphasize that the models make *different qualitative predictions* (reversals vs. no reversals) and the hyperbolic is correct on this count. The better quantitative fit is a bonus, not the primary evidence.
+Explain the distinction with a vivid example. A rat that earns all its food in the chamber (closed) vs. a rat that gets supplemental food afterward (open). Ask: "In which case would you expect the rat to work harder at high prices?" Emphasize that demand parameters are not comparable across economic contexts.
 
-### The k Parameter (10 min)
+### Applied Connections (10 min)
 
-Discuss interpretation of $k$. Higher $k$ = steeper curve = more impulsive. Lower $k$ = shallower curve = more self-controlled. Show how $k$ varies across clinical populations (substance use disorders, ADHD, obesity).
+Cover three application domains briefly:
 
-**Common student confusion #2:** "What does $k$ *mean* in practice?" Students may struggle with the units ($1/\text{time}$). Offer a concrete interpretation: $k = 0.10$ per week means that a 10-week delay cuts value roughly in half ($V = A/(1 + 0.10 \times 10) = A/2$). More generally, the half-life of value is $1/k$ (the delay at which value drops to half the face amount). This gives $k$ an intuitive temporal meaning.
+1. **Drug self-administration**: Essential value as a measure of abuse liability. Reference Hursh & Silberberg (2008).
+2. **Reinforcer assessment**: Francisco, Madden, & Borrero (2009) showed that demand analysis reveals differences between reinforcers that preference assessments miss.
+3. **Token economies**: How demand analysis can inform the pricing structure of a token economy.
 
-Mention the **magnitude effect**: $k$ is not constant across amounts. Larger rewards are discounted less steeply. This is important because it violates the simple model and tells us something about how organisms process amount and delay information.
+### Wrap-Up (5 min)
 
-**Common student confusion #3:** "If $k$ varies across reward types, is it really a trait measure of impulsivity?" This is a genuine open question in the field. Acknowledge the tension. Some researchers treat $k$ as a trans-situational trait; others view it as outcome-specific. The empirical evidence supports partial specificity. This is a good place to preview more complex models (hyperboloid, multi-attribute models).
+Return to the opening scenario. Now ask: "How would you determine which of the two equally-preferred reinforcers is actually more effective?" Students should articulate the demand-analysis approach. Preview the lab session.
 
-### Area Under the Curve (5 min)
+### Assigned Readings
 
-Introduce AUC as a model-free alternative. Walk through the normalization and trapezoid computation. Emphasize that AUC complements, rather than replaces, parametric measures. Use AUC when you want to compare discounting without committing to a specific functional form. Use $k$ (or the hyperboloid) when you care about the shape of the function or want a mechanistic interpretation.
-
-### Wrap-Up and 8-Step Framework (10 min)
-
-Quickly walk through how the 8-step framework applies to Mazur's model. Students have now seen it applied twice (Week 1 and now). Emphasize the value of Step 4 (assumptions)---many of the limitations of the discounting model come from assumptions that are stated in Step 4 and then known to be violated (e.g., amount-independent $k$).
-
-### Recommended Readings
-
-- **Rachlin, H. (2006).** Notes on discounting. *Journal of the Experimental Analysis of Behavior, 85*, 425--435. Foundational conceptual treatment.
-- **Critchfield, T. S., & Kollins, S. H. (2001).** Temporal discounting: Basic research and the analysis of socially important behavior. *Journal of Applied Behavior Analysis, 34*, 101--122. Translational relevance.
-- **Odum, A. L., et al. (2020).** Discounting of different outcomes. Demonstrates outcome specificity of discounting.
-- **Cox, D. J., & Dallery, J. (2018).** Effects of a second outcome on discounting. Shows that discounting is context-dependent, not just trait-dependent.
+- **Hursh, S. R., & Silberberg, A. (2008)**. Economic demand and essential value. *Psychological Review, 115*(1), 186--198. https://doi.org/10.1037/0033-295X.115.1.186
+- **Francisco, M. T., Madden, G. J., & Borrero, J. C. (2009)**. Behavioral economics: Principles, procedures, and utility for applied behavior analysis. *The Behavior Analyst Today, 10*(2), 277--294. https://doi.org/10.1037/h0100671
+- **Hursh, S. R., Madden, G. J., Spiga, R., DeLeon, I. G., & Francisco, M. T. (2013)**. The translational utility of behavioral economics: The experimental analysis of consumption and choice. In G. J. Madden, W. V. Dube, T. D. Hackenberg, G. P. Hanley, & K. A. Lattal (Eds.), *APA handbook of behavior analysis: Vol. 2. Translating principles into practice* (pp. 191--224). American Psychological Association. https://doi.org/10.1037/13938-008
 
 ---
 
 ## Discussion Prompts
 
-1. **Outcome specificity and impulsivity:** If discounting rates differ across outcome types within the same individual (e.g., money vs. health vs. food), what does that mean for using $k$ as a trait measure of impulsivity? Can someone be "impulsive" for food but "self-controlled" for money? What are the implications for clinical assessment?
+1. **Reinforcer selection**: "You have a client for whom you have identified three potential reinforcers via a paired-stimulus preference assessment. All three are chosen about equally. How would you use demand analysis to decide which reinforcer to use in treatment? What practical considerations would affect whether you could actually conduct a demand assessment in a clinical setting?"
 
-2. **Preference reversals and self-control strategies:** Preference reversals explain why people make plans for the future (e.g., saving for retirement, committing to a diet) but then abandon them when the smaller-sooner option becomes available. What behavioral interventions exploit this insight? (Hint: think about commitment devices, precommitment, and how they work mathematically in terms of the discount function.)
+2. **Policy implications**: "A state agency is considering raising the 'price' of cigarettes through taxation. How would you use the demand framework to predict the effect on consumption? What would it mean if cigarettes have high essential value for a particular population? What are the limitations of this analysis?"
 
-3. **The magnitude effect and equity:** Larger rewards are discounted less steeply. This means that wealthier individuals (for whom any given dollar amount is relatively "larger" against their wealth) might appear to be more self-controlled. Is steep discounting a property of the individual, a property of the reinforcer magnitude, or an interaction? What are the implications for interpreting group differences in $k$?
+3. **$Q_0$ vs. essential value**: "A colleague argues that the best reinforcer is simply the one the client consumes the most of when it is freely available. How would you respond? Under what circumstances might a reinforcer with a lower $Q_0$ actually be more useful clinically than one with a higher $Q_0$?"
 
-4. **Descriptive vs. mechanistic:** Mazur's hyperbolic function describes the shape of discounting well, but it does not explain *why* discounting is hyperbolic. What kinds of mechanistic processes might generate a hyperbolic form? (Examples to prompt discussion: Weber-Fechner-like logarithmic time perception, memory decay, competition among temporal representations.)
+4. **Model assumptions**: "The demand equation assumes a single commodity in a closed economy. How realistic is this for applied settings? What happens to demand when substitutes are available, and how might you account for this?"
 
 ---
 
 ## In-Class Demonstrations
 
-### Demonstration 1: Estimate Your Own Indifference Points
+### Demonstration 1: Auction Game
 
-Give students a brief paper-and-pencil (or digital) questionnaire:
+Give each student 100 "tokens" (play money or points on a sheet). Present two commodities: a preferred snack (e.g., candy) and a less-preferred item (e.g., a pencil). Conduct multiple rounds where the price of each item increases (Round 1: 1 token, Round 2: 5 tokens, Round 3: 15 tokens, Round 4: 40 tokens, Round 5: 80 tokens). Students record how many units they would purchase at each price. Aggregate the class data and plot the two demand curves. Compute approximate $Q_0$ and note which commodity shows more elastic demand. This provides an experiential foundation for the concepts before the equation is introduced.
 
-> "For each delay below, what is the most you would pay right now to guarantee receiving $100 at that delay? In other words, what amount of money right now feels equivalent to $100 at each delay?"
+### Demonstration 2: Parameter Exploration
 
-| Delay | Your Indifference Point |
-|:------|:-----------------------:|
-| 1 week | $\_\_\_ |
-| 1 month | $\_\_\_ |
-| 3 months | $\_\_\_ |
-| 6 months | $\_\_\_ |
-| 1 year | $\_\_\_ |
-| 5 years | $\_\_\_ |
+Using a projected spreadsheet or graphing tool (Desmos, GeoGebra, or a simple Python script), display the exponential demand equation with sliders for $Q_0$, $\alpha$, and $k$. Let students predict what will happen when each parameter changes, then move the sliders. Key manipulations:
+- Increase $\alpha$: Curve bends earlier, consumption drops faster.
+- Increase $Q_0$: Curve shifts up at the y-intercept.
+- Change $k$: The floor of the curve moves (range changes) but the bend point shifts only slightly.
 
-Have students plot their own data (delay on x-axis, indifference point on y-axis). Ask: Does the curve look more like an exponential decay or a hyperbola? Most students will see the characteristic steep-then-flat pattern. If time permits, have a few students share their plots to show individual differences in steepness.
+This interactive demonstration helps students separate the roles of the three parameters.
 
-### Demonstration 2: Estimate k
+### Demonstration 3: Real Data Fitting
 
-Using the indifference points from Demonstration 1, have students pick one data point and compute $k$ using the rearranged Mazur equation:
-
-$$k = \frac{A - V}{V \cdot D}$$
-
-Then have them compute $k$ from a second data point at a different delay. Are the two estimates similar? If yes, the hyperbolic model is a reasonable description of their data. If the estimates diverge substantially, discuss what might be happening (measurement noise, non-hyperbolic discounting, magnitude effects if they interpreted the task differently).
-
-### Demonstration 3: Preference Reversal Demonstration
-
-Present two choices in sequence:
-
-> Choice A: "Would you prefer $50 in 26 weeks or $100 in 52 weeks?"
-> Choice B: "Would you prefer $50 today or $100 in 26 weeks?"
-
-Tally responses for each. If a substantial fraction of students chose $100 in Choice A but $50 in Choice B, you have demonstrated a preference reversal in real time. Connect this back to the crossing of hyperbolic discount curves.
+Show a published dataset (e.g., from Hursh & Silberberg, 2008) and walk through the curve-fitting process live. Use R or Python to fit the exponential demand equation to the data. Display the parameter estimates, predicted curve, and residuals. This previews the lab activity and demystifies the fitting process.
 
 ---
 
 ## Transition to Lab
 
-This week's lab focuses on the computational side of discounting. Students will:
+The lab session for this week focuses on hands-on demand curve fitting and essential value computation. Students will:
 
-- Import a dataset of indifference points from multiple hypothetical participants.
-- Fit both the hyperbolic ($V = A/(1+kD)$) and exponential ($V = Ae^{-kD}$) models using nonlinear least-squares regression.
-- Compare model fits using sum of squared residuals, $R^2$, and (optionally) AIC/BIC.
-- Compute AUC for each participant.
-- Visualize discount curves with observed data overlaid on fitted functions.
-- Interpret $k$ values in behavioral terms and compare across participants.
+1. Receive a dataset containing consumption values across multiple FR values for two different commodities (or two different organisms).
+2. Fit the exponential demand equation to each dataset using provided code templates (Python or R).
+3. Estimate $Q_0$, $\alpha$, and $k$ (or fix $k$ and estimate the other two).
+4. Compute essential value ($1/\alpha$) and $P_{max}$ for each commodity/organism.
+5. Plot the observed data and fitted curves in log-log space.
+6. Write a brief interpretation comparing the two demand curves, explaining what the parameter differences mean in behavioral terms.
 
-The lab reinforces the lecture by giving students hands-on experience with the entire modeling pipeline: data, model specification, parameter estimation, model comparison, and interpretation. Emphasize that the goal is not just to get a number out of the software but to understand what the number means and whether the model earned the right to be taken seriously.
+The lab should reinforce that demand analysis is not just an abstract framework---it is a practical tool that can be applied to real data with standard software. Encourage students to experiment with starting values and observe how the optimization converges (or fails to converge) under different initial conditions.

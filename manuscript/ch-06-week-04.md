@@ -624,11 +624,11 @@ Sutton, R. S., & Barto, A. G. (1998). *Reinforcement learning: An introduction*.
 **Optional:**
 
 - Rescorla, R. A. & Wagner, A. R. (1972). A theory of Pavlovian conditioning: The effectiveness of reinforcement and non-reinforcement. In A. H. Black & W. F. Prokasy (Eds.), *Classical Conditioning II*.
-- Nevin, J. A. (1998). Choice and momentum. In W. T. O'Donohue (Ed.), *Learning and Behavior Therapy*.
+- Nevin, J. A. (1998). Choice and behavioral momentum. In W. T. O'Donohue (Ed.), *Learning and Behavior Therapy*.
 - Nevin, J. A. (2002). Measuring behavioral momentum. *Behavioural Processes*, *57*, 187-198.
 - Stout, S. C. & Miller, R. R. (2007). Sometimes-competing retrieval (SOCR): A formalization of the comparator hypothesis. *Psychological Review*, *114*, 759-783.
 - Nevin, J. A. & Shahan, T. A. (2011). Behavioral momentum theory: Equations and applications. *Journal of Applied Behavior Analysis*, *44*, 877-895.
-- Esber, G. R. et al. (2025). The Rescorla-Wagner model: It is not what you think it is.
+- Esber, G. R., Schoenbaum, G., & Iordanova, M. D. (2025). The Rescorla-Wagner model: It is not what you think it is. *Neurobiology of Learning and Memory*, *217*, 108021. https://doi.org/10.1016/j.nlm.2025.108021
 
 
 ## Lab: Associative Learning Models
