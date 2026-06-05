@@ -1,159 +1,119 @@
 ---
-title: "Instructor Notes: Week 5 — Respondent Conditioning"
+title: "Instructor Notes: Week 5 — Behavioral Momentum and Response Persistence"
 week: 5
 ---
 
 ## Lecture Objectives
 
-- Students should be able to state the Rescorla-Wagner equation, define each parameter, and explain why prediction error---not contiguity---is the driving force of associative learning.
-- Students should be able to compute associative strength values across multiple trials given specific parameter values, and recognize the negatively accelerated learning curve that results.
-- Students should be able to explain blocking, conditioned inhibition, and overexpectation as direct consequences of the Rescorla-Wagner model's summation assumption and prediction error rule.
-- Students should be able to describe behavioral momentum theory's distinction between response rate (governed by the operant contingency) and resistance to change (governed by the Pavlovian contingency), and articulate its clinical implications.
-- Students should be able to contrast the Rescorla-Wagner model's fixed associability with Mackintosh's variable associability and identify at least one phenomenon (e.g., learned irrelevance) that distinguishes the two models.
+- Students should be able to state the behavioral momentum metaphor and explain the core distinction between response rate (governed by the operant contingency) and resistance to change (governed by the Pavlovian stimulus-reinforcer contingency).
+- Students should be able to write the basic resistance-to-change equation, define each term, and use it to predict the relative disruption of behavior across rich and lean contexts.
+- Students should be able to explain why behavioral momentum theory treats persistence as a Pavlovian phenomenon and articulate the clinical implications of this claim.
+- Students should be able to connect behavioral momentum theory to resurgence and relapse, and describe at least one treatment-design tension the theory exposes (e.g., enriching a context to strengthen desirable behavior may also make problem behavior more persistent).
+- Students should be able to apply the 8-step modeling framework to a resistance-to-change scenario.
 
 ---
 
 ## Suggested Lecture Walkthrough (~60 min)
 
-### Opening: The Phenomenon (10 min)
+### Opening: Connecting Backward and Framing the Phenomenon (10 min)
 
-Begin with classical conditioning as a phenomenon, not a model. Describe a standard tone-food preparation. Ask students: "Why does the rat start approaching the food magazine when it hears the tone?" Accept answers---they will likely mention pairing, association, contiguity.
+Open by linking to last week. The Rescorla-Wagner model explained how organisms *learn* predictive relationships. This week asks a different question: once behavior is established, why does it *persist*---sometimes stubbornly---when conditions change?
 
-Then introduce the blocking paradigm. Describe the two-phase procedure (Phase 1: A+; Phase 2: AB+; Test: B alone). Ask students to predict the result under a contiguity account. Most will predict B should be conditioned. Reveal the actual result: B shows little or no conditioning. This is the motivating puzzle.
+Make the phenomenon concrete before any equations. Offer everyday cases of persistence: the pigeon that keeps pecking after the contingency changes, the child whose tantrums continue after a new intervention begins, the person who relapses after quitting. Ask: "Why do some behaviors collapse the moment conditions change, while others keep going?" Establish that persistence is not random---it is predictable, quantifiable, and governed by identifiable variables.
 
-Key point to emphasize: contiguity is present in Phase 2---B is paired with the US on every trial---yet learning does not occur. Something beyond contiguity must matter.
+Introduce the central metaphor: behavior has **velocity** (response rate) and **mass** (resistance to disruption). These two properties are controlled by *different* variables. This is the conceptual heart of the week.
 
-### Building to the Equation (15 min)
+### Behavioral Momentum Theory and the Multiple Schedule (10 min)
 
-Introduce prediction error informally first. "The organism learns when it is surprised." Walk through what "surprise" means quantitatively: the discrepancy between what is expected ($V$) and what happens ($\lambda$).
+Describe the standard preparation: a multiple schedule with two components that differ in reinforcement rate (e.g., a rich VI and a lean VI), each signaled by its own stimulus. Baseline response rates are measured, then a disruptor is introduced (prefeeding, extinction, alternative reinforcement). Resistance to change is measured as the proportional decline in responding relative to baseline.
 
-Then introduce the equation:
+Key empirical finding to emphasize: behavior in the *richer* component is proportionally *less* disrupted, even when baseline response rates are similar across components. Reinforcement rate, not response rate, predicts persistence.
 
-$$\Delta V = \alpha \beta (\lambda - V)$$
+### The Pavlovian Nature of Persistence (10 min)
 
-Define each term carefully:
-- $V$: what the organism currently expects (associative strength)
-- $\lambda$: what actually happens (asymptote supported by the US)
-- $\lambda - V$: the surprise (prediction error)
-- $\alpha$: how noticeable the CS is (salience)
-- $\beta$: how effective the US is (learning rate)
+This is the conceptual move students find most surprising. Response rate is shaped by the *operant* (response-reinforcer) contingency, but resistance to change tracks the *Pavlovian* (stimulus-reinforcer) contingency---the relationship between the component stimulus and the rate of reinforcement delivered in its presence.
 
-Emphasize that this is a **difference equation**---it updates trial by trial. It is not continuous.
+The evidence: adding response-independent reinforcement to a component *increases* resistance to change even though it can *decrease* response rate (because it weakens the response-reinforcer contingency). Rate and persistence dissociate. Hammer this point: two behaviors occurring at the same rate can have very different "mass."
 
-### Numerical Demonstration of Acquisition (10 min)
+### The Equations (10 min)
 
-Work through the first 5 trials of the acquisition example from the chapter on the board (or slide). Use $\alpha = 0.3$, $\beta = 0.5$, $\lambda = 1.0$, $V_0 = 0$. Have students compute along with you. Point out the shrinking prediction error and the negatively accelerated curve.
+Present the basic resistance-to-change relation:
 
-Ask: "What happens if we keep going? Does $V$ ever reach exactly 1.0?" (Answer: No---it approaches asymptotically.)
+$$\log \left( \frac{B_x}{B_0} \right) = -\frac{x}{r \cdot d}$$
 
-### Blocking Demonstration (10 min)
+Define each term:
+- $B_0$: baseline response rate (before disruption)
+- $B_x$: response rate during disruption of magnitude $x$
+- $r$: reinforcement rate in the component (the Pavlovian stimulus-reinforcer relation)
+- $d$: a sensitivity parameter scaling the effect of disruption
+- $x$: magnitude of the disruptor
 
-This is the payoff. Walk through the blocking calculation step by step:
+The logic: larger $r$ (a richer context) makes the right-hand side smaller in magnitude, so the proportional decline is smaller---behavior persists. Then introduce the augmented model, which expresses baseline behavior itself as a power function of reinforcement:
 
-1. After Phase 1: $V_A \approx 0.95$, $V_B = 0$.
-2. Phase 2, Trial 1: Prediction error = $\lambda - (V_A + V_B) = 1.0 - 0.95 = 0.05$.
-3. $\Delta V_B = 0.3 \times 0.5 \times 0.05 = 0.0075$.
-4. After 5 trials: $V_B \approx 0.02$.
+$$\frac{B}{B_0} = d \cdot r^{b}$$
 
-Compare to conditioning B alone for 5 trials: $V_B \approx 0.56$. The difference is dramatic.
+Note that the augmented model lets the same reinforcement variable account for both baseline rate and resistance, which is conceptually economical. Do not over-formalize---the goal is for students to read $r$ as "the mass-conferring variable."
 
-Ask students: "Where in the equation does blocking come from?" Guide them to see that it comes from the shared prediction error---$V$ in the error term is the **sum** of all CSs present, not just the one being updated.
+### Key Predictions and Clinical Implications (5 min)
 
-### Common Confusions to Address
+State the headline prediction: enriching the reinforcement context increases persistence. Then surface the clinical tension directly---this is the section students remember. If you deliver reinforcement in a context to strengthen a desirable behavior (e.g., DRA), you may simultaneously increase the behavioral momentum of *whatever else* occurs in that context, including problem behavior. Persistence is a property of the context, not just the target response.
 
-- **Why do compound stimuli share the error?** Students often ask why both A and B are updated using the same prediction error. Emphasize the summation assumption: the organism's total expectation is $V_A + V_B$, and the error is computed against this total. Each CS gets "credit" (or "blame") proportional to its own $\alpha$.
+### Wrap-Up and 8-Step Framework (5 min)
 
-- **What does negative $V$ mean?** Students find conditioned inhibition conceptually difficult. Use a concrete example: "The tone means food is coming. The light means food is NOT coming. When you hear the tone, you expect food. When you see the light with the tone, you reduce your expectation." Negative $V$ is an active signal of non-occurrence, not merely the absence of learning.
-
-- **Trial-level vs. real-time.** Some students will ask about what happens within a trial. Acknowledge that the Rescorla-Wagner model is silent on within-trial dynamics. Mention that real-time models (e.g., TD models, the Temporal model) address this, but they are beyond this week's scope.
-
-### Behavioral Momentum (10 min)
-
-Shift from associative learning to resistance to change. Present the core metaphor: behavior has velocity (rate) and mass (resistance to disruption). These are controlled by different variables.
-
-Describe a typical multiple-schedule experiment: two components with different reinforcement rates. Introduce disruption (e.g., prefeeding). Show that behavior in the richer component is proportionally less disrupted.
-
-Present the basic equation:
-
-$$\log \left( \frac{B_x}{B_o} \right) = -x \cdot \frac{c}{r}$$
-
-Highlight the clinical implication: problem behaviors maintained in rich contexts (lots of reinforcement) will be hardest to reduce.
-
-### Mackintosh's Attention Model (5 min)
-
-Briefly introduce the idea that $\alpha$ might not be fixed. If a CS has a history of being a poor predictor, the organism "tunes it out"---$\alpha$ decreases. If it is a good predictor, $\alpha$ increases. This explains learned irrelevance, which R-W cannot handle.
-
-Do not belabor the formal details of Mackintosh's rule. The key takeaway is that attention is a learnable process, and models can capture this by allowing parameters to change.
+Walk through how the 8-step framework applies to a resistance-to-change scenario. Emphasize Step 2 (scope: BMT models persistence under disruption, not acquisition or steady-state rate per se) and Step 4 (assumptions: the operative reinforcement rate is the one signaled by the component stimulus; disruptors are assumed to act multiplicatively). Preview the lab, which makes these predictions quantitative.
 
 ### Assigned Readings
 
-- Nevin, J. A., Mandell, C., & Atak, J. R. (1983). The analysis of behavioral momentum. *Journal of the Experimental Analysis of Behavior*, *39*(1), 49--59.
-- Mackintosh, N. J. (1975). A theory of attention: Variations in the associability of stimuli with reinforcement. *Psychological Review*, *82*(4), 276--298.
-- Matzel, L. D., Schachtman, T. R., & Miller, R. R. (1988). Learned irrelevance exceeds the sum of the CSpreexposure and USpreexposure effects. *Journal of Experimental Psychology: Animal Behavior Processes*, *14*(3), 311--319.
+- Nevin, J. A., Mandell, C., & Atak, J. R. (1983). The analysis of behavioral momentum. *Journal of the Experimental Analysis of Behavior, 39*(1), 49--59. https://doi.org/10.1901/jeab.1983.39-49
+- Nevin, J. A., & Shahan, T. A. (2011). Behavioral momentum theory: Equations and applications. *Journal of Applied Behavior Analysis, 44*(4), 877--895. https://doi.org/10.1901/jaba.2011.44-877
+- Nevin, J. A. (2002). Measuring behavioral momentum. *Behavioural Processes, 57*(2--3), 187--198. https://doi.org/10.1016/S0376-6357(02)00013-X
+- Shahan, T. A., & Craig, A. R. (2017). Resurgence as choice. *Behavioural Processes, 141*(Pt 1), 100--127. https://doi.org/10.1016/j.beproc.2017.01.006
 
 ---
 
 ## Discussion Prompts
 
-1. The Rescorla-Wagner model was published in 1972, and the temporal difference learning algorithm that powers modern AI was published in the 1980s--1990s. Both are fundamentally about prediction error. What does it mean for behavior science that one of its core models became foundational to an entirely different field? Does this validate the model, or does it merely show that a mathematical idea can be useful in multiple contexts without being "true" in either?
+1. **The treatment-design paradox.** Behavioral momentum theory predicts that enriching the reinforcement context will make behavior more persistent. But in clinical settings, we sometimes want to make problem behaviors *less* persistent. If you are delivering reinforcement to reduce problem behavior (e.g., via DRA), are you simultaneously increasing the behavioral momentum of whatever behavior is occurring in that context? How would you design around this tension?
 
-2. Behavioral momentum theory predicts that enriching the reinforcement context will make behavior more persistent. But in clinical settings, we sometimes want to make problem behaviors less persistent. Does this create a paradox? If you are delivering reinforcement to reduce problem behavior (e.g., via DRA), are you simultaneously increasing the behavioral momentum of whatever behavior is occurring in that context?
+2. **Rate vs. mass.** Two clients emit a target behavior at the same rate, but one persists under disruption and the other does not. What does behavioral momentum theory say is responsible for the difference, and what would you measure to confirm it? Why is response rate alone a poor index of "how strong" a behavior is?
 
-3. The Rescorla-Wagner model treats all learning as changes in a single quantity ($V$). Is this realistic? Think about your own learning experiences---does it feel like a single "associative strength" is being updated, or is something more complex happening? How would you test whether a single-quantity model is adequate?
+3. **The operant/respondent distinction.** Behavioral momentum theory claims that persistence is governed by the Pavlovian stimulus-reinforcer relation, not the operant response-reinforcer relation. How would you explain this to a practitioner who has only ever thought about behavior in operant terms? What would you point to as the strongest evidence?
 
-4. Mackintosh says organisms learn to attend to good predictors and ignore poor ones. The Rescorla-Wagner model says organisms simply learn the predictive value of each stimulus. In everyday clinical work, which perspective seems more useful? Can you think of a clinical scenario where the distinction matters?
+4. **Resurgence and relapse.** Resurgence (the return of a previously reinforced behavior when an alternative is removed) and other forms of relapse are major clinical concerns. How does framing persistence in terms of reinforcement context (rather than the response itself) change how you would try to prevent relapse?
 
 ---
 
 ## In-Class Demonstrations
 
-### Demonstration 1: Blocking Calculation on the Board
+### Demonstration 1: Resistance to Change in Rich vs. Lean Contexts
 
-Walk through the full blocking calculation interactively. Have students compute each trial's values while you record them on the board. Use two columns side by side:
+Present a simplified two-component scenario:
 
-- **Left column:** B conditioned alone for 5 trials ($V_B$ grows to ~0.56)
-- **Right column:** B conditioned in compound with pre-trained A for 5 trials ($V_B$ grows to ~0.02)
+- **Rich component:** reinforcement rate $r = 60$/hr, baseline response rate $B_0 = 40$ resp/min
+- **Lean component:** reinforcement rate $r = 15$/hr, baseline response rate $B_0 = 40$ resp/min
 
-The visual contrast between the two columns makes blocking vivid. Ask students to identify the exact point in the equation where blocking "happens" (answer: the summation of $V_A + V_B$ in the error term).
+Introduce a disruptor of magnitude $x = 1$ with sensitivity $d = 1$. Compute the proportional change for each:
 
-### Demonstration 2: Overexpectation Prediction
+- Rich: $\log(B_x/B_0) = -1/(60 \cdot 1) = -0.017$; $B_x/B_0 \approx 0.96$ (about a 4% reduction)
+- Lean: $\log(B_x/B_0) = -1/(15 \cdot 1) = -0.067$; $B_x/B_0 \approx 0.86$ (about a 14% reduction)
 
-After blocking, introduce overexpectation as a novel prediction. Set up:
+The key teaching point: baseline rates are *identical* (40 resp/min in both), yet the richer context is far more resistant to the same disruptor. Have students recompute with a stronger disruptor ($x = 3$) to see the gap widen. Discuss what this means for choosing the context in which to build clinically important behavior.
 
-- Train A alone: $V_A \to 0.95$
-- Train B alone: $V_B \to 0.95$
-- Present AB compound with the US ($\lambda = 1.0$)
+### Demonstration 2: The Rate-Persistence Dissociation
 
-Ask students: "What is the prediction error on the first compound trial?" ($\lambda - (V_A + V_B) = 1.0 - 1.9 = -0.9$). Both A and B **lose** strength even though the US is presented. This is counterintuitive and is a strong test of the model. Have students calculate 2--3 trials to see both $V_A$ and $V_B$ decrease.
+Set up a thought experiment (or use class-generated numbers). In Component A, the response-reinforcer contingency is strong, producing a high response rate. In Component B, you add response-*independent* reinforcement: this lowers the response rate (the operant contingency is diluted) but raises the total reinforcement rate signaled by the stimulus.
 
-### Demonstration 3: Behavioral Momentum Comparison
-
-Present a simplified scenario with two components:
-
-- **Rich component:** reinforcement rate $r = 60$/hr, baseline response rate $B_o = 40$ resp/min
-- **Lean component:** reinforcement rate $r = 15$/hr, baseline response rate $B_o = 40$ resp/min
-
-Introduce a disruptor of magnitude $x = 1$ with $c = 1$.
-
-Compute the proportional change for each:
-
-- Rich: $\log(B_x / B_o) = -1/60 = -0.017$; $B_x / B_o = 0.96$ (4% reduction)
-- Lean: $\log(B_x / B_o) = -1/15 = -0.067$; $B_x / B_o = 0.86$ (14% reduction)
-
-This shows concretely how the same disruptor produces less disruption in the richer context. Discuss what this means for clinical interventions.
+Ask students to predict: which component shows more resistance to change? Most will guess A (higher rate). Reveal that B---despite its *lower* rate---is predicted to be *more* persistent, because resistance tracks the stimulus-reinforcer (Pavlovian) relation. This makes the central dissociation vivid and sets up Discussion Prompt 2.
 
 ---
 
 ## Transition to Lab
 
-This week's lab covers:
+This week's lab makes resistance-to-change predictions quantitative. Students will:
 
-- **Simulating Rescorla-Wagner learning curves.** Students will implement the R-W equation in code (Python or spreadsheet) and generate acquisition curves for different parameter values. They will reproduce the table from the worked example computationally and verify their results match the analytical solution $V_n = \lambda(1 - (1 - \alpha\beta)^n)$.
+- **Compute predicted resistance to change** for multiple-schedule components that differ in reinforcement rate, using the basic equation, and plot proportional response rate ($B_x/B_0$) against disruptor magnitude for each component.
+- **Explore the reinforcement-ratio manipulation.** Students will vary the ratio of reinforcement rates between the rich and lean components and observe how the predicted difference in resistance grows or shrinks.
+- **Fit the augmented model** to baseline data, estimating $d$ and $b$, and interpret what the parameters say about the context.
+- **Connect to relapse.** Students will simulate a simple resurgence scenario and relate the outcome back to the reinforcement context in which the behavior was originally trained.
 
-- **Simulating blocking.** Students will extend their simulation to a two-phase blocking design and compare $V_B$ in the blocking condition vs. a control condition (B conditioned alone). They will produce plots showing the dramatic difference.
-
-- **Comparing behavioral momentum predictions.** Students will compute predicted resistance to change for components with different reinforcement rates and plot the results. They will explore how changing the reinforcement ratio between components affects the predicted difference in resistance.
-
-- **Parameter exploration.** Students will systematically vary $\alpha$ and $\beta$ to see how each parameter affects the speed and shape of the learning curve. This builds intuition for what the parameters "do" in the model.
-
-Encourage students to connect their simulation output back to the 8-step framework: the simulation is Step 8 (check the math, test against data, derive predictions) made concrete.
+Encourage students to connect their simulation output back to the 8-step framework: the lab is Step 8 (test against data, derive predictions) made concrete, and it should make the rate-versus-mass distinction something they can see in a plot rather than just assert in words.

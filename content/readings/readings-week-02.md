@@ -21,9 +21,9 @@ readings:
     citation: "Odum, A. L. et al. (2020). Delay discounting of different outcomes: Review and theory. *Journal of the Experimental Analysis of Behavior*, *113*, 657-679."
     type: "required"
   - filename: "[OPTIONAL] (2018) Influence of second outcome on monetary discounting, Cox & Dallery.pdf"
-    citation: "Cox, D. J. & Dallery, J. (2018). Influence of second outcome on monetary discounting. *Behavioural Processes*, *157*, 165-171."
+    citation: "Cox, D. J. & Dallery, J. (2018). Influence of second outcome on monetary discounting. *Behavioural Processes*, *153*, 84-91. https://doi.org/10.1016/j.beproc.2018.05.012"
     type: "supplemental"
   - filename: "[OPTIONAL] (2021) Rejecting impulsivity as a psychological construct, Strickland & Johnson.pdf"
-    citation: "Strickland, J. C. & Johnson, M. W. (2021). Rejecting impulsivity as a psychological construct. *Journal of the Experimental Analysis of Behavior*, *116*, 349-362."
+    citation: "Strickland, J. C. & Johnson, M. W. (2021). Rejecting impulsivity as a psychological construct: A theoretical, empirical, and sociocultural argument. *Psychological Review*, *128*(2), 336-361. https://doi.org/10.1037/rev0000263"
     type: "supplemental"
 ---

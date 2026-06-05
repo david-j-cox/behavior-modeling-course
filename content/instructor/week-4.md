@@ -1,118 +1,126 @@
 ---
-title: "Instructor Notes: Week 4 — Demand"
+title: "Instructor Notes: Week 4 — Associative Learning Models"
 week: 4
 ---
 
 ## Lecture Objectives
 
-- Students should be able to explain the concept of demand and articulate why the relationship between price and consumption is more informative than preference at a single price point.
-- Students should be able to write the exponential demand equation, identify each parameter, and explain what each parameter captures behaviorally.
-- Students should be able to compute essential value ($1/\alpha$) and interpret it in plain language, including comparing essential values across commodities or individuals.
-- Students should be able to distinguish between elastic and inelastic demand, identify $P_{max}$ on a demand curve, and explain its practical significance.
-- Students should be able to apply the 8-step modeling framework to the demand equation and articulate the assumptions underlying the model.
+- Students should be able to state the Rescorla-Wagner equation, define each parameter, and explain why prediction error---not contiguity---is the driving force of associative learning.
+- Students should be able to compute associative strength values across multiple trials given specific parameter values, and recognize the negatively accelerated learning curve that results.
+- Students should be able to explain blocking, conditioned inhibition, and overexpectation as direct consequences of the Rescorla-Wagner model's summation assumption and prediction error rule.
+- Students should be able to contrast the Rescorla-Wagner model's fixed associability with Mackintosh's variable associability and identify at least one phenomenon (e.g., learned irrelevance) that distinguishes the two models.
 
 ---
 
 ## Suggested Lecture Walkthrough (~60 min)
 
-### Opening: From Preference to Demand (10 min)
+### Opening: The Phenomenon (10 min)
 
-Begin with a concrete scenario. Present two hypothetical reinforcers that are equally preferred in a paired-stimulus preference assessment. Ask: "If both are chosen 50% of the time when they're free, does that mean they're equally effective reinforcers?" Let students discuss briefly, then introduce the key insight---preference at zero (or near-zero) price does not capture how hard an organism will work. This motivates the demand framework.
+Begin with classical conditioning as a phenomenon, not a model. Describe a standard tone-food preparation. Ask students: "Why does the rat start approaching the food magazine when it hears the tone?" Accept answers---they will likely mention pairing, association, contiguity.
 
-Show a simple demand curve (consumption on y-axis, price on x-axis) without the equation. Point out the two regions: the flat part (inelastic) and the steep decline (elastic). Introduce the idea that the shape of this curve tells us something fundamental about reinforcer value.
+Then introduce the blocking paradigm. Describe the two-phase procedure (Phase 1: A+; Phase 2: AB+; Test: B alone). Ask students to predict the result under a contiguity account. Most will predict B should be conditioned. Reveal the actual result: B shows little or no conditioning. This is the motivating puzzle.
 
-### Unit Price (5 min)
+Key point to emphasize: contiguity is present in Phase 2---B is paired with the US on every trial---yet learning does not occur. Something beyond contiguity must matter.
 
-Define unit price as responses per unit of reinforcer. Work through two or three examples: FR 10 with 1 pellet (unit price = 10), FR 20 with 2 pellets (unit price = 10), FR 5 with 0.5 pellets (unit price = 10). Emphasize that unit price allows comparison across different schedule-magnitude combinations. Briefly note the unit price equivalence assumption and flag that it is testable and sometimes violated.
+### Building to the Equation (15 min)
 
-### Building the Equation (15 min)
+Introduce prediction error informally first. "The organism learns when it is surprised." Walk through what "surprise" means quantitatively: the discrepancy between what is expected ($V$) and what happens ($\lambda$).
 
-This is the core technical section. Build up to the full equation in stages:
+Then introduce the equation:
 
-1. **Start with the idea**: We need a function that starts at $Q_0$ when price is zero and declines as price increases. What mathematical form would do this?
-2. **Exponential decay**: Introduce $e^{-\alpha C}$ as a decay function. Show that this starts at 1 when $C = 0$ and approaches 0 as $C$ grows. Note that this alone would give linear decay in log space.
-3. **The normalization**: Explain why $Q_0$ appears in the exponent ($\alpha \cdot Q_0 \cdot C$). Without it, $\alpha$ values are not comparable across commodities with different baseline consumption levels. This is a critical conceptual point---spend time on it.
-4. **The $k$ constant**: Explain that $k$ sets the range of the curve in log units. Show what happens when $k$ changes (the floor of the curve moves up or down). Note the convention of fixing $k$ across conditions.
-5. **Full equation**: Write the complete equation and confirm it reduces correctly at $C = 0$.
+$$\Delta V = \alpha \beta (\lambda - V)$$
 
-**Common confusions to address explicitly:**
+Define each term carefully:
+- $V$: what the organism currently expects (associative strength)
+- $\lambda$: what actually happens (asymptote supported by the US)
+- $\lambda - V$: the surprise (prediction error)
+- $\alpha$: how noticeable the CS is (salience)
+- $\beta$: how effective the US is (learning rate)
 
-- **What $k$ does**: Students often think $k$ controls the steepness of the curve. Clarify that $k$ controls the range (floor), while $\alpha$ controls the steepness (rate of decline). Demonstrate with two curves that have the same $\alpha$ but different $k$ values.
-- **Log-log space**: Students may be unfamiliar with plotting in log-log coordinates. Explain why this is standard: demand curves span orders of magnitude in both price and consumption, so linear axes compress the interesting parts of the curve. Show the same data plotted in linear and log-log space.
-- **Why the exponential form**: Students may wonder why not use a power function or polynomial. The exponential form was chosen because it (a) normalizes for $Q_0$, (b) yields a single rate parameter $\alpha$ that is directly interpretable, and (c) produces essential value as a simple reciprocal. Earlier models (e.g., Hursh et al., 1988) used power functions that lacked these properties.
+Emphasize that this is a **difference equation**---it updates trial by trial. It is not continuous.
 
-### Essential Value and $P_{max}$ (10 min)
+### Numerical Demonstration of Acquisition (10 min)
 
-Define essential value as $1/\alpha$. Work through a numerical example: if $\alpha = 0.0003$, then $EV = 3{,}333$. Compare to a second commodity with $\alpha = 0.005$ ($EV = 200$). Ask students: "Which commodity would you expect the organism to keep working for at high prices?"
+Work through the first 5 trials of the acquisition example from the chapter on the board (or slide). Use $\alpha = 0.3$, $\beta = 0.5$, $\lambda = 1.0$, $V_0 = 0$. Have students compute along with you. Point out the shrinking prediction error and the negatively accelerated curve.
 
-Introduce $P_{max} = 0.368 / (\alpha \cdot Q_0 \cdot k)$. Compute it for the same examples. Explain the behavioral meaning: below $P_{max}$, total output is still increasing with price (the organism works harder); above $P_{max}$, total output is decreasing (the organism is giving up). Connect this to the inelastic/elastic distinction.
+Ask: "What happens if we keep going? Does $V$ ever reach exactly 1.0?" (Answer: No---it approaches asymptotically.)
 
-### Open vs. Closed Economies (5 min)
+### Blocking Demonstration (10 min)
 
-Explain the distinction with a vivid example. A rat that earns all its food in the chamber (closed) vs. a rat that gets supplemental food afterward (open). Ask: "In which case would you expect the rat to work harder at high prices?" Emphasize that demand parameters are not comparable across economic contexts.
+This is the payoff. Walk through the blocking calculation step by step:
 
-### Applied Connections (10 min)
+1. After Phase 1: $V_A \approx 0.95$, $V_B = 0$.
+2. Phase 2, Trial 1: Prediction error = $\lambda - (V_A + V_B) = 1.0 - 0.95 = 0.05$.
+3. $\Delta V_B = 0.3 \times 0.5 \times 0.05 = 0.0075$.
+4. After 5 trials: $V_B \approx 0.02$.
 
-Cover three application domains briefly:
+Compare to conditioning B alone for 5 trials: $V_B \approx 0.56$. The difference is dramatic.
 
-1. **Drug self-administration**: Essential value as a measure of abuse liability. Reference Hursh & Silberberg (2008).
-2. **Reinforcer assessment**: Francisco, Madden, & Borrero (2009) showed that demand analysis reveals differences between reinforcers that preference assessments miss.
-3. **Token economies**: How demand analysis can inform the pricing structure of a token economy.
+Ask students: "Where in the equation does blocking come from?" Guide them to see that it comes from the shared prediction error---$V$ in the error term is the **sum** of all CSs present, not just the one being updated.
 
-### Wrap-Up (5 min)
+### Common Confusions to Address
 
-Return to the opening scenario. Now ask: "How would you determine which of the two equally-preferred reinforcers is actually more effective?" Students should articulate the demand-analysis approach. Preview the lab session.
+- **Why do compound stimuli share the error?** Students often ask why both A and B are updated using the same prediction error. Emphasize the summation assumption: the organism's total expectation is $V_A + V_B$, and the error is computed against this total. Each CS gets "credit" (or "blame") proportional to its own $\alpha$.
+
+- **What does negative $V$ mean?** Students find conditioned inhibition conceptually difficult. Use a concrete example: "The tone means food is coming. The light means food is NOT coming. When you hear the tone, you expect food. When you see the light with the tone, you reduce your expectation." Negative $V$ is an active signal of non-occurrence, not merely the absence of learning.
+
+- **Trial-level vs. real-time.** Some students will ask about what happens within a trial. Acknowledge that the Rescorla-Wagner model is silent on within-trial dynamics. Mention that real-time models (e.g., TD models, the Temporal model) address this, but they are beyond this week's scope.
+
+### Mackintosh's Attention Model (5 min)
+
+Briefly introduce the idea that $\alpha$ might not be fixed. If a CS has a history of being a poor predictor, the organism "tunes it out"---$\alpha$ decreases. If it is a good predictor, $\alpha$ increases. This explains learned irrelevance, which R-W cannot handle.
+
+Do not belabor the formal details of Mackintosh's rule. The key takeaway is that attention is a learnable process, and models can capture this by allowing parameters to change.
 
 ### Assigned Readings
 
-- **Hursh, S. R., & Silberberg, A. (2008)**. Economic demand and essential value. *Psychological Review, 115*(1), 186--198.
-- **Francisco, M. T., Madden, G. J., & Borrero, J. C. (2009)**. Behavioral economics: Principles, procedures, and utility for applied behavior analysis. *Journal of Applied Behavior Analysis, 42*(2), 277--294.
-- **Hursh, S. R., Madden, G. J., Spiga, R., DeLeon, I. G., & Francisco, M. T. (2013)**. The translational utility of the exponential demand equation. In *APA Handbook of Behavior Analysis* (Vol. 2).
+- Rescorla, R. A., & Wagner, A. R. (1972). A theory of Pavlovian conditioning: Variations in the effectiveness of reinforcement and nonreinforcement. In A. H. Black & W. F. Prokasy (Eds.), *Classical conditioning II: Current research and theory* (pp. 64--99). Appleton-Century-Crofts.
+- Mackintosh, N. J. (1975). A theory of attention: Variations in the associability of stimuli with reinforcement. *Psychological Review, 82*(4), 276--298. https://doi.org/10.1037/h0076778
+- Matzel, L. D., Held, F. P., & Miller, R. R. (1988). Information and expression of simultaneous and backward associations: Implications for contiguity theory. *Learning and Motivation, 19*(4), 317--344. https://doi.org/10.1016/0023-9690(88)90044-6
 
 ---
 
 ## Discussion Prompts
 
-1. **Reinforcer selection**: "You have a client for whom you have identified three potential reinforcers via a paired-stimulus preference assessment. All three are chosen about equally. How would you use demand analysis to decide which reinforcer to use in treatment? What practical considerations would affect whether you could actually conduct a demand assessment in a clinical setting?"
+1. The Rescorla-Wagner model was published in 1972, and the temporal difference learning algorithm that powers modern AI was published in the 1980s--1990s. Both are fundamentally about prediction error. What does it mean for behavior science that one of its core models became foundational to an entirely different field? Does this validate the model, or does it merely show that a mathematical idea can be useful in multiple contexts without being "true" in either?
 
-2. **Policy implications**: "A state agency is considering raising the 'price' of cigarettes through taxation. How would you use the demand framework to predict the effect on consumption? What would it mean if cigarettes have high essential value for a particular population? What are the limitations of this analysis?"
+2. The Rescorla-Wagner model treats all learning as changes in a single quantity ($V$). Is this realistic? Think about your own learning experiences---does it feel like a single "associative strength" is being updated, or is something more complex happening? How would you test whether a single-quantity model is adequate?
 
-3. **$Q_0$ vs. essential value**: "A colleague argues that the best reinforcer is simply the one the client consumes the most of when it is freely available. How would you respond? Under what circumstances might a reinforcer with a lower $Q_0$ actually be more useful clinically than one with a higher $Q_0$?"
-
-4. **Model assumptions**: "The demand equation assumes a single commodity in a closed economy. How realistic is this for applied settings? What happens to demand when substitutes are available, and how might you account for this?"
+3. Mackintosh says organisms learn to attend to good predictors and ignore poor ones. The Rescorla-Wagner model says organisms simply learn the predictive value of each stimulus. In everyday clinical work, which perspective seems more useful? Can you think of a clinical scenario where the distinction matters?
 
 ---
 
 ## In-Class Demonstrations
 
-### Demonstration 1: Auction Game
+### Demonstration 1: Blocking Calculation on the Board
 
-Give each student 100 "tokens" (play money or points on a sheet). Present two commodities: a preferred snack (e.g., candy) and a less-preferred item (e.g., a pencil). Conduct multiple rounds where the price of each item increases (Round 1: 1 token, Round 2: 5 tokens, Round 3: 15 tokens, Round 4: 40 tokens, Round 5: 80 tokens). Students record how many units they would purchase at each price. Aggregate the class data and plot the two demand curves. Compute approximate $Q_0$ and note which commodity shows more elastic demand. This provides an experiential foundation for the concepts before the equation is introduced.
+Walk through the full blocking calculation interactively. Have students compute each trial's values while you record them on the board. Use two columns side by side:
 
-### Demonstration 2: Parameter Exploration
+- **Left column:** B conditioned alone for 5 trials ($V_B$ grows to ~0.56)
+- **Right column:** B conditioned in compound with pre-trained A for 5 trials ($V_B$ grows to ~0.02)
 
-Using a projected spreadsheet or graphing tool (Desmos, GeoGebra, or a simple Python script), display the exponential demand equation with sliders for $Q_0$, $\alpha$, and $k$. Let students predict what will happen when each parameter changes, then move the sliders. Key manipulations:
-- Increase $\alpha$: Curve bends earlier, consumption drops faster.
-- Increase $Q_0$: Curve shifts up at the y-intercept.
-- Change $k$: The floor of the curve moves (range changes) but the bend point shifts only slightly.
+The visual contrast between the two columns makes blocking vivid. Ask students to identify the exact point in the equation where blocking "happens" (answer: the summation of $V_A + V_B$ in the error term).
 
-This interactive demonstration helps students separate the roles of the three parameters.
+### Demonstration 2: Overexpectation Prediction
 
-### Demonstration 3: Real Data Fitting
+After blocking, introduce overexpectation as a novel prediction. Set up:
 
-Show a published dataset (e.g., from Hursh & Silberberg, 2008) and walk through the curve-fitting process live. Use R or Python to fit the exponential demand equation to the data. Display the parameter estimates, predicted curve, and residuals. This previews the lab activity and demystifies the fitting process.
+- Train A alone: $V_A \to 0.95$
+- Train B alone: $V_B \to 0.95$
+- Present AB compound with the US ($\lambda = 1.0$)
+
+Ask students: "What is the prediction error on the first compound trial?" ($\lambda - (V_A + V_B) = 1.0 - 1.9 = -0.9$). Both A and B **lose** strength even though the US is presented. This is counterintuitive and is a strong test of the model. Have students calculate 2--3 trials to see both $V_A$ and $V_B$ decrease.
 
 ---
 
 ## Transition to Lab
 
-The lab session for this week focuses on hands-on demand curve fitting and essential value computation. Students will:
+This week's lab covers:
 
-1. Receive a dataset containing consumption values across multiple FR values for two different commodities (or two different organisms).
-2. Fit the exponential demand equation to each dataset using provided code templates (Python or R).
-3. Estimate $Q_0$, $\alpha$, and $k$ (or fix $k$ and estimate the other two).
-4. Compute essential value ($1/\alpha$) and $P_{max}$ for each commodity/organism.
-5. Plot the observed data and fitted curves in log-log space.
-6. Write a brief interpretation comparing the two demand curves, explaining what the parameter differences mean in behavioral terms.
+- **Simulating Rescorla-Wagner learning curves.** Students will implement the R-W equation in code (Python or spreadsheet) and generate acquisition curves for different parameter values. They will reproduce the table from the worked example computationally and verify their results match the analytical solution $V_n = \lambda(1 - (1 - \alpha\beta)^n)$.
 
-The lab should reinforce that demand analysis is not just an abstract framework---it is a practical tool that can be applied to real data with standard software. Encourage students to experiment with starting values and observe how the optimization converges (or fails to converge) under different initial conditions.
+- **Simulating blocking.** Students will extend their simulation to a two-phase blocking design and compare $V_B$ in the blocking condition vs. a control condition (B conditioned alone). They will produce plots showing the dramatic difference.
+
+- **Parameter exploration.** Students will systematically vary $\alpha$ and $\beta$ to see how each parameter affects the speed and shape of the learning curve. This builds intuition for what the parameters "do" in the model.
+
+Encourage students to connect their simulation output back to the 8-step framework: the simulation is Step 8 (check the math, test against data, derive predictions) made concrete.

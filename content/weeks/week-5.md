@@ -450,7 +450,7 @@ Next week, in **Week 6**, we turn to the tools of model comparison: information 
 
 ## References
 
-Nevin, J. A. (1998). Choice and momentum. In W. T. O'Donohue (Ed.), *Learning and behavior therapy* (pp. 230--251). Allyn & Bacon.
+Nevin, J. A. (1998). Choice and behavioral momentum. In W. T. O'Donohue (Ed.), *Learning and behavior therapy* (pp. 230--251). Allyn & Bacon.
 
 Nevin, J. A. (2002). Measuring behavioral momentum. *Behavioural Processes, 57*(2--3), 187--198. https://doi.org/10.1016/S0376-6357(02)00013-X
 

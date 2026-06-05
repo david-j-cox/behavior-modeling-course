@@ -237,9 +237,9 @@ More broadly, this week's introduction connects to the entire tradition of quant
 
 Cox, D. J. (2026). Of models, vectors, and matrices: Advancing analyses of the multiple control of behavior. *Advances in the Experimental Analysis of Behavior*. Pre-print: https://doi.org/10.13140/RG.2.2.11144.94723
 
-Critchfield, T. S., & Reed, D. D. (2009). What are we doing when we translate from quantitative models? *The Behavior Analyst, 32*(2), 339--362. https://doi.org/10.1007/BF03392199
+Critchfield, T. S., & Reed, D. D. (2009). What are we doing when we translate from quantitative models? *The Behavior Analyst, 32*(2), 339--362. https://doi.org/10.1007/BF03392197
 
-Dallery, J., & Soto, P. L. (2013). Quantitative descriptions of environment-behavior relations. In G. J. Madden (Ed.), *APA handbook of behavior analysis: Vol. 1. Methods and principles* (pp. 219--249). American Psychological Association. https://doi.org/10.1037/13937-010
+Dallery, J., & Soto, P. L. (2013). Quantitative description of environment-behavior relations. In G. J. Madden (Ed.), *APA handbook of behavior analysis: Vol. 1. Methods and principles* (pp. 219--249). American Psychological Association. https://doi.org/10.1037/13937-010
 
 Gudmundsson, A. (2020). *Volcanotectonics: Understanding the structure, deformation and dynamics of volcanoes*. Cambridge University Press. https://doi.org/10.1017/9781139176217
 

@@ -614,7 +614,7 @@ These references collectively illustrate that both multilevel and time-series me
 
 ## References
 
-Adhikari, R., & Agrawal, R. K. (2013). *An introductory study on time series modeling and forecasting*. LAP Lambert Academic Publishing. https://doi.org/10.48550/arXiv.1302.6613
+Adhikari, R., & Agrawal, R. K. (2013). *An introductory study on time series modeling and forecasting*. arXiv. https://doi.org/10.48550/arXiv.1302.6613
 
 Cox, D. J., & Vladescu, J. C. (2023). *Statistics for applied behavior analysis practitioners and researchers*. Academic Press.
 
