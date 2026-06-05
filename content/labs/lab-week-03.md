@@ -26,7 +26,8 @@ In this folder, there is a single dataset with participant data common in demand
 4. Calculate the parameter k or choose its constant value
 5. Create a function that calculates the consumption Q using the exponential demand equation
 6. Apply the function to each row in the dataset to identify the predicted consumption
-7. Graph and analyze the results -- calculate the goodness of fit metrics and display them to interpret the model's goodness of fit
+7. Graph and analyze the results. 
+8. Calculate the goodness of fit metrics and display them to interpret the model's goodness of fit
 
 ### Things to Watch Out For
 
