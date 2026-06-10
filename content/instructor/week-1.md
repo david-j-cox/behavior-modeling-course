@@ -39,7 +39,7 @@ Fear of math, confusion about what a "model" is vs. a "theory," not understandin
 
 ### Assigned readings
 
-Dallery & Soto (2013), Critchfield & Reed (2009), Cox (pre-print) on models, vectors, and matrices.
+Dallery & Soto (2013), Critchfield & Reed (2009), Cox (2026) on models, vectors, and matrices.
 
 ## Discussion Prompts
 
