@@ -216,7 +216,7 @@ More broadly, this week's introduction connects to the entire tradition of quant
 - Why is simplicity (parsimony) a valued feature in model selection?
 - How do quantitative models promote scientific communication?
 
-### Cox (pre-print)
+### Cox (2026)
 
 - What is meant by "multiple control" in behavior analysis?
 - Why does the author argue that a comprehensive understanding of behavior requires analyzing multiple control?
