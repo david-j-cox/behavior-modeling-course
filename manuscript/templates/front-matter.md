@@ -1,4 +1,4 @@
-# Mathematical and Computational Modeling in Behavior Science {.unnumbered}
+# Introduction to Mathematical Modeling in Behavior Science {.unnumbered}
 
 **A Systematic Guide to Building, Evaluating, and Applying Formal Models of Behavior**
 

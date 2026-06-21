@@ -9,7 +9,7 @@ title: "Course Syllabus"
 | **Faculty** | David J. Cox, Ph.D., M.S.B., BCBA-D |
 | **Email** | dcox@endicott.edu |
 | **Course No** | ABA 761 |
-| **Course Title** | Mathematical & Computational Modeling in Behavior Science |
+| **Course Title** | Introduction to Mathematical Modeling in Behavior Science |
 | **Course Credits** | 3 |
 | **Class Type** | Synchronous |
 | **Office Hours** | By appointment |

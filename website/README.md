@@ -1,4 +1,4 @@
-# Mathematical & Computational Modeling in Behavior Science
+# Introduction to Mathematical Modeling in Behavior Science
 
 Companion website for a doctoral-level course on building, evaluating, and applying formal models of behavior-environment relations.
 

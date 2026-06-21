@@ -4,7 +4,7 @@ import ThemeToggle from "@/components/ThemeToggle";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Mathematical & Computational Modeling in Behavior Science",
+  title: "Introduction to Mathematical Modeling in Behavior Science",
   description:
     "Course companion for doctoral-level mathematical and computational modeling in behavior science.",
 };
@@ -69,7 +69,7 @@ export default function RootLayout({
         <main>{children}</main>
         <footer className="footer">
           <div className="container">
-            Mathematical &amp; Computational Modeling in Behavior Science
+            Introduction to Mathematical Modeling in Behavior Science
             &mdash; A doctoral course companion.
           </div>
         </footer>

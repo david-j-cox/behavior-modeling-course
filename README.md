@@ -1,4 +1,4 @@
-# Mathematical & Computational Modeling in Behavior Science
+# Introduction to Mathematical Modeling in Behavior Science
 
 A unified, open-source repository for a doctoral-level course (ABA 761) on building, evaluating, and applying formal models of behavior-environment relations.
 

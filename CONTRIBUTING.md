@@ -1,6 +1,6 @@
 # Contributing
 
-Thank you for your interest in contributing to the Mathematical & Computational Modeling in Behavior Science course materials.
+Thank you for your interest in contributing to the Introduction to Mathematical Modeling in Behavior Science course materials.
 
 ## How to Contribute
 
