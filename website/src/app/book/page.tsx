@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Get the Book | Modeling in Behavior Science",
   description:
-    "Mathematical and Computational Modeling in Behavior Science is available as an ebook and paperback. The full course content, in a form you can read on a plane or mark up with a pen.",
+    "Introduction to Mathematical Modeling in Behavior Science is available as an ebook and paperback. The full course content, in a form you can read on a plane or mark up with a pen.",
 };
 
 const formats = [
@@ -39,7 +39,7 @@ export default function BookPage() {
       <section style={{ marginTop: "2rem" }}>
         <h2 style={{ borderBottom: "none", marginTop: "0" }}>About the Book</h2>
         <p>
-          <em>Mathematical and Computational Modeling in Behavior Science</em> is
+          <em>Introduction to Mathematical Modeling in Behavior Science</em> is
           the printed and ebook companion to this course. It contains the same
           thirteen chapters, eight-step framework, practice problems, worked
           answers, appendices, and glossary that you will find on this site,
