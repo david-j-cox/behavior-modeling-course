@@ -31,7 +31,7 @@ const sections = [
 export default function HomePage() {
   return (
     <div className="container page">
-      <h1>Mathematical &amp; Computational Modeling in Behavior Science</h1>
+      <h1>Introduction to Mathematical Modeling in Behavior Science</h1>
       <p style={{ fontSize: "1.1rem", color: "var(--color-text-muted)", maxWidth: "38rem" }}>
         A doctoral course companion for building, evaluating, and applying
         formal models of behavior-environment relations.

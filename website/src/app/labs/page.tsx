@@ -3,7 +3,7 @@ import { renderMarkdown } from "@/lib/markdown";
 import LabsContent from "./LabsContent";
 
 export const metadata = {
-  title: "Lab Assignments — Mathematical & Computational Modeling in Behavior Science",
+  title: "Lab Assignments — Introduction to Mathematical Modeling in Behavior Science",
 };
 
 export default async function LabsPage() {

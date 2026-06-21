@@ -1,6 +1,6 @@
 # Manuscript
 
-This folder is the Leanpub-native source for the printed/ebook version of *Mathematical and Computational Modeling in Behavior Science*. It is generated from canonical content under `/content` and should never be edited by hand. To change a chapter, edit the source markdown under `/content` and re-run the build.
+This folder is the Leanpub-native source for the printed/ebook version of *Introduction to Mathematical Modeling in Behavior Science*. It is generated from canonical content under `/content` and should never be edited by hand. To change a chapter, edit the source markdown under `/content` and re-run the build.
 
 ## Build
 

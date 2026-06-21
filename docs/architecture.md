@@ -2,7 +2,7 @@
 
 ## Overview
 
-This monorepo contains course materials for Mathematical & Computational Modeling in Behavior Science. The key design principle is **single-source content**: all course content lives in `/content/`, and both the handbook manuscript generator and the companion website read from that directory.
+This monorepo contains course materials for Introduction to Mathematical Modeling in Behavior Science. The key design principle is **single-source content**: all course content lives in `/content/`, and both the handbook manuscript generator and the companion website read from that directory.
 
 ## Directory Structure
 
