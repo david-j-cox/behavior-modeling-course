@@ -5,6 +5,9 @@ description: "Build lifecycle diagrams, derive equations, and run simulations fo
 notebooks:
   - filename: "model_demonstrations.ipynb"
     title: "Model Demonstrations"
+instructorNotebooks:
+  - filename: "model_demonstrations_solution.ipynb"
+    title: "Model Demonstrations (Solution)"
 dataFiles: []
 ---
 

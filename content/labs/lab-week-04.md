@@ -1,43 +1,58 @@
 ---
 week: 4
 title: "Associative Learning Models"
-description: "Fit behavioral momentum models to extinction and alternative reinforcement data, and implement the Mackintosh model for associative learning."
+description: "Implement the Rescorla-Wagner and Mackintosh models as recursive update rules and reproduce classic conditioning phenomena."
 notebooks:
   - filename: "equation_fits.ipynb"
     title: "Equation Fits"
 instructorNotebooks:
+  - filename: "equation_fits_solution.ipynb"
+    title: "Equation Fits (Solution)"
   - filename: "dataset_creation.ipynb"
     title: "Dataset Creation"
-dataFiles:
-  - "behavioral_momentum_extinction_data.csv"
-  - "behavioral_momentum_alternative_data.csv"
-  - "mackintosh_model_data.csv"
+dataFiles: []
 ---
 
 ## Associative Learning Models Lab
 
-This week, we focus broadly on the area of respondent conditioning -- stimulus-stimulus learning. Two areas, in particular, have arguably been studied more than others from a quantitative modeling perspective. These are behavioral momentum (e.g., Nevin et al., 1983; Nevin & Shahan, 2011) and attempts to quantify changes in stimulus associative value (e.g., Mackintosh, 1975; Rescorla-Wagner, 1972). The purpose of this lab is twofold.
-
-### Part 1: Behavioral Momentum Model Fitting
-
-As with previous weeks, the first goal is to practice fitting an equation to experimentally obtained data. There are two datasets prepared for you to continue practicing this skill. One is a set of behavioral momentum data where extinction was the disruptor. The second is a set of behavioral momentum data where alternative reinforcement was the disruptor. The required reading for this week was the original Nevin and colleagues (1983) article, which was chosen so that you have a good grasp of what behavioral momentum is all about. Thus, to fit a model to the data, you'll want to dig into the supplemental materials to find the right equations.
-
-**Hints for Behavioral Momentum Model Fitting:**
-
-- **Parameter Bounds Matter:** The behavioral momentum equations have specific parameter constraints. For extinction: c and d should be positive, r should be > 0.1, and B0 should be reasonable baseline rates. For alternative reinforcement: p should be positive, r should be > 0.1.
-- **Initial Parameter Guesses:** Think about what reasonable starting values might be: B0 should be close to the baseline response rate in the data; r is the reinforcement rate (look at the experimental conditions); c, d, p are scaling parameters (start with small positive values).
-
-### Part 2: Recursive Models and the Mackintosh Model
-
-The second goal is to introduce the idea of recursive models, which we will spend a lot of time with in later weeks. A recursive model is a model where the output of the model at time t is part of the input to the model at time t+1. Formally:
+This week, we focus on respondent conditioning -- stimulus-stimulus learning -- and the quantitative models that describe how organisms learn predictive relationships between events. Both models in this lab are **recursive**: the state of the system at trial `t` (the associative strengths, and for Mackintosh the attention weights) becomes part of the input at trial `t+1`. Formally:
 
 X(t+1) = f(X(t), I(t))
 
-Here, X(t) is the state of the system at time t (e.g., associative strengths, attention weights), I(t) is the input or event at time t (e.g., CS, US, reinforcer delivery, prediction error), and f is a transition function describing how the system updates over time.
+where X(t) is the state at time t, I(t) is the input or event at time t (a CS, the US, a prediction error), and f is the transition rule. Because both parts are simulations, no data files are required.
 
-Your second task is to implement the Mackintosh (1975) model in code to visualize how the associative value of a stimulus evolves across trials, depending on different starting values for theta. To deepen your understanding, extend your model to incorporate changes in alpha (attention or salience) across trials. This will allow you to simulate phenomena such as (a) overshadowing, where one stimulus has a higher alpha than another; and (b) blocking, where a previously conditioned stimulus prevents learning about a new one due to its prior associative history.
+### Part 1: The Rescorla-Wagner Model
 
-**Hints for Mackintosh Model Implementation:**
+The Rescorla-Wagner (1972) model is the foundational quantitative account of associative learning. Its central claim is that learning is driven by *prediction error*: associative strength changes only to the extent that the outcome of a trial differs from what the organism already expected. For each stimulus present on a trial,
 
-- **Recursive Nature:** The associability (alpha) and association strength (V) update based on previous values.
-- **Phenomenon Validation:** Your outputs should show: basic conditioning (association strength increases and associability adjusts), overshadowing (CS1 with high alpha gains more V than CS2 with low alpha), and blocking (CS2 shows minimal learning when CS1 already predicts the US).
+ΔV_i = α_i * β * (λ - V_total),  where  V_total = Σ V_i
+
+Here α_i is the salience of stimulus i, β is the learning rate of the US, λ is the asymptote supported by the US (1.0 when it occurs, 0.0 when it does not), and V_total is the summed associative strength of all stimuli present on that trial.
+
+Your task is to implement this update rule as a function and use it to reproduce four classic phenomena that all emerge from the shared prediction-error term:
+
+- **Blocking:** a CS that already predicts the US prevents learning to a newly added CS.
+- **Overshadowing:** when two CSs are trained together, the more salient one captures more associative strength.
+- **Overexpectation:** two separately conditioned CSs, then trained together, both *lose* strength because their summed prediction overshoots λ.
+- **Conditioned inhibition:** a CS paired with the absence of an otherwise-predicted US acquires *negative* associative strength.
+
+**Hints:**
+
+- Represent each trial as the set of stimuli present plus the US asymptote λ for that trial. Build the phenomenon by choosing the right sequence of trials across phases.
+- Compute `V_total` from the stimuli present *before* updating, then apply ΔV to each present stimulus.
+
+### Part 2: The Mackintosh Model (Recursive Associability)
+
+The Mackintosh (1975) model extends prediction-error learning with a dynamic *associability* (attention) term. A stimulus that predicts the US better than its competitors gains associability across trials, while a poorer predictor loses it. This lets the model capture attentional phenomena that fixed-salience Rescorla-Wagner cannot.
+
+Your task is to implement the Mackintosh update rules for association strength `V` and associability `alpha`, then write simulation functions for (a) basic conditioning, (b) overshadowing, and (c) blocking, and visualize how V and alpha evolve across trials for a range of learning rates (theta).
+
+**Hints:**
+
+- **Recursive nature:** both the associability (alpha) and the association strength (V) update based on their previous values.
+- **Phenomenon validation:** your outputs should show basic conditioning (V rises toward λ while alpha adjusts), overshadowing (CS1 with higher alpha gains more V than CS2), and blocking (CS2 shows minimal learning when CS1 already predicts the US).
+
+### References
+
+- Rescorla, R. A., & Wagner, A. R. (1972). A theory of Pavlovian conditioning: Variations in the effectiveness of reinforcement and nonreinforcement.
+- Mackintosh, N. J. (1975). A theory of attention: Variations in the associability of stimuli with reinforcement. *Psychological Review*, 82(4), 276-298.

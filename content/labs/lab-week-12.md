@@ -8,6 +8,8 @@ notebooks:
 dataFiles:
   - "fa_classification_data.csv"
 instructorNotebooks:
+  - filename: "ml_lab_solution.ipynb"
+    title: "ML Classification Lab (Solution)"
   - filename: "fa_classification_data_creation.ipynb"
     title: "Dataset Creation"
 ---

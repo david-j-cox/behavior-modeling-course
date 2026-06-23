@@ -8,6 +8,8 @@ notebooks:
 dataFiles:
   - "functional_analysis_data.csv"
 instructorNotebooks:
+  - filename: "probability_lab_solution.ipynb"
+    title: "Probability Lab (Solution)"
   - filename: "fa_data_creation.ipynb"
     title: "Dataset Creation"
 ---

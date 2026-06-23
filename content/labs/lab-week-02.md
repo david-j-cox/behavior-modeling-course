@@ -8,6 +8,10 @@ notebooks:
   - filename: "discounting_analyses.ipynb"
     title: "Discounting Analyses"
 instructorNotebooks:
+  - filename: "week_02_matching_law_lab_solution.ipynb"
+    title: "Matching Law Lab (Solution)"
+  - filename: "discounting_analyses_solution.ipynb"
+    title: "Discounting Analyses (Solution)"
   - filename: "gme_lab_dataset_creation.ipynb"
     title: "Dataset Creation (Matching)"
   - filename: "discounting_data_creation.ipynb"

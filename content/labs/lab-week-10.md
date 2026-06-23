@@ -8,6 +8,8 @@ notebooks:
 dataFiles:
   - "acquisition_data.csv"
 instructorNotebooks:
+  - filename: "dynamical_systems_lab_solution.ipynb"
+    title: "Dynamical Systems Lab (Solution)"
   - filename: "acquisition_data_creation.ipynb"
     title: "Dataset Creation"
 ---
