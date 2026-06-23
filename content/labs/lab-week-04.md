@@ -3,12 +3,12 @@ week: 4
 title: "Associative Learning Models"
 description: "Implement the Rescorla-Wagner and Mackintosh models as recursive update rules and reproduce classic conditioning phenomena."
 notebooks:
-  - filename: "equation_fits.ipynb"
-    title: "Equation Fits"
+  - filename: "associative_learning_lab.ipynb"
+    title: "Associative Learning Lab"
 instructorNotebooks:
-  - filename: "equation_fits_solution.ipynb"
-    title: "Equation Fits (Solution)"
-  - filename: "dataset_creation.ipynb"
+  - filename: "associative_learning_lab_solution.ipynb"
+    title: "Associative Learning Lab (Solution)"
+  - filename: "associative_learning_data_creation.ipynb"
     title: "Dataset Creation"
 dataFiles: []
 ---
