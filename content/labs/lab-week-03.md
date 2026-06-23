@@ -6,6 +6,8 @@ notebooks:
   - filename: "demand_analysis.ipynb"
     title: "Demand Analysis"
 instructorNotebooks:
+  - filename: "demand_analysis_solution.ipynb"
+    title: "Demand Analysis (Solution)"
   - filename: "demand_data_creation.ipynb"
     title: "Dataset Creation"
 dataFiles:
