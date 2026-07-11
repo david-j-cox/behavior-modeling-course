@@ -13,7 +13,9 @@ instructorNotebooks:
   - filename: "behavioral_momentum_lab_solution.ipynb"
     title: "Behavioral Momentum Lab (Solution)"
   - filename: "momentum_data_creation.ipynb"
-    title: "Dataset Creation"
+    title: "Dataset Creation (Prefeeding)"
+  - filename: "behavioral_momentum_data_creation.ipynb"
+    title: "Dataset Creation (Extinction & Alternative)"
 ---
 
 ## Behavioral Momentum and Response Persistence Lab

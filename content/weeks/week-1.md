@@ -137,10 +137,6 @@ In plain language: if you know how fast the organism is responding ($k$), you ca
 
 **Step 8: Check the math, test against data, and derive predictions.** Verify: The model predicts a straight-line cumulative record. If $k = 2$ responses/min and $t = 30$ min, then $R = 60$ responses. Validate: Compare the predicted straight line to actual cumulative records. In practice, real cumulative records show local variability (pauses, bursts), so the linear model will fit the overall trend but not the fine grain. Solve: Given an estimate of $k$ from observed data (e.g., total responses divided by total time), predict cumulative responses at any time point.
 
-## Plain-Language Interpretation
-
-$R = k \cdot t$ says: "If you know how fast the organism is responding ($k$), you can predict how many total responses will have occurred by any given time ($t$) simply by multiplying." Using the water flowing analogy, the rate of flow ($k$) determines how quickly the bucket ($R$) fills as time ($t$) passes.
-
 This is obviously a simplification. Real organisms pause, accelerate, and decelerate. But the linear model serves as a useful baseline. Deviations from linearity are informative: they point toward phenomena (satiation, ratio strain, schedule effects) that a more complex model would need to capture.
 
 ## Assumptions and Limitations
@@ -157,6 +153,10 @@ Importantly, all of the above limitations should be considered the boundaries of
 ## Connection to Empirical Behavior Science
 
 The cumulative record is one of the oldest and most characteristic tools of the experimental analysis of behavior. Skinner used it to visualize response patterns under different schedules of reinforcement. The linear model $R = k \cdot t$ corresponds to the idealized cumulative record for a VI schedule: a straight line whose slope reflects response rate.
+
+![Idealized versus observed cumulative record](/images/week1-cumulative-record.svg)
+
+*Figure: The linear model $R = k \cdot t$ (blue) predicts a straight-line cumulative record with slope $k$. A real record (red) tracks the same overall slope but contains pauses and bursts the model deliberately omits. The model is wrong in the fine grain yet useful for the trend, and the deviations point to phenomena a richer model would need to capture.*
 
 More broadly, this week's introduction connects to the entire tradition of quantitative analysis in behavior science. The field has always valued prediction and control. Mathematical models make prediction explicit and testable. The 8-step framework provides a systematic method for constructing models that are clear, testable, and connected to behavioral principles.
 

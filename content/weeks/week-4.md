@@ -15,21 +15,7 @@ keyEquations:
 
 ## Why This Topic Matters
 
-Learning is fundamentally about prediction. Organisms that can learn where food will appear, which signals precede danger, and what cues mark safety survive and reproduce. But exactly how do organisms learn these associations from experience? What determines how quickly an association forms, how much it changes behavior, and when behavior will stop changing and at what levels? These are not philosophical questions. They are quantitative ones, and they have quantitative answers.
-
-The Rescorla-Wagner model, published in 1972, provided the first comprehensive mathematical answer. Its central idea is that learning is driven by prediction error. Note how this departs from the common contiguity claim popular at the time that an organism learns simply because two events occur together in time. In conrast, the Rescorla-Wagner model claims that learning occurs because the outcome of a trial differs from what the organism expected. When outcomes are surprising, learning is rapid. When outcomes are fully predicted, learning stops. This idea that the discrepancy between expected and actual events is the engine of associative change transformed the study of classical conditioning from a catalog of phenomena into a quantitative science.
-
-Before Rescorla and Wagner, the dominant view was that simply pairing a conditioned stimulus (CS) and an unconditioned stimulus (US) was sufficient for learning (i.e., contiguity). The logic reads straightforward. If a tone sounds and food appears, the organism forms an association between tone and food. Repeat the pairing, and the association increases the likelihood that related responding occurs. But experimental findings had begun to question that view. For example, Rescorla's own work (1968) demonstrated that what mattered was the contingency between the CS and US. A CS paired with a US but in a context where the US also occurred frequently without the CS showed little conditioning, even though the number of CS-US pairings was identical to a condition that produced robust conditioning.
-
-Then came Kamin's blocking effect. In blocking, a CS paired with a US acquires no associative strength if another CS already predicts that US. Contiguity was again present but learning did not occur. Something was missing from the contiguity account, and Rescorla and Wagner argued that something was prediction error.
-
-The Rescorla-Wagner model gave these findings a mathematical home. It also predicted several new phenomena that were subsequently confirmed in the laboratory (i.e., conditioned inhibition, superconditioning, overexpectation). Thus, the model described what had already been found and also told experimenters where to look next. This is the hallmark of a productive formal model.
-
-The model's reach extended far beyond animal learning. The prediction error signal it formalized became the basis for temporal difference learning in artificial intelligence (AI) which is a cornerstone of modern reinforcement learning algorithms. Sutton and Barto (1981, 1998) extended the Rescorla-Wagner idea to real-time, sequential decision-making, creating the framework that underlies much of contemporary AI. When Schultz and colleagues (1997) discovered that dopamine neurons in the primate midbrain fire in a pattern that closely resembles the temporal difference prediction error, a bridge was built between behavioral learning theory, computational neuroscience, and AI. Few models in any science can claim such broad applicability.
-
-This week also introduces Mackintosh's attention model, which addresses a limitation of the Rescorla-Wagner model by allowing the associability parameter to change with experience. Stimuli that are good predictors of outcomes become more associable over time; stimuli that are poor predictors become less so. This captures phenomena like learned irrelevance that the Rescorla-Wagner model handles poorly. Mackintosh's model represents a move from purely error-driven learning to learning that includes attentional selection which again forms the basis of much recent advancement in AI architectures.
-
-Together, these models illustrate a core theme of this course. Specifically, that simple mathematical rules, carefully specified, can capture complex and surprising features of the behavior of organisms. They also illustrate how models evolve. The Rescorla-Wagner model identified prediction error as the key variable and Mackintosh identified attention as a learnable process. Each model built on the successes and limitations of its predecessors, advancing the field incrementally and cumulatively.
+Learning is fundamentally about prediction, and the central claim of the Rescorla-Wagner model (1972) is that learning is driven by prediction error rather than by mere contiguity. An organism does not learn simply because a conditioned stimulus (CS) and unconditioned stimulus (US) occur together in time; it learns when the outcome of a trial differs from what it expected. When outcomes are surprising, learning is rapid; when outcomes are fully predicted, learning stops. The rest of this week formalizes that idea as an equation and works through what its structure predicts.
 
 ---
 
@@ -39,9 +25,9 @@ Together, these models illustrate a core theme of this course. Specifically, tha
 
 The central idea in the Rescorla-Wagner model is associative strength, denoted $V$. Associative strength represents the degree to which a CS predicts the US. When $V$ is high, the organism "expects" the US when the CS appears. When $V$ is low or zero, the CS carries no predictive information. When $V$ is negative, the CS actively signals the absence of the US (which is also predictive).
 
-It is important to understand that $V$ is not really a thing but, rather, a label given to a pattern of behavior. All we are can measure are the various characteristics of behavior (e.g., magnitude of a conditioned response, the probability of responding, the latency to respond). The model then assumes that greater predictive capabilities monotonically relate to the measured dimension of behavior.
+It is important to understand that $V$ is not really a thing but, rather, a label given to a pattern of behavior. All we can measure are the various characteristics of behavior (e.g., magnitude of a conditioned response, the probability of responding, the latency to respond), and the model assumes that greater predictive capability monotonically relates to the measured dimension of behavior.
 
-Learning in this framework is, thus, a change in association based on the organism's learning history. The critical claim is that learning does not occur simply because the CS and US are paired. Rather, learning occurs when there is a discrepancy between what the organism expects and what actually happens (i.e., a prediction error).
+Learning in this framework is, thus, a change in association based on the organism's learning history. The critical claim is that learning occurs not because the CS and US are paired, but when there is a discrepancy between what the organism expects and what actually happens (i.e., a prediction error).
 
 Mathematucally, the prediction error on a given trial is:
 $$\text{Prediction Error} = \lambda - V$$
@@ -53,7 +39,7 @@ On any given trial, three things are then possible:
 - When $\lambda - V < 0$, the US is overpredicted. The organism expects more than what occurs (including expecting the US when it does not appear), and associative strength decreases. This is termed negative prediction error and it drives extinction and conditioned inhibition.
 - When $\lambda - V = 0$, the US is fully predicted. There is no surprise, no error, and no learning. The system is at equilibrium.
 
-Even with this specificity, there are still some loose ends in the precision with which behavior can be described and predicted. Each of the models we review below attempt to increase the precision with which we can account for behavior. 
+Each of the models reviewed below attempts to increase the precision with which we can describe and predict behavior.
 
 ---
 ### The Rescorla-Wagner Model
@@ -74,7 +60,7 @@ where:
 - $\lambda$ (lambda) is the asymptotic associative strength supported by the US. On reinforced trials (CS followed by US), $\lambda$ is typically set to some positive value (often 1.0 for convenience). On non-reinforced trials (CS presented without US), $\lambda = 0$.
 
 Since this is a book more about the act of modeling than the models themeslves, several characteristics of this equation are worth noting:
-1. It is a difference equation, not a differential equation. It updates in discrete steps, trial by trial. This makes it natural for trial-based conditioning procedures but less suited for continuous, real-time processes where events unfold continuously.
+1. It is a difference equation, not a differential equation, updating in discrete steps trial by trial. This makes it natural for trial-based conditioning procedures but less suited for continuous, real-time processes.
 
 2. The product $\alpha \beta$ governs the learning rate. Higher CS salience or more effective US processing produces faster learning. But note that $\alpha$ and $\beta$ have the same mathematical effect in that they multiply together to form a single rate parameter. Their theoretical distinction matters, however, for predictions about compound stimuli (where different CSs have different $\alpha$ values but share the same $\beta$).
 
@@ -86,16 +72,12 @@ Since this is a book more about the act of modeling than the models themeslves, 
 
 ---
 ### Blocking
-Blocking is one of the most important phenomena in the study of classical conditioning and also illustrates the predictive capabilities of the Rescorla-Wagner model.
-
-A blocking preparation proceeds as follows:
+Blocking is one of the most important phenomena in classical conditioning and a clear illustration of the model's predictive power. A blocking preparation proceeds as follows:
 - Phase 1: CS_A is paired with the US for many trials until $V_A \approx \lambda$. That is, the organism has learned that A predicts the US.
 - Phase 2: The compound CS_A + CS_B is paired with the same US for several trials. Both A and B occur together, followed by the US.
 - Test: CS_B is presented alone. The question is the degree to which behavior changes now only in the presence of B.
 
-The contiguity account predicts that B should acquire strength because B was paired with the US on every trial in Phase 2. But experimentally, B shows little or no conditioning. The previous learning with A "blocks" learning about B.
-
-The Rescorla-Wagner model explains this elegantly. At the start of Phase 2, $V_A \approx \lambda$ and $V_B = 0$. The total associative strength on compound trials is $V_A + V_B \approx \lambda$. The prediction error is:
+The contiguity account predicts that B should acquire strength because it was paired with the US on every Phase 2 trial. Experimentally, B shows little or no conditioning: prior learning with A "blocks" learning about B. The Rescorla-Wagner model explains this elegantly. At the start of Phase 2, $V_A \approx \lambda$ and $V_B = 0$, so the total associative strength on compound trials is $V_A + V_B \approx \lambda$ and the prediction error is:
 
 $$\lambda - (V_A + V_B) \approx \lambda - \lambda = 0$$
 
@@ -103,15 +85,13 @@ With no prediction error, neither stimulus gains (or loses) associative strength
 
 $$\Delta V_B = \alpha_B \beta (0) = 0$$
 
-Thus, no learning to B occurs because there is nothing left to learn. The US is already fully predicted by A. No special "blocking mechanism" is needed. Blocking emerges from the general prediction-error learning rule combined with the additive associative values.
+No learning to B occurs because the US is already fully predicted by A. No special "blocking mechanism" is needed; blocking emerges from the general prediction-error learning rule combined with the additive associative values.
 
-Unblocking provides an important complement. If the US changes between Phase 1 and Phase 2 (e.g., it becomes larger or smaller), prediction error is restored: $\lambda_{\text{new}} - V_A \neq 0$. Now B can gain (or lose) associative strength on compound trials. The fact that changing the US leads to learning about B confirms that it is the prediction error, not just the presence of A, that prevents learning in the standard blocking design.
+Unblocking is the important complement. If the US changes between Phase 1 and Phase 2, prediction error is restored ($\lambda_{\text{new}} - V_A \neq 0$) and B can again gain or lose strength on compound trials. That changing the US produces learning about B confirms it is the prediction error, not just the presence of A, that prevents learning in the standard design.
 
 ---
 ### Conditioned Inhibition
-Conditioned inhibition occurs when a stimulus acquires negative associative strength. That is, it signals the absence of a US. Improtantly, a conditioned inhibitor does not fail to predict the US. Rather, it predicts that the US will not occur.
-
-The standard procedure for establishing conditioned inhibition uses two trial types interleaved within the same session:
+Conditioned inhibition occurs when a stimulus acquires negative associative strength: it does not merely fail to predict the US, it predicts that the US will not occur. The standard procedure uses two trial types interleaved within the same session:
 
 - A+ trials: CS_A is presented alone and followed by the US. On these trials, $\lambda > 0$, and $V_A$ increases toward $\lambda$.
 - AB- trials: The compound CS_A + CS_B is presented without the US. On these trials, $\lambda = 0$.
@@ -125,7 +105,7 @@ Since A has positive associative strength (from A+ trials), the compound predict
 $$\Delta V_A = \alpha_A \beta_2 (0 - (V_A + V_B)) < 0$$
 $$\Delta V_B = \alpha_B \beta_2 (0 - (V_A + V_B)) < 0$$
 
-But A is gaining associative value on A+ trials and losing it on AB- trials. Over many trials, A reaches a positive equilibrium value. B, which only appears on non-reinforced trials, accumulates more and more negative associative strength with each AB- trial. B becomes a conditioned inhibitor.
+A gains on A+ trials and loses on AB- trials, reaching a positive equilibrium. B, which appears only on non-reinforced trials, accumulates increasingly negative associative strength with each AB- trial and becomes a conditioned inhibitor.
 
 Two standard tests confirm conditioned inhibition:
 1. The summation test: Present the putative inhibitor (B) in compound with a separately trained excitatory CS (C, where $V_C > 0$). If B is truly inhibitory ($V_B < 0$), the compound CB should produce less responding than C alone.
@@ -136,25 +116,23 @@ Both tests were formalized by Rescorla (1969) and provide operational criteria f
 
 ---
 ### Overshadowing
-A related compound stimulus phenomenon is overshadowing. When two CSs of unequal salience are conditioned in compound (AB+), the more salient CS acquires more associative strength than the less salient one, and each acquires less than if it were conditioned alone. This occurs because both CSs share the same prediction error but receive increments proportional to their respective $\alpha$ values:
+When two CSs of unequal salience are conditioned in compound (AB+), the more salient CS acquires more associative strength than the less salient one, and each acquires less than if conditioned alone. This occurs because both CSs share the same prediction error but receive increments proportional to their respective $\alpha$ values:
 
 $$\Delta V_A = \alpha_A \beta (\lambda - (V_A + V_B))$$
 $$\Delta V_B = \alpha_B \beta (\lambda - (V_A + V_B))$$
 
 If $\alpha_A > \alpha_B$, then $V_A$ grows faster than $V_B$ on every trial. Loosely speaking, as $V_A$ grows, it "uses up" the prediction error, leaving less for $V_B$. At equilibrium, $V_A + V_B = \lambda$, but $V_A > V_B$. A overshadows B.
 
-Overshadowing is a less influential version of the same mechanism that produces blocking. In blocking, one CS has already consumed all the prediction error before the second CS is introduced. In overshadowing, the two CSs compete for prediction error from the start, and the more salient one wins a larger share.
+Overshadowing is a milder version of the mechanism that produces blocking. In blocking, one CS has already consumed all the prediction error before the second is introduced; in overshadowing, the two CSs compete from the start and the more salient one wins a larger share.
 
 ---
 ### Overexpectation
-Overexpectation is a particularly striking prediction of the Rescorla-Wagner model because it involves a decrease in associative strength despite the continued presence of the US.
-
-The procedure is as follows:
+Overexpectation is a particularly striking prediction because it involves a decrease in associative strength despite the continued presence of the US. The procedure:
 
 - Phase 1: CS_A is conditioned alone until $V_A \approx \lambda$. Separately, CS_B is conditioned alone until $V_B \approx \lambda$.
 - Phase 2: The compound CS_A + CS_B is paired with the same US as before.
 
-What happens? The total prediction on compound trials is $V_A + V_B \approx 2\lambda$, but the US only supports $\lambda$. The prediction error is:
+The total prediction on compound trials is $V_A + V_B \approx 2\lambda$, but the US only supports $\lambda$. The prediction error is:
 
 $$\lambda - (V_A + V_B) \approx \lambda - 2\lambda = -\lambda$$
 
@@ -165,13 +143,13 @@ $$\Delta V_B = \alpha_B \beta (\lambda - (V_A + V_B)) < 0$$
 
 Over multiple compound trials, $V_A$ and $V_B$ both decline until $V_A + V_B = \lambda$. Each CS ends up with associative strength of approximately $\lambda / 2$.
 
-This is counterintuitive: both CSs are paired with the US on every trial in Phase 2, yet both lose associative strength. Contiguity is fully maintained but, according to the traditional contiguity or even predictive probability perspective, learning goes in the "wrong" direction. The Rescorla-Wagner model predicts this because the organism's total expectation overshoots reality, and the model corrects the overshoot by reducing each CS's contribution. Overexpectation has been confirmed experimentally (Lattal & Nakajima, 1998; Rescorla, 1970) and stands as one of the model's most impressive novel predictions.
+Both CSs are paired with the US on every trial in Phase 2, yet both lose associative strength: contiguity is fully maintained, but learning goes in the "wrong" direction. The Rescorla-Wagner model predicts this because the organism's total expectation overshoots reality, and the model corrects the overshoot by reducing each CS's contribution. Overexpectation has been confirmed experimentally (Lattal & Nakajima, 1998; Rescorla, 1970) and stands as one of the model's most impressive novel predictions.
 
 ---
 ### Mackintosh's Attention Model
 Mackintosh's attention model (1975) was developed to address phenomena that the Rescorla-Wagner model does not handle well such as learned irrelevance and certain features of latent inhibition.
 
-The key difference from Rescorla-Wagner is that Mackintosh allows the associability parameter $\alpha$ to change with experience. In the Rescorla-Wagner model, $\alpha$ is a fixed property of the CS (e.g., a loud tone always has the same salience regardless of the organism's history with it). Mackintosh argued that this is psychologically unrealistic. Organisms learn to attend to stimuli that are good predictors of outcomes and learn to ignore stimuli that are poor predictors (i.e., selective attention). Selective attention requires that $\alpha$ varies as opposed to being a constant.
+The key difference from Rescorla-Wagner is that Mackintosh allows the associability parameter $\alpha$ to change with experience rather than remaining a fixed property of the CS. Organisms learn to attend to good predictors and ignore poor ones (selective attention), which requires that $\alpha$ vary rather than stay constant.
 
 Mackintosh's learning rule for associative strength is similar to Rescorla-Wagner:
 $$\Delta V_{CS} = \alpha_{CS} \beta (\lambda - V_{CS})$$
@@ -182,30 +160,17 @@ Mackintosh's rule for updating associability is:
 - If $|V_{CS} - \lambda|$ < $|V_{\text{other}} - \lambda|$, then $\alpha_{CS}$ increases. The CS is a better predictor of the outcome than other available stimuli, so the organism increases its attention to it.
 - If $|V_{CS} - \lambda|$ > $|V_{\text{other}} - \lambda|$, then $\alpha_{CS}$ decreases. The CS is a worse predictor than other stimuli, so the organism decreases its attention to it.
 
-The logic is intuitive: pay attention to informative stimuli and ignore uninformative ones. This is adaptive because all biological organisms have limited ability to sense and perceive the totality of physical stimuli that surround us in our everyday environments (i.e., we have limited processing capacity). And, any system with limited processing capacity should allocate attention to the cues that best predict outcomes important to that system.
+The logic is intuitive: pay attention to informative stimuli and ignore uninformative ones. Because any system with limited processing capacity should allocate attention to the cues that best predict important outcomes, this is adaptive. The key payoff is learned irrelevance: if a stimulus has an extensive history of being uncorrelated with any outcome, its $\alpha$ decreases to a low value, so later pairing with a US produces slow learning. The Rescorla-Wagner model, with fixed $\alpha$, cannot account for this. More generally, the model provides a formal account of "attention" as a quantifiable parameter ($\alpha$) that changes according to a well-defined rule based on measured behavior-environment relations.
 
-This produces a rich set of predictions:
-1. Learned irrelevance: If a stimulus has an extensive history of being uncorrelated with any outcome, its $\alpha$ decreases to a low value. Later, when it is paired with a US, learning is slow because $\alpha$ is already low. The Rescorla-Wagner model, with fixed $\alpha$, cannot account for this.
-
-2. Intradimensional-extradimensional shift effects: After learning to discriminate stimuli along one dimension (e.g., color), organisms learn new discriminations faster along the same dimension (intradimensional shift) compared to along a new dimension (extradimensional shift). Mackintosh's model explains this as a transfer of high associability to the relevant dimension.
-
-3. Differential blocking: Some blocking effects are asymmetric in ways that variable $\alpha$ can explain better than fixed $\alpha$.
-
-4. Attention as an explanatory variable: Mackintosh's model provides a formal account of what "attention" might mean behaviorally in the context of learning. Specifically, in this model, attention can be defined as a specific, quantifiable parameter ($\alpha$) that changes according to a well-defined rule and based on measured behavior-environment relations.
-
-The Mackintosh model adds complexity but also explanatory power. It represents a move from a purely error-driven account to one that includes attentional processes. This is a theme that recurs in many modern learning theories, including the Pearce-Hall model (1980), the hybrid model of Le Pelley (2004), and various computational accounts.
+The Mackintosh model adds complexity but also explanatory power, moving from a purely error-driven account to one that includes attentional processes. This is a theme that recurs in many modern learning theories, including the Pearce-Hall model (1980), the hybrid model of Le Pelley (2004), and various computational accounts.
 
 ---
 ## Applying the 8-Step Framework
-This section walks through each step of the 8-step modeling framework using the Rescorla-Wagner model applied to a concrete example: conditioning a tone (CS) with food delivery (US) over multiple trials.
+This section walks through the 8-step modeling framework using the Rescorla-Wagner model applied to a concrete example: conditioning a tone (CS) with food delivery (US) over multiple trials.
 
 Step 1: Identify All Environmental and Behavioral Components of the Phenomenon
 
-A hungry rat is placed in a conditioning chamber equipped with a speaker, a food magazine, and an infrared beam that detects approaches to the magazine. On each trial, a 10-second tone is presented, and at tone offset, a food pellet is delivered into the magazine. Trials are separated by a variable intertrial interval averaging 90 seconds. We measure the rat's conditioned response (CR) as an index of learning the stimulus-stimulus relation being presented (i.e., approach to the food magazine during the tone, as detected by beam breaks).
-
-Over the course of 30 conditioning trials, the following pattern emerges: On the first few trials, the rat shows little magazine approach during the tone. By trials 5-10, approach begins to increase. By trials 15-20, approach is robust and reliable. After trial 20, further increases are small. The learning curve is negatively accelerated with large gains early, diminishing gains later. The rat has learned that the tone predicts food.
-
-We want to model this acquisition process. Specifically, we want to model how the tone's ability to predict food (its associative strength) changes trial by trial.
+A hungry rat is placed in a conditioning chamber with a speaker, a food magazine, and an infrared beam detecting approaches to the magazine. On each trial a 10-second tone is presented, and at tone offset a food pellet is delivered; trials are separated by a variable intertrial interval averaging 90 seconds. We measure the conditioned response (CR) as an index of learning: approach to the magazine during the tone, detected by beam breaks. Across 30 trials, magazine approach is negligible on the first few trials, rises through trials 5-20, and shows only small further gains after trial 20, producing a negatively accelerated learning curve. We want to model how the tone's associative strength changes trial by trial.
 
 ---
 Step 2: Define the Behavioral Principles, Processes, and Intended Scope of the Model
@@ -228,9 +193,7 @@ The model operates at the level of trials: each trial produces a single update t
 
 Step 3: Write Down the Behavioral Principles, Known Quantitative Laws, and Functional Relationships
 
-The governing principle is that associative learning is driven by prediction error. That is, the discrepancy between what the organism expects and what actually occurs. This principle was articulated by Rescorla and Wagner (1972) based on converging evidence from blocking, contingency, and other compound stimulus experiments.
-
-The quantitative law is the Rescorla-Wagner equation:
+The governing principle, articulated by Rescorla and Wagner (1972) from converging evidence in blocking, contingency, and compound-stimulus experiments, is that associative learning is driven by prediction error: the discrepancy between what the organism expects and what actually occurs. The quantitative law is the Rescorla-Wagner equation:
 
 $$\Delta V = \alpha \beta (\lambda - V)$$
 
@@ -252,7 +215,7 @@ Step 4: State All Simplifying Assumptions Explicitly
 ---
 Step 5: Write the Model Verbally, Then Express It Mathematically
 
-Verbally: On each conditioning trial, the associative strength of the tone increases by an amount proportional to the difference between the maximum associative strength the food can support and the current associative strength of the tone; where strength is as defined by some behavioral dimension we are measuring (e.g., latency, intensity, duration, rate). The proportionality constant is the product of the tone's salience and the food's learning rate parameter. When the tone's associative strength is low (early in training), the discrepancy is large and learning is rapid. As the tone's associative strength approaches the maximum, the discrepancy shrinks and learning slows.
+Verbally: On each trial, the tone's associative strength increases by an amount proportional to the difference between the maximum strength the food can support and the tone's current strength, with the proportionality constant being the product of the tone's salience and the food's learning rate. When the current strength is low, the discrepancy is large and learning is rapid; as strength approaches the maximum, the discrepancy shrinks and learning slows.
 
 Mathematically:
 
@@ -269,9 +232,7 @@ In plain language: after each trial, the tone's predictive strength moves a frac
 ---
 Step 6: Verify Dimensional Consistency
 
-$V$ represents associative strength, which is a dimensionless quantity on an arbitrary scale (here, 0 to 1). $\alpha$ and $\beta$ are dimensionless proportions (no units). $\lambda$ is in the same arbitrary units as $V$. The product $\alpha \beta (\lambda - V)$ is therefore dimensionless, and $V_{n+1} = V_n + \text{(dimensionless increment)}$ is consistent.
-
-Note that this is a difference equation, not a rate equation, so there are no time units to check. The model steps in units of "trials," and all quantities are expressed per trial or are dimensionless.
+$V$ and $\lambda$ are dimensionless quantities on an arbitrary scale (here, 0 to 1), and $\alpha$ and $\beta$ are dimensionless proportions. The product $\alpha \beta (\lambda - V)$ is therefore dimensionless, and $V_{n+1} = V_n + \text{(dimensionless increment)}$ is consistent. Because this is a difference equation rather than a rate equation, there are no time units to check; the model steps in units of "trials."
 
 ---
 Step 7: Specify Starting Values and Constraints.
@@ -337,9 +298,7 @@ $$V_n = \lambda \left(1 - (1 - \alpha\beta)^n \right)$$
 
 Substituting our parameters: $V_n = 1 - 0.85^n$. At $n = 10$: $V_{10} = 1 - 0.85^{10} = 1 - 0.1969 = 0.8031$.
 
-We can also ask: how many trials to reach 95% of asymptote? We need $V_n = 0.95$, so $0.85^n = 0.05$, giving $n = \log(0.05) / \log(0.85) \approx 18.4$ trials. 
-
-Note here the benefit of what quantitative modeling provides in terms of trials to criterion which would be impossible to do with textual-verbal models alone. 
+We can also ask how many trials it takes to reach 95% of asymptote: we need $V_n = 0.95$, so $0.85^n = 0.05$, giving $n = \log(0.05) / \log(0.85) \approx 18.4$ trials. This trials-to-criterion computation is a benefit of quantitative modeling that verbal models alone cannot provide.
 
 ---
 ### Extinction: Following Acquisition with Non-Reinforced Trials
@@ -360,6 +319,10 @@ So on each extinction trial, $V$ retains 85% of its previous value:
 | 5                | 0.501          | -0.501                       | -0.075      | 0.426            |
 
 After 5 extinction trials, $V$ has dropped from 0.961 to 0.426. The prediction error is negative on every trial because the organism "expects" the US but it does not occur. This symmetry between acquisition and extinction is a feature of the model. Both processes are driven by the same equation; they differ only in the value of $\lambda$.
+
+![Rescorla-Wagner acquisition and extinction](/images/week4-acquisition-extinction.svg)
+
+*Figure: With $\alpha\beta = 0.15$, associative strength $V$ rises toward the asymptote $\lambda = 1$ during acquisition (negatively accelerated, blue) and decays back toward zero once the US is removed and $\lambda = 0$ (extinction, red). The two phases mirror each other because the same prediction-error equation governs both; only the value of $\lambda$ changes.*
 
 ---
 ### Blocking Demonstration
@@ -383,6 +346,10 @@ $$\Delta V_B = \alpha_B \beta (\lambda - (V_A + V_B))$$
 
 After 5 compound trials, $V_B = 0.021$ which is essentially no change in conditioning. Compare this to what would happen if B had been conditioned alone from the start: after 5 solo trials, $V_B$ would be $1 - 0.85^5 = 0.556$. The presence of the already-trained A has blocked learning about B by a factor of more than 25.
 
+![The blocking effect](/images/week4-blocking.svg)
+
+*Figure: The blocking effect. Trained alone (control, blue), CS B acquires associative strength normally. Added to a compound with a pretrained CS A that already predicts the US (blocked, red), B gains almost nothing: A has already consumed the available prediction error, so $\lambda - (V_A + V_B) \approx 0$ and there is nothing left for B to learn. Contiguity between B and the US is identical in both conditions; only the prediction error differs.*
+
 ---
 ### Effect of Different Learning Rates
 
@@ -400,45 +367,27 @@ The shape of all three curves is the same---negatively accelerated exponential a
 ## Assumptions and Limitations
 The Rescorla-Wagner model, despite its enormous influence, rests on assumptions that constrain its applicability:
 
-- Trial-level processing: The model updates once per trial. It does not represent real-time dynamics within a trial such as the timing of the CS, the timing of the US, the moment-to-moment changes in expectation. Real conditioning is exquisitely sensitive to the CS-US interval. Models like the temporal difference (TD) model and the Timing model of Gallistel and Gibbon (2000) address real-time learning.
+- Trial-level processing: The model updates once per trial and does not represent within-trial timing of the CS, US, or expectation, even though real conditioning is exquisitely sensitive to the CS-US interval. Real-time models such as the temporal difference (TD) model and the Timing model of Gallistel and Gibbon (2000) address this.
 
-- Linear error correction: The change in $V$ is a linear function of the prediction error. There is no mechanism for accelerating or decelerating learning based on the recent history of errors.
+- Linear error correction: The change in $V$ is a linear function of the prediction error, with no mechanism for accelerating or decelerating learning based on the recent history of errors.
 
-- Fixed associability ($\alpha$): The salience of the CS does not change with experience. This is the assumption that Mackintosh (1975) and Pearce and Hall (1980) relaxed. The fixed-$\alpha$ assumption means the model cannot account for latent inhibition, learned irrelevance, or the effects of prior discrimination training on subsequent learning.
+- Fixed associability ($\alpha$): CS salience does not change with experience, so the model cannot account for latent inhibition, learned irrelevance, or effects of prior discrimination training. This is the assumption Mackintosh (1975) and Pearce and Hall (1980) relaxed.
 
-- Summation of associative strengths: When multiple CSs are present, the model sums their individual associative strengths to produce the total prediction. This elemental approach does not allow for configural processing, in which the compound AB is treated as a distinct entity from A or B alone. Pearce's configural model (1987) addresses this limitation.
+- Summation of associative strengths: The model sums individual associative strengths rather than allowing configural processing, in which the compound AB is a distinct entity from A or B alone. Pearce's configural model (1987) addresses this.
 
-- No representation of time: The model treats all CS-US intervals as equivalent and all intertrial intervals as irrelevant.
+- No representation of time: All CS-US intervals are treated as equivalent and all intertrial intervals as irrelevant.
 
-- Symmetry of excitation and inhibition: The same equation governs both. Some evidence suggests that excitation and inhibition may follow different rules.
+- Symmetry of excitation and inhibition: The same equation governs both, though some evidence suggests they may follow different rules.
 
-- No memory or context effects: The model has no mechanism for spontaneous recovery, renewal, or reinstatement. These phenomena suggest that extinction does not erase the original association but rather creates a new, context-dependent inhibitory association.
+- No memory or context effects: The model has no mechanism for spontaneous recovery, renewal, or reinstatement, phenomena suggesting that extinction creates a new, context-dependent inhibitory association rather than erasing the original.
 
-- US processing is constant: The parameter $\beta$ does not change with experience. In reality, habituation to the US, changes in motivation, and sensitization all affect how the US is processed.
+- US processing is constant: The parameter $\beta$ does not change with experience, ignoring habituation, motivation, and sensitization.
 
-These limitations are not reasons to discard the model. They are the boundaries that define where the model applies and where extensions are needed. The Rescorla-Wagner model remains the starting point for nearly all formal models of associative learning precisely because it is simple enough to understand clearly and powerful enough to generate surprising, testable predictions.
+These limitations are not reasons to discard the model; they are the boundaries that define where it applies and where extensions are needed. Rescorla-Wagner remains the starting point for nearly all formal models of associative learning precisely because it is simple enough to understand clearly and powerful enough to generate surprising, testable predictions.
 
 ---
 ## Connection to Empirical Behavior Science
-### Blocking and Compound Conditioning
-The blocking effect, first demonstrated by Kamin (1969), was the empirical finding that most directly motivated the Rescorla-Wagner model. Kamin showed that rats trained with a noise CS that predicted shock (Phase 1) and then trained with a noise-light compound that predicted the same shock (Phase 2) showed no conditioning to the light alone at test.
-
-Subsequent research has confirmed blocking across many species and preparations and has explored its boundary conditions. Blocking is reduced or eliminated when the US changes between phases (unblocking), when there is a long retention interval between phases, or when the added CS is particularly salient. The Rescorla-Wagner model's account remains the standard explanation (via the shared prediction error in compound conditioning), though alternative accounts exist, including the comparator hypothesis (Miller & Matzel, 1988).
-
-### Conditioned Inhibition
-The model's prediction that stimuli can acquire negative associative strength has been extensively tested. Conditioned inhibitors pass both the summation test and the retardation test, providing operational criteria that map directly onto the model's predictions.
-
-Conditioned inhibition has clinical relevance. For example, in the context of anxiety disorders, a conditioned inhibitor functions as a "safety signal" (i.e., a stimulus that signals the absence of threat). Understanding how inhibitory associations are acquired and maintained is important for therapies that aim to establish safety signals as part of treatment.
-
-### Mackintosh and Attentional Processes
-Mackintosh (1975) proposed his attention model to account for findings that the Rescorla-Wagner model could not easily handle, including learned irrelevance and certain intradimensional/extradimensional shift effects. Matzel and colleagues (1988) provided particularly compelling evidence for learned irrelevance by showing that pre-exposing both the CS and US in an uncorrelated fashion slowed the rate of subsequent conditioning more than pre-exposing either the CS or the US alone. This "super-additive" deficit in learning is predicted by Mackintosh's model but not by Rescorla-Wagner.
-
-The attention model influenced subsequent theories, including the Pearce-Hall model (1980). The tension between these models has been productive, generating decades of research and leading to hybrid models that incorporate both principles (Le Pelley, 2004). Specifically, that tension is that Mackintosh's model predicts that good predictors gain attention whereas Pearce-Hall predicting that uncertain outcomes gain attention
-
-### Temporal Difference Learning in AI
-The prediction error signal formalized by Rescorla and Wagner became the conceptual foundation for temporal difference (TD) learning in artificial intelligence (AI) (Sutton & Barto, 1998). TD learning extends the Rescorla-Wagner idea from trial-level to moment-by-moment updating.
-
-The discovery that dopamine neurons in the midbrain encode a signal resembling the TD prediction error (Schultz, Dayan, & Montague, 1997) created a remarkable bridge between behavioral learning theory, computational neuroscience, and AI. This is one of the most striking examples of a behavioral model's reach extending far beyond its original domain.
+The prediction-error signal formalized by Rescorla and Wagner became the conceptual foundation for temporal difference (TD) learning in artificial intelligence, which extends the trial-level update to moment-by-moment updating (Sutton & Barto, 1998); the later discovery that midbrain dopamine neurons encode a signal resembling the TD prediction error (Schultz, Dayan, & Montague, 1997) bridged behavioral learning theory, computational neuroscience, and AI.
 
 ---
 ## Exercises for Reflection
@@ -489,9 +438,7 @@ The discovery that dopamine neurons in the midbrain encode a signal resembling t
 
 ---
 ## Connecting Forward
-This week we have seen how the Rescorla-Wagner model formalizes the process by which organisms learn predictive relationships between stimuli. The history of CS-US pairings and the prediction errors generated across those pairings determines the associative strength that a conditioned stimulus carries. Mackintosh's model adds that the organism's attentional allocation is itself shaped by this history.
-
-Next week, we turn to a different but related question. Once behavior has been established through a history of reinforcement, what determines how persistent that behavior is when conditions change? Behavioral momentum theory addresses this by showing that the "mass" of behavior in a given context is determined by the Pavlovian stimulus-reinforcer relationship in that context. This is the same kind of associative history we studied this week, but now operating at the level of the discriminative stimulus context rather than the individual CS. Where the Rescorla-Wagner model tells us how associations form, behavioral momentum theory tells us how those associations make behavior resist change. The bridge between the two is the Pavlovian contingency. This week we formalized how it builds associative strength. Next week we will see how it builds behavioral persistence.
+This week we saw how the Rescorla-Wagner model formalizes the way prediction errors across CS-US pairings build the associative strength a conditioned stimulus carries, and how Mackintosh's model makes attentional allocation itself a product of that history. Next week we turn to behavioral momentum theory, where the same kind of Pavlovian stimulus-reinforcer relationship, now operating at the level of the discriminative-stimulus context, determines how persistent behavior is when conditions change. Where Rescorla-Wagner tells us how associations form, behavioral momentum tells us how they make behavior resist change.
 
 ---
 
