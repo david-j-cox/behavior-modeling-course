@@ -1,7 +1,7 @@
 ---
 slug: "week-6"
 number: 6
-published: false
+published: true
 title: "Model Comparisons"
 subtitle: "How to choose between competing accounts of the same data"
 description: "AIC, BIC, cross-validation, parsimony, and the bias-variance tradeoff."
