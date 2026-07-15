@@ -5,9 +5,10 @@ description: "Fit the exponential demand equation to participant consumption dat
 notebooks:
   - filename: "demand_analysis.ipynb"
     title: "Demand Analysis"
-instructorNotebooks:
+solutionNotebooks:
   - filename: "demand_analysis_solution.ipynb"
     title: "Demand Analysis (Solution)"
+instructorNotebooks:
   - filename: "demand_data_creation.ipynb"
     title: "Dataset Creation"
 dataFiles:

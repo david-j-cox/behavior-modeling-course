@@ -13,6 +13,7 @@ export default async function LabsPage() {
       title: lab.meta.title,
       description: lab.meta.description,
       notebooks: lab.meta.notebooks,
+      solutionNotebooks: lab.meta.solutionNotebooks || [],
       instructorNotebooks: lab.meta.instructorNotebooks || [],
       dataFiles: lab.meta.dataFiles,
       html: await renderMarkdown(lab.content),

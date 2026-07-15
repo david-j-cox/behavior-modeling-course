@@ -5,7 +5,7 @@ description: "Compare regression and classification models using a variety of fi
 notebooks:
   - filename: "model_comparisons.ipynb"
     title: "Model Comparisons"
-instructorNotebooks:
+solutionNotebooks:
   - filename: "model_comparisons_solution.ipynb"
     title: "Model Comparisons (Solution)"
 dataFiles:

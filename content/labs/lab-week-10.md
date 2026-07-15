@@ -7,9 +7,10 @@ notebooks:
     title: "Dynamical Systems Lab"
 dataFiles:
   - "acquisition_data.csv"
-instructorNotebooks:
+solutionNotebooks:
   - filename: "dynamical_systems_lab_solution.ipynb"
     title: "Dynamical Systems Lab (Solution)"
+instructorNotebooks:
   - filename: "acquisition_data_creation.ipynb"
     title: "Dataset Creation"
 ---

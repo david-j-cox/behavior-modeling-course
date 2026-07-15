@@ -5,9 +5,10 @@ description: "Implement the Rescorla-Wagner and Mackintosh models as recursive u
 notebooks:
   - filename: "associative_learning_lab.ipynb"
     title: "Associative Learning Lab"
-instructorNotebooks:
+solutionNotebooks:
   - filename: "associative_learning_lab_solution.ipynb"
     title: "Associative Learning Lab (Solution)"
+instructorNotebooks:
   - filename: "associative_learning_data_creation.ipynb"
     title: "Dataset Creation"
 dataFiles: []
