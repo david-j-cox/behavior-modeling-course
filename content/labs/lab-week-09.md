@@ -7,9 +7,10 @@ notebooks:
     title: "Multilevel Modeling Lab"
 dataFiles:
   - "nested_behavior_data.csv"
-instructorNotebooks:
+solutionNotebooks:
   - filename: "multilevel_lab_solution.ipynb"
     title: "Multilevel Modeling Lab (Solution)"
+instructorNotebooks:
   - filename: "nested_data_creation.ipynb"
     title: "Dataset Creation"
 ---

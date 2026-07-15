@@ -9,9 +9,10 @@ dataFiles:
   - "momentum_data.csv"
   - "behavioral_momentum_extinction_data.csv"
   - "behavioral_momentum_alternative_data.csv"
-instructorNotebooks:
+solutionNotebooks:
   - filename: "behavioral_momentum_lab_solution.ipynb"
     title: "Behavioral Momentum Lab (Solution)"
+instructorNotebooks:
   - filename: "momentum_data_creation.ipynb"
     title: "Dataset Creation (Prefeeding)"
   - filename: "behavioral_momentum_data_creation.ipynb"

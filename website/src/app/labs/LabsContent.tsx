@@ -10,6 +10,7 @@ interface LabItem {
   title: string;
   description: string;
   notebooks: LabNotebook[];
+  solutionNotebooks: LabNotebook[];
   instructorNotebooks: LabNotebook[];
   dataFiles: string[];
   html: string;
@@ -87,6 +88,27 @@ export default function LabsContent({ labs }: Props) {
                       href={`/labs/${weekDir}/${nb.filename}`}
                       download
                       className="badge"
+                      style={{ textDecoration: "none" }}
+                    >
+                      {nb.title}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {lab.solutionNotebooks.length > 0 && (
+              <div style={{ marginBottom: "0.75rem" }}>
+                <div className="readings-label">Answer Keys</div>
+                <div
+                  style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem" }}
+                >
+                  {lab.solutionNotebooks.map((nb) => (
+                    <a
+                      key={nb.filename}
+                      href={`/labs/${weekDir}/${nb.filename}`}
+                      download
+                      className="badge badge-advanced"
                       style={{ textDecoration: "none" }}
                     >
                       {nb.title}

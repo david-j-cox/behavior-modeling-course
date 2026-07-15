@@ -5,7 +5,7 @@ description: "Build a Q-learning agent and test whether reinforcement learning p
 notebooks:
   - filename: "computational_models_lab.ipynb"
     title: "Q-Learning Lab"
-instructorNotebooks:
+solutionNotebooks:
   - filename: "computational_models_lab_solution.ipynb"
     title: "Q-Learning Lab (Solution)"
 dataFiles: []

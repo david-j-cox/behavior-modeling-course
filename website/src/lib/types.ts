@@ -67,6 +67,7 @@ export interface LabMeta {
   title: string;
   description: string;
   notebooks: LabNotebook[];
+  solutionNotebooks?: LabNotebook[];
   instructorNotebooks?: LabNotebook[];
   dataFiles: string[];
 }

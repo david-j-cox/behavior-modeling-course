@@ -48,9 +48,6 @@ export default function RootLayout({
                 <Link href="/labs">Labs</Link>
               </li>
               <li>
-                <Link href="/problems">Problems</Link>
-              </li>
-              <li>
                 <Link href="/readings">Readings</Link>
               </li>
               <li>
