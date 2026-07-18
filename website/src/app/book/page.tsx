@@ -2,41 +2,37 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Get the Book | Modeling in Behavior Science",
+  title: "The Book | Modeling in Behavior Science",
   description:
-    "Introduction to Mathematical Modeling in Behavior Science is available as an ebook and paperback. The full course content, in a form you can read on a plane or mark up with a pen.",
+    "Introduction to Mathematical Modeling in Behavior Science is in progress. The ebook and paperback will be available once all modules are finished and reviewed.",
 };
-
-const formats = [
-  {
-    label: "Ebook (Leanpub)",
-    desc: "PDF, EPUB, and MOBI. Pay what you want above the suggested minimum. Free updates whenever the course is revised.",
-    href: "#",
-    cta: "Buy on Leanpub",
-  },
-  {
-    label: "Kindle",
-    desc: "Read on any Kindle device or app. Same content as the Leanpub EPUB.",
-    href: "#",
-    cta: "Buy on Kindle",
-  },
-  {
-    label: "Paperback",
-    desc: "Print edition via Amazon KDP. 6 x 9 in, suitable for marking up alongside the labs.",
-    href: "#",
-    cta: "Order paperback",
-  },
-];
 
 export default function BookPage() {
   return (
     <div className="container page">
-      <h1>Get the Book</h1>
+      <h1>The Book</h1>
       <p style={{ fontSize: "1.1rem", color: "var(--color-text-muted)", maxWidth: "38rem" }}>
         The full course, in a form you can read on a plane or mark up with a pen.
       </p>
 
       <section style={{ marginTop: "2rem" }}>
+        <div
+          className="card"
+          style={{ display: "block", padding: "1.5rem", borderLeft: "4px solid var(--color-link)" }}
+        >
+          <div className="card-title" style={{ marginBottom: "0.5rem" }}>
+            Coming soon
+          </div>
+          <p style={{ margin: 0 }}>
+            The book is still being written and reviewed. The ebook and
+            paperback editions will be available once all modules are finished.
+            In the meantime, all of the content is free on the{" "}
+            <Link href="/">course site</Link>.
+          </p>
+        </div>
+      </section>
+
+      <section style={{ marginTop: "2.5rem" }}>
         <h2 style={{ borderBottom: "none", marginTop: "0" }}>About the Book</h2>
         <p>
           <em>Introduction to Mathematical Modeling in Behavior Science</em> is
@@ -50,36 +46,6 @@ export default function BookPage() {
           a running Python kernel and a browser. The book is the place to read
           the theory end-to-end, study offline, or work through the practice
           problems away from a screen.
-        </p>
-        <p>
-          Buying the book is the most direct way to support continued work on
-          the course. All site content stays free.
-        </p>
-      </section>
-
-      <section style={{ marginTop: "2.5rem" }}>
-        <h2 style={{ borderBottom: "none", marginTop: "0" }}>Where to Buy</h2>
-        <div className="card-grid">
-          {formats.map((f) => (
-            <a key={f.label} href={f.href} className="card">
-              <div className="card-title">{f.label}</div>
-              <div className="card-desc">{f.desc}</div>
-              <div
-                style={{
-                  marginTop: "0.75rem",
-                  fontWeight: 600,
-                  color: "var(--color-link)",
-                }}
-              >
-                {f.cta} &rarr;
-              </div>
-            </a>
-          ))}
-        </div>
-        <p style={{ marginTop: "1.25rem", color: "var(--color-text-muted)", fontSize: "0.9rem" }}>
-          Purchase links will be live once the book is published. Check back
-          soon, or follow along on the <Link href="/">course site</Link> in the
-          meantime.
         </p>
       </section>
 
