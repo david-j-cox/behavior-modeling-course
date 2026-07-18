@@ -8,7 +8,7 @@ week: 5
 - Students should be able to state the behavioral momentum metaphor and explain the core distinction between response rate (governed by the operant contingency) and resistance to change (governed by the Pavlovian stimulus-reinforcer contingency).
 - Students should be able to write the basic resistance-to-change equation, define each term, and use it to predict the relative disruption of behavior across rich and lean contexts.
 - Students should be able to explain why behavioral momentum theory treats persistence as a Pavlovian phenomenon and articulate the clinical implications of this claim.
-- Students should be able to connect behavioral momentum theory to resurgence and relapse, and describe at least one treatment-design tension the theory exposes (e.g., enriching a context to strengthen desirable behavior may also make problem behavior more persistent).
+- Students should be able to connect behavioral momentum theory to resurgence and relapse, and describe at least one treatment-design tension the theory exposes (e.g., enriching a context to increase desirable behavior may also make problem behavior more persistent).
 - Students should be able to apply the 8-step modeling framework to a resistance-to-change scenario.
 
 ---
@@ -56,7 +56,7 @@ Note that the augmented model lets the same reinforcement variable account for b
 
 ### Key Predictions and Clinical Implications (5 min)
 
-State the headline prediction: enriching the reinforcement context increases persistence. Then surface the clinical tension directly---this is the section students remember. If you deliver reinforcement in a context to strengthen a desirable behavior (e.g., DRA), you may simultaneously increase the behavioral momentum of *whatever else* occurs in that context, including problem behavior. Persistence is a property of the context, not just the target response.
+State the headline prediction: enriching the reinforcement context increases persistence. Then surface the clinical tension directly---this is the section students remember. If you deliver reinforcement in a context to increase a desirable behavior (e.g., DRA), you may simultaneously increase the behavioral momentum of *whatever else* occurs in that context, including problem behavior. Persistence is a property of the context, not just the target response.
 
 ### Wrap-Up and 8-Step Framework (5 min)
 
