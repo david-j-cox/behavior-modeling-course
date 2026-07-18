@@ -91,14 +91,14 @@ Return to the opening message: model building is iterative. The tools they learn
 
 ### Demonstration 1: Drawing a Flow Diagram for Operant Conditioning
 
-**Setup:** Draw two boxes on the board labeled "Response Strength" and "Alternative Behavior." This connects to the in-class demonstration document's operant lever-pressing example.
+**Setup:** Draw two boxes on the board labeled "Response Probability" and "Alternative Behavior." This connects to the in-class demonstration document's operant lever-pressing example.
 
 **Procedure:**
-1. Ask students: What increases response strength? (Reinforcement.) Draw an inflow arrow and label it with a reinforcement rate.
-2. Ask: What decreases response strength? (Extinction, fatigue, satiation.) Draw outflow arrows.
-3. Ask: Does the alternative behavior pool affect the response strength pool? (Yes---behavioral competition.) Draw a bidirectional arrow between the pools.
+1. Ask students: What increases response probability? (Reinforcement.) Draw an inflow arrow and label it with a reinforcement rate.
+2. Ask: What decreases response probability? (Extinction, fatigue, satiation.) Draw outflow arrows.
+3. Ask: Does the alternative behavior pool affect the response probability pool? (Yes---behavioral competition.) Draw a bidirectional arrow between the pools.
 4. Now write the equation: $\frac{dR}{dt} = \text{reinforcement inflow} - \text{extinction outflow} - \text{competition flow}$.
-5. Ask students to propose specific functional forms for each term (e.g., reinforcement inflow proportional to reinforcement rate, extinction outflow proportional to current response strength).
+5. Ask students to propose specific functional forms for each term (e.g., reinforcement inflow proportional to reinforcement rate, extinction outflow proportional to current response probability).
 
 **Connection to demonstration document:** Reference the operant lever-pressing scenario where a rat's lever pressing is maintained by food reinforcement. The flow diagram formalizes the verbal description of contingencies into a mathematical structure.
 

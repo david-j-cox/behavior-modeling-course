@@ -64,7 +64,7 @@ An **agent-based model** is a computational model in which individual **agents**
 
 Each agent in an ABM typically has:
 
-- **States**: Internal variables such as response strength, motivational level, or accumulated reinforcement history.
+- **States**: Internal variables such as response probability, motivational level, or accumulated reinforcement history.
 - **Rules**: Behavioral algorithms that determine what the agent does at each time step, based on its current state and local environment. These rules can be deterministic or probabilistic.
 - **An environment**: The shared context in which agents operate, including reinforcement contingencies, spatial structure, and other agents.
 

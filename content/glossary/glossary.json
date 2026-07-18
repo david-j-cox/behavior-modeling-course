@@ -79,7 +79,7 @@
   },
   {
     "term": "Derivative",
-    "definition": "A mathematical quantity representing the instantaneous rate of change of a function with respect to one of its variables. In behavioral modeling, derivatives often represent rates of change in response strength, value, or other behavioral quantities over time.",
+    "definition": "A mathematical quantity representing the instantaneous rate of change of a function with respect to one of its variables. In behavioral modeling, derivatives often represent rates of change in response rate, value, or other behavioral quantities over time.",
     "relatedTerms": ["Differential Equation", "Function", "Variable"],
     "firstAppears": 5
   },
@@ -121,7 +121,7 @@
   },
   {
     "term": "Extinction",
-    "definition": "The decrease in responding that occurs when reinforcement is discontinued. Modeled dynamically as a process of declining response strength or associative value.",
+    "definition": "The decrease in responding that occurs when reinforcement is discontinued. Modeled dynamically as a process of declining response rate or associative value.",
     "relatedTerms": ["Acquisition", "Reinforcement", "Steady State"],
     "firstAppears": 5
   },
