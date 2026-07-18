@@ -227,7 +227,7 @@ where:
 - $\beta = 0.5$ (the food pellet supports a moderate learning rate)
 - $\lambda = 1.0$ (the asymptotic associative strength supported by the food, set to 1 for convenience)
 
-In plain language: after each trial, the tone's predictive strength moves a fraction of the remaining distance toward the maximum level the food supports. The fraction is $\alpha \beta = 0.15$, or 15% of the remaining gap.
+In plain language: after each trial, the tone's associative strength moves a fraction of the remaining distance toward the maximum level the food supports. The fraction is $\alpha \beta = 0.15$, or 15% of the remaining gap.
 
 ---
 Step 6: Verify Dimensional Consistency

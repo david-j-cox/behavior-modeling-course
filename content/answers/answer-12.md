@@ -59,7 +59,7 @@ Under DRA, attention is withheld following problem behavior (extinction). The ra
 
 $$\frac{dy}{dt} = \rho \cdot y \cdot \left(1 - \frac{y}{K}\right)$$
 
-When the alternative behavior contacts reinforcement, it grows. The $\rho \cdot y$ term captures the idea that growth is proportional to the current level of alternative behavior (a form of "behavioral momentum" — the more often manding occurs, the more opportunities it has to be reinforced and strengthened). The $(1 - y/K)$ term introduces a ceiling: as $y$ approaches the carrying capacity $K$, growth slows because there are only so many opportunities per hour for attention-maintained manding. At $y = K$, the growth rate is zero.
+When the alternative behavior contacts reinforcement, it grows. The $\rho \cdot y$ term captures the idea that growth is proportional to the current level of alternative behavior (a form of "behavioral momentum" — the more often manding occurs, the more opportunities it has to be reinforced, further increasing its rate). The $(1 - y/K)$ term introduces a ceiling: as $y$ approaches the carrying capacity $K$, growth slows because there are only so many opportunities per hour for attention-maintained manding. At $y = K$, the growth rate is zero.
 
 ### (c) At Least Four Assumptions
 
