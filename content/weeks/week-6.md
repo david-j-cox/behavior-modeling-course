@@ -217,7 +217,7 @@ This model has 2 free parameters ($k$ and $s$). When $s = 1$ it reduces to Mazur
 ## Worked Example
 
 ### The Data
-A participant completes a delay discounting task with a larger-later amount of $A = \$100$ at six delays. The indifference points are:
+A participant completes a delay discounting task with a larger-later amount of $A = \text{\textdollar}100$ at six delays. The indifference points are:
 
 | Delay (days) | Indifference Point (\$) |
 |:---:|:---:|
@@ -368,9 +368,9 @@ The hyperboloid would be preferred for a participant whose discounting function 
 ### Making a Prediction
 The payoff of model selection is reliable prediction. Having selected the hyperbolic model with $k = 0.025$, we can predict indifference points at untested delays:
 
-- At $D = 14$ days: $V = 100 / (1 + 0.025 \times 14) = 100 / 1.35 = \$74.07$
-- At $D = 500$ days: $V = 100 / (1 + 0.025 \times 500) = 100 / 13.5 = \$7.41$
-- At $D = 730$ days (2 years): $V = 100 / (1 + 0.025 \times 730) = 100 / 19.25 = \$5.19$
+- At $D = 14$ days: $V = 100 / (1 + 0.025 \times 14) = 100 / 1.35 = \text{\textdollar}74.07$
+- At $D = 500$ days: $V = 100 / (1 + 0.025 \times 500) = 100 / 13.5 = \text{\textdollar}7.41$
+- At $D = 730$ days (2 years): $V = 100 / (1 + 0.025 \times 730) = 100 / 19.25 = \text{\textdollar}5.19$
 
 These predictions are only as good as the model choice: the exponential (with $r^2 = 0.708$ and systematic residuals) would give unreliable ones. Model comparison is what makes these predictions trustworthy.
 
