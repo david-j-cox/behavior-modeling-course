@@ -446,12 +446,30 @@ strong {
   margin-bottom: 0.5rem;
 }
 
+/* Two real columns rather than CSS multi-column. The split is decided in
+   TableOfContents.tsx so that a heading always sits with its subheadings and
+   any leftover height lands in the left column. */
+.toc-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 2rem;
+  align-items: start;
+}
+
 .toc-list {
   list-style: none;
   padding: 0;
   margin: 0;
-  columns: 2;
-  column-gap: 2rem;
+}
+
+.toc-group {
+  list-style: none;
+}
+
+.toc-sublist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .toc-item,
@@ -478,8 +496,8 @@ strong {
 }
 
 @media (max-width: 640px) {
-  .toc-list {
-    columns: 1;
+  .toc-columns {
+    grid-template-columns: 1fr;
   }
 }
 
