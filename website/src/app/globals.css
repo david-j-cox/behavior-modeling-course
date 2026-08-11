@@ -226,6 +226,17 @@ strong {
   margin: 2rem 0;
 }
 
+/* --- Figures --- */
+
+/* Figures are authored at their natural size, which is wider than the prose
+   column. Constrain them to the column and centre them within it. */
+.prose img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.5rem auto;
+}
+
 /* --- KaTeX display math --- */
 
 .prose .katex-display {
