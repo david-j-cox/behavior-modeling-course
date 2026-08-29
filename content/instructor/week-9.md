@@ -63,7 +63,7 @@ Mention model selection via ACF/PACF patterns and information criteria (AIC/BIC)
 
 1. **Nesting in your own research.** "Think about a dataset you have worked with or might collect in the future. What is the nesting structure? What are the Level 1 and Level 2 units? What do you think the ICC might be, and why?" This prompt helps students connect the abstract framework to their own work.
 
-2. **Shrinkage and small-n designs.** "Behavior analysis traditionally uses single-subject designs with small numbers of participants. How does shrinkage in multilevel models help or hinder the analysis of such data? Is borrowing strength across participants a good thing or does it obscure individual patterns?" This can generate productive debate between students who value group-level generalization and those who prioritize individual analysis.
+2. **Shrinkage and small-n designs.** "Behavior analysis traditionally uses single-subject designs with small numbers of participants. How does shrinkage in multilevel models help or hinder the analysis of such data? Is pooling information across participants a good thing or does it obscure individual patterns?" This can generate productive debate between students who value group-level generalization and those who prioritize individual analysis.
 
 3. **Temporal dependence and intervention evaluation.** "If a client's behavior shows strong autocorrelation (phi = 0.8), what does that imply for how quickly you can detect the effect of an intervention? How might you use the AR model to set a more principled criterion for deciding whether an intervention is working?" This connects time-series modeling to clinical decision-making.
 
